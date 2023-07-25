@@ -1,0 +1,100 @@
+Rignite 
+
+Rignite partners with 3rd party companies to create interesting products aimed at pc-builder enthusiasts. 
+Once 3rd party companies develop a product idea, the product is posted to the Rignite website. 
+Customers can then vote on whether or not they want to join in on the product run order. 
+Once enough votes are cast to join on a product run, the product run is funded.
+
+User Story
+
+Tables
+
+===================================== PRIMARY TABLE - Products =====================================
+	
+    GET
+
+        • All visitors can get index of Products.
+        • Index of products is the entry point for the User story.
+        • All products are shown on individual product cards on the Index page.
+        • The product cards show basic information about the product.
+        • The product cards are links to detailed information, including specs, for the product.
+        
+    REACT
+
+        • Logged in Users can add products to their shopping cart.
+        • The shopping cart will persist between sessions for logged in Users.
+        • Within the shopping cart, Users can remove items or increase quantity of items purchased.
+        • Users can submit a shopping cart to create an order.
+
+    POST
+
+        • Sellers can create new Products through secret and protected page.
+
+    PATCH
+
+        • Sellers can edit Products through secret and protected page.
+
+    DELETE
+
+        • Sellers can delete Products through secret and protected page.
+
+================================== Users: Sellers and Customers ===================================
+
+    Login 
+
+        • Modal from navigation. Available on all pages.
+        • Separate field for validating Sellers
+
+    POST 
+
+        • Modal from navigation. Available on all pages.
+        • Separate field for validating Sellers.
+
+    UPDATE
+
+        • Logged in users can manage their account on a separate my profile page.
+        • User can edit their information. 
+        • Form auto-populates with existing User data pulled from server.
+
+    DELETE
+
+        • From separate my profile page for User account management.
+        • Button opens a modal for confirmation of delete of User account.
+
+============================================= Orders =============================================
+
+    GET
+
+        • Users can review their past orders.
+        • Users can see order status, including in-transit, delivered, canceled. 
+        • Order status will include a deliver by date.
+
+    POST
+
+        • Users can create new orders through a shopping cart.
+
+    PATCH
+
+        • Users can edit their orders before shipment.
+
+    DELETE
+
+        • Users can cancel their orders before shipment.
+
+========================================== Reviews ==============================================
+	
+    GET
+
+        • Users can see their past reviews on their my profile page.
+
+    POST
+
+        • User can create a new review on a product if you haven’t posted one and 	don’t own it
+
+    PATCH 
+
+        • If a User owns review, they can edit their review.
+
+    DELETE
+    
+        • If a User owns review, they can delete their review.
