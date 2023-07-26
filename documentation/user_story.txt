@@ -1,57 +1,51 @@
 ============================================== RIGNITE ==============================================
 
 Rignite sells dope products aimed at pc-builder enthusiasts who want extra style for their rig.
-Users create an account, add items to their shopping cart, and then create orders when finished.
+Rignite Users create an account, add items to their shopping cart, and then create orders when finished.
 Users can leave reviews with a photo and rating for products.
 Users can manage their account information.
-Admins are Rignite employees with the power to post additional products.
+Admins are Rignite employees with the power to post additional products, edit their employee accounts,
+and see User orders.
 
-============================================= DATABASE ==============================================
+============================================= FEATURES ==============================================
 	
- ----- Products -----
+ ----- Table: Products -----
 
     GET
 
-        • All visitors can get index of Products.
         • Index of products is the entry point for the User story.
+        • All visitors can get index of Products.
         • All products are shown on individual product cards on the Index page.
         • The product cards show basic information about the product.
-        • The product cards are links to detailed information, including specs, for the product.
-        
-    REACT
-
-        • Logged in Users can add products to their shopping cart.
-        • The shopping cart will persist between sessions for logged in Users.
-        • Within the shopping cart, Users can remove items or increase quantity of items purchased.
-        • Users can submit a shopping cart to create an order.
+        • Users can click product cards to get detailed product information, including specs.
 
     POST
 
-        • Sellers can create new Products through secret and protected page.
+        • Logged in Admins can create new Products. Users are unable to use the create new product page.
 
     PATCH
 
-        • Sellers can edit Products through secret and protected page.
+        • Logged in Admins can edit Products.
 
     DELETE
 
-        • Sellers can delete Products through secret and protected page.
+        • Logged in Admins can delete Products.
 
------ Users: Sellers and Customers -----
+ ----- Table: Admins and Customers -----
 
     Login 
 
         • Modal from navigation. Available on all pages.
-        • Separate field for validating Sellers
+        • Separate field for validating Admins
 
     POST 
 
         • Modal from navigation. Available on all pages.
-        • Separate field for validating Sellers.
+        • Separate field for validating Admins.
 
     UPDATE
 
-        • Logged in users can manage their account on a separate my profile page.
+        • Logged in Users can manage their account on a separate my profile page.
         • User can edit their information. 
         • Form auto-populates with existing User data pulled from server.
 
@@ -60,17 +54,24 @@ Admins are Rignite employees with the power to post additional products.
         • From separate my profile page for User account management.
         • Button opens a modal for confirmation of delete of User account.
 
------ Orders ----- 
+ ----- Table: Orders ----- 
 
     GET
 
         • Users can review their past orders.
         • Users can see order status, including in-transit, delivered, canceled. 
-        • Order status will include a deliver by date.
+        • Order status will include a deliver-by date.
 
     POST
 
         • Users can create new orders through a shopping cart.
+
+    REACT
+
+        • Logged in Users can add products to their shopping cart.
+        • The shopping cart will persist between sessions for logged in Users. (?)
+        • Within the shopping cart, Users can remove items or increase quantity of items purchased.
+        • Users can submit a shopping cart to create an order.
 
     PATCH
 
@@ -80,7 +81,7 @@ Admins are Rignite employees with the power to post additional products.
 
         • Users can cancel their orders before shipment.
 
------ Reviews -----
+ ----- Table: Reviews -----
 	
     GET
 
@@ -88,7 +89,7 @@ Admins are Rignite employees with the power to post additional products.
 
     POST
 
-        • User can create a new review on a product if you haven’t posted one and 	don’t own it
+        • User can create a new review on a product if they haven’t reviewed.
 
     PATCH 
 
