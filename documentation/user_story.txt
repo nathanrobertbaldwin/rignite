@@ -1,16 +1,15 @@
-Rignite 
+============================================== RIGNITE ==============================================
 
-Rignite partners with 3rd party companies to create interesting products aimed at pc-builder enthusiasts. 
-Once 3rd party companies develop a product idea, the product is posted to the Rignite website. 
-Customers can then vote on whether or not they want to join in on the product run order. 
-Once enough votes are cast to join on a product run, the product run is funded.
+Rignite sells dope products aimed at pc-builder enthusiasts who want extra style for their rig.
+Users create an account, add items to their shopping cart, and then create orders when finished.
+Users can leave reviews with a photo and rating for products.
+Users can manage their account information.
+Admins are Rignite employees with the power to post additional products.
 
-User Story
-
-Tables
-
-===================================== PRIMARY TABLE - Products =====================================
+============================================= DATABASE ==============================================
 	
+ ----- Products -----
+
     GET
 
         • All visitors can get index of Products.
@@ -38,7 +37,7 @@ Tables
 
         • Sellers can delete Products through secret and protected page.
 
-================================== Users: Sellers and Customers ===================================
+----- Users: Sellers and Customers -----
 
     Login 
 
@@ -61,7 +60,7 @@ Tables
         • From separate my profile page for User account management.
         • Button opens a modal for confirmation of delete of User account.
 
-============================================= Orders =============================================
+----- Orders ----- 
 
     GET
 
@@ -81,7 +80,7 @@ Tables
 
         • Users can cancel their orders before shipment.
 
-========================================== Reviews ==============================================
+----- Reviews -----
 	
     GET
 
