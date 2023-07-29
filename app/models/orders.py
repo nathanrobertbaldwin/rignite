@@ -17,7 +17,7 @@ class Order(db.Model):
     batch_id = db.Column(db.String(50), nullable=False)
     quantity = db.Column(db.Integer, nullable=False)
     order_date = db.Column(db.String(50), nullable=False)
-    status = db.Column(db.Enum(*order_status), nullable=False)
+    status = db.Column(db.Enum(*order_status, name="status_enum"), nullable=False)
 
     def to_dict(self):
         return {
