@@ -25,7 +25,7 @@ class Order(db.Model):
 
     def order_details_to_dict(self):
         return {
-            "id": self.id,
+            # "id": self.id,
             "user_id": self.user_id,
             "order_customer": {
                 "first_name": self.order_customer.first_name,
@@ -41,7 +41,7 @@ class Order(db.Model):
 
     def order_by_batch_id_to_dict(self):
         return {
-            "id": self.id,
+            # "id": self.id,
             "user_id": self.user_id,
             "product_id": self.product_id,
             "order_product": self.order_product.to_dict(),

@@ -49,7 +49,7 @@ class User(db.Model, UserMixin):
             "state": self.state,
             "zip_code": self.zip_code,
             "is_admin": self.is_admin,
-            "user_orders": [order.to_dict() for order in self.user_orders],
+            "user_orders": [order.order_details_to_dict() for order in self.user_orders],
             "user_reviews": [review.to_dict() for review in self.user_reviews],
         }
 
