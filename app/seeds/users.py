@@ -14,7 +14,7 @@ def seed_users():
         state="New York",
         zip_code=10001,
         is_admin=True,
-        #password="password",
+        password="password",
     )
 
     user1 = User(
@@ -27,7 +27,7 @@ def seed_users():
         state="Nevada",
         zip_code=11111,
         is_admin=False,
-        #password="password",
+        password="password",
     )
 
     user2 = User(
@@ -40,7 +40,7 @@ def seed_users():
         state="New York",
         zip_code=22222,
         is_admin=False,
-        #password="password",
+        password="password",
     )
 
     db.session.add_all([admin, user1, user2])

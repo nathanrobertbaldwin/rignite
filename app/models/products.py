@@ -18,9 +18,7 @@ class Product(db.Model):
     description = db.Column(db.Text, nullable=False)
     specs = db.Column(db.Text, nullable=False)
 
-    product_orders = db.relationship(
-        "User", secondary=Order.__tablename__, back_populates="user_orders"
-    )
+    product_orders = db.relationship('Order')
 
     product_reviews = db.relationship("Review", backref="product")
 

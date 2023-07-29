@@ -11,7 +11,7 @@ class Photo(db.Model):
     product_id = db.Column(
         db.Integer, db.ForeignKey(add_prefix_for_prod("products.id"))
     )
-    url = db.Column(db.String(50), nullable=False)
+    url = db.Column(db.String(255), nullable=False)
 
     def to_dict(self):
         return {
