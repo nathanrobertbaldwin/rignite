@@ -9,10 +9,12 @@ class Review(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("users.id")))
-    product_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("products.id")))
-    review = db.Column(db.String(500), nullable=False)
+    product_id = db.Column(
+        db.Integer, db.ForeignKey(add_prefix_for_prod("products.id"))
+    )
+    review = db.Column(db.String(255), nullable=False)
     rating = db.Column(db.Integer, nullable=False)
-    photo_url = db.Column(db.Text(255), nullable=True)
+    photo_url = db.Column(db.String(255), nullable=True)
 
     def to_dict(self):
         return {
