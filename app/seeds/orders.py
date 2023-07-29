@@ -18,7 +18,7 @@ def seed_orders():
         batch_id="0aj9fa09jdfa0f9dj",
         quantity=2,
         order_date="2023-07-21",
-        status="in-transit",
+        status="in transit",
     )
 
     order3 = Order(
@@ -45,7 +45,7 @@ def seed_orders():
         batch_id="2f309j203j9f",
         quantity=2,
         order_date="2023-07-24",
-        status="in-transit",
+        status="in transit",
     )
 
     order6 = Order(
@@ -72,7 +72,7 @@ def seed_orders():
         batch_id="2309fj2093rfs",
         quantity=2,
         order_date="2023-07-27",
-        status="in-transit",
+        status="in transit",
     )
 
     order9 = Order(

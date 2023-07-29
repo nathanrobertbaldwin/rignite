@@ -4,7 +4,7 @@ from flask_cors import CORS
 from flask_migrate import Migrate
 from flask_wtf.csrf import CSRFProtect, generate_csrf
 from flask_login import LoginManager
-from .models import db, User
+from .models import db, User, Product, Review, Photo, Order
 from .api.user_routes import user_routes
 from .api.auth_routes import auth_routes
 from .seeds import seed_commands
@@ -44,7 +44,29 @@ CORS(app)
 
 @app.route("/")
 def test():
-    return "WORKING"
+    # ========= Get all users who aren't admins =========
+    admins = User.query.filter(User.is_admin == True)
+    return [admin.admins_query_all_to_dict() for admin in admins]
+
+    # ========= Get all users who aren't admins =========
+    # customers = User.query.filter(User.is_admin == False)
+    # return [customer.customers_query_all_to_dict() for customer in customers]
+
+    # ========= Get details for all orders =========
+    # orders = Order.query.all()
+    # return [order.order_details_to_dict() for order in orders]
+
+    # ========= Get all orders in an order batch =========
+    # orders = Order.query.filter(Order.batch_id == "0aj9fa09jdfa0f9dj")
+    # return [order.order_by_batch_id_to_dict() for order in orders]
+
+    # ========= Get all products =========
+    # products = Product.query.all()
+    # return [product.product_details_to_dict() for product in products]
+
+    # ========= Get all reviews on a product by product.id =========
+    # product = Product.query.get(1)
+    # return product.reviews_for_product()
 
 
 @app.before_request

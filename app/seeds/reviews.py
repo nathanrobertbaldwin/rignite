@@ -76,11 +76,11 @@ def seed_reviews():
     )
 
     review10 = Review(
-            user_id=2,
-            product_id=1,
-            review="Day one of using this keyboard, it worked perfectly. I loved the LEDs, the feel of the MX Browns, just about everything about this keyboard seemed perfect compared to my previous keyboard.",
-            rating=4,
-            photo_url="https://massdrop-s3.imgix.net/product-images/drop-paragon-series-snoboard/FP/EoycBX5SjW0lWeWSY6op_PC.png",
+        user_id=2,
+        product_id=1,
+        review="Day one of using this keyboard, it worked perfectly. I loved the LEDs, the feel of the MX Browns, just about everything about this keyboard seemed perfect compared to my previous keyboard.",
+        rating=4,
+        photo_url="https://massdrop-s3.imgix.net/product-images/drop-paragon-series-snoboard/FP/EoycBX5SjW0lWeWSY6op_PC.png",
     )
 
     db.session.add_all(
@@ -100,7 +100,7 @@ def seed_reviews():
     db.session.commit()
 
 
-def undo_reivews():
+def undo_reviews():
     if environment == "production":
         db.session.execute(f"TRUNCATE table {SCHEMA}.reviews RESTART IDENTITY CASCADE;")
     else:
