@@ -10,7 +10,7 @@ from .api.auth_routes import auth_routes
 from .seeds import seed_commands
 from .config import Config
 
-app = Flask(__name__, static_folder=".../react-app/build", static_url_path="/")
+app = Flask(__name__, static_folder="../react-app/build", static_url_path="/")
 
 # Setup login manager
 login = LoginManager(app)
@@ -40,6 +40,13 @@ CORS(app)
 # Therefore, we need to make sure that in production any
 # request made over http is redirected to https.
 # Well.........
+
+
+@app.route("/")
+def test():
+    return "WORKING"
+
+
 @app.before_request
 def https_redirect():
     if os.environ.get("FLASK_ENV") == "production":
