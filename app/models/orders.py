@@ -10,10 +10,11 @@ class Order(db.Model):
     if environment == "production":
         __table_args__ = {"schema": SCHEMA}
 
-    id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("users.id")))
+    # id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("users.id")), primary_key=True)
     product_id = db.Column(
-        db.Integer, db.ForeignKey(add_prefix_for_prod("products.id"))
+        db.Integer, db.ForeignKey(add_prefix_for_prod("products.id")),
+        primary_key=True
     )
     batch_id = db.Column(db.String(50), nullable=False)
     quantity = db.Column(db.Integer, nullable=False)
