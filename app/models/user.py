@@ -50,5 +50,5 @@ class User(db.Model, UserMixin):
             "zip_code": self.zip_code,
             "is_admin": self.is_admin,
             "hashed_password": self.hashed_password,
-            "user_orders": {order.to_dict() for order in self.user_orders},
+            "user_orders": [order.to_dict() for order in self.user_orders],
         }

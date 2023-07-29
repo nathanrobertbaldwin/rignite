@@ -25,7 +25,7 @@ class Product(db.Model):
     def to_dict(self):
         return {
             "id": self.id,
-            "user_id": self.user_id,
+            "admin_id": self.user_id,
             "product_name": self.product_name,
             "category": self.category,
             "price": self.price,
@@ -33,5 +33,4 @@ class Product(db.Model):
             "color": self.color,
             "description": self.description,
             "specs": self.specs,
-            "product_orders": {order.to_dict() for order in self.product_orders},
         }
