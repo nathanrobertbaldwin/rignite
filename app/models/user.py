@@ -22,9 +22,9 @@ class User(db.Model, UserMixin):
     is_admin = db.Column(db.Boolean, nullable=False)
     hashed_password = db.Column(db.String(255), nullable=False)
 
-    user_orders = db.relationship('Order')
+    user_orders = db.relationship('Order', cascade='all, delete-orphan')
 
-    user_reviews = db.relationship("Review", backref="user")
+    user_reviews = db.relationship("Review", backref="user", cascade='all, delete-orphan')
 
     @property
     def password(self):
