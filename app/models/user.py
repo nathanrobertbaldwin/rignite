@@ -20,24 +20,22 @@ class User(db.Model, UserMixin):
     state = db.Column(db.String(50), nullable=False)
     zip_code = db.Column(db.Integer, nullable=False)
     is_admin = db.Column(db.Boolean, nullable=False)
-    # hashed_password = db.Column(db.String(255), nullable=False)
+    hashed_password = db.Column(db.String(255), nullable=False)
 
-    user_orders = db.relationship(
-        "Product", secondary=Order.__tablename__, back_populates="product_orders"
-    )
+    user_orders = db.relationship('Order')
 
     user_reviews = db.relationship("Review", backref="user")
 
-    # @property
-    # def password(self):
-    #     return self.hashed_password
+    @property
+    def password(self):
+        return self.hashed_password
 
-    # @password.setter
-    # def password(self, password):
-    #     self.hashed_password = generate_password_hash(password)
+    @password.setter
+    def password(self, password):
+        self.hashed_password = generate_password_hash(password)
 
-    # def check_password(self, password):
-    #     return check_password_hash(self.password, password)
+    def check_password(self, password):
+        return check_password_hash(self.password, password)
 
     def customers_query_all_to_dict(self):
         return {

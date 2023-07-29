@@ -20,8 +20,7 @@ class Order(db.Model):
     order_date = db.Column(db.String(50), nullable=False)
     status = db.Column(db.Enum(*order_status, name="status_enum"), nullable=False)
 
-    order_customer = db.relationship("User", backref="order")
-    order_product = db.relationship("Product", backref="order")
+    order_product = db.relationship("Product")
 
     def order_details_to_dict(self):
         return {
