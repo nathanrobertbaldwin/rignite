@@ -26,6 +26,8 @@ class User(db.Model, UserMixin):
         "Product", secondary=Order.__tablename__, back_populates="product_orders"
     )
 
+    user_reviews = db.relationship("Review", backref="user")
+
     @property
     def password(self):
         return self.hashed_password
@@ -37,7 +39,7 @@ class User(db.Model, UserMixin):
     def check_password(self, password):
         return check_password_hash(self.password, password)
 
-    def to_dict(self):
+    def customers_query_all_to_dict(self):
         return {
             "id": self.id,
             "username": self.username,
@@ -49,6 +51,33 @@ class User(db.Model, UserMixin):
             "state": self.state,
             "zip_code": self.zip_code,
             "is_admin": self.is_admin,
-            "hashed_password": self.hashed_password,
-            "user_orders": {order.to_dict() for order in self.user_orders},
+            "user_orders": [order.to_dict() for order in self.user_orders],
+            "user_reviews": [review.to_dict() for review in self.user_reviews],
+        }
+
+    def customer_basic_info_to_dict(self):
+        return {
+            "id": self.id,
+            "username": self.username,
+            "first_name": self.first_name,
+            "last_name": self.last_name,
+            "email": self.email,
+            "address": self.address,
+            "city": self.city,
+            "state": self.state,
+            "zip_code": self.zip_code,
+        }
+
+    def admins_query_all_to_dict(self):
+        return {
+            "id": self.id,
+            "username": self.username,
+            "first_name": self.first_name,
+            "last_name": self.last_name,
+            "email": self.email,
+            "address": self.address,
+            "city": self.city,
+            "state": self.state,
+            "zip_code": self.zip_code,
+            "is_admin": self.is_admin,
         }

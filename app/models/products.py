@@ -22,10 +22,12 @@ class Product(db.Model):
         "User", secondary=Order.__tablename__, back_populates="user_orders"
     )
 
-    def to_dict(self):
+    product_reviews = db.relationship("Review", backref="product")
+
+    def product_details_to_dict(self):
         return {
             "id": self.id,
-            "user_id": self.user_id,
+            "admin_id": self.user_id,
             "product_name": self.product_name,
             "category": self.category,
             "price": self.price,
@@ -33,5 +35,11 @@ class Product(db.Model):
             "color": self.color,
             "description": self.description,
             "specs": self.specs,
-            "product_orders": {order.to_dict() for order in self.product_orders},
+        }
+
+    def reviews_for_product(self):
+        return {
+            "id": self.id,
+            "product_name": self.product_name,
+            "product_reviews": [review.to_dict() for review in self.product_reviews],
         }
