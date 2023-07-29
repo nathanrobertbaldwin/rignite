@@ -27,12 +27,12 @@ class Order(db.Model):
         return {
             # "id": self.id,
             "user_id": self.user_id,
-            "order_customer": {
-                "first_name": self.order_customer.first_name,
-                "last_name": self.order_customer.last_name,
-            },
+            # "order_customer": {
+            #     "first_name": self.order_customer.first_name,
+            #     "last_name": self.order_customer.last_name,
+            # },
             "product_id": self.product_id,
-            "order_product": self.order_product.to_dict(),
+            "order_product": self.order_product.product_details_to_dict(),
             "batch_id": self.batch_id,
             "quantity": self.quantity,
             "order_date": self.order_date,
@@ -44,10 +44,10 @@ class Order(db.Model):
             # "id": self.id,
             "user_id": self.user_id,
             "product_id": self.product_id,
-            "order_product": self.order_product.to_dict(),
+            "order_product": self.order_product.product_details_to_dict(),
             "batch_id": self.batch_id,
             "quantity": self.quantity,
             "order_date": self.order_date,
             "status": self.status,
-            "order_customer": self.order_customer.customer_basic_info_to_dict(),
+            # "order_customer": self.order_customer.customer_basic_info_to_dict(),
         }
