@@ -35,7 +35,7 @@ def upgrade():
         sa.Column("state", sa.String(length=50), nullable=False),
         sa.Column("zip_code", sa.Integer(), nullable=False),
         sa.Column("is_admin", sa.Boolean(), nullable=False),
-        sa.Column("hashed_password", sa.String(length=255), nullable=False),
+        # sa.Column("hashed_password", sa.String(length=255), nullable=False),
         sa.PrimaryKeyConstraint("id"),
         sa.UniqueConstraint("email"),
         sa.UniqueConstraint("username"),
