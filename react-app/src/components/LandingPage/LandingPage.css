@@ -1,0 +1,50 @@
+#catagories {
+    max-width: 1320px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        "a a b b c c"
+        ". d d e e .";
+    grid-gap: 20px;
+    padding: 0px 40px;
+    margin: auto;
+}
+
+.cateImg {
+    aspect-ratio: 1/1;
+    width: 100%;
+    border-radius: 20px;
+}
+
+#KB {
+    grid-area: a;
+}
+
+#Sp {
+    grid-area: b;
+}
+
+#HP {
+    grid-area: c;
+}
+
+#MP {
+    grid-area: d;
+}
+
+#Mi {
+    grid-area: e;
+}
+
+@media screen and (max-width: 1200px) {
+
+    #catagories {
+        max-width: 960px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+            "a a b b"
+            "c c d d"
+            ". e e .";
+    }
+}

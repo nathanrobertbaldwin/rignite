@@ -1,7 +1,113 @@
-.profile-dropdown {
-  position: absolute;
+.hidden {
+  display: none
 }
 
-.hidden {
-  display: none;
+#navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid lightgray;
+}
+
+#loginButtons>button {
+  background: none;
+  border: none;
+  color: white;
+  font-family: 'Belanosima', serif;
+  font-size: x-large;
+  padding: 20px;
+}
+
+#modal-content {
+  background-color: rgb(24, 26, 27);
+}
+
+#logo {
+  height: 75px;
+}
+
+#userButtons {
+  display: flex;
+  align-items: center;
+}
+
+#userButtons>a {
+  margin-right: 20px;
+  font-size: large;
+  text-decoration: none;
+}
+
+#profileDrop {
+  margin-right: 20px;
+  background: none;
+  border: none;
+  font-family: 'Belanosima', serif;
+  font-size: xx-large;
+  color: white;
+}
+
+.profile-dropdown {
+  background-color: rgb(24, 26, 27);
+  list-style-type: none;
+  margin-top: 0px;
+  padding-left: 0px;
+  position: absolute;
+  right: 30px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(140, 130, 115);
+  border-image: initial;
+}
+
+.profile-dropdown>li {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#logOut {
+  background: none;
+  border: none;
+  font-family: 'Belanosima', serif;
+  color: white;
+}
+
+#logOut:hover {
+  cursor: pointer;
+}
+
+#logOutLi {
+  border-top: 1px solid;
+  border-color: rgb(140, 130, 115);
+  margin-left: 4px;
+  margin-right: 4px;
+  /* padding-left: -10px; */
+}
+#userButtons>a{
+  color: rgb(245, 160, 85);
+}
+#dropNavs{
+  display: flex;
+  flex-direction: column;
+  padding-top: 0px;
+  border-top: 1px solid;
+  border-color: rgb(140, 130, 115);
+  margin-left: 4px;
+  margin-right: 4px;
+}
+#dropNavs>a{
+  color: white;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+.navi-icons {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid grey;
+  padding-bottom: 20px;
+  align-items: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: bold;
 }
