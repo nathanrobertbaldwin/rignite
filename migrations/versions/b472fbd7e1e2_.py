@@ -39,6 +39,10 @@ def upgrade():
         sa.UniqueConstraint("email"),
         sa.UniqueConstraint("username"),
     )
+
+    if environment == "production":
+        op.execute(f"ALTER TABLE users SET SCHEMA {SCHEMA};")
+
     op.create_table(
         "products",
         sa.Column("id", sa.Integer(), nullable=False),
@@ -56,6 +60,10 @@ def upgrade():
         ),
         sa.PrimaryKeyConstraint("id"),
     )
+
+    if environment == "production":
+        op.execute(f"ALTER TABLE products SET SCHEMA {SCHEMA};")
+
     op.create_table(
         "orders",
         sa.Column("id", sa.Integer(), nullable=False),
@@ -79,6 +87,10 @@ def upgrade():
         ),
         sa.PrimaryKeyConstraint("id"),
     )
+
+    if environment == "production":
+        op.execute(f"ALTER TABLE orders SET SCHEMA {SCHEMA};")
+
     op.create_table(
         "photos",
         sa.Column("id", sa.Integer(), nullable=False),
@@ -90,6 +102,10 @@ def upgrade():
         ),
         sa.PrimaryKeyConstraint("id"),
     )
+
+    if environment == "production":
+        op.execute(f"ALTER TABLE photos SET SCHEMA {SCHEMA};")
+
     op.create_table(
         "reviews",
         sa.Column("id", sa.Integer(), nullable=False),
@@ -108,10 +124,10 @@ def upgrade():
         ),
         sa.PrimaryKeyConstraint("id"),
     )
-    # ### end Alembic commands ###
 
     if environment == "production":
-        op.execute(f"ALTER TABLE users SET SCHEMA {SCHEMA};")
+        op.execute(f"ALTER TABLE reviews SET SCHEMA {SCHEMA};")
+    # ### end Alembic commands ###
 
 
 def downgrade():
