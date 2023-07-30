@@ -22,9 +22,11 @@ class User(db.Model, UserMixin):
     is_admin = db.Column(db.Boolean, nullable=False)
     hashed_password = db.Column(db.String(255), nullable=False)
 
-    user_orders = db.relationship('Order', cascade='all, delete-orphan')
+    user_orders = db.relationship("Order", cascade="all, delete-orphan")
 
-    user_reviews = db.relationship("Review", backref="user", cascade='all, delete-orphan')
+    user_reviews = db.relationship(
+        "Review", backref="user", cascade="all, delete-orphan"
+    )
 
     @property
     def password(self):
@@ -37,6 +39,21 @@ class User(db.Model, UserMixin):
     def check_password(self, password):
         return check_password_hash(self.password, password)
 
+    # for basic user info
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "username": self.username,
+            "first_name": self.first_name,
+            "last_name": self.last_name,
+            "email": self.email,
+            "address": self.address,
+            "city": self.city,
+            "state": self.state,
+            "zip_code": self.zip_code,
+        }
+
+    # for eager loading all customer data with associated tables.
     def customers_query_all_to_dict(self):
         return {
             "id": self.id,
@@ -49,23 +66,13 @@ class User(db.Model, UserMixin):
             "state": self.state,
             "zip_code": self.zip_code,
             "is_admin": self.is_admin,
-            "user_orders": [order.order_details_to_dict() for order in self.user_orders],
+            "user_orders": [
+                order.order_details_to_dict() for order in self.user_orders
+            ],
             "user_reviews": [review.to_dict() for review in self.user_reviews],
         }
 
-    def customer_basic_info_to_dict(self):
-        return {
-            "id": self.id,
-            "username": self.username,
-            "first_name": self.first_name,
-            "last_name": self.last_name,
-            "email": self.email,
-            "address": self.address,
-            "city": self.city,
-            "state": self.state,
-            "zip_code": self.zip_code,
-        }
-
+    # for loading admin info
     def admins_query_all_to_dict(self):
         return {
             "id": self.id,
