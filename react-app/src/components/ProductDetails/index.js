@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getAllProductsThunk } from "../../store/products";
-import "./LandingPage.css";
+import "./LandingPage.css"; 
 
 export default function Landing() {
   const dispatch = useDispatch();
@@ -15,7 +15,6 @@ export default function Landing() {
 
   if (!isLoaded) return <></>;
 
-  // categories = {};
 
   return <>"Hello from Product"</>;
 }
