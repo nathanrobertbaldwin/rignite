@@ -6,7 +6,7 @@ def seed_products():
     blue_keyboard = Product(
         user_id=1,
         product_name="Rignite BlueSky",
-        category="Keyboard",
+        category_id=1,
         price=99.99,
         brand="Rignite",
         color="Blue",
@@ -17,7 +17,7 @@ def seed_products():
     red_keyboard = Product(
         user_id=1,
         product_name="Rignite RedSky Elite",
-        category="Keyboard",
+        category_id=1,
         price=129.99,
         brand="Rignite",
         color="Blue",
@@ -28,7 +28,7 @@ def seed_products():
     mech_mouse = Product(
         user_id=1,
         product_name="Rignite MechMachine",
-        category="Mouse",
+        category_id=2,
         price=75.99,
         brand="Rignite",
         color="Black",
@@ -39,7 +39,7 @@ def seed_products():
     slick_mouse = Product(
         user_id=1,
         product_name="Rignite MechMachine Elite",
-        category="Mouse",
+        category_id=2,
         price=145.99,
         brand="Rignite",
         color="Black",
@@ -50,7 +50,7 @@ def seed_products():
     ameratsu_mat_red = Product(
         user_id=1,
         product_name="Ameratsu Mat Maroon",
-        category="Gaming Mat",
+        category_id=3,
         price=35.99,
         brand="FangKey",
         color="Red",
@@ -61,7 +61,7 @@ def seed_products():
     ameratsu_mat_white = Product(
         user_id=1,
         product_name="Ameratsu Mat Gold",
-        category="Gaming Mat",
+        category_id=3,
         price=35.99,
         brand="FangKey",
         color="White",
@@ -72,7 +72,7 @@ def seed_products():
     big_speaker = Product(
         user_id=1,
         product_name="HarmonySound X-1 Speaker",
-        category="Speaker",
+        category_id=4,
         price=35.99,
         brand="Rignite",
         color="Black",
@@ -83,7 +83,7 @@ def seed_products():
     headset = Product(
         user_id=1,
         product_name="UltimaGamer X300",
-        category="Headphones",
+        category_id=5,
         price=35.99,
         brand="Rignite",
         color="White",
