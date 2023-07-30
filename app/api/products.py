@@ -1,5 +1,5 @@
-from flask import Blueprint, jsonify
-from ..models import Product, db
+from flask import Blueprint
+from ..models import Product
 
 products = Blueprint("products", __name__)
 
@@ -8,6 +8,5 @@ products = Blueprint("products", __name__)
 # GET /api/products/all
 @products.route("/all")
 def get_all_products():
-    print("ARE WE HEREHEHEHHE")
     products = Product.query.all()
     return [product.product_details_to_dict() for product in products]
