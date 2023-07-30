@@ -1,0 +1,11 @@
+#all-product-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    margin: auto;
+}
+
+.all-product-image{
+    aspect-ratio: 1/1;
+    height: 300px;
+}
