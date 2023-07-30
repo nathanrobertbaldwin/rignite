@@ -28,6 +28,7 @@ function App() {
           <Route exact path='/products/all'>
             <ProductIndex />
           </Route>
+          <Route exact path='/photos/all' />
           <Route exact path="/login">
             <LoginFormPage />
           </Route>
