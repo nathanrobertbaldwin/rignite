@@ -7,6 +7,8 @@ import { authenticate } from "./store/session";
 import Navigation from "./components/Navigation";
 import LandingPage from "./components/LandingPage";
 import ProductIndex from "./components/ProductIndex";
+import ManageUser from "./components/ManageUser";
+
 
 function App() {
   const dispatch = useDispatch();
@@ -20,19 +22,22 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          <Route path="/">
+          <Route exact path="/">
             <LandingPage />
           </Route>
           <Route exact path='/products/all'>
             <ProductIndex />
           </Route>
-          <Route path="/login">
+          <Route exact path="/login">
             <LoginFormPage />
           </Route>
-          <Route path="/signup">
+          <Route exact path="/signup">
             <SignupFormPage />
           </Route>
-          <Route path="*">
+          <Route exact path="/users/manage">
+            <ManageUser />
+          </Route>
+          <Route exact path="*">
             <h2>"You done goofed."</h2>
           </Route>
         </Switch>
