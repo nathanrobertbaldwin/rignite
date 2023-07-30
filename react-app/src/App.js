@@ -35,7 +35,7 @@ function App() {
           <Route exact path="/signup">
             <SignupFormPage />
           </Route>
-          <Route exact path="/category/:categoryId">
+          <Route exact path="/category/:id">
             <CategoryProducts />
           </Route>
           <Route exact path="/users/manage">
