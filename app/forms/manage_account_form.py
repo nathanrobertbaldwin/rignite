@@ -18,6 +18,7 @@ def user_exists(form, field):
 
 def username_exists(form, field):
     # Checking if username is already in use
+    #aaa
     username_input = field.data
 
     all_other_users = User.query.filter(User.id != str(current_user.id)).all()
