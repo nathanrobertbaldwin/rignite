@@ -1,6 +1,7 @@
-from flask import Blueprint, jsonify
-from flask_login import login_required
-from ..models import User
+from flask import Blueprint, jsonify, request
+from flask_login import login_required, current_user
+from ..models import User, db
+from app.forms import ManageForm
 
 user_routes = Blueprint("users", __name__)
 
@@ -14,6 +15,52 @@ def users():
     users = User.query.all()
     return {"users": [user.to_dict() for user in users]}
 
+@user_routes.route("/manage", methods=["PUT"])
+@login_required
+def manage_account():
+    """
+    Logged in Users can manage their account on a separate my profile page.
+    User can edit their information.
+    """
+
+    # this isnt coming from User table directly, need to run a query from the actual User table to save changes
+    curr_user_id = current_user.to_dict()["id"]
+    user = User.query.get(curr_user_id)
+
+    form = ManageForm()
+    form["csrf_token"].data = request.cookies["csrf_token"]
+
+    if form.validate_on_submit():
+        # YOU NEED TO USE DOT NOTATION, OTHERWISE YOU GET A TYPE ERROR: "USER" OBJECT NOT SUBSCRIPTABLE
+        user.address = form.data["address"]
+        user.email = form.data["email"]
+        user.first_name = form.data["first_name"]
+        user.last_name = form.data["last_name"]
+        user.address = form.data["address"]
+        user.city = form.data["city"]
+        user.state = form.data["state"]
+        user.zip_code = form.data["zip_code"]
+        user.password = form.data["password"]
+
+        db.session.commit()
+        return user.to_dict()
+
+    else:
+        return form.errors
+
+@user_routes.route("/delete", methods=["DELETE"])
+@login_required
+def delete_user():
+    """
+    From separate my profile page for User account management.
+    Button opens a modal for confirmation of delete of User account.
+    """
+    curr_user_id = current_user.id
+    user = User.query.get(curr_user_id)
+
+    db.session.delete(user)
+    db.session.commit()
+    return "successfully deleted"
 
 @user_routes.route("/<int:id>")
 @login_required
