@@ -48,6 +48,20 @@ def manage_account():
     else:
         return form.errors
 
+@user_routes.route("/delete", methods=["DELETE"])
+@login_required
+def delete_user():
+    """
+    From separate my profile page for User account management.
+    Button opens a modal for confirmation of delete of User account.
+    """
+    curr_user_id = current_user.id
+    user = User.query.get(curr_user_id)
+
+    db.session.delete(user)
+    db.session.commit()
+    return "successfully deleted"
+
 @user_routes.route("/<int:id>")
 @login_required
 def user(id):
