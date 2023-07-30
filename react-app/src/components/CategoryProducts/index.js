@@ -4,13 +4,17 @@ import { useParams } from "react-router-dom";
 import { getAllProductsThunk } from "../../store/products";
 import ProductCard from "./ProductCard/ProductCard";
 
-export default function CategoryProducts() {
+export default function CategoryProducts({ category }) {
   const dispatch = useDispatch();
-  const { category } = useParams();
+  const { id } = useParams();
   const productsData = useSelector((store) => store.products);
   const products = Object.values(productsData);
 
   const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    dispatch(getAllProductsThunk());
+  }, [dispatch]);
 
   useEffect(() => {
     dispatch(getAllProductsThunk()).then(() => setIsLoaded(true));
@@ -19,7 +23,7 @@ export default function CategoryProducts() {
   if (!isLoaded) return <></>;
 
   const categoryProducts = products.filter(
-    (product) => product.category === category
+    (product) => product.category_id == id
   );
 
   return (
