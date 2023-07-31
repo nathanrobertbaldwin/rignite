@@ -10,6 +10,7 @@ import CategoryProducts from "./components/CategoryProducts";
 import ProductIndex from "./components/ProductIndex";
 import ManageUser from "./components/ManageUser";
 import ProductDetails from "./components/ProductDetails";
+import AccountSettings from "./components/ManageUser/AccountSettings";
 
 function App() {
   const dispatch = useDispatch();
@@ -32,7 +33,6 @@ function App() {
           <Route exact path="/products/:id">
             <ProductDetails />
           </Route>
-          <Route exact path="/photos/all" />
           <Route exact path="/login">
             <LoginFormPage />
           </Route>
@@ -44,6 +44,9 @@ function App() {
           </Route>
           <Route exact path="/users/manage">
             <ManageUser />
+          </Route>
+          <Route exact path="/users/delete">
+            <AccountSettings />
           </Route>
           <Route exact path="*">
             <h2>"You done goofed."</h2>
