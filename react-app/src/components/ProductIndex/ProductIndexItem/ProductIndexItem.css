@@ -1,0 +1,10 @@
+#individual-product-container {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.all-product-image{
+    aspect-ratio: 1/1;
+    height: 300px;
+}

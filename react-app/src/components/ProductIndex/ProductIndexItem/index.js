@@ -1,16 +1,29 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { Link } from 'react-router-dom';
+import './ProductIndexItem.css'
 
 export default function ProductIndexItem({product}) {
-
+    const photosData = useSelector((store) => store.photos)
+    const photos = Object.values(photosData);
+    const productPhoto = photos.filter((photo) => {
+        return photo.product_id === product.id;
+    })
 
     return (
-        <div>
-            <img className='all-product-image' src="https://upload.wikimedia.org/wikipediacommons/thumb/6/6e/Golde33443.jpg/640px-Golde33443.jpg" alt=""/>
-            <div>
-                <p>{product.product_name}</p>
-                <p>$ {product.price}</p>
+        <Link className='product-index-link' to ={`/products/${product.id}`} title={product.product_name}>
+            <div id='individual-product-container'>
+                <img
+                className='all-product-image'
+                src={productPhoto[0].url}
+                alt="product"
+                title={product.product_name}
+                />
+                <div>
+                    <p>{product.product_name}</p>
+                    <p>$ {product.price}</p>
+                </div>
             </div>
-        </div>
+        </Link>
     )
 }
