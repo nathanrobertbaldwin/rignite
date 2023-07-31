@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getAllProductsThunk } from "../../store/products";
-import "./ProductIndex.css";
 import { Link } from 'react-router-dom';
-import { ProductIndexItem } from './ProductIndexItem'
+import ProductIndexItem  from './ProductIndexItem'
+
 
 export default function ProductIndex() {
   const dispatch = useDispatch();
@@ -22,7 +22,7 @@ export default function ProductIndex() {
     <div id='all-product-container'>
         {products.map((product) => (
           <Link to ={`/products/${product.id}`} title={product.product_name}>
-            <ProductIndexItem />
+            <ProductIndexItem product={product} key={product.id}/>
           </Link>
         ))}
     </div>
