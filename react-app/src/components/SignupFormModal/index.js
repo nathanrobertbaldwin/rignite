@@ -23,6 +23,13 @@ function SignupFormModal() {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		if (password === confirmPassword) {
+
+			if(admin) {
+				setAdmin("True")
+			} else {
+				setAdmin("False")
+			}
+
 			const data = await dispatch(signUp(username, email, firstname, lastname, address, city, state, zipcode, admin, password));
 			if (data) {
 				setErrors(data);
