@@ -3,13 +3,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getAllProductsThunk } from "../../store/products";
 import { getAllPhotosThunk } from "../../store/photos";
-import ProductCard from "./ProductCard/ProductCard";
+import ProductCard from "./ProductCard";
 
 export default function CategoryProducts({ category }) {
   const dispatch = useDispatch();
-  const { id } = useParams();
   const productsData = useSelector((store) => store.products);
   const products = Object.values(productsData);
+  let { id } = useParams();
+  id = parseInt(id);
 
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -24,7 +25,7 @@ export default function CategoryProducts({ category }) {
   if (!isLoaded) return <></>;
 
   const categoryProducts = products.filter(
-    (product) => product.category_id == id
+    (product) => product.category_id === id
   );
 
   return (

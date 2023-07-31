@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getAllProductsThunk } from "../../store/products";
 import "./ProductIndex.css";
+import { Link } from 'react-router-dom';
+import { ProductIndexItem } from './ProductIndexItem'
 
 export default function ProductIndex() {
   const dispatch = useDispatch();
@@ -19,13 +21,9 @@ export default function ProductIndex() {
   return (
     <div id='all-product-container'>
         {products.map((product) => (
-            <div>
-                <img className='all-product-image' src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Golde33443.jpg/640px-Golde33443.jpg" alt=""/>
-                <div>
-                    <p>{product.product_name}</p>
-                    <p>$ {product.price}</p>
-                </div>
-            </div>
+          <Link to ={`/products/${product.id}`} title={product.product_name}>
+            <ProductIndexItem />
+          </Link>
         ))}
     </div>
   )

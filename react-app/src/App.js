@@ -9,6 +9,7 @@ import LandingPage from "./components/LandingPage";
 import CategoryProducts from "./components/CategoryProducts";
 import ProductIndex from "./components/ProductIndex";
 import ManageUser from "./components/ManageUser";
+import ProductDetails from "./components/ProductDetails";
 
 function App() {
   const dispatch = useDispatch();
@@ -25,10 +26,13 @@ function App() {
           <Route exact path="/">
             <LandingPage />
           </Route>
-          <Route exact path='/products/all'>
+          <Route exact path="/products/all">
             <ProductIndex />
           </Route>
-          <Route exact path='/photos/all' />
+          <Route exact path="/products/:id">
+            <ProductDetails />
+          </Route>
+          <Route exact path="/photos/all" />
           <Route exact path="/login">
             <LoginFormPage />
           </Route>
