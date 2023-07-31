@@ -61,3 +61,8 @@ body {
 #modal-content>#demoButton:hover {
     cursor: pointer;
 }
+
+img {
+    max-width: 400px;
+    aspect-ratio: 3/2;
+}
