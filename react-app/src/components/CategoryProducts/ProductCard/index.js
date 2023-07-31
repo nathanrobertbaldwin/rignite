@@ -10,7 +10,7 @@ export default function ProductCard({ product }) {
   });
 
   return (
-    <Link id="product_card_container" to={`/product/${product.id}`}>
+    <Link id="product_card_container" to={`/products/${product.id}`}>
       <div id="product_card_image_container">
         <img
           alt="product"
