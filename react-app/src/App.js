@@ -27,11 +27,11 @@ function App() {
           <Route exact path="/">
             <LandingPage />
           </Route>
-          <Route exact path="/products/:id">
-            <ProductDetails />
-          </Route>
           <Route exact path="/products/all">
             <ProductIndex />
+          </Route>
+          <Route exact path="/products/:id">
+            <ProductDetails />
           </Route>
           <Route exact path="/login">
             <LoginFormPage />
