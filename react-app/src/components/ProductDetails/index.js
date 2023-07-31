@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getAllReviewsThunk } from "../../store/reviews";
 import { FaStar } from "react-icons/fa";
+import { getAllProductCategoriesThunk } from "../../store/categories";
+import { getAllProductsThunk } from "../../store/products";
+import { getAllReviewsThunk } from "../../store/reviews";
+import { getAllPhotosThunk } from "../../store/photos";
 // import OpenModalButton from "../OpenModalButton";
 // import LoginFormModal from "../LoginFormModal";
 // import PostReviewModal from "./PostReviewModal";
@@ -20,20 +23,23 @@ export default function ProductDetails() {
   const productReviews = reviews.filter((review) => review.product_id === id)
   const photosData = useSelector((state) => state.photos)
   const photos = Object.values(photosData)
+  
+  useEffect(() => {
+    // MEGATHUNKADONK
+    if (!Object.values(products).length){
+      dispatch(getAllProductCategoriesThunk());
+      dispatch(getAllProductsThunk());
+      dispatch(getAllReviewsThunk());
+      dispatch(getAllPhotosThunk());
+      console.log("STATE RELOADED")
+    }
+  }, [dispatch]);
+
+   console.log("RERENDER")
 
   const productPhotos = photos.filter((photo) => {
     return photo.product_id === id
   })
- 
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    dispatch(getAllReviewsThunk()).then(() => {
-      setIsLoaded(true);
-    });
-  }, [dispatch]);
-
-  if (!isLoaded) return <></>;
 
   const primaryPhoto = productPhotos[0].url
   const otherPhotos = productPhotos.slice(1)
