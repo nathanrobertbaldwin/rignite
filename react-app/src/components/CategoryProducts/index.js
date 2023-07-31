@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getAllProductsThunk } from "../../store/products";
+import { getAllPhotosThunk } from "../../store/photos";
 import ProductCard from "./ProductCard/ProductCard";
 
 export default function CategoryProducts({ category }) {
@@ -17,7 +18,7 @@ export default function CategoryProducts({ category }) {
   }, [dispatch]);
 
   useEffect(() => {
-    dispatch(getAllProductsThunk()).then(() => setIsLoaded(true));
+    dispatch(getAllPhotosThunk()).then(() => setIsLoaded(true));
   }, [dispatch]);
 
   if (!isLoaded) return <></>;

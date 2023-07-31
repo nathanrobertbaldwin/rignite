@@ -1,3 +1,5 @@
+import dataNormalizer from "./utilities";
+
 // Action strings.
 
 const GET_ALL_PRODUCTS = "get_products/GET";
@@ -32,9 +34,10 @@ export default function reducer(state = initialState, action) {
   switch (action.type) {
     case GET_ALL_PRODUCTS: {
       const allProducts = action.data;
+      const normalizedProducts = dataNormalizer(allProducts);
       return {
         ...state,
-        ...allProducts,
+        ...normalizedProducts,
       };
     }
     default: {
