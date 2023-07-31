@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getAllProductsThunk } from "../../store/products";
+import { getAllPhotosThunk } from "../../store/photos";
 import { Link } from 'react-router-dom';
-import ProductIndexItem  from './ProductIndexItem'
+import ProductIndexItem from './ProductIndexItem'
+import './ProductIndex.css'
 
 
 export default function ProductIndex() {
@@ -12,7 +14,11 @@ export default function ProductIndex() {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    dispatch(getAllProductsThunk()).then(() => setIsLoaded(true));
+    dispatch(getAllProductsThunk());
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(getAllPhotosThunk()).then(() => setIsLoaded(true));
   }, [dispatch]);
 
   if (!isLoaded) return <></>;
