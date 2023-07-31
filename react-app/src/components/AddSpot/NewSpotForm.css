@@ -1,0 +1,57 @@
+#new_spot_form_h1 {
+  text-align: center;
+  border-bottom: 1px solid lightgray;
+  padding-bottom: .5em;
+  margin-bottom: .5em;
+}
+#new_spot_form_container {
+  max-width: 400px;
+  margin: auto;
+  padding-top: 2em;  
+}
+
+#new_spot_form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#new_spot_form_section {
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+}
+
+#new_spot_spot_description_field{
+  width:100%;
+}
+
+#new_spot_form_h4 {
+padding-bottom: 1em;
+}
+
+#new_spot_form_p {
+  margin-bottom: 0.5em;
+}
+
+#new_spot_form_input {
+  width: 98%;
+  margin-top: .25em;
+  margin-bottom: .75em;
+}
+
+#new_spot_form_price_label{
+  display: flex;
+  align-items: center;
+}
+
+#new_form_dollar_sign{
+  margin-bottom: .5em;
+}
+
+#new_spot_button_container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+  width: 100%;
+}
