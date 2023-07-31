@@ -2,6 +2,7 @@ from flask import Blueprint, jsonify, request
 from flask_login import login_required, current_user
 from ..models import User, db
 from app.forms import ManageForm
+import json
 
 user_routes = Blueprint("users", __name__)
 
@@ -36,7 +37,7 @@ def manage_account():
         user.email = form.data["email"]
         user.first_name = form.data["first_name"]
         user.last_name = form.data["last_name"]
-        user.address = form.data["address"]
+        user.username = form.data["username"]
         user.city = form.data["city"]
         user.state = form.data["state"]
         user.zip_code = form.data["zip_code"]
@@ -46,7 +47,7 @@ def manage_account():
         return user.to_dict()
 
     else:
-        return form.errors
+        return { "errors": form.errors }
 
 @user_routes.route("/delete", methods=["DELETE"])
 @login_required

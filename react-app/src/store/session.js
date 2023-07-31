@@ -73,7 +73,7 @@ export const logout = () => async (dispatch) => {
 	}
 };
 
-export const signUp = (username, email, password) => async (dispatch) => {
+export const signUp = (username, email, firstname, lastname, address, city, state, zipcode, admin, password) => async (dispatch) => {
 	const response = await fetch("/api/auth/signup", {
 		method: "POST",
 		headers: {
@@ -83,6 +83,13 @@ export const signUp = (username, email, password) => async (dispatch) => {
 			username,
 			email,
 			password,
+			first_name: firstname,
+			last_name: lastname,
+			address,
+			city,
+			state,
+			zip_code: zipcode,
+			is_admin: "True"
 		}),
 	});
 
@@ -101,7 +108,7 @@ export const signUp = (username, email, password) => async (dispatch) => {
 };
 
 export const updateUser = (formData) => async (dispatch) => {
-	const response = await fetch("/api/user/manage", {
+	const response = await fetch("/api/users/manage", {
 		method: "PUT",
 		headers: {
 			"Content-Type": "application/json",
@@ -110,8 +117,9 @@ export const updateUser = (formData) => async (dispatch) => {
 	})
 
 	if(response.ok) {
-		const updatedInfo = await response.json()
-		dispatch(editUser(updatedInfo))
+		const thunkResponse = await response.json()
+		dispatch(editUser(thunkResponse))
+		return thunkResponse
 	}
 }
 

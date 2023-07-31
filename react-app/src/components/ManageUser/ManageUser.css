@@ -1,0 +1,16 @@
+#manage-account-main-container {
+    border: 5px solid white;
+    display: flex;
+}
+
+#account-basic-info-section {
+    border: 3px solid blue;
+}
+
+#account-auth-section {
+    border: 2px solid red;
+}
+
+#account-shipping-section {
+    border: 3px solid green;
+}
