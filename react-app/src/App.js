@@ -11,6 +11,7 @@ import ProductIndex from "./components/ProductIndex";
 import ManageUser from "./components/ManageUser";
 import ProductDetails from "./components/ProductDetails"
 import AccountSettings from "./components/ManageUser/AccountSettings";
+import Orders from "./components/Orders";
 
 function App() {
   const dispatch = useDispatch();
@@ -47,6 +48,9 @@ function App() {
           </Route>
           <Route exact path="/users/delete">
             <AccountSettings />
+          </Route>
+          <Route exact path="/orders">
+            <Orders />
           </Route>
           <Route exact path="*">
             <h2>"You done goofed."</h2>

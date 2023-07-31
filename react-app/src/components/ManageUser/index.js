@@ -76,7 +76,7 @@ function ManageUser() {
             <div id='account-nav-sidebar'>
                 <button>My Info</button>
                 {/* ACCOUNT SETTINGS WILL BE A NAV LINK TO DELETE USER ROUTE */}
-                <NavLink exact to="/users/delete"> <button>Account Settings</button> </NavLink>
+                <button onClick={()=>history.push('/users/delete')}>Account Settings</button>
                 {/* ACCOUNT SETTINGS WILL BE A NAV LINK TO DELETE USER ROUTE */}
             </div>
 

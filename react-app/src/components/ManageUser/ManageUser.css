@@ -14,3 +14,9 @@
 #account-shipping-section {
     border: 3px solid green;
 }
+
+#account-nav-sidebar {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}

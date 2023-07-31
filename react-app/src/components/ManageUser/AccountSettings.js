@@ -1,14 +1,15 @@
-import { NavLink } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import OpenModalButton from "../OpenModalButton";
 import DeleteAccountModal from "./DeleteAccountModal";
 import "./ManageUser.css"
 
 function AccountSettings() {
+    const history = useHistory();
     return (
         <div id='manage-account-main-container'>
 
             <div id='account-nav-sidebar'>
-                <NavLink exact to="/users/manage"> <button>My Info</button> </NavLink>
+                <button onClick={()=>history.push('/users/manage')}>My Info</button>
                 <button>Account Settings</button>
             </div>
 
