@@ -99,7 +99,7 @@ export default function ProductDetails() {
       </div>
       {view === "overview" && <Overview product={product} />}
       {view === "details" && <Detail product={product} />}
-      {view === "reviews" && <Review product={product} />}
+      {view === "reviews" && <Review product={product} user={user} />}
     </div>
   );
 }
