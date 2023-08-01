@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
@@ -27,11 +27,13 @@ export default function ProductDetails() {
   useEffect(() => {
     // MEGATHUNKADONK
     if (!Object.values(products).length){
-      dispatch(getAllProductCategoriesThunk());
-      dispatch(getAllProductsThunk());
-      dispatch(getAllReviewsThunk());
-      dispatch(getAllPhotosThunk());
-      console.log("STATE RELOADED")
+      async function fetchData (){
+      await dispatch(getAllProductCategoriesThunk());
+      await dispatch(getAllProductsThunk());
+      await dispatch(getAllReviewsThunk());
+      await dispatch(getAllPhotosThunk());
+      }
+      fetchData()
     }
   }, [dispatch]);
 
