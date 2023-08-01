@@ -31,7 +31,7 @@ export default function Orders() {
     // object of orders for the user. each key is a batch id for a single user order with all info about the order
     const userOrders = {};
     Object.keys(orders).forEach(batch => {
-        if (orders[batch][0].user_id === user.id) userOrders[batch] = orders[batch]
+        if (orders[batch][0].user_id === user.id && orders[batch][0].status === activePage) userOrders[batch] = orders[batch]
     });
 
     console.log('User Orders', userOrders)
@@ -60,7 +60,7 @@ export default function Orders() {
             <div id='orders'>
 
                 {Object.keys(userOrders).length ? (
-                    Object.keys(userOrders).filter(batch => userOrders[batch][0].status === activePage)
+                    Object.keys(userOrders)
                     .map(batch => {
                         const order = userOrders[batch][0]
                         return (

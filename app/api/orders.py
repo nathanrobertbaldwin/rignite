@@ -1,14 +1,14 @@
 from flask import Blueprint
 from ..models import Order, db
-from flask_login import login_required
+from flask_login import login_required, current_user
 
 orders = Blueprint("orders", __name__)
 
 @orders.route("/")
 @login_required
-def allOrders():
+def allUserOrders():
     # ========= Get details for all orders =========
-    orders = Order.query.all()
+    orders = Order.query.filter(Order.user_id == current_user.id)
     return [order.order_details_to_dict() for order in orders]
 
 # @orders.route("/new", methods=["POST"])
@@ -43,7 +43,7 @@ def editOrder(batchId, status):
     return orderToUpdate
 
 
-@orders.route("/delete/<string:batchId>", methods=["DELETE"])
+@orders.route("/<string:batchId>", methods=["DELETE"])
 @login_required
 def deleteOrder(batchId):
     orderToDelete = Order.query.filter(Order.batch_id == batchId)
@@ -52,4 +52,4 @@ def deleteOrder(batchId):
         db.session.delete(order)
 
     db.session.commit()
-    return "successfully deleted order"
+    return {"message":"successfully deleted order"}
