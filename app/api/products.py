@@ -54,3 +54,57 @@ def new_product():
 
     if form.errors:
         return form.errors
+
+@products.route("/update", methods=["POST"])
+def new_product():
+    form = ProductForm()
+    form["csrf_token"].data = request.cookies["csrf_token"]
+    
+    if form.validate_on_submit():
+        data = form.data
+        # This right?
+        product = Product.query.get(data["id"])
+        product.product_name = data["product_name"]
+        product.price = data["price"],
+        product.category_id = data["product_name"],
+        product.brand = data["product_name"],
+        product.color = data["product_name"],
+        product.product_name = data["product_name"],
+        product.product_name = data["product_name"],
+
+
+        new_product = Product(
+            user_id=data["user_id"],
+            product_name=data["product_name"],
+            price=data["price"],
+            category_id=data["category_id"],
+            brand=data["brand"],
+            color=data["color"],
+            description=data["description"],
+            specs=data["specs"],
+        )
+
+        db.session.add(new_product)
+        db.session.commit()
+
+        photo1 = Photo(product_id=new_product.id, url=data["imageOne"])
+        new_photos = []
+        new_photos.append(photo1)
+
+        if data["imageTwo"]:
+            photo2 = Photo(product_id=new_product.id, url=data["imageTwo"])
+            new_photos.append(photo2)
+        if data["imageThree"]:
+            photo3 = Photo(product_id=new_product.id, url=data["imageThree"])
+            new_photos.append(photo3)
+        if data["imageFour"]:
+            photo4 = Photo(product_id=new_product.id, url=data["imageFour"])
+            new_photos.append(photo3)
+
+        db.session.add_all([*new_photos])
+        db.session.commit()
+
+        return new_product.product_details_to_dict()
+
+    if form.errors:
+        return form.errors
