@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ProfileButton from "./ProfileButton";
 import AddProductModal from "../AddProductModal";
+import SeeCartModal from "../CartModal";
 import OpenModalButton from "../OpenModalButton";
 import "./Navigation.css";
 
@@ -27,6 +28,11 @@ function Navigation({ isLoaded }) {
           modalComponent={<AddProductModal />}
         />
       )}
+      <OpenModalButton
+          className="modal_button"
+          buttonText="See your cart"
+          modalComponent={<SeeCartModal />}
+        />
       {isLoaded && (
         <li>
           <ProfileButton user={sessionUser} />

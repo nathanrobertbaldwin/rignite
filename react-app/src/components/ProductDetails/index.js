@@ -7,6 +7,8 @@ import { getAllProductsThunk } from "../../store/products";
 import { getAllReviewsThunk } from "../../store/reviews";
 import { getAllPhotosThunk } from "../../store/photos";
 import { getAllOrdersThunk } from "../../store/orders";
+import SeeCartModal from "../CartModal";
+import OpenModalButton from "../OpenModalButton";
 // import OpenModalButton from "../OpenModalButton";
 // import LoginFormModal from "../LoginFormModal";
 // import PostReviewModal from "./PostReviewModal";
@@ -53,35 +55,45 @@ export default function ProductDetails() {
 
   return (
     <div id="product_details">
-      <h2>
+      {/* <h2>
         {product.address}, {product.state}, {product.country}
-      </h2>
-      <div id="product_details_images_container">
-        <img
-          alt="product"
-          id="product_details_preview_image"
-          src={primaryPhoto}
-        />
-        <div id="product_details_other_images_container">
-          {otherPhotos.map((image) => {
-            return (
-              <img
-                alt=""
-                key={image.id}
-                className="product_details_other_images"
-                src={image.url}
-              />
-            );
-          })}
+      </h2> */}
+      <div id='product_details_main_content_container'>
+        <div id="product_details_images_container">
+          <div id="product_details_main_image">
+            <img
+              alt="product"
+              id="product_details_preview_image"
+              src={primaryPhoto}
+            />
+          </div>
+          <div id="product_details_other_images_container">
+            {otherPhotos.map((image) => {
+              return (
+                <img
+                  alt=""
+                  key={image.id}
+                  className="product_details_other_images"
+                  src={image.url}
+                />
+              );
+            })}
+          </div>
+        </div>
+        <div id='product_details_product_main_info'>
+          <h3>{`${product.product_name}`}</h3>
+          <h4>{`$${product.price} / night `}</h4>
+          <p id="product_details_product_description">{product.description}</p>
+          <OpenModalButton
+          buttonText="Add to cart"
+          modalComponent={<SeeCartModal/>}
+          />
         </div>
       </div>
       <div id="product_details_info_container">
-        <h3>{`${product.name}`}</h3>
         <div id="product_details_purchase_button_container">
-          <p id="product_details_product_description">{product.description}</p>
           <div id="product_details_purchase_card">
             <div id="product_details_purchase_card_header_container">
-              <h4>{`$${product.price} / night `}</h4>
               <h5>
                 {reviewsCount === 0 ? (
                   "New!"
