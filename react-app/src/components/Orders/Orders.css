@@ -1,0 +1,10 @@
+#order-status-container {
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+    cursor: pointer;
+}
+
+#orders-title {
+    text-align: center;
+}

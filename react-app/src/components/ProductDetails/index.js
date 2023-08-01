@@ -6,6 +6,7 @@ import { getAllProductCategoriesThunk } from "../../store/categories";
 import { getAllProductsThunk } from "../../store/products";
 import { getAllReviewsThunk } from "../../store/reviews";
 import { getAllPhotosThunk } from "../../store/photos";
+import { getAllOrdersThunk } from "../../store/orders";
 // import OpenModalButton from "../OpenModalButton";
 // import LoginFormModal from "../LoginFormModal";
 // import PostReviewModal from "./PostReviewModal";
@@ -23,8 +24,8 @@ export default function ProductDetails() {
   const productReviews = reviews.filter((review) => review.product_id === id)
   const photosData = useSelector((state) => state.photos)
   const photos = Object.values(photosData)
-  
-  useEffect(() => {
+
+  useEffect(async () => {
     // MEGATHUNKADONK
     if (!Object.values(products).length){
       async function fetchData (){
@@ -32,12 +33,11 @@ export default function ProductDetails() {
       await dispatch(getAllProductsThunk());
       await dispatch(getAllReviewsThunk());
       await dispatch(getAllPhotosThunk());
+      await dispatch(getAllOrdersThunk());
       }
       fetchData()
     }
   }, [dispatch]);
-
-   console.log("RERENDER")
 
   const productPhotos = photos.filter((photo) => {
     return photo.product_id === id

@@ -17,8 +17,8 @@ def seed_orders():
         product_id=2,
         batch_id="0aj9fa09jdfa0f9dj",
         quantity=2,
-        order_date="2023-07-21",
-        status="in transit",
+        order_date="2023-07-20",
+        status="pending",
     )
 
     order3 = Order(
@@ -26,8 +26,8 @@ def seed_orders():
         product_id=7,
         batch_id="0aj9fa09jdfa0f9dj",
         quantity=1,
-        order_date="2023-07-22",
-        status="delivered",
+        order_date="2023-07-20",
+        status="pending",
     )
 
     order4 = Order(
@@ -44,8 +44,8 @@ def seed_orders():
         product_id=6,
         batch_id="2f309j203j9f",
         quantity=2,
-        order_date="2023-07-24",
-        status="in transit",
+        order_date="2023-07-23",
+        status="pending",
     )
 
     order6 = Order(
@@ -53,8 +53,8 @@ def seed_orders():
         product_id=7,
         batch_id="2f309j203j9f",
         quantity=1,
-        order_date="2023-07-25",
-        status="delivered",
+        order_date="2023-07-23",
+        status="pending",
     )
 
     order7 = Order(
@@ -71,8 +71,8 @@ def seed_orders():
         product_id=4,
         batch_id="2309fj2093rfs",
         quantity=2,
-        order_date="2023-07-27",
-        status="in transit",
+        order_date="2023-07-26",
+        status="pending",
     )
 
     order9 = Order(
@@ -81,7 +81,7 @@ def seed_orders():
         batch_id="j23kfjfjkg32gh",
         quantity=3,
         order_date="2023-07-28",
-        status="delivered",
+        status="pending",
     )
 
     order10 = Order(
