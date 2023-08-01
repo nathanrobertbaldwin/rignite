@@ -4,8 +4,6 @@ import { useParams } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
 import { getAllProductCategoriesThunk } from "../../store/categories";
 import { getAllProductsThunk } from "../../store/products";
-import { getAllReviewsThunk } from "../../store/reviews";
-import { getAllPhotosThunk } from "../../store/photos";
 import { getAllOrdersThunk } from "../../store/orders";
 // import OpenModalButton from "../OpenModalButton";
 // import LoginFormModal from "../LoginFormModal";
@@ -15,39 +13,33 @@ import "./ProductDetails.css";
 export default function ProductDetails() {
   const dispatch = useDispatch();
   let { id } = useParams();
-  id = parseInt(id)
-  const user = useSelector((store) => store.user)
+  id = parseInt(id);
+  const user = useSelector((store) => store.user);
   const products = useSelector((store) => store.products);
-  const product = products[id]
-  const reviewsData = useSelector((state) => state.reviews);
-  const reviews = Object.values(reviewsData)
-  const productReviews = reviews.filter((review) => review.product_id === id)
-  const photosData = useSelector((state) => state.photos)
-  const photos = Object.values(photosData)
+  const product = products[id];
 
   useEffect(async () => {
     // MEGATHUNKADONK
-    if (!Object.values(products).length){
-      async function fetchData (){
-      await dispatch(getAllProductCategoriesThunk());
-      await dispatch(getAllProductsThunk());
-      await dispatch(getAllReviewsThunk());
-      await dispatch(getAllPhotosThunk());
-      await dispatch(getAllOrdersThunk());
+    if (!Object.values(products).length) {
+      async function fetchData() {
+        await dispatch(getAllProductCategoriesThunk());
+        await dispatch(getAllProductsThunk());
+        await dispatch(getAllOrdersThunk());
       }
-      fetchData()
+      fetchData();
     }
   }, [dispatch]);
 
-  const productPhotos = photos.filter((photo) => {
-    return photo.product_id === id
-  })
+  const photos = product?.product_photos;
+  const reviews = product?.product_reviews;
 
-  const primaryPhoto = productPhotos[0].url
-  const otherPhotos = productPhotos.slice(1)
-  const reviewsCount = productReviews.length
+  if (!photos) return <></>;
 
-  const avgStarRating = productReviews.avgStarRating
+  const primaryPhoto = photos[0].url;
+  const otherPhotos = photos.slice(1);
+  const reviewsCount = reviews.length;
+
+  const avgStarRating = reviews.avgStarRating
     ? product.avgStarRating.toFixed(2)
     : "New!";
 
@@ -102,9 +94,7 @@ export default function ProductDetails() {
             </div>
             {user ? (
               <div id="product_details_purchase_button_container">
-                <button className="button_small">
-                  Purchase This product!
-                </button>
+                <button className="button_small">Purchase This product!</button>
               </div>
             ) : (
               // <OpenModalButton

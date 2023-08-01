@@ -3,8 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { editOrderStatusFetch, getAllOrdersThunk } from "../../store/orders";
 import { getAllProductCategoriesThunk } from "../../store/categories";
 import { getAllProductsThunk } from "../../store/products";
-import { getAllReviewsThunk } from "../../store/reviews";
-import { getAllPhotosThunk } from "../../store/photos";
 import OpenModalButton from "../OpenModalButton";
 import DeleteOrderModal from "./DeleteOrderModal";
 import "./Orders.css"
@@ -33,9 +31,7 @@ export default function Orders() {
         if (!Object.values(orders).length) {
             await dispatch(getAllProductCategoriesThunk());
             await dispatch(getAllProductsThunk());
-            await dispatch(getAllReviewsThunk());
             await dispatch(getAllOrdersThunk());
-            await dispatch(getAllPhotosThunk());
             // console.log('PINGED BACKEND')
         }
     }, [dispatch]);
@@ -57,7 +53,6 @@ export default function Orders() {
                 }
             }
             if (update) {
-                // console.log('AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',orders)
                 dispatch(getAllOrdersThunk());
             }
         }
