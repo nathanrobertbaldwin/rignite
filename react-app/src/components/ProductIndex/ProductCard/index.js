@@ -21,7 +21,7 @@ export default function ProductCard({ product }) {
         <p>{product.product_name}</p>
         <p>$ {product.price}</p>
       </div>
-      {sessionUser.is_admin && (
+      {/* {sessionUser.is_admin && (
         <div id="manage_product_button_container">
           <li className="nav_links">
             <OpenModalButton
@@ -31,7 +31,7 @@ export default function ProductCard({ product }) {
             />
           </li>
         </div>
-      )}
+      )} */}
     </div>
   );
 }
