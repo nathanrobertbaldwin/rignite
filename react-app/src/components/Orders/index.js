@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux";
-import { getAllOrdersThunk } from "../../store/orders";
+import { editOrderStatusFetch, getAllOrdersThunk } from "../../store/orders";
 import { getAllProductCategoriesThunk } from "../../store/categories";
 import { getAllProductsThunk } from "../../store/products";
 import { getAllReviewsThunk } from "../../store/reviews";
@@ -15,26 +15,18 @@ export default function Orders() {
     let [activePage, setActivePage] = useState('pending');
 
     const dispatch = useDispatch();
-    const user = useSelector(state => state.session.user);
+    // const user = useSelector(state => state.session.user);
     const orders = useSelector(state => state.orders);
 
-    // const today = new Date();
-    // Object.keys(orders).forEach(async (batch) => {
-    //     let order = orders[batch][0]
-    //     let orderDate = new Date(order.order_date);
-    //     if (order.user_id === user.id && (today - orderDate)>86400000){
-    //         if (today - orderDate > 604800000 && order.status != 'delivered') await dispatch(putOrderStatus(batch,'delivered'));
-    //         else if (order.status != 'in transit') await dispatch(putOrderStatus(batch,'in transit'));
-    //     }
-    // });
+
 
     // object of orders for the user. each key is a batch id for a single user order with all info about the order
-    const userOrders = {};
+    const filteredOrders = {};
     Object.keys(orders).forEach(batch => {
-        if (orders[batch][0].user_id === user.id && orders[batch][0].status === activePage) userOrders[batch] = orders[batch]
+        if (orders[batch][0].status === activePage) filteredOrders[batch] = orders[batch]
     });
 
-    console.log('User Orders', userOrders)
+    // console.log('User Orders', userOrders)
 
     useEffect(async () => {
         // MEGATHUNKADONK
@@ -48,6 +40,30 @@ export default function Orders() {
         }
     }, [dispatch]);
 
+    useEffect(() => {
+        async function once() {
+            const today = new Date();
+            let update = false;
+            for (let i = 0; i < Object.keys(orders).length; i++) {
+                let batch = Object.keys(orders)[i];
+                let order = orders[batch][0];
+                let orderDate = new Date(order.order_date);
+                if (today - orderDate > 604800000 && order.status != 'delivered') {
+                    await dispatch(editOrderStatusFetch(batch, 'delivered'));
+                    update = true;
+                } else if ((today - orderDate) > 86400000 && order.status === 'pending') {
+                    await dispatch(editOrderStatusFetch(batch, 'in transit'));
+                    update = true;
+                }
+            }
+            if (update) {
+                // console.log('AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',orders)
+                dispatch(getAllOrdersThunk());
+            }
+        }
+        if (Object.keys(orders).length) once()
+    }, [orders])
+
 
     return (
         <>
@@ -59,26 +75,26 @@ export default function Orders() {
             </div>
             <div id='orders'>
 
-                {Object.keys(userOrders).length ? (
-                    Object.keys(userOrders)
-                    .map(batch => {
-                        const order = userOrders[batch][0]
-                        return (
-                            <div>
-                                <p>Order Date: {order.order_date}</p>
-                                <p>Order #: {batch}</p>
-                                {userOrders[batch].map(product => {
-                                    return (
-                                        <div>
-                                            <p>{product.order_product.product_name}</p>
-                                            <p>{product.quantity}</p>
-                                        </div>
-                                    )
-                                })}
-                                <OpenModalButton buttonText={"Cancel Order"} modalComponent={<DeleteOrderModal batch={batch} />} />
-                            </div>
-                        )
-                    })
+                {Object.keys(filteredOrders).length ? (
+                    Object.keys(filteredOrders)
+                        .map(batch => {
+                            const order = filteredOrders[batch][0]
+                            return (
+                                <div>
+                                    <p>Order Date: {order.order_date}</p>
+                                    <p>Order #: {batch}</p>
+                                    {filteredOrders[batch].map(product => {
+                                        return (
+                                            <div>
+                                                <p>{product.order_product.product_name}</p>
+                                                <p>{product.quantity}</p>
+                                            </div>
+                                        )
+                                    })}
+                                    <OpenModalButton buttonText={"Cancel Order"} modalComponent={<DeleteOrderModal batch={batch} />} />
+                                </div>
+                            )
+                        })
                 ) : (
                     <div>
                         <p>We don't see any active transactions in your records.</p>

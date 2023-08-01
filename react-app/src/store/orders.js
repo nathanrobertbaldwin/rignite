@@ -40,10 +40,10 @@ export const editOrderStatusFetch = (batchId, status) => async () => {
 		body: JSON.stringify(status)
 	})
 
-  if(response.ok) {
-    const newOrderStatus = await response.json()
-    return newOrderStatus
-  }
+  // if(response.ok) {
+  //   const newOrderStatus = await response.json()
+  //   return newOrderStatus
+  // }
 
 }
 

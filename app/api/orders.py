@@ -1,4 +1,4 @@
-from flask import Blueprint
+from flask import Blueprint, request
 from ..models import Order, db
 from flask_login import login_required, current_user
 
@@ -28,8 +28,10 @@ def allUserOrders():
 
 @orders.route("/<string:batchId>", methods=["PUT"])
 @login_required
-def editOrder(batchId, status):
+def editOrder(batchId):
 
+    status = request.json
+    # print('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',status)
     if status != "delivered" and status != "in transit" and status != "pending":
         return "Invalid Status"
 
@@ -40,7 +42,7 @@ def editOrder(batchId, status):
         db.session.add(order)
 
     db.session.commit()
-    return orderToUpdate
+    return
 
 
 @orders.route("/<string:batchId>", methods=["DELETE"])
