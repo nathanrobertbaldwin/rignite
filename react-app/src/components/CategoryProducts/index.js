@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getAllProductCategoriesThunk } from "../../store/categories";
@@ -15,13 +15,16 @@ export default function CategoryProducts({ category }) {
   id = parseInt(id);
 
 
-  useEffect(async () => {
+  useEffect(() => {
     // MEGATHUNKADONK
     if (!Object.values(productsData).length){
+      async function fetchData (){
       await dispatch(getAllProductCategoriesThunk());
       await dispatch(getAllProductsThunk());
       await dispatch(getAllReviewsThunk());
-      await dispatch(getAllPhotosThunk())
+      await dispatch(getAllPhotosThunk());
+      }
+      fetchData()
     }
   }, [dispatch]);
 

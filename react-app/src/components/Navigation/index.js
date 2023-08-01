@@ -6,7 +6,7 @@ import './Navigation.css';
 
 function Navigation({ isLoaded }){
 	const sessionUser = useSelector(state => state.session.user);
-
+	
 	return (
 		<ul className='navi-icons'>
 			<li>
@@ -15,6 +15,11 @@ function Navigation({ isLoaded }){
 			<li>
 				<NavLink exact to='/products/all'>Shop</NavLink>
 			</li>
+
+				<NavLink exact to="/products/new">
+					<button>Add a New Product</button>
+				</NavLink>
+
 			{isLoaded && (
 				<li>
 					<ProfileButton user={sessionUser} />

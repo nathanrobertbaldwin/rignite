@@ -8,6 +8,7 @@ import Navigation from "./components/Navigation";
 import LandingPage from "./components/LandingPage";
 import CategoryProducts from "./components/CategoryProducts";
 import ProductIndex from "./components/ProductIndex";
+import AddProduct from "./components/AddProduct";
 import ManageUser from "./components/ManageUser";
 import ProductDetails from "./components/ProductDetails"
 import AccountSettings from "./components/ManageUser/AccountSettings";
@@ -30,6 +31,9 @@ function App() {
           </Route>
           <Route exact path="/products/all">
             <ProductIndex />
+          </Route>
+          <Route exact path="/products/new">
+            <AddProduct />
           </Route>
           <Route exact path="/products/:id">
             <ProductDetails />

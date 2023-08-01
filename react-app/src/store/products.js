@@ -1,4 +1,4 @@
-import dataNormalizer from "./utilities";
+import { dataNormalizer } from "./utilities";
 
 // Action strings.
 
@@ -28,8 +28,9 @@ export const getAllProductsThunk = () => async (dispatch) => {
   }
 };
 
-export const createNewProduct = (product) => async (dispatch) => {
-  const response = await fetch("api/products/", {
+export const createNewProductThunk = (product) => async (dispatch) => {
+  
+  const response = await fetch("/api/products/new", {
     method: "POST",
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify(product)

@@ -1,6 +1,4 @@
-import { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { Link } from 'react-router-dom';
+import { useSelector } from "react-redux";
 import './ProductIndexItem.css'
 
 export default function ProductIndexItem({product}) {
@@ -11,7 +9,6 @@ export default function ProductIndexItem({product}) {
     })
 
     return (
-        <Link className='product-index-link' to ={`/products/${product.id}`} title={product.product_name}>
             <div id='individual-product-container'>
                 <img
                 className='all-product-image'
@@ -24,6 +21,5 @@ export default function ProductIndexItem({product}) {
                     <p>$ {product.price}</p>
                 </div>
             </div>
-        </Link>
     )
 }
