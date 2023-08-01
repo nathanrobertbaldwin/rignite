@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { editOrderStatusFetch, getAllOrdersThunk } from "../../store/orders";
 import { getAllProductCategoriesThunk } from "../../store/categories";
@@ -13,6 +14,7 @@ import "./Orders.css"
 
 export default function Orders() {
     let [activePage, setActivePage] = useState('pending');
+    const history = useHistory();
 
     const dispatch = useDispatch();
     // const user = useSelector(state => state.session.user);
@@ -85,7 +87,7 @@ export default function Orders() {
                                     <p>Order #: {batch}</p>
                                     {filteredOrders[batch].map(product => {
                                         return (
-                                            <div>
+                                            <div onClick={()=>history.push(`/products/${product.product_id}`)}>
                                                 <p>{product.order_product.product_name}</p>
                                                 <p>{product.quantity}</p>
                                             </div>
