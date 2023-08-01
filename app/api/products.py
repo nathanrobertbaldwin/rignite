@@ -1,5 +1,5 @@
 from flask import Blueprint, request
-from ..models import Product, db
+from ..models import Product, Photo, db
 from ..forms.products_form import ProductForm
 
 products = Blueprint("products", __name__)
@@ -28,6 +28,15 @@ def new_product():
             description=data["description"],
             specs=data["specs"],
         )
+        photo1 = Photo(product_id=data[new_product.id], url=data["imageOne"])
+
+        if data["imageTwo"]:
+            photo2 = Photo(product_id=data[new_product.id], url=data["imageTwo"])
+        if data["imageThree"]:
+            photo3 = Photo(product_id=data[new_product.id], url=data["imageThree"])
+        if data["imageFour"]:
+            photo4 = Photo(product_id=data[new_product.id], url=data["imageFour"])
+
         db.session.add(new_product)
         db.session.commit()
         return new_product.product_details_to_dict()
