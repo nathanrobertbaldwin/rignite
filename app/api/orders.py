@@ -31,7 +31,6 @@ def allUserOrders():
 def editOrder(batchId):
 
     status = request.json
-    # print('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',status)
     if status != "delivered" and status != "in transit" and status != "pending":
         return "Invalid Status"
 
@@ -42,7 +41,7 @@ def editOrder(batchId):
         db.session.add(order)
 
     db.session.commit()
-    return
+    return {}
 
 
 @orders.route("/<string:batchId>", methods=["DELETE"])
