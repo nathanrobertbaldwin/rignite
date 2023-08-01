@@ -75,7 +75,7 @@ export default function Orders() {
                                         </div>
                                     )
                                 })}
-                                <OpenModalButton buttonText={"Cancel Order"} modalComponent={<DeleteOrderModal />} />
+                                <OpenModalButton buttonText={"Cancel Order"} modalComponent={<DeleteOrderModal batch={batch} />} />
                             </div>
                         )
                     })
