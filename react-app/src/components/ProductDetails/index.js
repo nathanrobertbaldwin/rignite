@@ -40,7 +40,7 @@ export default function ProductDetails() {
   const photos = product?.product_photos;
   const reviews = product?.product_reviews;
 
-  if (!photos) return <></>;
+  if (!product) return <></>;
 
   const primaryPhoto = photos[0].url;
   const otherPhotos = photos.slice(1);
