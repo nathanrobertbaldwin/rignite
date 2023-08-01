@@ -79,8 +79,10 @@ export default function Orders() {
                                     <p>Order Date: {order.order_date}</p>
                                     <p>Order #: {batch}</p>
                                     {filteredOrders[batch].map(product => {
+                                        console.log("PRODUCT INFO", product)
                                         return (
                                             <div>
+                                                <img src={product.order_product.product_photos[0].url} />
                                                 <p>{product.order_product.product_name}</p>
                                                 <p>{product.quantity}</p>
                                             </div>
