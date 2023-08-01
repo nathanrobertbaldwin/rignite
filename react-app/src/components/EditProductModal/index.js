@@ -1,29 +1,34 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { createNewProductThunk } from "../../store/products";
+import { editProductThunk } from "../../store/products";
 import { useModal } from "../../context/Modal";
-import "./AddProductModal.css";
+import "./EditProductModal.css";
 
-export default function AddProductModal() {
+export default function EditProductModal({ product }) {
   const dispatch = useDispatch();
   const history = useHistory();
+  const { closeModal } = useModal();
   const user = useSelector((state) => state.session.user);
   // will want to ensure that user is logged and is an Admin
-  const [brand, setBrand] = useState("");
-  const [category_id, setCategoryId] = useState("");
-  const [color, setColor] = useState("");
-  const [description, setDescription] = useState("");
-  const [specs, setSpecs] = useState("");
-  const [price, setPrice] = useState("");
-  const [product_name, setProductName] = useState("");
+
+  const [brand, setBrand] = useState(product.brand);
+  const [category_id, setCategoryId] = useState(product.category_id);
+  const [color, setColor] = useState(product.color);
+  const [description, setDescription] = useState(product.description);
+  const [specs, setSpecs] = useState(product.specs);
+  const [price, setPrice] = useState(product.price);
+  const [product_name, setProductName] = useState(product.product_name);
+
+  // something weird going on with images and error checking.
+
+  const [imageOne, setImageOne] = useState(product.product_photos[0].url);
+  const [imageTwo, setImageTwo] = useState(product.product_photos[1].url);
+  const [imageThree, setImageThree] = useState(product.product_photos[2].url);
+  const [imageFour, setImageFour] = useState(product.product_photos[3].url);
+
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const [validationErrors, setValidationErrors] = useState({});
-  const [imageOne, setImageOne] = useState("");
-  const [imageTwo, setImageTwo] = useState("");
-  const [imageThree, setImageThree] = useState("");
-  const [imageFour, setImageFour] = useState("");
-  const { closeModal } = useModal();
 
   // Error Checking
 
@@ -51,6 +56,7 @@ export default function AddProductModal() {
 
     if (Object.values(validationErrors).length === 0) {
       let data = {
+        product_id: product.id,
         user_id: user.id,
         brand,
         // Note: Give current category.
@@ -65,10 +71,10 @@ export default function AddProductModal() {
         imageThree,
         imageFour,
       };
-      const newProductId = await dispatch(createNewProductThunk(data));
+      const editedProductId = await dispatch(editProductThunk(data));
       _reset();
       closeModal();
-      history.push(`/products/${newProductId}`);
+      history.push(`/products/${editedProductId}`);
     }
   }
 
@@ -81,7 +87,8 @@ export default function AddProductModal() {
     if (!color) errors.color = "Color is required";
     if (!description) errors.description = "Description is required";
     if (description.length < 50)
-      errors.description = "Description must be greater than 50 characters.";
+      errors.description =
+        "Description must be greater than 50 characters.";
     if (!price) errors.price = "Price is required";
     if (price < 0) errors.price = "Price must be positive";
     if (!product_name) errors.product_name = "Product must have a name";
@@ -134,10 +141,10 @@ export default function AddProductModal() {
 
   return (
     <div id="new_product_form_container">
-      <h1 id="new_product_form_h1">Create A New Product</h1>
+      <h1 id="new_product_form_h1">Edit This Product</h1>
       <form id="new_product_form" onSubmit={handleSubmit}>
         <div id="new_product_form_section">
-          <h4 id="new_product_form_h4">Create a New Product</h4>
+          <h4 id="new_product_form_h4">Edit This Product</h4>
           <label>
             {validationErrors.product_name && hasSubmitted ? (
               <p>
