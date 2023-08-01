@@ -14,7 +14,6 @@ export default function CategoryProducts({ category }) {
   let { id } = useParams();
   id = parseInt(id);
 
-
   useEffect(() => {
     // MEGATHUNKADONK
     if (!Object.values(productsData).length){

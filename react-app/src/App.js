@@ -10,7 +10,7 @@ import CategoryProducts from "./components/CategoryProducts";
 import ProductIndex from "./components/ProductIndex";
 import AddProduct from "./components/AddProduct";
 import ManageUser from "./components/ManageUser";
-import ProductDetails from "./components/ProductDetails"
+import ProductDetails from "./components/ProductDetails";
 import AccountSettings from "./components/ManageUser/AccountSettings";
 import Orders from "./components/Orders";
 
