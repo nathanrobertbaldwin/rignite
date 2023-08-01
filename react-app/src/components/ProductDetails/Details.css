@@ -1,0 +1,17 @@
+#overview-specs-container{
+    display: flex;
+    gap: 20px;
+    padding: 0 10%;
+}
+
+#individual-spec{
+    padding-bottom: 10px;
+}
+
+#specs-list{
+    flex-basis: 50%;
+}
+
+#included-list{
+    flex-basis: 50%;
+}
