@@ -77,6 +77,7 @@ export default function reducer(state = initialState, action) {
     case DELETE_ORDER: {
       const newState = {...state}
       delete newState[action.data.batchId]
+      return newState
     }
     default: {
       return state;

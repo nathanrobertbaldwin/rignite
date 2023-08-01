@@ -1,10 +1,8 @@
-import { useHistory } from "react-router-dom";
 import { useDispatch } from 'react-redux'
 import { useModal } from "../../context/Modal";
 import { deleteOrderThunk } from "../../store/orders";
 
 function DeleteOrderModal({batch}) {
-    const history = useHistory()
     const dispatch = useDispatch()
     const { closeModal } = useModal()
 
@@ -13,7 +11,6 @@ function DeleteOrderModal({batch}) {
 
         return dispatch((deleteOrderThunk(batch)))
         .then(closeModal)
-        .then(history.push("/orders"))
         .catch(async (res) => console.log(res));
 
     }
