@@ -3,7 +3,7 @@ import { dataNormalizer } from "./utilities";
 // Action strings.
 
 const GET_ALL_PRODUCTS = "get_products/GET";
-const CREATE_PRODUCT = 'create_product/POST'
+const CREATE_PRODUCT = "create_product/POST";
 
 // Actions
 
@@ -14,8 +14,8 @@ const getProducts = (products) => ({
 
 const makeProduct = (product) => ({
   type: CREATE_PRODUCT,
-  data: product
-})
+  data: product,
+});
 
 // Thunks
 
@@ -24,23 +24,23 @@ export const getAllProductsThunk = () => async (dispatch) => {
 
   if (response.ok) {
     const data = await response.json();
+    console.log("IS RESPONSE OKAY?");
     dispatch(getProducts(data));
   }
 };
 
 export const createNewProductThunk = (product) => async (dispatch) => {
-  
   const response = await fetch("/api/products/new", {
     method: "POST",
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify(product)
-  }) 
-  if(response.ok) {
-    const newProduct = await response.json()
-    dispatch(makeProduct(newProduct))
-    return newProduct.id
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(product),
+  });
+  if (response.ok) {
+    const newProduct = await response.json();
+    dispatch(makeProduct(newProduct));
+    return newProduct.id;
   }
-}
+};
 
 // Normalizer
 
@@ -61,10 +61,10 @@ export default function reducer(state = initialState, action) {
       };
     }
     case CREATE_PRODUCT: {
-      const newState = {...state}
-      const newProduct = action.data
-      newState[newProduct.id] = newProduct.data
-      return newState
+      const newState = { ...state };
+      const newProduct = action.data;
+      newState[newProduct.id] = newProduct.data;
+      return newState;
     }
     default: {
       return state;
