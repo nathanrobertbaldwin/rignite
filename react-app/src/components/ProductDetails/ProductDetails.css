@@ -1,3 +1,6 @@
+
+/* PRODUCT DETAILS COMPONENT */
+
 #product_details_main_content_container{
     display: flex;
 }
@@ -23,4 +26,24 @@
 
 #product_details_product_main_info{
     flex-basis: 40%;
+}
+
+#switch-view-container {
+    display: flex;
+    padding-top: 50px;
+    justify-content: space-around;
+}
+
+/* REVIEWS COMPONENT */
+
+#product-review-details-overview-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+#single-review {
+    border: 1px solid red;
+    display: flex;
 }
