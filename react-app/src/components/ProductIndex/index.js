@@ -4,6 +4,7 @@ import { getAllProductCategoriesThunk } from "../../store/categories";
 import { getAllProductsThunk } from "../../store/products";
 import { getAllReviewsThunk } from "../../store/reviews";
 import { getAllPhotosThunk } from "../../store/photos";
+import { getAllOrdersThunk } from "../../store/orders";
 import { Link } from 'react-router-dom';
 import ProductIndexItem  from './ProductIndexItem'
 
@@ -20,9 +21,8 @@ export default function ProductIndex() {
       await dispatch(getAllProductCategoriesThunk());
       await dispatch(getAllProductsThunk());
       await dispatch(getAllReviewsThunk());
-      await dispatch(getAllPhotosThunk()).then(()=> {
-        setIsLoaded(true)
-      });
+      await dispatch(getAllPhotosThunk());
+      await dispatch(getAllOrdersThunk());
       console.log("STATE RELOADED")
     }
   }, [dispatch]);
@@ -30,7 +30,7 @@ export default function ProductIndex() {
   console.log("RERENDER")
 
   if (!isLoaded) return <></>
-  
+
   return (
     <div id='all-product-container'>
         {products.map((product) => (

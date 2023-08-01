@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getAllProductCategoriesThunk } from "../../store/categories";
 import { getAllProductsThunk } from "../../store/products";
 import { getAllReviewsThunk } from "../../store/reviews";
 import { getAllPhotosThunk } from "../../store/photos";
+import { getAllOrdersThunk } from "../../store/orders";
 import ProductCard from "./ProductCard";
 
 export default function CategoryProducts({ category }) {
@@ -21,7 +22,8 @@ export default function CategoryProducts({ category }) {
       await dispatch(getAllProductCategoriesThunk());
       await dispatch(getAllProductsThunk());
       await dispatch(getAllReviewsThunk());
-      await dispatch(getAllPhotosThunk())
+      await dispatch(getAllPhotosThunk());
+      await dispatch(getAllOrdersThunk());
     }
   }, [dispatch]);
 
