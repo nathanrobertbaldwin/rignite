@@ -40,11 +40,12 @@ export default function ProductDetails() {
   const photos = product?.product_photos;
   const reviews = product?.product_reviews;
 
-  if (!photos) return <></>;
+  if (!product) return <></>;
 
   const primaryPhoto = photos[0].url;
   const otherPhotos = photos.slice(1);
   const reviewsCount = reviews.length;
+  console.log('da product photos', product.product_photos)
 
   const avgStarRating = reviews.avgStarRating
     ? product.avgStarRating.toFixed(2)
@@ -96,9 +97,9 @@ export default function ProductDetails() {
         <button onClick={() => handleView("details")}>Details</button>
         <button onClick={() => handleView("reviews")}>Reviews</button>
       </div>
-      {view === "overview" && <Overview product={product.product} />}
-      {view === "details" && <Detail product={product.product} />}
-      {view === "reviews" && <Review product={product} user={user} />}
+      {view === "overview" && <Overview product={product} />}
+      {view === "details" && <Detail product={product} />}
+      {view === "reviews" && <Review product={product} />}
     </div>
   );
 }

@@ -51,6 +51,7 @@ export default function AddProductModal() {
 
     if (Object.values(validationErrors).length === 0) {
       let data = {
+        user_id: user.id,
         brand,
         // Note: Give current category.
         category_id,
@@ -64,10 +65,10 @@ export default function AddProductModal() {
         imageThree,
         imageFour,
       };
-      const newProduct = await dispatch(createNewProductThunk(data));
+      const newProductId = await dispatch(createNewProductThunk(data));
       _reset();
       closeModal();
-      history.push(`/products/${newProduct.id}`);
+      history.push(`/products/${newProductId}`);
     }
   }
 
@@ -93,12 +94,18 @@ export default function AddProductModal() {
     if (!imageOne) errors.imageOne = "You must have at least 1 image";
     if (!urlCheck(imageOne))
       errors.imageOne = "Images must end with .png, .jpg, or .jpeg";
-    if (!urlCheck(imageTwo))
-      errors.imageTwo = "Images must end with .png, .jpg, or .jpeg";
-    if (!urlCheck(imageThree))
-      errors.imageThree = "Images must end with .png, .jpg, or .jpeg";
-    if (!urlCheck(imageFour))
-      errors.imageFour = "Images must end with .png, .jpg, or .jpeg";
+    if (imageTwo) {
+      if (!urlCheck(imageTwo))
+        errors.imageTwo = "Images must end with .png, .jpg, or .jpeg";
+    }
+    if (imageThree) {
+      if (!urlCheck(imageThree))
+        errors.imageThree = "Images must end with .png, .jpg, or .jpeg";
+    }
+    if (imageFour) {
+      if (!urlCheck(imageFour))
+        errors.imageFour = "Images must end with .png, .jpg, or .jpeg";
+    }
     setValidationErrors(errors);
   }
 

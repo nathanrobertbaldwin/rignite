@@ -30,7 +30,6 @@ export const getAllProductsThunk = () => async (dispatch) => {
 
   if (response.ok) {
     const data = await response.json();
-    console.log("IS RESPONSE OKAY?");
     dispatch(getProducts(data));
   }
 };
@@ -44,6 +43,7 @@ export const createNewProductThunk = (product) => async (dispatch) => {
   if (response.ok) {
     const newProduct = await response.json();
     dispatch(makeProduct(newProduct));
+    console.log("FROM THUNK,", newProduct);
     return newProduct.id;
   }
 };
@@ -91,7 +91,8 @@ export default function reducer(state = initialState, action) {
     case CREATE_PRODUCT: {
       const newState = { ...state };
       const newProduct = action.data;
-      newState[newProduct.id] = newProduct.data;
+      console.log("FROM REDUCER,", newProduct);
+      newState[newProduct.id] = newProduct
       return newState;
     }
     case ADD_REVIEW_TO_PRODUCT: {
