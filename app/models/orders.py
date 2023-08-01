@@ -16,7 +16,7 @@ class Order(db.Model):
         db.Integer, db.ForeignKey(add_prefix_for_prod("products.id")),
         primary_key=True
     )
-    batch_id = db.Column(db.String(100), nullable=False)
+    batch_id = db.Column(db.String(100), nullable=False, unique=True)
     quantity = db.Column(db.Integer, nullable=False)
     order_date = db.Column(db.String(50), nullable=False)
     status = db.Column(db.Enum(*order_status, name="status_enum"), nullable=False)

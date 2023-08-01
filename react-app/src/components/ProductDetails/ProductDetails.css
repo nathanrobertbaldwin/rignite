@@ -1,0 +1,26 @@
+#product_details_main_content_container{
+    display: flex;
+}
+
+#product_details_images_container{
+    flex-basis: 60%;
+}
+
+#product_details_main_image>img{
+    width: 100%;
+}
+
+#product_details_other_images_container{
+    display: flex;
+    width: 50%;
+    gap: 10px;
+}
+
+#product_details_other_images_container>img{
+    flex: 1;
+    width: 50%;
+}
+
+#product_details_product_main_info{
+    flex-basis: 40%;
+}

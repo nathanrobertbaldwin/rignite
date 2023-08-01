@@ -4,8 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { editOrderStatusFetch, getAllOrdersThunk } from "../../store/orders";
 import { getAllProductCategoriesThunk } from "../../store/categories";
 import { getAllProductsThunk } from "../../store/products";
-import { getAllReviewsThunk } from "../../store/reviews";
-import { getAllPhotosThunk } from "../../store/photos";
 import OpenModalButton from "../OpenModalButton";
 import DeleteOrderModal from "./DeleteOrderModal";
 import "./Orders.css"
@@ -15,30 +13,20 @@ import "./Orders.css"
 export default function Orders() {
     let [activePage, setActivePage] = useState('pending');
     const history = useHistory();
-
     const dispatch = useDispatch();
-    // const user = useSelector(state => state.session.user);
     const orders = useSelector(state => state.orders);
 
-
-
-    // object of orders for the user. each key is a batch id for a single user order with all info about the order
     const filteredOrders = {};
     Object.keys(orders).forEach(batch => {
         if (orders[batch][0].status === activePage) filteredOrders[batch] = orders[batch]
     });
-
-    // console.log('User Orders', userOrders)
 
     useEffect(async () => {
         // MEGATHUNKADONK
         if (!Object.values(orders).length) {
             await dispatch(getAllProductCategoriesThunk());
             await dispatch(getAllProductsThunk());
-            await dispatch(getAllReviewsThunk());
             await dispatch(getAllOrdersThunk());
-            await dispatch(getAllPhotosThunk());
-            // console.log('PINGED BACKEND')
         }
     }, [dispatch]);
 
@@ -59,13 +47,11 @@ export default function Orders() {
                 }
             }
             if (update) {
-                // console.log('AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',orders)
                 dispatch(getAllOrdersThunk());
             }
         }
         if (Object.keys(orders).length) once()
     }, [orders])
-
 
     return (
         <>
@@ -76,7 +62,6 @@ export default function Orders() {
                 <h3 onClick={() => setActivePage('delivered')}>Delivered</h3>
             </div>
             <div id='orders'>
-
                 {Object.keys(filteredOrders).length ? (
                     Object.keys(filteredOrders)
                         .map(batch => {
@@ -88,6 +73,7 @@ export default function Orders() {
                                     {filteredOrders[batch].map(product => {
                                         return (
                                             <div onClick={()=>history.push(`/products/${product.product_id}`)}>
+                                                <img src={product.order_product.product_photos[0].url} />
                                                 <p>{product.order_product.product_name}</p>
                                                 <p>{product.quantity}</p>
                                             </div>
