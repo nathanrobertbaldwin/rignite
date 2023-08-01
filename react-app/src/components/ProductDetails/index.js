@@ -1,18 +1,23 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { FaStar } from "react-icons/fa";
 import { getAllProductCategoriesThunk } from "../../store/categories";
 import { getAllProductsThunk } from "../../store/products";
 import { getAllOrdersThunk } from "../../store/orders";
 import SeeCartModal from "../CartModal";
 import OpenModalButton from "../OpenModalButton";
+import Overview from "./Overview";
+import Detail from "./Details";
+import Review from "./Reviews";
 // import OpenModalButton from "../OpenModalButton";
 // import LoginFormModal from "../LoginFormModal";
 // import PostReviewModal from "./PostReviewModal";
 import "./ProductDetails.css";
 
 export default function ProductDetails() {
+
+  const [view, setView] = useState("overview")
+
   const dispatch = useDispatch();
   let { id } = useParams();
   id = parseInt(id);
@@ -44,6 +49,10 @@ export default function ProductDetails() {
   const avgStarRating = reviews.avgStarRating
     ? product.avgStarRating.toFixed(2)
     : "New!";
+
+  const handleView = (view) => {
+    setView(view);
+  };
 
   return (
     <div id="product_details">
@@ -82,7 +91,22 @@ export default function ProductDetails() {
           />
         </div>
       </div>
-      <div id="product_details_info_container">
+      <div id="switch-view-container">
+        <button onClick={() => handleView("overview")}>Overview</button>
+        <button onClick={() => handleView("details")}>Details</button>
+        <button onClick={() => handleView("reviews")}>Reviews</button>
+      </div>
+      {view === "overview" && <Overview product={product.product} />}
+      {view === "details" && <Detail product={product.product} />}
+      {view === "reviews" && <Review product={product} />}
+    </div>
+  );
+}
+
+
+
+
+{/* <div id="product_details_info_container">
         <div id="product_details_purchase_button_container">
           <div id="product_details_purchase_card">
             <div id="product_details_purchase_card_header_container">
@@ -118,8 +142,8 @@ export default function ProductDetails() {
             )}
           </div>
         </div>
-      </div>
-      <div id="reviews_title_post_review_container">
+      </div> */}
+      {/* <div id="reviews_title_post_review_container">
         <div id="review_title">
           {reviewsCount === 0 ? (
             <h3>New!</h3>
@@ -134,8 +158,6 @@ export default function ProductDetails() {
             </h3>
           )}
         </div>
-        {/* {postYourReview}
-        {loginButton} */}
       </div>
       <div id="reviews_container">
         {reviewsCount === 0 ? (
@@ -147,7 +169,4 @@ export default function ProductDetails() {
           // <Reviews product={product} />
           <p>Reviews will go here</p>
         )}
-      </div>
-    </div>
-  );
-}
+      </div> */}

@@ -24,4 +24,5 @@ class Review(db.Model):
             "review": self.review,
             "rating": self.rating,
             "photo_url": self.photo_url,
+            "user": self.user.to_dict()
         }
