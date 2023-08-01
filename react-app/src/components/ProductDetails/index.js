@@ -21,7 +21,7 @@ export default function ProductDetails() {
   const dispatch = useDispatch();
   let { id } = useParams();
   id = parseInt(id);
-  const user = useSelector((store) => store.user);
+  const user = useSelector((state) => state.session.user)
   const products = useSelector((store) => store.products);
   const product = products[id];
 
@@ -103,71 +103,3 @@ export default function ProductDetails() {
     </div>
   );
 }
-
-
-
-
-{/* <div id="product_details_info_container">
-        <div id="product_details_purchase_button_container">
-          <div id="product_details_purchase_card">
-            <div id="product_details_purchase_card_header_container">
-              <h5>
-                {reviewsCount === 0 ? (
-                  "New!"
-                ) : (
-                  <div id="product_details_purchase_card_review_info">
-                    <FaStar id="review_stars" />
-                    <p id="reviews_stars_container">
-                      {`${avgStarRating} `}
-                      {reviewsCount === 0
-                        ? ""
-                        : reviewsCount === 1
-                        ? ` ${reviewsCount} Review`
-                        : ` ${reviewsCount} Reviews`}
-                    </p>
-                  </div>
-                )}
-              </h5>
-            </div>
-            {user ? (
-              <div id="product_details_purchase_button_container">
-                <button className="button_small">Purchase This product!</button>
-              </div>
-            ) : (
-              // <OpenModalButton
-              //   className="orange_modal_button"
-              //   buttonText="Login to Create purchase"
-              //   modalComponent={<LoginFormModal />}
-              // />
-              <p>Login to create a purchase modal and button</p>
-            )}
-          </div>
-        </div>
-      </div> */}
-      {/* <div id="reviews_title_post_review_container">
-        <div id="review_title">
-          {reviewsCount === 0 ? (
-            <h3>New!</h3>
-          ) : (
-            <h3>
-              <FaStar id="review_stars" />
-              {` ${avgStarRating} `}
-              <span>&#183;</span>
-              {reviewsCount === 1
-                ? ` ${reviewsCount} Review`
-                : ` ${reviewsCount} Reviews`}
-            </h3>
-          )}
-        </div>
-      </div>
-      <div id="reviews_container">
-        {reviewsCount === 0 ? (
-          <div>
-            <p></p>
-            <h4>Be the first to review this product!</h4>
-          </div>
-        ) : (
-          // <Reviews product={product} />
-          <p>Reviews will go here</p>
-        )}
-      </div> */}

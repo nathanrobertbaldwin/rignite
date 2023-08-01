@@ -58,7 +58,6 @@ function ManageUser() {
         }
 
         const response = await dispatch(updateUser(userInfo))
-        console.log("RESPONSE", response)
 
         if (response.errors) {
             const errors = response.errors // main backend errors

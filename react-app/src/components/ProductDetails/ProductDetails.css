@@ -47,3 +47,12 @@
     border: 1px solid red;
     display: flex;
 }
+
+.review-user-info {
+    border: 1px solid blue;
+    margin-right: 10px;
+}
+
+.review-info {
+    border: 1px solid green;
+}
