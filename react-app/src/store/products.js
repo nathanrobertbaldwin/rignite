@@ -4,7 +4,9 @@ import { dataNormalizer } from "./utilities";
 
 const GET_ALL_PRODUCTS = "get_products/GET";
 const CREATE_PRODUCT = "create_product/POST";
+const EDIT_PRODUCT = "edit_product/POST";
 const ADD_REVIEW_TO_PRODUCT = "add_review_to_product/POST"
+
 
 // Actions
 
@@ -15,6 +17,11 @@ const getProducts = (products) => ({
 
 const makeProduct = (product) => ({
   type: CREATE_PRODUCT,
+  data: product,
+});
+
+const editProduct = (product) => ({
+  type: EDIT_PRODUCT,
   data: product,
 });
 
@@ -43,8 +50,22 @@ export const createNewProductThunk = (product) => async (dispatch) => {
   if (response.ok) {
     const newProduct = await response.json();
     dispatch(makeProduct(newProduct));
-    console.log("FROM THUNK,", newProduct);
     return newProduct.id;
+  }
+};
+
+export const editProductThunk = (product) => async (dispatch) => {
+  const id = product.product_id;
+  delete product.product_id;
+  const response = await fetch(`/api/products/edit/${id}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(product),
+  });
+  if (response.ok) {
+    const editedProduct = await response.json();
+    dispatch(editProduct(editedProduct));
+    return editedProduct.id;
   }
 };
 
@@ -70,10 +91,6 @@ export const addReviewThunk = (reviewInfo) => async (dispatch) => {
 
 }
 
-// Normalizer
-
-// const normalizer = (data) => {};
-
 // Products reducer
 
 const initialState = {};
@@ -92,7 +109,13 @@ export default function reducer(state = initialState, action) {
       const newState = { ...state };
       const newProduct = action.data;
       console.log("FROM REDUCER,", newProduct);
-      newState[newProduct.id] = newProduct
+      newState[newProduct.id] = newProduct;
+      return newState;
+    }
+    case EDIT_PRODUCT: {
+      const newState = { ...state };
+      const editedProduct = action.data;
+      newState[editedProduct.id] = editedProduct;
       return newState;
     }
     case ADD_REVIEW_TO_PRODUCT: {

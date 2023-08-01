@@ -1,10 +1,10 @@
-import { useEffect} from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getAllProductCategoriesThunk } from "../../store/categories";
 import { getAllProductsThunk } from "../../store/products";
 import { getAllOrdersThunk } from "../../store/orders";
-import ProductCard from "./ProductCard";
+import ProductCard from "../ProductCard";
 
 export default function CategoryProducts({ category }) {
   const dispatch = useDispatch();
@@ -15,15 +15,13 @@ export default function CategoryProducts({ category }) {
 
   useEffect(() => {
     // MEGATHUNKADONK
-    if (!Object.values(productsData).length){
-      async function fetchData (){
-      await dispatch(getAllProductCategoriesThunk());
-      await dispatch(getAllProductsThunk());
-      await dispatch(getAllOrdersThunk());
-
+    if (!Object.values(productsData).length) {
+      async function fetchData() {
+        await dispatch(getAllProductCategoriesThunk());
+        await dispatch(getAllProductsThunk());
+        await dispatch(getAllOrdersThunk());
       }
-      fetchData()
-
+      fetchData();
     }
   }, [dispatch]);
 
