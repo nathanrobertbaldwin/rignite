@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getAllProductCategoriesThunk } from "../../store/categories";
 import { getAllProductsThunk } from "../../store/products";
@@ -13,24 +13,25 @@ export default function Landing() {
   const dispatch = useDispatch();
   const categoriesData = useSelector((store) => store.categories);
   const categories = Object.values(categoriesData);
-  const [isLoaded, setIsLoaded] = useState(false);
 
-  useEffect(async () => {
+  useEffect(() => {
     // MEGATHUNKADONK
     if (!Object.values(categoriesData).length){
+      async function fetchData (){
       await dispatch(getAllProductCategoriesThunk());
       await dispatch(getAllProductsThunk());
       await dispatch(getAllReviewsThunk());
       await dispatch(getAllPhotosThunk());
       await dispatch(getAllOrdersThunk());
+      }
+      fetchData()
+
     }
   }, [dispatch]);
 
-  if (!isLoaded) return <></>
-
   return (
     <div id="spots_index">
-      {categories.map((category) => {
+      {categories?.map((category) => {
         return <CategoryCard key={category.id} category={category} />;
       })}
     </div>

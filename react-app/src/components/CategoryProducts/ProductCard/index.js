@@ -10,6 +10,7 @@ export default function ProductCard({ product }) {
   });
 
   return (
+    <>
     <Link id="product_card_container" to={`/products/${product.id}`}>
       <div id="product_card_image_container">
         <img
@@ -22,6 +23,7 @@ export default function ProductCard({ product }) {
       <div id="product_name">
         <h3>{product.product_name}</h3>
       </div>
-    </Link>
+      </Link>
+    </>
   );
 }

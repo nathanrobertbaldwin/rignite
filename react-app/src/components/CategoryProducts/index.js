@@ -15,15 +15,19 @@ export default function CategoryProducts({ category }) {
   let { id } = useParams();
   id = parseInt(id);
 
-
-  useEffect(async () => {
+  useEffect(() => {
     // MEGATHUNKADONK
     if (!Object.values(productsData).length){
+      async function fetchData (){
       await dispatch(getAllProductCategoriesThunk());
       await dispatch(getAllProductsThunk());
       await dispatch(getAllReviewsThunk());
       await dispatch(getAllPhotosThunk());
       await dispatch(getAllOrdersThunk());
+
+      }
+      fetchData()
+
     }
   }, [dispatch]);
 

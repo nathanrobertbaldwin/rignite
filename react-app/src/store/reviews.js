@@ -1,4 +1,4 @@
-import dataNormalizer from "./utilities";
+import { dataNormalizer } from "./utilities";
 
 // Action strings.
 
