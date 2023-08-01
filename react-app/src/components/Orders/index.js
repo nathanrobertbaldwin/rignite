@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { editOrderStatusFetch, getAllOrdersThunk } from "../../store/orders";
 import { getAllProductCategoriesThunk } from "../../store/categories";
@@ -11,20 +12,14 @@ import "./Orders.css"
 
 export default function Orders() {
     let [activePage, setActivePage] = useState('pending');
-
+    const history = useHistory();
     const dispatch = useDispatch();
-    // const user = useSelector(state => state.session.user);
     const orders = useSelector(state => state.orders);
 
-
-
-    // object of orders for the user. each key is a batch id for a single user order with all info about the order
     const filteredOrders = {};
     Object.keys(orders).forEach(batch => {
         if (orders[batch][0].status === activePage) filteredOrders[batch] = orders[batch]
     });
-
-    // console.log('User Orders', userOrders)
 
     useEffect(async () => {
         // MEGATHUNKADONK
@@ -32,7 +27,6 @@ export default function Orders() {
             await dispatch(getAllProductCategoriesThunk());
             await dispatch(getAllProductsThunk());
             await dispatch(getAllOrdersThunk());
-            // console.log('PINGED BACKEND')
         }
     }, [dispatch]);
 
@@ -59,7 +53,6 @@ export default function Orders() {
         if (Object.keys(orders).length) once()
     }, [orders])
 
-
     return (
         <>
             <h1 id="orders-title">Orders</h1>
@@ -69,7 +62,6 @@ export default function Orders() {
                 <h3 onClick={() => setActivePage('delivered')}>Delivered</h3>
             </div>
             <div id='orders'>
-
                 {Object.keys(filteredOrders).length ? (
                     Object.keys(filteredOrders)
                         .map(batch => {
@@ -79,9 +71,8 @@ export default function Orders() {
                                     <p>Order Date: {order.order_date}</p>
                                     <p>Order #: {batch}</p>
                                     {filteredOrders[batch].map(product => {
-                                        console.log("PRODUCT INFO", product)
                                         return (
-                                            <div>
+                                            <div onClick={()=>history.push(`/products/${product.product_id}`)}>
                                                 <img src={product.order_product.product_photos[0].url} />
                                                 <p>{product.order_product.product_name}</p>
                                                 <p>{product.quantity}</p>
