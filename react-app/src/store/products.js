@@ -5,6 +5,8 @@ import { dataNormalizer } from "./utilities";
 const GET_ALL_PRODUCTS = "get_products/GET";
 const CREATE_PRODUCT = "create_product/POST";
 const EDIT_PRODUCT = "edit_product/POST";
+const ADD_REVIEW_TO_PRODUCT = "add_review_to_product/POST"
+
 
 // Actions
 
@@ -22,6 +24,11 @@ const editProduct = (product) => ({
   type: EDIT_PRODUCT,
   data: product,
 });
+
+const addReview = (reviewObj) => ({
+  type: ADD_REVIEW_TO_PRODUCT,
+  reviewObj
+})
 
 // Thunks
 
@@ -62,9 +69,27 @@ export const editProductThunk = (product) => async (dispatch) => {
   }
 };
 
-// Normalizer
+export const addReviewThunk = (reviewInfo) => async (dispatch) => {
+  const response = await fetch("/api/reviews/new", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(reviewInfo),
+  })
 
-// const normalizer = (data) => {};
+  if (response.ok) {
+    const reviewObj = await response.json();
+
+    // send this back to handle errors on the front end
+    if(reviewObj.errors) {
+      return reviewObj
+    }
+
+    dispatch(addReview(reviewObj))
+    return reviewObj
+    
+  }
+
+}
 
 // Products reducer
 
@@ -92,6 +117,11 @@ export default function reducer(state = initialState, action) {
       const editedProduct = action.data;
       newState[editedProduct.id] = editedProduct;
       return newState;
+    }
+    case ADD_REVIEW_TO_PRODUCT: {
+      const newState = {...state }
+      newState[action.reviewObj.product_id].product_reviews.push(action.reviewObj)
+      return newState
     }
     default: {
       return state;

@@ -1,0 +1,23 @@
+#star-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.stars {
+    display: flex;
+    grid-gap: 5px;
+    font-size: 24px;
+}
+
+.activestar {
+    color: gold;
+}
+
+#highlight {
+    color: gold;
+}
+
+.star-text {
+    font-size: 24px;
+}
