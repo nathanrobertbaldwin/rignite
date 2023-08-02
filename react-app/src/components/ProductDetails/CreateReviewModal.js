@@ -3,6 +3,7 @@ import { useModal } from "../../context/Modal";
 import { FaStar } from 'react-icons/fa';
 import { useState } from 'react';
 import { addReviewThunk } from '../../store/products';
+import { getUserReviewsThunk } from '../../store/reviews';
 import "./CreateReviewModal.css"
 
 function CreateReviewModal({user, productId}) {
@@ -42,6 +43,7 @@ function CreateReviewModal({user, productId}) {
             setFormErrors(errors)
             console.log(errors)
         } else {
+            await dispatch(getUserReviewsThunk())
             closeModal()
         }
 

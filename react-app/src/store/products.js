@@ -7,6 +7,7 @@ const CREATE_PRODUCT = "create_product/POST";
 const EDIT_PRODUCT = "edit_product/POST";
 const ADD_REVIEW_TO_PRODUCT = "add_review_to_product/POST"
 const EDIT_REVIEW = "edit_review/PUT"
+const DELETE_REVIEW = "delete_review/DELETE"
 
 
 // Actions
@@ -34,6 +35,11 @@ const addReview = (reviewObj) => ({
 const editReview = (reviewObj) => ({
   type: EDIT_REVIEW,
   reviewObj
+})
+
+const deleteReview = (reviewInfoArr) => ({
+  type: DELETE_REVIEW,
+  reviewInfoArr
 })
 
 // Thunks
@@ -119,6 +125,19 @@ export const editReviewThunk = (reviewId, reviewInfo) => async (dispatch) => {
   }
 }
 
+export const deleteReviewThunk = (reviewId, productId) => async (dispatch) => {
+	const response = await fetch(`/api/reviews/${reviewId}`, {
+		method: "DELETE",
+		headers: {
+			"Content-Type": "application/json",
+		}
+	})
+
+	if(response.ok) {
+		dispatch(deleteReview([reviewId, productId]))
+	}
+}
+
 // Products reducer
 
 const initialState = {};
@@ -136,7 +155,6 @@ export default function reducer(state = initialState, action) {
     case CREATE_PRODUCT: {
       const newState = { ...state };
       const newProduct = action.data;
-      console.log("FROM REDUCER,", newProduct);
       newState[newProduct.id] = newProduct;
       return newState;
     }
@@ -156,6 +174,15 @@ export default function reducer(state = initialState, action) {
       const productReviewArray = newState[action.reviewObj.product_id].product_reviews
       const indexToReplace = productReviewArray.findIndex((review) => review.id === action.reviewObj.id)
       productReviewArray[indexToReplace] = action.reviewObj
+      return newState
+    }
+    case DELETE_REVIEW: {
+      const [reviewId, productId] = action.reviewInfoArr
+      const newState = {...state}
+
+      const productReviewArray = newState[productId].product_reviews
+      const indexToDelete = productReviewArray.findIndex((review) => review.id === reviewId)
+      productReviewArray.splice(indexToDelete, 1)
       return newState
     }
     default: {
