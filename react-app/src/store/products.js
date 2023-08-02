@@ -6,6 +6,7 @@ const GET_ALL_PRODUCTS = "get_products/GET";
 const CREATE_PRODUCT = "create_product/POST";
 const EDIT_PRODUCT = "edit_product/POST";
 const ADD_REVIEW_TO_PRODUCT = "add_review_to_product/POST"
+const EDIT_REVIEW = "edit_review/PUT"
 
 
 // Actions
@@ -27,6 +28,11 @@ const editProduct = (product) => ({
 
 const addReview = (reviewObj) => ({
   type: ADD_REVIEW_TO_PRODUCT,
+  reviewObj
+})
+
+const editReview = (reviewObj) => ({
+  type: EDIT_REVIEW,
   reviewObj
 })
 
@@ -86,9 +92,31 @@ export const addReviewThunk = (reviewInfo) => async (dispatch) => {
 
     dispatch(addReview(reviewObj))
     return reviewObj
-    
+
   }
 
+}
+
+export const editReviewThunk = (reviewId, reviewInfo) => async (dispatch) => {
+  const response = await fetch(`/api/reviews/${reviewId}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(reviewInfo),
+  })
+
+  if (response.ok) {
+    const reviewObj = await response.json();
+
+    // send this back to handle errors on the front end
+    if(reviewObj.errors) {
+      return reviewObj
+    }
+
+    dispatch(editReview(reviewObj))
+    // dispatch()
+    return reviewObj
+
+  }
 }
 
 // Products reducer
@@ -121,6 +149,13 @@ export default function reducer(state = initialState, action) {
     case ADD_REVIEW_TO_PRODUCT: {
       const newState = {...state }
       newState[action.reviewObj.product_id].product_reviews.push(action.reviewObj)
+      return newState
+    }
+    case EDIT_REVIEW: {
+      const newState = {...state }
+      const productReviewArray = newState[action.reviewObj.product_id].product_reviews
+      const indexToReplace = productReviewArray.findIndex((review) => review.id === action.reviewObj.id)
+      productReviewArray[indexToReplace] = action.reviewObj
       return newState
     }
     default: {

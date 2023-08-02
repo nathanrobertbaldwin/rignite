@@ -1,7 +1,6 @@
 import { useHistory } from "react-router-dom";
 import OpenModalButton from "../OpenModalButton";
 import DeleteAccountModal from "./DeleteAccountModal";
-import "./ManageUser.css"
 
 function AccountSettings() {
     const history = useHistory();
@@ -11,6 +10,7 @@ function AccountSettings() {
             <div id='account-nav-sidebar'>
                 <button onClick={()=>history.push('/users/manage')}>My Info</button>
                 <button>Account Settings</button>
+                <button onClick={()=>history.push('/users/reviews')}>Manage Reviews</button>
             </div>
 
             <div>

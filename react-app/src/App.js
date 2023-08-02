@@ -12,6 +12,7 @@ import ManageUser from "./components/ManageUser";
 import ProductDetails from "./components/ProductDetails";
 import AccountSettings from "./components/ManageUser/AccountSettings";
 import Orders from "./components/Orders";
+import UserReviews from "./components/ManageUser/UserReviews";
 
 function App() {
   const dispatch = useDispatch();
@@ -27,6 +28,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             <LandingPage />
+          </Route>
+          <Route exact path="/users/reviews">
+            <UserReviews />
           </Route>
           <Route exact path="/products/all">
             <ProductIndex />
