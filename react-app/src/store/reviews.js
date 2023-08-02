@@ -32,7 +32,6 @@ export default function reducer(state = initialState, action) {
             const allReviews = action.data;
             const normalizedReviews = dataNormalizer(allReviews);
             return {
-            ...state,
             ...normalizedReviews,
             };
         }

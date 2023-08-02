@@ -58,3 +58,15 @@ def edit_review(reviewId):
 
     else:
         return {"errors": form.errors}
+
+
+@reviews.route("/<int:reviewId>", methods=["DELETE"])
+@login_required
+def delete_review(reviewId):
+
+    review = Review.query.get(reviewId)
+
+    db.session.delete(review)
+    db.session.commit()
+
+    return "successfully deleted"

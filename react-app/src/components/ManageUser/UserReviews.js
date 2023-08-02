@@ -7,6 +7,7 @@ import { getUserReviewsThunk } from "../../store/reviews";
 import { useEffect } from "react";
 import OpenModalButton from "../OpenModalButton";
 import EditReviewModal from "./EditReviewModal";
+import DeleteReviewModal from "./DeleteReviewModal";
 
 function UserReviews() {
 
@@ -45,6 +46,7 @@ function UserReviews() {
                         <p>{review.review}</p>
                         <button onClick={() => history.push(`/products/${review.product_id}`)}>See Product Page</button>
                         <OpenModalButton buttonText={"Edit Review"} modalComponent={<EditReviewModal reviewData={review} reviewId={review.id} />} />
+                        <OpenModalButton buttonText={"Delete Review"} modalComponent={<DeleteReviewModal productId={review.product_id} reviewId={review.id} />} />
                     </div>;
                 })}
             </div>
