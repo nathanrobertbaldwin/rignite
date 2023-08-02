@@ -1,6 +1,7 @@
 from flask import Blueprint, request
 from ..models import Order, db
 from flask_login import login_required, current_user
+import uuid
 
 orders = Blueprint("orders", __name__)
 
@@ -11,20 +12,28 @@ def allUserOrders():
     orders = Order.query.filter(Order.user_id == current_user.id)
     return [order.order_details_to_dict() for order in orders]
 
-# @orders.route("/new", methods=["POST"])
-# @login_required
-# def addNewOrder(cartInfo):
-#     newOrder = Order(
-#         user_id = cartInfo.user_id,
-#         product_id = cartInfo.product_id,
-#         batch_id = cartInfo.batch_id,
-#         quantity = cartInfo.quantity,
-#         order_date = cartInfo.order_date,
-#         status = "pending"
-#     )
+@orders.route("/", methods=["POST"])
+@login_required
+def addNewOrder():
+    req = request.get_json()
+    print(req)
+    batch = str(uuid.uuid4())
+    arr = []
+    for order in req['cart']:
+        newOrder = Order(
+            user_id = req['user'],
+            product_id = order[0],
+            batch_id = batch,
+            quantity = order[1],
+            order_date = req['date'],
+            status = "pending"
+        )
+        print(newOrder)
+        db.session.add(newOrder)
+        db.session.commit()
+        arr.append(newOrder.order_details_to_dict())
 
-#     db.session.add(newOrder)
-#     db.session.commit()
+    return arr
 
 @orders.route("/<string:batchId>", methods=["PUT"])
 @login_required

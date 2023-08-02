@@ -1,12 +1,16 @@
 import { useEffect, useState } from "react";
 import { useModal } from "../../context/Modal";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
+import { createOrderThunk } from "../../store/orders";
 
 export default function SeeCartModal({ addProduct }) {
-    const { closeModal } = useModal();
     const user = useSelector((state) => state.session.user);
-    let total = 0;
     const products = useSelector(state => state.products);
+    const [total, setTotal] =  useState(0);
+    const { closeModal } = useModal();
+    const history = useHistory();
+    const dispatch = useDispatch();
 
 
     let cart2 = null;
@@ -20,29 +24,32 @@ export default function SeeCartModal({ addProduct }) {
         if (productIndex != -1) cart2[productIndex][1]++
         else cart2.push([addProduct, 1]);
     }
-    // localStorage.setItem(`rigCart${user.id}`, JSON.stringify(cart2));
     const [cart, setCart] = useState(cart2);
 
 
 
     const onClick = async (e) => {
         e.preventDefault();
-        closeModal()
+        dispatch(createOrderThunk(user.id,cart,total))
+        .then(()=>localStorage.removeItem(`rigCart${user.id}`))
+        .then(()=>history.push('/orders'))
+        .then(()=>closeModal())
     }
 
-    // useEffect(() => {
-    // }, [cart])
-
     useEffect(() => {
+        let newTotal = 0;
+        cart?.forEach(([prodId, quan])=> {
+            newTotal += (products[prodId].price * quan)
+        });
+        setTotal(newTotal)
         localStorage.setItem(`rigCart${user.id}`, JSON.stringify(cart));
+        if (!cart) localStorage.removeItem(`rigCart${user.id}`)
     }, [cart])
 
 
     return (
         <>
             {cart && cart.map(([productId, quantity],idx) => {
-                total += (products[productId].price * quantity)
-                // console.log(products[productId], productId)
                 return (
                     <div>
                         <h2>{products[productId].product_name}</h2>
@@ -51,13 +58,14 @@ export default function SeeCartModal({ addProduct }) {
                             let newCart = [...cart];
                             newCart[idx][1] = e.target.value;
                             if (newCart[idx][1] < 1) newCart.splice(idx,1)
+                            if (!newCart.length)newCart = null;
                             setCart(newCart);
                         }} /></p>
                     </div>
                 )
             })}
             <h2>Total: {Number.parseFloat(total).toFixed(2)}</h2>
-            <button onClick={onClick}>Checkout</button>
+            {cart && <button onClick={onClick}>Checkout</button>}
         </>
     )
 }

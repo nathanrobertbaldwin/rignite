@@ -39,12 +39,11 @@ class Order(db.Model):
             "status": self.status,
         }
 
-    def order_by_batch_id_to_dict(self):
+    def order_to_dict_pre_commit(self):
         return {
             # "id": self.id,
             "user_id": self.user_id,
             "product_id": self.product_id,
-            "order_product": self.order_product.product_details_to_dict(),
             "batch_id": self.batch_id,
             "quantity": self.quantity,
             "order_date": self.order_date,
