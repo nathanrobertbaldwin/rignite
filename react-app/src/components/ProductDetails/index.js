@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { getAllProductCategoriesThunk } from "../../store/categories";
 import { getAllProductsThunk } from "../../store/products";
 import { getAllOrdersThunk } from "../../store/orders";
+import { getUserReviewsThunk } from "../../store/reviews";
 import SeeCartModal from "../CartModal";
 import OpenModalButton from "../OpenModalButton";
 import Overview from "./Overview";
@@ -32,6 +33,7 @@ export default function ProductDetails() {
         await dispatch(getAllProductCategoriesThunk());
         await dispatch(getAllProductsThunk());
         await dispatch(getAllOrdersThunk());
+        await dispatch(getUserReviewsThunk());
       }
       fetchData();
     }

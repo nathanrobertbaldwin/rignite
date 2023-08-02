@@ -5,6 +5,7 @@ import { getAllProductCategoriesThunk } from "../../store/categories";
 import { getAllProductsThunk } from "../../store/products";
 import { getAllOrdersThunk } from "../../store/orders";
 import ProductCard from "../ProductCard";
+import { getUserReviewsThunk } from "../../store/reviews";
 
 export default function CategoryProducts({ category }) {
   const dispatch = useDispatch();
@@ -20,6 +21,7 @@ export default function CategoryProducts({ category }) {
         await dispatch(getAllProductCategoriesThunk());
         await dispatch(getAllProductsThunk());
         await dispatch(getAllOrdersThunk());
+        await dispatch(getUserReviewsThunk());
       }
       fetchData();
     }

@@ -4,7 +4,6 @@ import { useHistory } from 'react-router-dom'
 import { authenticate } from '../../store/session'
 import "./ManageUser.css"
 import { updateUser } from '../../store/session'
-import { NavLink } from "react-router-dom";
 
 function ManageUser() {
 
@@ -74,9 +73,8 @@ function ManageUser() {
 
             <div id='account-nav-sidebar'>
                 <button>My Info</button>
-                {/* ACCOUNT SETTINGS WILL BE A NAV LINK TO DELETE USER ROUTE */}
                 <button onClick={()=>history.push('/users/delete')}>Account Settings</button>
-                {/* ACCOUNT SETTINGS WILL BE A NAV LINK TO DELETE USER ROUTE */}
+                <button onClick={()=>history.push('/users/reviews')}>Manage Reviews</button>
             </div>
 
             <form onSubmit={handleSubmit}>

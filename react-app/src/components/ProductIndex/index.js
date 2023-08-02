@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { getAllProductCategoriesThunk } from "../../store/categories";
 import { getAllProductsThunk } from "../../store/products";
 import { getAllOrdersThunk } from "../../store/orders";
+import { getUserReviewsThunk } from "../../store/reviews";
 import { Link } from "react-router-dom";
 import ProductCard from "../ProductCard";
 
@@ -18,6 +19,7 @@ export default function ProductIndex() {
         await dispatch(getAllProductCategoriesThunk());
         await dispatch(getAllProductsThunk());
         await dispatch(getAllOrdersThunk());
+        await dispatch(getUserReviewsThunk());
       }
       fetchData();
     }

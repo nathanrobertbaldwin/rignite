@@ -6,6 +6,7 @@ import { getAllProductCategoriesThunk } from "../../store/categories";
 import { getAllProductsThunk } from "../../store/products";
 import OpenModalButton from "../OpenModalButton";
 import DeleteOrderModal from "./DeleteOrderModal";
+import { getUserReviewsThunk } from "../../store/reviews";
 import "./Orders.css"
 
 // ["pending", "in transit", "delivered"]
@@ -27,6 +28,7 @@ export default function Orders() {
             await dispatch(getAllProductCategoriesThunk());
             await dispatch(getAllProductsThunk());
             await dispatch(getAllOrdersThunk());
+            await dispatch(getUserReviewsThunk());
         }
     }, [dispatch]);
 
