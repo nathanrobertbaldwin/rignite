@@ -88,7 +88,7 @@ export default function ProductDetails() {
           <p id="product_details_product_description">{product.description}</p>
           <OpenModalButton
           buttonText="Add to cart"
-          modalComponent={<SeeCartModal/>}
+          modalComponent={<SeeCartModal addProduct={product.id}/>}
           />
         </div>
       </div>

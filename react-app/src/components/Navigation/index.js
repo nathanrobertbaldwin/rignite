@@ -31,7 +31,7 @@ function Navigation({ isLoaded }) {
       <OpenModalButton
           className="modal_button"
           buttonText="See your cart"
-          modalComponent={<SeeCartModal />}
+          modalComponent={<SeeCartModal addProduct={false}/>}
         />
       {isLoaded && (
         <li>
