@@ -10,6 +10,7 @@ def seed_orders():
         quantity=1,
         order_date="2023-07-20",
         status="pending",
+        total=100.00
     )
 
     order2 = Order(
@@ -19,6 +20,7 @@ def seed_orders():
         quantity=2,
         order_date="2023-07-20",
         status="pending",
+        total=100.00
     )
 
     order3 = Order(
@@ -28,6 +30,7 @@ def seed_orders():
         quantity=1,
         order_date="2023-07-20",
         status="pending",
+        total=100.00
     )
 
     order4 = Order(
@@ -37,6 +40,7 @@ def seed_orders():
         quantity=1,
         order_date="2023-07-23",
         status="pending",
+        total=100.90
     )
 
     order5 = Order(
@@ -46,6 +50,7 @@ def seed_orders():
         quantity=2,
         order_date="2023-07-23",
         status="pending",
+        total=100.90
     )
 
     order6 = Order(
@@ -55,6 +60,7 @@ def seed_orders():
         quantity=1,
         order_date="2023-07-23",
         status="pending",
+        total=100.90
     )
 
     order7 = Order(
@@ -64,6 +70,7 @@ def seed_orders():
         quantity=2,
         order_date="2023-07-26",
         status="pending",
+        total=100.99
     )
 
     order8 = Order(
@@ -73,6 +80,7 @@ def seed_orders():
         quantity=2,
         order_date="2023-07-26",
         status="pending",
+        total=100.99
     )
 
     order9 = Order(
@@ -82,6 +90,7 @@ def seed_orders():
         quantity=3,
         order_date="2023-07-28",
         status="pending",
+        total=100.99
     )
 
     order10 = Order(
@@ -91,6 +100,7 @@ def seed_orders():
         quantity=1,
         order_date="2023-07-29",
         status="pending",
+        total=100.99
     )
 
     db.session.add_all(

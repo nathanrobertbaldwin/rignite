@@ -1,7 +1,8 @@
 // Action strings.
 
 const GET_ALL_ORDERS = "get_orders/GET";
-const DELETE_ORDER = "delete_orders/DELETE"
+const DELETE_ORDER = "delete_orders/DELETE";
+const ADD_ORDER = 'add_order/POST'
 
 // Actions
 
@@ -13,6 +14,11 @@ const getAllOrders = (orders) => ({
 const deleteOrder = (batchId) => ({
   type: DELETE_ORDER,
   data: batchId
+})
+
+const addOrder = (order) => ({
+  type: ADD_ORDER,
+  order
 })
 
 // Thunks
@@ -47,7 +53,7 @@ export const editOrderStatusFetch = (batchId, status) => async () => {
 
 }
 
-//REMOVE_SPOT
+//REMOVE_ORDER
 export const deleteOrderThunk = (batchId) => async (dispatch) => {
   const response = await fetch(`/api/orders/${batchId}`, {
       method: 'DELETE',
@@ -60,6 +66,29 @@ export const deleteOrderThunk = (batchId) => async (dispatch) => {
       return message
   }
 }
+
+
+//CREATE_ORDER
+export const createOrderThunk = (uID, cart, total) => async (dispatch) =>{
+  let todayx = new Date();
+  let date = todayx.toISOString().slice(0,10)
+
+  const res = await fetch('/api/orders/', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      user: uID,
+      cart,
+      total,
+      date
+    })
+  })
+  if(res.ok){
+    const order = await res.json();
+    dispatch(addOrder(order));
+  }
+}
+
 
 // Orders reducer
 
@@ -76,10 +105,15 @@ export default function reducer(state = initialState, action) {
     }
     case DELETE_ORDER: {
       const newState = {...state}
-      console.log('before delete', newState, action.data)
+      // console.log('before delete', newState, action.data)
       delete newState[action.data]
-      console.log('after delete', newState)
+      // console.log('after delete', newState)
       return newState
+    }
+    case ADD_ORDER: {
+      const newState = {...state};
+      newState[action.order[0].batch_id] = action.order;
+      return newState;
     }
     default: {
       return state;
