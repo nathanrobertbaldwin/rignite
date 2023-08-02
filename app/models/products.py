@@ -1,6 +1,7 @@
 from .db import db, environment, SCHEMA, add_prefix_for_prod
 from .orders import Order
 
+product_status = ['active', 'sold out', 'deactivated']
 
 class Product(db.Model):
     __tablename__ = "products"
@@ -19,6 +20,7 @@ class Product(db.Model):
     color = db.Column(db.String(50), nullable=True)
     description = db.Column(db.Text, nullable=False)
     specs = db.Column(db.Text, nullable=False)
+    status = db.Column(db.Enum(*product_status, name='status_enum2'), nullable=False)
 
     product_orders = db.relationship("Order")
 

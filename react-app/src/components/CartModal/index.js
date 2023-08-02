@@ -30,7 +30,7 @@ export default function SeeCartModal({ addProduct }) {
 
     const onClick = async (e) => {
         e.preventDefault();
-        dispatch(createOrderThunk(user.id,cart,total))
+        dispatch(createOrderThunk(user.id,cart,Number.parseFloat(total).toFixed(2)))
         .then(()=>localStorage.removeItem(`rigCart${user.id}`))
         .then(()=>history.push('/orders'))
         .then(()=>closeModal())

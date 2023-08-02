@@ -16,8 +16,13 @@ def allUserOrders():
 @login_required
 def addNewOrder():
     req = request.get_json()
-    print(req)
     batch = str(uuid.uuid4())
+
+    existingBatchIds = Order.query.filter(Order.batch_id == batch)
+    while len([order.order_details_to_dict() for order in existingBatchIds]) > 0:
+        batch = str(uuid.uuid4())
+        existingBatchIds = Order.query.filter(Order.batch_id == batch)
+
     arr = []
     for order in req['cart']:
         newOrder = Order(
@@ -26,9 +31,9 @@ def addNewOrder():
             batch_id = batch,
             quantity = order[1],
             order_date = req['date'],
-            status = "pending"
+            status = "pending",
+            total = req['total']
         )
-        print(newOrder)
         db.session.add(newOrder)
         db.session.commit()
         arr.append(newOrder.order_details_to_dict())

@@ -10,16 +10,16 @@ class Order(db.Model):
     if environment == "production":
         __table_args__ = {"schema": SCHEMA}
 
-    # id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("users.id")), primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("users.id")))
     product_id = db.Column(
-        db.Integer, db.ForeignKey(add_prefix_for_prod("products.id")),
-        primary_key=True
+        db.Integer, db.ForeignKey(add_prefix_for_prod("products.id"))
     )
-    batch_id = db.Column(db.String(100), nullable=False, unique=True)
+    batch_id = db.Column(db.String(100), nullable=False)
     quantity = db.Column(db.Integer, nullable=False)
     order_date = db.Column(db.String(50), nullable=False)
     status = db.Column(db.Enum(*order_status, name="status_enum"), nullable=False)
+    total = db.Column(db.Numeric(scale=2), nullable=False)
 
     order_product = db.relationship("Product")
 
