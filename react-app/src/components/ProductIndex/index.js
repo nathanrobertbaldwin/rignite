@@ -6,6 +6,7 @@ import { getAllOrdersThunk } from "../../store/orders";
 import { getUserReviewsThunk } from "../../store/reviews";
 import { Link } from "react-router-dom";
 import ProductCard from "../ProductCard";
+import './ProductIndex.css'
 
 export default function ProductIndex() {
   const dispatch = useDispatch();

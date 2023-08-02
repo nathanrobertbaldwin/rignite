@@ -1,10 +1,12 @@
 #all-product-container{
-    width: 1025px;
     display: grid;
+    place-items: center;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-    margin: auto;
+    padding: 0 10%;
+}
 
+#all-product-container>a{
+    text-decoration: none;
 }
 
 .all-product-image{

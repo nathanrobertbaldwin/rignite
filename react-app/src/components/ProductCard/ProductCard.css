@@ -1,0 +1,23 @@
+#product_card_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 300px;
+    text-decoration: none;
+}
+
+#product_card_container>a{
+    text-decoration: none;
+}
+
+#product_name{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: rgb(224, 224, 224);
+}
+
+#product_name>a{
+    text-decoration: none;
+}
