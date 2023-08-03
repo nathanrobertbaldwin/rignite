@@ -12,7 +12,7 @@ import "./Orders.css";
 // ["pending", "in transit", "delivered"]
 
 export default function Orders() {
-    const user = useSelector(state=>state.session.user);
+    const user = useSelector(state => state.session.user);
     const history = useHistory();
     if (!user) history.push('/');
     let [activePage, setActivePage] = useState('pending');
@@ -61,9 +61,9 @@ export default function Orders() {
         <>
             <h1 id="orders-title">Orders</h1>
             <div id="order-status-container">
-                <h3 onClick={() => setActivePage('pending')}>Pending</h3>
-                <h3 onClick={() => setActivePage('in transit')}>In-Transit</h3>
-                <h3 onClick={() => setActivePage('delivered')}>Delivered</h3>
+                <h3 onClick={() => setActivePage('pending')} id={activePage==='pending'?'activePage':''}>Pending</h3>
+                <h3 onClick={() => setActivePage('in transit')} id={activePage==='in transit'?'activePage':''}>In-Transit</h3>
+                <h3 onClick={() => setActivePage('delivered')} id={activePage==='delivered'?'activePage':''}>Delivered</h3>
             </div>
             <div id='orders'>
                 {Object.keys(filteredOrders).length ? (
@@ -71,19 +71,26 @@ export default function Orders() {
                         .map(batch => {
                             const order = filteredOrders[batch][0]
                             return (
-                                <div>
-                                    <p>Order Date: {order.order_date}</p>
-                                    <p>Order #: {batch}</p>
+                                <div className='ordCard'>
+                                    <div className='ordDets'>
+                                        <p>Order Date: {order.order_date}</p>
+                                        <p>Order #: {batch}</p>
+                                    </div>
                                     {filteredOrders[batch].map(product => {
                                         return (
-                                            <div onClick={()=>history.push(`/products/${product.product_id}`)}>
+                                            <div className='prodCard' onClick={() => history.push(`/products/${product.product_id}`)}>
                                                 <img src={product.order_product.product_photos[0].url} />
-                                                <p>{product.order_product.product_name}</p>
-                                                <p>{product.quantity}</p>
+                                                <div className='prodDets'>
+                                                    <h2>{product.order_product.product_name}</h2>
+                                                    <p>Quantity:{product.quantity}</p>
+                                                </div>
                                             </div>
                                         )
                                     })}
-                                    <OpenModalButton buttonText={"Cancel Order"} modalComponent={<DeleteOrderModal batch={batch} />} />
+                                    <h3>Total: ${order.total}</h3>
+                                    {activePage != 'delivered' && <div className='ordCancel'>
+                                        <OpenModalButton buttonText={"Cancel Order"} modalComponent={<DeleteOrderModal batch={batch} />} />
+                                    </div>}
                                 </div>
                             )
                         })
