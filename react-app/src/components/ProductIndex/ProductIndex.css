@@ -1,0 +1,20 @@
+#all-product-container{
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 10%;
+}
+
+#all-product-container>a{
+    text-decoration: none;
+}
+
+.all-product-image{
+    aspect-ratio: 1/1;
+    height: 300px;
+}
+
+.product-index-link {
+    color: white;
+    text-decoration: none;
+}

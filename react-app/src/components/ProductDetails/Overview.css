@@ -1,0 +1,34 @@
+#overview-description-container{
+    display: flex;
+    gap: 20px;
+    padding: 0 10%;
+}
+
+.overview-product-name{
+    flex-basis: 50%;
+}
+
+.overview-description{
+    flex-basis: 50%;
+}
+
+#overview-primary-image{
+    padding: 0 10%;
+    max-width: 80%;
+}
+
+#overview-secondary-image{
+    padding: 0 10%;
+    max-width: 80%;
+}
+
+#other-photos-container{
+    display: flex;
+    padding: 0 10%;
+    gap: 5%;
+    padding-top: 10px;
+}
+
+#overview-other-images{
+
+}

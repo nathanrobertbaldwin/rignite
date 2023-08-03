@@ -1,0 +1,22 @@
+#category_card_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 300px;
+    text-decoration: none;
+}
+
+#category_card_image_container>{
+    width: 100%
+}
+
+#category_image{
+    min-width: 400px;
+    width: 100%;
+}
+
+#category_name{
+    text-decoration: none;
+    color: rgb(224, 224, 224)
+}

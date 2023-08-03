@@ -8,6 +8,13 @@ function SignupFormModal() {
 	const dispatch = useDispatch();
 	const [email, setEmail] = useState("");
 	const [username, setUsername] = useState("");
+	const [firstname, setFirstname] = useState("");
+	const [lastname, setLastname] = useState("");
+	const [address, setAddress] = useState("");
+	const [city, setCity] = useState("");
+	const [state, setState] = useState("");
+	const [zipcode, setZipcode] = useState("");
+	const [admin, setAdmin] = useState(false);
 	const [password, setPassword] = useState("");
 	const [confirmPassword, setConfirmPassword] = useState("");
 	const [errors, setErrors] = useState([]);
@@ -16,7 +23,14 @@ function SignupFormModal() {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		if (password === confirmPassword) {
-			const data = await dispatch(signUp(username, email, password));
+
+			if(admin) {
+				setAdmin("True")
+			} else {
+				setAdmin("False")
+			}
+
+			const data = await dispatch(signUp(username, email, firstname, lastname, address, city, state, zipcode, admin, password));
 			if (data) {
 				setErrors(data);
 			} else {
@@ -55,6 +69,77 @@ function SignupFormModal() {
 						onChange={(e) => setUsername(e.target.value)}
 						required
 					/>
+				</label>
+				<label>
+					Firstname
+					<input
+						type="text"
+						value={firstname}
+						onChange={(e) => setFirstname(e.target.value)}
+						required
+					/>
+				</label>
+				<label>
+					Lastname
+					<input
+						type="text"
+						value={lastname}
+						onChange={(e) => setLastname(e.target.value)}
+						required
+					/>
+				</label>
+				<label>
+					Address
+					<input
+						type="text"
+						value={address}
+						onChange={(e) => setAddress(e.target.value)}
+						required
+					/>
+				</label>
+				<label>
+					City
+					<input
+						type="text"
+						value={city}
+						onChange={(e) => setCity(e.target.value)}
+						required
+					/>
+				</label>
+				<label>
+					State
+					<input
+						type="text"
+						value={state}
+						onChange={(e) => setState(e.target.value)}
+						required
+					/>
+				</label>
+				<label>
+					Zipcode
+					<input
+						type="number"
+						value={zipcode}
+						onChange={(e) => setZipcode(e.target.value)}
+						required
+					/>
+				</label>
+				<label>
+					Are you an admin?
+					<input
+						type="radio"
+						value={true}
+						name="yes-no"
+						onChange={(e) => setAdmin(e.target.value)}
+						required
+					/> Yes
+					<input
+						type="radio"
+						value={false}
+						name="yes-no"
+						onChange={(e) => setAdmin(e.target.value)}
+						required
+					/> No
 				</label>
 				<label>
 					Password

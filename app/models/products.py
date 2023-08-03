@@ -1,6 +1,7 @@
 from .db import db, environment, SCHEMA, add_prefix_for_prod
 from .orders import Order
 
+product_status = ['active', 'sold out', 'deactivated']
 
 class Product(db.Model):
     __tablename__ = "products"
@@ -19,10 +20,13 @@ class Product(db.Model):
     color = db.Column(db.String(50), nullable=True)
     description = db.Column(db.Text, nullable=False)
     specs = db.Column(db.Text, nullable=False)
+    status = db.Column(db.Enum(*product_status, name='status_enum2'), nullable=False)
 
     product_orders = db.relationship("Order")
 
     product_reviews = db.relationship("Review", backref="product")
+
+    product_photos = db.relationship("Photo", backref="product")
 
     def product_details_to_dict(self):
         return {
@@ -35,11 +39,13 @@ class Product(db.Model):
             "color": self.color,
             "description": self.description,
             "specs": self.specs,
-        }
-
-    def reviews_for_product(self):
-        return {
-            "id": self.id,
-            "product_name": self.product_name,
+            "product_photos": [photo.to_dict() for photo in self.product_photos],
             "product_reviews": [review.to_dict() for review in self.product_reviews],
         }
+
+    # def reviews_for_product(self):
+    #     return {
+    #         "id": self.id,
+    #         "product_name": self.product_name,
+    #         "product_reviews": [review.to_dict() for review in self.product_reviews],
+    #     }

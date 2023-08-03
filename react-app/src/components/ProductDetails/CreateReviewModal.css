@@ -1,0 +1,64 @@
+
+
+/* STAR CONTAINER */
+
+#star-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.stars {
+    display: flex;
+    grid-gap: 5px;
+    font-size: 24px;
+}
+
+.activestar {
+    color: gold;
+}
+
+#highlight {
+    color: gold;
+}
+
+.star-text {
+    font-size: 24px;
+}
+
+
+/* TEXT AREA */
+
+.review-textarea {
+    width: 700px;
+    height: 150px;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+#photo-url-container {
+    margin: 20px 0px;
+    display: flex;
+    gap: 10px;
+
+}
+
+#photo-url-container > input {
+    width: 60%;
+}
+
+#review-button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.review-submit-button {
+    border: 1px solid white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.review-submit-button:hover {
+    background-color: rgb(206, 206, 206);
+}

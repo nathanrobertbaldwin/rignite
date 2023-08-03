@@ -51,6 +51,7 @@ class User(db.Model, UserMixin):
             "city": self.city,
             "state": self.state,
             "zip_code": self.zip_code,
+            "is_admin": self.is_admin,
         }
 
     # for eager loading all customer data with associated tables.

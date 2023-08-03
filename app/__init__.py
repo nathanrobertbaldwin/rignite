@@ -9,6 +9,8 @@ from .models import db, User, Product, Review, Photo, Order
 from .api.user_routes import user_routes
 from .api.auth_routes import auth_routes
 from .api.products import products
+from .api.categories import categories
+from .api.orders import orders
 from .api.reviews import reviews
 
 from .seeds import seed_commands
@@ -33,7 +35,10 @@ app.config.from_object(Config)
 app.register_blueprint(user_routes, url_prefix="/api/users")
 app.register_blueprint(auth_routes, url_prefix="/api/auth")
 app.register_blueprint(products, url_prefix="/api/products")
+app.register_blueprint(categories, url_prefix="/api/categories")
+app.register_blueprint(orders, url_prefix="/api/orders")
 app.register_blueprint(reviews, url_prefix="/api/reviews")
+
 db.init_app(app)
 Migrate(app, db)
 
@@ -48,46 +53,46 @@ CORS(app)
 # Well.........
 
 
-@app.route("/6")
-def test6():
-    # ========= Get all users who aren't admins =========
-    admins = User.query.filter(User.is_admin == True)
-    return [admin.admins_query_all_to_dict() for admin in admins]
+# @app.route("/6")
+# def test6():
+#     # ========= Get all users who aren't admins =========
+#     admins = User.query.filter(User.is_admin == True)
+#     return [admin.admins_query_all_to_dict() for admin in admins]
 
 
-@app.route("/1")
-def test1():
-    # ========= Get all users who aren't admins =========
-    customers = User.query.filter(User.is_admin == False)
-    return [customer.customers_query_all_to_dict() for customer in customers]
+# @app.route("/1")
+# def test1():
+#     # ========= Get all users who aren't admins =========
+#     customers = User.query.filter(User.is_admin == False)
+#     return [customer.customers_query_all_to_dict() for customer in customers]
 
 
-@app.route("/2")
-def test2():
-    # ========= Get details for all orders =========
-    orders = Order.query.all()
-    return [order.order_details_to_dict() for order in orders]
+# @app.route("/2")
+# def test2():
+#     # ========= Get details for all orders =========
+#     orders = Order.query.all()
+#     return [order.order_details_to_dict() for order in orders]
 
 
-@app.route("/3")
-def test3():
-    # ========= Get all orders in an order batch =========
-    orders = Order.query.filter(Order.batch_id == "0aj9fa09jdfa0f9dj")
-    return [order.order_by_batch_id_to_dict() for order in orders]
+# @app.route("/3")
+# def test3():
+#     # ========= Get all orders in an order batch =========
+#     orders = Order.query.filter(Order.batch_id == "0aj9fa09jdfa0f9dj")
+#     return [order.order_by_batch_id_to_dict() for order in orders]
 
 
-@app.route("/4")
-def test4():
-    # ========= Get all products =========
-    products = Product.query.all()
-    return [product.product_details_to_dict() for product in products]
+# @app.route("/4")
+# def test4():
+#     # ========= Get all products =========
+#     products = Product.query.all()
+#     return [product.product_details_to_dict() for product in products]
 
 
-@app.route("/5")
-def test5():
-    # ========= Get all reviews on a product by product.id =========
-    product = Product.query.get(1)
-    return product.reviews_for_product()
+# @app.route("/5")
+# def test5():
+#     # ========= Get all reviews on a product by product.id =========
+#     product = Product.query.get(1)
+#     return product.reviews_for_product()
 
 
 @app.before_request
