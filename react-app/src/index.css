@@ -1,13 +1,14 @@
 /* TODO Add site wide styles */
 
 html {
-    background-color: rgb(36, 34, 34);
+    background-color: rgb(5, 5, 5);
     margin: 0px !important;
     padding: 0px !important;
     font-family: "Gordita", Helvetica, Arial, Verdana, sans-serif;
 }
 
 body {
+    color: white;
     margin: 0px !important;
     padding: 0px !important;
 }
@@ -112,4 +113,15 @@ a {
 
 a:hover {
     color: lightblue   
+}
+
+button {
+    cursor: pointer;
+    background-color: #f44a07;
+    font-size: x-large;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    /* background-color: #FF9C75; */
+    /* visibility: hidden; */
 }
