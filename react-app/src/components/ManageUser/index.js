@@ -72,14 +72,16 @@ function ManageUser() {
         <div id='manage-account-main-container'>
 
             <div id='account-nav-sidebar'>
-                <button>My Info</button>
-                <button onClick={()=>history.push('/users/delete')}>Account Settings</button>
-                <button onClick={()=>history.push('/users/reviews')}>Manage Reviews</button>
+                <h2>Options</h2>
+                <button className='account-nav-buttons'> My Info</button>
+                <button onClick={()=>history.push('/users/delete')} className='account-nav-buttons'>Account Settings</button>
+                <button onClick={()=>history.push('/users/reviews')} className='account-nav-buttons'>Manage Reviews</button>
             </div>
 
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} id='change-account-info-form'>
                 <div id='account-basic-info-section'>
-                    <div>
+                    <h2 className="change-account-form-title">Basic</h2>
+                    <div id='update-username-container'>
                         <label htmlFor="username">Username</label>
                         <input
                             id='username'
@@ -90,7 +92,7 @@ function ManageUser() {
                         />
                         {formErrors.username && <span className='form-errors'>{formErrors.username[0]}</span>}
                     </div>
-                    <div>
+                    <div id='update-firstname-container'>
                         <label htmlFor="firstName">First Name</label>
                         <input
                             id='firstName'
@@ -101,7 +103,7 @@ function ManageUser() {
                         />
                         {formErrors.first_name && <span className='form-errors'>{formErrors.first_name[0]}</span>}
                     </div>
-                    <div>
+                    <div id='update-lastname-container'>
                         <label htmlFor="lastName">Last Name</label>
                         <input
                             id='lastName'
@@ -115,7 +117,8 @@ function ManageUser() {
                 </div>
 
                 <div id='account-auth-section'>
-                    <div>
+                    <h2 className="change-account-form-title">Email & Password</h2>
+                    <div id='update-email-container'>
                         <label htmlFor="email">Email</label>
                         <input
                             id='email'
@@ -126,7 +129,7 @@ function ManageUser() {
                         />
                         {formErrors.email && <span className='form-errors'>{formErrors.email[0]}</span>}
                     </div>
-                    <div>
+                    <div id='update-password-container'>
                         <label htmlFor="password">Password</label>
                         <input
                             id='password'
@@ -140,7 +143,8 @@ function ManageUser() {
                 </div>
 
                 <div id='account-shipping-section'>
-                    <div>
+                    <h2 className="change-account-form-title">Shipping Info</h2>
+                    <div id='update-address-container'>
                         <label htmlFor="address">Address</label>
                         <input
                             id='address'
@@ -151,7 +155,7 @@ function ManageUser() {
                         />
                         {formErrors.address && <span className='form-errors'>{formErrors.address[0]}</span>}
                     </div>
-                    <div>
+                    <div id='update-city-container'>
                         <label htmlFor="city">City</label>
                         <input
                             id='city'
@@ -162,7 +166,7 @@ function ManageUser() {
                         />
                         {formErrors.city && <span className='form-errors'>{formErrors.city[0]}</span>}
                     </div>
-                    <div>
+                    <div id='update-state-container'>
                         <label htmlFor="state">State</label>
                         <input
                             id='state'
@@ -173,7 +177,7 @@ function ManageUser() {
                         />
                         {formErrors.state && <span className='form-errors'>{formErrors.state[0]}</span>}
                     </div>
-                    <div>
+                    <div id='update-zipcode-container'>
                         <label htmlFor="zipcode">Zip Code</label>
                         <input
                             id='zipcode'
@@ -186,7 +190,7 @@ function ManageUser() {
                     </div>
                 </div>
 
-                <button type='submit'>Save</button>
+                <button type='submit' id='change-account-details-button'>Save</button>
 
             </form>
         </div>
