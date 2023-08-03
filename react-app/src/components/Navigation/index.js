@@ -11,25 +11,25 @@ function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
   return (
     <ul className="navi-icons">
-      <li>
+      <li id='home-link'>
         <NavLink exact to="/">
-          Home
+          <h2>Home</h2>
         </NavLink>
       </li>
-      <li>
+      <li id='shop-link'>
         <NavLink exact to="/products/all">
-          Shop
+          <h2>Shop</h2>
         </NavLink>
       </li>
       {sessionUser?.is_admin && (
         <OpenModalButton
-          className="modal_button"
+          className="product_modal_button"
           buttonText="Add A Product"
           modalComponent={<AddProductModal />}
         />
       )}
       <OpenModalButton
-          className="modal_button"
+          className="see-cart-modal"
           buttonText="See your cart"
           modalComponent={<SeeCartModal addProduct={false}/>}
         />

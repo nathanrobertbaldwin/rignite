@@ -110,4 +110,25 @@
   align-items: center;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-weight: bold;
+  list-style: none;
+}
+
+
+#shop-link{
+  padding-right: 75%;
+}
+
+#shop-link>a{
+  color: white;
+  text-decoration: none;
+}
+
+#home-link>a{
+  color: white;
+  text-decoration: none;
+}
+
+.see-cart-modal>button{
+  background-color: transparent;
+  border: none;
 }

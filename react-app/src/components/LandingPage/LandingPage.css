@@ -1,4 +1,24 @@
-#catagories {
+#spots_index{
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 10%;
+
+}
+
+@media (max-width:  1562px) {
+    #spots_index {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 1067px) {
+    #spots_index {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* #catagories {
     max-width: 1320px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -47,4 +67,4 @@
             "c c d d"
             ". e e .";
     }
-}
+} */
