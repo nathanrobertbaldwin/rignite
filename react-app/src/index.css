@@ -1,8 +1,16 @@
 /* TODO Add site wide styles */
 
+
+
 body {
     background-color: rgb(24, 26, 27);
     color: white;
+    font-family: "Gordita", Helvetica, Arial, Verdana, sans-serif;
+}
+
+div {
+    margin: 0px;
+    padding: 0px;
 }
 
 #modal-content {
