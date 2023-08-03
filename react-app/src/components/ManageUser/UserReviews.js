@@ -10,11 +10,13 @@ import EditReviewModal from "./EditReviewModal";
 import DeleteReviewModal from "./DeleteReviewModal";
 
 function UserReviews() {
+    const user = useSelector(state=>state.session.user);
+    const history = useHistory();
+    if (!user) history.push('/')
 
     const userReviews = useSelector((state) => state.reviews)
     const products = useSelector((state) => state.products)
 
-    const history = useHistory()
     const dispatch = useDispatch()
 
     useEffect(() => {

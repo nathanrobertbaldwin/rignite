@@ -5,7 +5,7 @@ import "./Review.css"
 
 function Review({product, user}) {
 
-    const doesUserHaveReview = product.product_reviews.find((review) => review.user.id === user.id)
+    const doesUserHaveReview = product.product_reviews.find((review) => review.user.id === user?.id)
 
     const productSumRating = product.product_reviews.reduce( (total, review) => total + review.rating, 0);
     let productAverageRating = (productSumRating / product.product_reviews.length).toFixed(1)
@@ -26,7 +26,7 @@ function Review({product, user}) {
     return (
         <div id="review-component-main-container">
             <div id="create-review-modal-button-container">
-                {doesUserHaveReview === undefined
+                {doesUserHaveReview === undefined && user
                 ? <OpenModalButton buttonText={"Post Review"} modalComponent={<CreateReviewModal user={user} productId={product.id} />} />
                 : null}
             </div>
