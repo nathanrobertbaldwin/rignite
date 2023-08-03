@@ -9,6 +9,22 @@
 
 }
 
+#create-review-modal-button-container {
+    position: absolute;
+    left: 5%;
+}
+
+#create-review-modal-button-container > button {
+    cursor: pointer;
+    background-color: #F0F0F0;
+    border: none;
+    height: 25px;
+}
+
+#create-review-modal-button-container > button:hover {
+    background-color: rgb(206, 206, 206);
+}
+
 #product-review-details-overview-container {
     display: flex;
     align-items: center;
