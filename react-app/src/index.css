@@ -3,7 +3,8 @@
 
 
 body {
-    background-color: rgb(24, 26, 27);
+    /* background-color: rgb(24, 26, 27); */
+    background-color: rgb(5, 5, 5);
     color: white;
     font-family: "Gordita", Helvetica, Arial, Verdana, sans-serif;
 }
@@ -73,4 +74,15 @@ div {
 img {
     max-width: 400px;
     aspect-ratio: 3/2;
+}
+
+button {
+    cursor: pointer;
+    background-color: #f44a07;
+    font-size: x-large;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    /* background-color: #FF9C75; */
+    /* visibility: hidden; */
 }

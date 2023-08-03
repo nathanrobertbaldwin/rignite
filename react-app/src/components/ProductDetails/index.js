@@ -19,6 +19,8 @@ export default function ProductDetails() {
 
   const [view, setView] = useState("overview")
 
+  const [activeIndex, setActiveIndex] = useState(0);
+
   const dispatch = useDispatch();
   let { id } = useParams();
   id = parseInt(id);
@@ -40,65 +42,61 @@ export default function ProductDetails() {
   }, [dispatch]);
 
   const photos = product?.product_photos;
-  const reviews = product?.product_reviews;
 
   if (!product) return <></>;
 
-  const primaryPhoto = photos[0].url;
-  const otherPhotos = photos.slice(1);
-  const reviewsCount = reviews.length;
-  console.log('da product photos', product.product_photos)
-
-  const avgStarRating = reviews.avgStarRating
-    ? product.avgStarRating.toFixed(2)
-    : "New!";
 
   const handleView = (view) => {
     setView(view);
   };
 
+  const handleNextImg = (offset) => {
+
+    let newIndex = activeIndex + offset;
+    if (newIndex < 0) newIndex = photos.length - 1;
+    if (newIndex >= photos.length) newIndex = 0;
+
+    setActiveIndex(newIndex);
+  };
+
   return (
     <div id="product_details">
-      {/* <h2>
-        {product.address}, {product.state}, {product.country}
-      </h2> */}
+
       <div id='product_details_main_content_container'>
-        <div id="product_details_images_container">
-          <div id="product_details_main_image">
-            <img
-              alt="product"
-              id="product_details_preview_image"
-              src={primaryPhoto}
-            />
-          </div>
-          <div id="product_details_other_images_container">
-            {otherPhotos.map((image) => {
-              return (
+
+      <div className="carousel">
+          <button onClick={() => handleNextImg(-1)} className="carousel-button prev">&#8592;</button>
+          <button onClick={() => handleNextImg(1)} className="carousel-button next">&#8594;</button>
+          <ul>
+            {photos.map((image, index) => (
+              <li className="slide" key={image.id} style={{ opacity: index === activeIndex ? 1 : 0 }}>
                 <img
-                  alt=""
-                  key={image.id}
-                  className="product_details_other_images"
+                  alt={image.id}
                   src={image.url}
                 />
-              );
-            })}
-          </div>
+              </li>
+            ))}
+          </ul>
         </div>
+
         <div id='product_details_product_main_info'>
           <h3>{`${product.product_name}`}</h3>
-          <h4>{`$${product.price} / night `}</h4>
+          <h4>{`$${product.price}`}</h4>
           <p id="product_details_product_description">{product.description}</p>
           <OpenModalButton
           buttonText="Add to cart"
           modalComponent={<SeeCartModal addProduct={product.id}/>}
           />
         </div>
+
       </div>
-      <div id="switch-view-container">
-        <button onClick={() => handleView("overview")}>Overview</button>
-        <button onClick={() => handleView("details")}>Details</button>
-        <button onClick={() => handleView("reviews")}>Reviews</button>
-      </div>
+      <hr className='hrtest'/>
+        <div id="switch-view-container">
+          <button onClick={() => handleView("overview")}>Overview</button>
+          <button onClick={() => handleView("details")}>Details</button>
+          <button onClick={() => handleView("reviews")}>Reviews</button>
+        </div>
+      <hr className='hrtest2'/>
       {view === "overview" && <Overview product={product} />}
       {view === "details" && <Detail product={product} />}
       {view === "reviews" && <Review product={product} user={user} />}
