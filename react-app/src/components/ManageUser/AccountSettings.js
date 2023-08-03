@@ -1,9 +1,12 @@
 import { useHistory } from "react-router-dom";
 import OpenModalButton from "../OpenModalButton";
 import DeleteAccountModal from "./DeleteAccountModal";
+import { useSelector } from "react-redux";
 
 function AccountSettings() {
+    const user = useSelector(state=>state.session.user);
     const history = useHistory();
+    if (!user) history.push('/')
     return (
         <div id='manage-account-main-container'>
 

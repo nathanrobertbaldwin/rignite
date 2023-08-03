@@ -28,11 +28,11 @@ function Navigation({ isLoaded }) {
           modalComponent={<AddProductModal />}
         />
       )}
-      <OpenModalButton
+      {sessionUser && <OpenModalButton
           className="see-cart-modal"
           buttonText="See your cart"
           modalComponent={<SeeCartModal addProduct={false}/>}
-        />
+        />}
       {isLoaded && (
         <li>
           <ProfileButton user={sessionUser} />

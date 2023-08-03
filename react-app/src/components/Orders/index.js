@@ -12,8 +12,10 @@ import "./Orders.css"
 // ["pending", "in transit", "delivered"]
 
 export default function Orders() {
-    let [activePage, setActivePage] = useState('pending');
+    const user = useSelector(state=>state.session.user);
     const history = useHistory();
+    if (!user) history.push('/')
+    let [activePage, setActivePage] = useState('pending');
     const dispatch = useDispatch();
     const orders = useSelector(state => state.orders);
 
