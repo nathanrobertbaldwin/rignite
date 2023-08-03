@@ -2,11 +2,15 @@
   display: none
 }
 
-#navBar {
+
+#nav_links_container{
+  height: 75px;
+  background-color: rgb(22, 22, 22);
+  position: sticky;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid lightgray;
+  justify-content: center;
+  border-bottom: 1px solid darkgrey;
 }
 
 #loginButtons>button {
@@ -22,10 +26,6 @@
   background-color: rgb(24, 26, 27);
 }
 
-#logo {
-  height: 75px;
-}
-
 #userButtons {
   display: flex;
   align-items: center;
@@ -34,7 +34,6 @@
 #userButtons>a {
   margin-right: 20px;
   font-size: large;
-  text-decoration: none;
 }
 
 #profileDrop {
@@ -84,18 +83,20 @@
   margin-right: 4px;
   /* padding-left: -10px; */
 }
+
 #userButtons>a{
   color: rgb(245, 160, 85);
 }
+
 #dropNavs{
   display: flex;
   flex-direction: column;
   padding-top: 0px;
   border-top: 1px solid;
-  border-color: rgb(140, 130, 115);
   margin-left: 4px;
   margin-right: 4px;
 }
+
 #dropNavs>a{
   color: white;
   margin-top: 10px;
@@ -105,17 +106,14 @@
 .navi-icons {
   display: flex;
   justify-content: space-between;
-  border-bottom: 2px solid grey;
-  padding-bottom: 20px;
+  gap: 2em;
   align-items: center;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  font-weight: bold;
-  list-style: none;
+  margin: 0px 0px;
+  width: 1700px;
 }
 
-
 #shop-link{
-  padding-right: 75%;
+  padding-right: 70%;
 }
 
 #shop-link>a{
