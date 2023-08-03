@@ -56,16 +56,6 @@ function EditReviewModal({reviewId, reviewData}) {
         <div id="review-modal-main-container">
             <form onSubmit={handleEditReviewSubmit}>
 
-                <div>
-                    <textarea
-                        className='review-textarea'
-                        value={reviewText}
-                        onChange={(e) => setReviewText(e.target.value)}
-                        placeholder='What did you think of this product?'
-                    />
-                    {formErrors.review && <span className='form-errors'>{formErrors.review}</span>}
-                </div>
-
                 <div id="star-container">
                     <div className="stars">
                         <FaStar className={`single-star ${rating >= 1 ? "activestar" : ""}`} id={highlight >= 1 ? "highlight" : ""} value={rating}
@@ -88,15 +78,26 @@ function EditReviewModal({reviewId, reviewData}) {
                 </div>
 
                 <div>
+                    <textarea
+                        className='review-textarea'
+                        value={reviewText}
+                        onChange={(e) => setReviewText(e.target.value)}
+                        placeholder='Please take a moment to write a review and rate this product...'
+                    />
+                </div>
+                    {formErrors.review && <span className='form-errors'>{formErrors.review}</span>}
+
+
+                <div id='photo-url-container'>
                     <label htmlFor="photo-url">Review Image File</label>
                     <input
                         id='photo-url'
                         type='text'
                         value={photoUrl}
                         onChange={(e) => setPhotoUrl(e.target.value)}
-                        placeholder='Attach Review Image Url'
+                        placeholder='Feel free to include an image to support your review...'
                     />
-                    {formErrors.username && <span className='form-errors'>{formErrors.username[0]}</span>}
+                    {/* {formErrors.username && <span className='form-errors'>{formErrors.username[0]}</span>} */}
                 </div>
 
                 <div id="review-button-container">
