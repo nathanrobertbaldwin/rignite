@@ -42,13 +42,13 @@ function UserReviews() {
 
             <div id="manage-reviews-main-container">
                 {Object.values(userReviews)?.map((review) => {
-                    return <div key={review.id}>
+                    return <div key={review.id} className="single-user-review">
                         <h3>{products[review.product_id].product_name}</h3>
                         <p>{review.review}</p>
                         <div id='manage-reviews-buttons'>
                             <button onClick={() => history.push(`/products/${review.product_id}`)}>See Product Page</button>
-                            <OpenModalButton buttonText={"Edit Review"} modalComponent={<EditReviewModal reviewData={review} reviewId={review.id} />} />
-                            <OpenModalButton buttonText={"Delete Review"} modalComponent={<DeleteReviewModal productId={review.product_id} reviewId={review.id} />} />
+                            <OpenModalButton buttonText={"Edit"} modalComponent={<EditReviewModal reviewData={review} reviewId={review.id} />} />
+                            <OpenModalButton buttonText={"Delete"} modalComponent={<DeleteReviewModal productId={review.product_id} reviewId={review.id} />} />
                         </div>
                     </div>;
                 })}
