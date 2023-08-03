@@ -9,17 +9,15 @@ export default function ProductCard({ product }) {
   return (
     <>
     <Link to={`/products/${product.id}`} title={product.product_name}>
-      <div>
-          <div id="product_card_image_container">
+      <div id='product-card-container'>
+          <div id="product-card-image-container">
             <img
               alt="product"
-              id="product_image"
+              id="product-image"
               src={product.product_photos[0].url}
               title={product.product_name}
             />
-          </div>
-          <div id="product_name">
-            <h1>{product.product_name}</h1>
+          <h1>{product.product_name}</h1>
           </div>
           {sessionUser?.is_admin && (
             <div id="manage_product_button_container">

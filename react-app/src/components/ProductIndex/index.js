@@ -29,9 +29,7 @@ export default function ProductIndex() {
   return (
     <div id="all-product-container">
       {products?.map((product) => (
-        <Link to={`/products/${product.id}`} title={product.product_name}>
           <ProductCard product={product} key={product.id} />
-        </Link>
       ))}
     </div>
   );
