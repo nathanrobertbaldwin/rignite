@@ -13,8 +13,6 @@ function DeleteReviewModal({productId, reviewId}) {
         return dispatch(deleteReviewThunk(reviewId, productId))
         .then( () => dispatch( getUserReviewsThunk()) )
         .then(closeModal)
-        .catch(async (res) => console.log(res));
-
     }
 
     const handleCloseModal = () => {

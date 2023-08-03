@@ -1,16 +1,31 @@
 /* TODO Add site wide styles */
 
+html {
+    background-color: rgb(5, 5, 5);
+    margin: 0px !important;
+    padding: 0px !important;
+    font-family: "Gordita", Helvetica, Arial, Verdana, sans-serif;
+}
 
+#root {
+    min-height: 100vh;
+}
 
 body {
-    background-color: rgb(24, 26, 27);
     color: white;
-    font-family: "Gordita", Helvetica, Arial, Verdana, sans-serif;
+    margin: 0px !important;
+    padding: 0px !important;
 }
 
 div {
     margin: 0px;
     padding: 0px;
+}
+
+ul{
+    list-style: none;
+    padding: none !important;
+    margin: none !important;
 }
 
 #modal-content {
@@ -42,7 +57,7 @@ div {
 
 #modal-content>form>button,
 #modal-content>button {
-    background-color: cyan;
+    background-color: #f44a07;
     border: white solid 3px;
     box-shadow: white 3px 2px;
     padding: 20px;
@@ -71,6 +86,84 @@ div {
 }
 
 img {
-    max-width: 400px;
-    aspect-ratio: 3/2;
+    object-fit: cover;
+}
+
+h1{
+    font-size: 24px;
+    margin: 0px;
+    padding: 0px;
+    color: white;
+}
+
+h2{
+    font-size: 20px;
+    margin: 0px;
+    padding: 0px;
+    color: white;
+}
+
+h3{
+    font-size: 16px;
+    margin: 0px;
+    padding: 0px;
+    color: white;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: lightblue
+}
+
+button {
+    cursor: pointer;
+    background-color: #f44a07;
+    font-size: x-large;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    /* background-color: #FF9C75; */
+    /* visibility: hidden; */
+}
+
+button:hover {
+    background-color: rgb(206, 206, 206);
+}
+
+
+/* FOOTER */
+
+#footer-container{
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(22, 22, 22);
+    height: 75px;
+    width: 100%;
+    gap: 10%;
+    border-top: 1px solid darkgrey;
+    margin-top: 30px;
+}
+
+#footer-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1em;
+    align-items: center;
+    /* border: 1px solid red; */
+}
+
+#footer-list > li{
+    cursor: pointer;
+}
+
+#footer-info>h2, ul, li{
+    color: white;
+    list-style: none;
 }

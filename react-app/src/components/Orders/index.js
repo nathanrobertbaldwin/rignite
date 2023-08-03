@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { editOrderStatusFetch, getAllOrdersThunk } from "../../store/orders";
@@ -7,21 +7,21 @@ import { getAllProductsThunk } from "../../store/products";
 import OpenModalButton from "../OpenModalButton";
 import DeleteOrderModal from "./DeleteOrderModal";
 import { getUserReviewsThunk } from "../../store/reviews";
-import "./Orders.css"
+import "./Orders.css";
 
 // ["pending", "in transit", "delivered"]
 
 export default function Orders() {
     const user = useSelector(state=>state.session.user);
     const history = useHistory();
-    if (!user) history.push('/')
+    if (!user) history.push('/');
     let [activePage, setActivePage] = useState('pending');
     const dispatch = useDispatch();
     const orders = useSelector(state => state.orders);
 
     const filteredOrders = {};
     Object.keys(orders).forEach(batch => {
-        if (orders[batch][0].status === activePage) filteredOrders[batch] = orders[batch]
+        if (orders[batch][0].status === activePage) filteredOrders[batch] = orders[batch];
     });
 
     useEffect(async () => {

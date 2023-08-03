@@ -3,20 +3,25 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 300px;
-    text-decoration: none;
+    max-width: 400px;
+    background-color: rgb(22, 22, 22);
+    border-radius: 1em;
 }
 
-#category_card_image_container>{
-    width: 100%
+#category_card_image_container{
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
 }
+
 
 #category_image{
-    min-width: 400px;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
     width: 100%;
+    height: 100%;
 }
 
-#category_name{
-    text-decoration: none;
-    color: rgb(224, 224, 224)
+#category_name_h3{
+    margin: 1em;
 }
