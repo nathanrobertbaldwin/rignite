@@ -19,6 +19,7 @@
     height: 45px;
     background-color: #F0F0F0;
     border: none;
+    cursor: pointer;
 }
 
 .account-nav-buttons:hover {
@@ -38,6 +39,10 @@
 #change-account-info-form {
     width: 700px;
     border-top: 1px solid rgb(24, 26, 27);
+}
+
+.form-errors {
+    color: rgb(181, 41, 41);
 }
 
 
@@ -199,10 +204,15 @@
     background-color: white;
     color: #222222;
     padding: 6px 20px;
-    border: 2px solid #222222
+    border: 2px solid #222222;
+    cursor: pointer;
 }
 
+#change-account-details-button:hover {
+    background-color: rgb(206, 206, 206);
+}
 
+/* ------------------------------------------------------------------- */
 
 /* DEACTIVATE ACCOUNT SECTION  */
 
@@ -228,16 +238,54 @@
     font-size: 16px;
     margin-left: 10px;
     margin-bottom: 10px;
+    cursor: pointer;
 }
 
+/* ------------------------------------------------------------------- */
+
+/* DELETE ACCOUNT MODAL */   /* DELETE REVIEW MODAL */
 
 #deactivate-account-modal-button > button:hover {
     background-color: rgb(206, 206, 206);
 }
 
-/* MANAGE REVIEWS CSS */
+.modal-buttons-container {
+    display: flex;
+    gap: 10px;
+}
+
+.modal-buttons-container > button {
+    border: 1px solid white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.modal-buttons-container > button:hover {
+    background-color: rgb(206, 206, 206);
+}
+
+
+/* ------------------------------------------------------------------- */
+
+
+
+/* USER REVIEWS/MANAGE REVIEWS CSS */
 
 #manage-reviews-buttons{
     display: flex;
     gap: 10px;
+}
+
+#manage-reviews-buttons > button{
+    border: 1px solid white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#manage-reviews-buttons > button:hover{
+    background-color: rgb(206, 206, 206);
+}
+
+.single-user-review {
+    background-color: #222222;
 }

@@ -27,10 +27,10 @@ function DeleteAccountModal() {
     return (
         <div id="delete-account-modal-main-container">
             <div className="">
-                <h2 className="">Confirm Deactivate</h2>
-                <h3 className="">Are you sure you want to deactive this account?</h3>
-                <div className="">
-                    <button onClick={handleDeleteAccount} className="">Yes (Deactivate Account)</button>
+                <h2>Confirm Deactivate</h2>
+                <h4>Are you sure you want to deactive this account?</h4>
+                <div className="modal-buttons-container">
+                    <button onClick={handleDeleteAccount} className="">Yes (Deactivate)</button>
                     <button onClick={handleCloseModal} className="">No</button>
                 </div>
             </div>
