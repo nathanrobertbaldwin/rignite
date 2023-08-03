@@ -1,20 +1,14 @@
-#all-product-container{
-    display: grid;
-    place-items: center;
-    grid-template-columns: repeat(3, 1fr);
-    padding: 0 10%;
+#all_products_container{
+    display: flex;
+    flex-direction: column;
 }
 
-#all-product-container>a{
-    text-decoration: none;
-}
-
-.all-product-image{
-    aspect-ratio: 1/1;
-    height: 300px;
-}
-
-.product-index-link {
-    color: white;
-    text-decoration: none;
+#all_products{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 2em;
+    width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
 }
