@@ -57,7 +57,7 @@ ul{
 
 #modal-content>form>button,
 #modal-content>button {
-    background-color: cyan;
+    background-color: #f44a07;
     border: white solid 3px;
     box-shadow: white 3px 2px;
     padding: 20px;
