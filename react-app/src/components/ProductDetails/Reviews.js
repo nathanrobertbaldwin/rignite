@@ -25,9 +25,11 @@ function Review({product, user}) {
 
     return (
         <div id="review-component-main-container">
-            {doesUserHaveReview === undefined
-            ? <OpenModalButton buttonText={"Post Review"} modalComponent={<CreateReviewModal user={user} productId={product.id} />} />
-            : null}
+            <div id="create-review-modal-button-container">
+                {doesUserHaveReview === undefined
+                ? <OpenModalButton buttonText={"Post Review"} modalComponent={<CreateReviewModal user={user} productId={product.id} />} />
+                : null}
+            </div>
             <h2>Customer Reviews</h2>
             <div id="product-review-details-overview-container">
                 <h2>{productAverageRating}</h2>
