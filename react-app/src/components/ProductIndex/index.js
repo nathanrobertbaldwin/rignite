@@ -27,10 +27,17 @@ export default function ProductIndex() {
   }, [dispatch]);
 
   return (
-    <div id="all-product-container">
-      {products?.map((product) => (
-          <ProductCard product={product} key={product.id} />
-      ))}
+    <div id="all_products_container">
+      <div>
+        <h2 id='shop-by-category'>Shop All Products</h2>
+      </div>
+      <div id="all_products">
+        {products?.map((product) => (
+          <Link to={`/products/${product.id}`} title={product.product_name}>
+            <ProductCard product={product} key={product.id} />
+          </Link>
+        ))}
+      </div>
     </div>
   );
 }

@@ -6,14 +6,17 @@ import { getAllProductsThunk } from "../../store/products";
 import { getAllOrdersThunk } from "../../store/orders";
 import ProductCard from "../ProductCard";
 import { getUserReviewsThunk } from "../../store/reviews";
-import './CategoryProducts.css';
 
-export default function CategoryProducts({ category }) {
+import "./CategoryProducts.css"
+
+export default function CategoryProducts() {
   const dispatch = useDispatch();
   const productsData = useSelector((store) => store.products);
   const products = Object.values(productsData);
+  const categoryData = useSelector((store) => store.categories)
   let { id } = useParams();
   id = parseInt(id);
+  const category = categoryData[id].name
 
   useEffect(() => {
     // MEGATHUNKADONK
@@ -33,10 +36,15 @@ export default function CategoryProducts({ category }) {
   );
 
   return (
-    <div id="all-category-product-container">
-      {categoryProducts?.map((product) => {
-        return <ProductCard key={product.id} product={product} />;
-      })}
+    <div id="category_products_index_container">
+      <div>
+        <h2 id='shop-by-category'>{`Shop ${category}`}</h2>
+      </div>
+      <div id="category_products">
+        {categoryProducts?.map((product) => {
+          return <ProductCard key={product.id} product={product} />;
+        })}
+      </div>
     </div>
   );
 }

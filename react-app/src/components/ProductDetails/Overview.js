@@ -5,9 +5,6 @@ function Overview({product}) {
     const primaryPhoto = product_photos[0]
     const secondaryPhoto = product_photos[1]
     const otherPhotos = product_photos.slice(2);
-    console.log('primary', primaryPhoto)
-    console.log('secondary', secondaryPhoto)
-    console.log('other', otherPhotos)
 
     return (
         <div id='overview-container'>

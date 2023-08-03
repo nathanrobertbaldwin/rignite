@@ -15,14 +15,11 @@ function DeleteAccountModal() {
         return dispatch(deleteUserAccount())
         .then(closeModal)
         .then(history.push("/"))
-        .catch(async (res) => console.log(res));
-
     }
 
     const handleCloseModal = () => {
         closeModal()
     }
-
 
     return (
         <div id="delete-account-modal-main-container">
