@@ -36,6 +36,7 @@ class Order(db.Model):
             "batch_id": self.batch_id,
             "quantity": self.quantity,
             "order_date": self.order_date,
+            "total": self.total,
             "status": self.status,
         }
 
