@@ -41,7 +41,6 @@ function CreateReviewModal({user, productId}) {
         if(response.errors) {
             const errors = response.errors
             setFormErrors(errors)
-            console.log(errors)
         } else {
             await dispatch(getUserReviewsThunk())
             closeModal()

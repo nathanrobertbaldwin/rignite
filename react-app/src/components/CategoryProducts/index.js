@@ -13,7 +13,6 @@ export default function CategoryProducts() {
   const productsData = useSelector((store) => store.products);
   const products = Object.values(productsData);
   const categoryData = useSelector((store) => store.categories)
-  console.log(categoryData)
   let { id } = useParams();
   id = parseInt(id);
   const category = categoryData[id].name

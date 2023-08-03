@@ -5,11 +5,6 @@ function Detail({product}) {
     const specsArray = specs.split(',')
     const specsTitle = specsArray[1]
     const specsInfo = specsArray.slice(1)
-    console.log('specs title', specsTitle)
-    console.log('specs info', specsInfo)
-
-
-
 
     return (
         <div id='overview-specs-container'>

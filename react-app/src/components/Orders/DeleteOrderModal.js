@@ -11,8 +11,6 @@ function DeleteOrderModal({batch}) {
 
         return dispatch((deleteOrderThunk(batch)))
         .then(closeModal)
-        .catch(async (res) => console.log(res));
-
     }
 
     const handleCloseModal = () => {
