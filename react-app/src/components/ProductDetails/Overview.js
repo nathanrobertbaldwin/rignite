@@ -26,7 +26,7 @@ function Overview({product}) {
             <img
                 alt="product"
                 id="overview-secondary-image"
-                src={secondaryPhoto.url}
+                src={secondaryPhoto?.url}
                 />
             </div>
             <div id='other-photos-container'>

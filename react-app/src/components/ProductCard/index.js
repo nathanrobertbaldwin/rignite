@@ -12,7 +12,7 @@ export default function ProductCard({ product }) {
             <img
                 id = "product_card_image"
                 alt="product"
-                src={product.product_photos[0].url}
+                src={product.product_photos[0]?.url}
                 title={product.product_name}
               />
           </div>
