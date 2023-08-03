@@ -8,5 +8,8 @@ categories = Blueprint("categories", __name__)
 # GET /api/categories/all
 @categories.route("/all")
 def get_all_categories():
+    """
+    Gets all product categories.
+    """
     categories = Category.query.all()
     return [category.to_dict() for category in categories]

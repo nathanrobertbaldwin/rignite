@@ -9,6 +9,9 @@ reviews = Blueprint("reviews", __name__)
 @reviews.route("/")
 @login_required
 def getAllUserReviews():
+    """
+    Gets all reviews for a user.
+    """
     all_user_reviews_query = Review.query.filter(Review.user_id == current_user.id)
 
     user_reviews_to_dict = [review.to_dict() for review in all_user_reviews_query]
@@ -17,7 +20,9 @@ def getAllUserReviews():
 @reviews.route("/new", methods=["POST"])
 @login_required
 def create_review():
-
+    """
+    Creates a new review from a user on a specific product.
+    """
     form = ReviewForm()
     form["csrf_token"].data = request.cookies["csrf_token"]
 
@@ -40,7 +45,9 @@ def create_review():
 @reviews.route("/<int:reviewId>", methods=["PUT"])
 @login_required
 def edit_review(reviewId):
-
+    """
+    A user can edit a review they created.
+    """
     review = Review.query.get(reviewId)
 
     form = EditReviewForm()
@@ -63,7 +70,9 @@ def edit_review(reviewId):
 @reviews.route("/<int:reviewId>", methods=["DELETE"])
 @login_required
 def delete_review(reviewId):
-
+    """
+    A user can delete a review they posted.
+    """
     review = Review.query.get(reviewId)
 
     db.session.delete(review)

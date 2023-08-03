@@ -8,13 +8,18 @@ orders = Blueprint("orders", __name__)
 @orders.route("/")
 @login_required
 def allUserOrders():
-    # ========= Get details for all orders =========
+    """
+    Gets all user order details.
+    """
     orders = Order.query.filter(Order.user_id == current_user.id)
     return [order.order_details_to_dict() for order in orders]
 
 @orders.route("/", methods=["POST"])
 @login_required
 def addNewOrder():
+    """
+    Adds a new product order for a user.
+    """
     req = request.get_json()
     batch = str(uuid.uuid4())
 
@@ -43,7 +48,9 @@ def addNewOrder():
 @orders.route("/<string:batchId>", methods=["PUT"])
 @login_required
 def editOrder(batchId):
-
+    """
+    Edits an order for a user.
+    """
     status = request.json
     if status != "delivered" and status != "in transit" and status != "pending":
         return "Invalid Status"
@@ -61,6 +68,9 @@ def editOrder(batchId):
 @orders.route("/<string:batchId>", methods=["DELETE"])
 @login_required
 def deleteOrder(batchId):
+    """
+    Deletes an order for a user.
+    """
     orderToDelete = Order.query.filter(Order.batch_id == batchId)
 
     for order in orderToDelete:

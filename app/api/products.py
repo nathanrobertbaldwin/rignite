@@ -15,6 +15,10 @@ def get_all_products():
 
 @products.route("/new", methods=["POST"])
 def new_product():
+    """
+    A user with admin privileges can create a new product.
+    Adds up to four images for a product.
+    """
     form = ProductForm()
     form["csrf_token"].data = request.cookies["csrf_token"]
     if form.validate_on_submit():
@@ -58,6 +62,9 @@ def new_product():
 
 @products.route("/edit/<productId>", methods=["POST"])
 def edit_product(productId):
+    """
+    A user with admin privileges can edit a product.
+    """
     form = ProductForm()
     form["csrf_token"].data = request.cookies["csrf_token"]
 
