@@ -53,16 +53,6 @@ function CreateReviewModal({user, productId}) {
         <div id="review-modal-main-container">
             <form onSubmit={handleReviewSubmit}>
 
-                <div>
-                    <textarea
-                        className='review-textarea'
-                        value={reviewText}
-                        onChange={(e) => setReviewText(e.target.value)}
-                        placeholder='What did you think of this product?'
-                    />
-                    {formErrors.review && <span className='form-errors'>{formErrors.review}</span>}
-                </div>
-
                 <div id="star-container">
                     <div className="stars">
                         <FaStar className={`single-star ${rating >= 1 ? "activestar" : ""}`} id={highlight >= 1 ? "highlight" : ""} value={rating}
@@ -79,25 +69,35 @@ function CreateReviewModal({user, productId}) {
 
                         <FaStar className={`single-star ${rating >= 5 ? "activestar" : ""}`} id={highlight >= 5 ? "highlight" : ""} value={rating}
                         onClick={() => setRating(5)} onMouseMoveCapture={() => setHighlight(5)} onMouseLeave={() => setHighlight("")} />
-                        <span className="star-text">Stars</span>
                     </div>
-                    {formErrors.rating && <span className='form-errors'>{formErrors.rating}</span>}
+                        {formErrors.rating && <span className='form-errors'>{formErrors.rating}</span>}
                 </div>
 
                 <div>
-                    <label htmlFor="photo-url">Review Image File</label>
+                    <textarea
+                        className='review-textarea'
+                        value={reviewText}
+                        onChange={(e) => setReviewText(e.target.value)}
+                        placeholder='Please take a moment to write a review and rate this product...'
+                    />
+                </div>
+                    {formErrors.review && <span className='form-errors'>{formErrors.review}</span>}
+
+
+                <div id='photo-url-container'>
+                    <label htmlFor="photo-url">Image File Upload:</label>
                     <input
                         id='photo-url'
                         type='text'
                         value={photoUrl}
                         onChange={(e) => setPhotoUrl(e.target.value)}
-                        placeholder='Attach Review Image Url'
+                        placeholder='Feel free to include an image to support your review...'
                     />
-                    {formErrors.username && <span className='form-errors'>{formErrors.username[0]}</span>}
+                    {/* {formErrors.username && <span className='form-errors'>{formErrors.username[0]}</span>} */}
                 </div>
 
                 <div id="review-button-container">
-                    <button className="review-submit-button" type="submit">Submit your Review</button>
+                    <button className="review-submit-button" type="submit">Submit Review</button>
                 </div>
             </form>
         </div>

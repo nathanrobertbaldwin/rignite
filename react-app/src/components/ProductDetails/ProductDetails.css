@@ -1,6 +1,14 @@
 
 /* PRODUCT DETAILS COMPONENT */
 
+/* this might break all of james styling */
+#product_details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 #product_details_main_content_container{
     display: flex;
 }
@@ -32,27 +40,4 @@
     display: flex;
     padding-top: 50px;
     justify-content: space-around;
-}
-
-/* REVIEWS COMPONENT */
-
-#product-review-details-overview-container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin-bottom: 10px;
-}
-
-#single-review {
-    border: 1px solid red;
-    display: flex;
-}
-
-.review-user-info {
-    border: 1px solid blue;
-    margin-right: 10px;
-}
-
-.review-info {
-    border: 1px solid green;
 }
