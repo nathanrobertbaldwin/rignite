@@ -13,7 +13,6 @@ import ProductDetails from "./components/ProductDetails";
 import AccountSettings from "./components/ManageUser/AccountSettings";
 import Orders from "./components/Orders";
 import UserReviews from "./components/ManageUser/UserReviews";
-import Footer from "./components/Footer"
 
 function App() {
   const dispatch = useDispatch();
@@ -62,7 +61,6 @@ function App() {
           </Route>
         </Switch>
       )}
-      <Footer/>
     </>
   );
 }

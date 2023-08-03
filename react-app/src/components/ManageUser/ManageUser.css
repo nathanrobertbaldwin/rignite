@@ -5,6 +5,7 @@
     display: flex;
     justify-content: center;
     gap: 20px;
+    margin-top: 30px;
 }
 
 #account-nav-sidebar {
@@ -17,7 +18,7 @@
 
 .account-nav-buttons {
     height: 45px;
-    background-color: #F0F0F0;
+    background-color: #F44A07;
     border: none;
     cursor: pointer;
 }
@@ -57,8 +58,8 @@
 }
 
 .change-account-form-title {
-    background-color: grey;
-    color: white;
+    background-color: #F44A07;
+    color: black;
     margin: 0px 0px 20px 0px;
     border: 1px solid white;
     border-top-left-radius: 10px;
@@ -201,10 +202,10 @@
 
 #change-account-details-button {
     margin-top: 20px;
-    background-color: white;
-    color: #222222;
+    background-color: #F44A07;
+    color: black;
     padding: 6px 20px;
-    border: 2px solid #222222;
+    border: 1px solid #222222;
     cursor: pointer;
 }
 
@@ -231,10 +232,9 @@
 }
 
 #deactivate-account-modal-button > button {
-    background-color: white;
-    color: #222222;
+    background-color: #F44A07;
+    color: black;
     margin-left: 10px;
-    border: 1px solid white;
     font-size: 16px;
     margin-left: 10px;
     margin-bottom: 10px;
@@ -252,6 +252,7 @@
 .modal-buttons-container {
     display: flex;
     gap: 10px;
+    margin-top: 10px;
 }
 
 .modal-buttons-container > button {
@@ -287,5 +288,9 @@
 }
 
 .single-user-review {
-    background-color: #222222;
+    background-color: black;
+    border: 1px solid grey;
+    margin-bottom: 20px;
+    padding: 10px 10px;
+    border-radius: 6px;
 }

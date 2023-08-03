@@ -7,6 +7,10 @@ html {
     font-family: "Gordita", Helvetica, Arial, Verdana, sans-serif;
 }
 
+#root {
+    min-height: 100vh;
+}
+
 body {
     color: white;
     margin: 0px !important;
@@ -112,7 +116,7 @@ a {
 }
 
 a:hover {
-    color: lightblue   
+    color: lightblue
 }
 
 button {
@@ -124,4 +128,42 @@ button {
     border-radius: 5px;
     /* background-color: #FF9C75; */
     /* visibility: hidden; */
+}
+
+button:hover {
+    background-color: rgb(206, 206, 206);
+}
+
+
+/* FOOTER */
+
+#footer-container{
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(22, 22, 22);
+    height: 75px;
+    width: 100%;
+    gap: 10%;
+    border-top: 1px solid darkgrey;
+    margin-top: 30px;
+}
+
+#footer-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1em;
+    align-items: center;
+    /* border: 1px solid red; */
+}
+
+#footer-list > li{
+    cursor: pointer;
+}
+
+#footer-info>h2, ul, li{
+    color: white;
+    list-style: none;
 }

@@ -45,10 +45,10 @@
 
 .slide > img {
     display: block;
-    max-width: 100%;
     width: 100%;
-    height: 94%;
+    height: 100%;
     object-position: center;
+    object-fit: fill;
 }
 
 .slide[data-active] {
@@ -62,22 +62,22 @@
     background: none;
     border: none;
     font-size: 4rem;
-    top: 90%;
+    top: 85%;
     cursor: pointer;
     border-radius: 0.25rem;
     padding: 0 .5rem;
     color: #F44A07;
-    background-color: black;
+    background-color: rgb(5, 5, 5);
 }
 
 .carousel-button:hover,
 .carousel-button:focus {
     color: #F44A07;
-    background-color: black;
+    background-color: rgb(5, 5, 5);;
 }
 
 .carousel-button:focus {
-    outline: 1px solid black;
+    outline: 1px solid rgb(5, 5, 5);
 }
 
 .carousel-button.prev {
