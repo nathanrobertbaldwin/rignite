@@ -1,17 +1,27 @@
 /* TODO Add site wide styles */
 
-
+html {
+    background-color: rgb(5, 5, 5);
+    margin: 0px !important;
+    padding: 0px !important;
+    font-family: "Gordita", Helvetica, Arial, Verdana, sans-serif;
+}
 
 body {
-    /* background-color: rgb(24, 26, 27); */
-    background-color: rgb(5, 5, 5);
     color: white;
-    font-family: "Gordita", Helvetica, Arial, Verdana, sans-serif;
+    margin: 0px !important;
+    padding: 0px !important;
 }
 
 div {
     margin: 0px;
     padding: 0px;
+}
+
+ul{
+    list-style: none;
+    padding: none !important;
+    margin: none !important;
 }
 
 #modal-content {
@@ -72,8 +82,37 @@ div {
 }
 
 img {
-    max-width: 400px;
-    aspect-ratio: 3/2;
+    object-fit: cover;
+}
+
+h1{
+    font-size: 24px;
+    margin: 0px;
+    padding: 0px;
+    color: white;
+}
+
+h2{
+    font-size: 20px;
+    margin: 0px;
+    padding: 0px;
+    color: white;
+}
+
+h3{
+    font-size: 16px;
+    margin: 0px;
+    padding: 0px;
+    color: white;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: lightblue   
 }
 
 button {

@@ -28,10 +28,15 @@ export default function Landing() {
   }, [dispatch]);
 
   return (
-    <div id="spots_index">
-      {categories?.map((category) => {
-        return <CategoryCard key={category.id} category={category} />;
-      })}
+    <div id="categories_index_container">
+      <div>
+        <h2 id='shop-by-category'>Shop by Category</h2>
+      </div>
+      <div id='categories_index'>
+        {categories?.map((category) => {
+          return <CategoryCard key={category.id} category={category} />;
+        })}
+      </div>
     </div>
   );
 }

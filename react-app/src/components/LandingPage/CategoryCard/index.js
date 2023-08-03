@@ -10,9 +10,7 @@ export default function CategoryCard({ category }) {
           src={category.photo_url}
           title={category.name}
         />
-      <div id="category_name">
-        <h1>{category.name}</h1>
-      </div>
+        <h3 id="category_name_h3">{category.name}</h3>
     </Link>
   );
 }

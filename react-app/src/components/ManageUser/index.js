@@ -10,6 +10,7 @@ function ManageUser() {
     const dispatch = useDispatch()
     const history = useHistory()
     const user = useSelector((state) => state.session.user)
+    if (!user) history.push('/')
 
     const [username, setUsername] = useState("")
     const [firstName, setFirstName] = useState("")
@@ -28,14 +29,17 @@ function ManageUser() {
     useEffect(() => {
         dispatch(authenticate())
 
-        setAddress(user.address)
-        setCity(user.city)
-        setEmail(user.email)
-        setFirstName(user.first_name)
-        setLastName(user.last_name)
-        setState(user.state)
-        setUsername(user.username)
-        setZipCode(user.zip_code)
+        if (!user) history.push('/')
+        else {
+            setAddress(user.address)
+            setCity(user.city)
+            setEmail(user.email)
+            setFirstName(user.first_name)
+            setLastName(user.last_name)
+            setState(user.state)
+            setUsername(user.username)
+            setZipCode(user.zip_code)
+        }
 
         setPassword("")
 
@@ -74,8 +78,8 @@ function ManageUser() {
             <div id='account-nav-sidebar'>
                 <h2>Options</h2>
                 <button className='account-nav-buttons'> My Info</button>
-                <button onClick={()=>history.push('/users/delete')} className='account-nav-buttons'>Account Settings</button>
-                <button onClick={()=>history.push('/users/reviews')} className='account-nav-buttons'>Manage Reviews</button>
+                <button onClick={() => history.push('/users/delete')} className='account-nav-buttons'>Account Settings</button>
+                <button onClick={() => history.push('/users/reviews')} className='account-nav-buttons'>Manage Reviews</button>
             </div>
 
             <form onSubmit={handleSubmit} id='change-account-info-form'>

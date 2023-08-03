@@ -14,6 +14,7 @@ import Review from "./Reviews";
 // import LoginFormModal from "../LoginFormModal";
 // import PostReviewModal from "./PostReviewModal";
 import "./ProductDetails.css";
+import LoginFormModal from "../LoginFormModal";
 
 export default function ProductDetails() {
 
@@ -85,7 +86,7 @@ export default function ProductDetails() {
           <p id="product_details_product_description">{product.description}</p>
           <OpenModalButton
           buttonText="Add to cart"
-          modalComponent={<SeeCartModal addProduct={product.id}/>}
+          modalComponent={ user ? <SeeCartModal addProduct={product.id}/> : <LoginFormModal />}
           />
         </div>
 
