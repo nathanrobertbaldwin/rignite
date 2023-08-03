@@ -1,0 +1,24 @@
+#all-category-product-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    grid-gap: 2em;
+    gap: 2em;
+    max-width: 1700px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+#all-product-container>a{
+    text-decoration: none;
+}
+
+.all-product-image{
+    aspect-ratio: 1/1;
+    height: 300px;
+}
+
+.product-index-link {
+    color: white;
+    text-decoration: none;
+}

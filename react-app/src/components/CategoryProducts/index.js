@@ -6,6 +6,7 @@ import { getAllProductsThunk } from "../../store/products";
 import { getAllOrdersThunk } from "../../store/orders";
 import ProductCard from "../ProductCard";
 import { getUserReviewsThunk } from "../../store/reviews";
+import './CategoryProducts.css';
 
 export default function CategoryProducts({ category }) {
   const dispatch = useDispatch();
@@ -32,7 +33,7 @@ export default function CategoryProducts({ category }) {
   );
 
   return (
-    <div id="spots_index">
+    <div id="all-category-product-container">
       {categoryProducts?.map((product) => {
         return <ProductCard key={product.id} product={product} />;
       })}

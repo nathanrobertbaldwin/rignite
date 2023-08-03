@@ -1,8 +1,11 @@
 #all-product-container{
-    display: grid;
-    place-items: center;
-    grid-template-columns: repeat(3, 1fr);
-    padding: 0 10%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    grid-gap: 2em;
+    gap: 2em;
+    max-width: 1700px;
+    margin: auto;
 }
 
 #all-product-container>a{
