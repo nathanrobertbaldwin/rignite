@@ -7,15 +7,14 @@ function Overview({product}) {
     const otherPhotos = product_photos.slice(2);
 
     return (
-        <div>
+        <div id='overview-container'>
             <div id='overview-description-container'>
                 <h2 className='overview-product-name'>{product.product_name}</h2>
                 <p className='overview-description'>{product.description}</p>
             </div>
-            <div>
+            <div id="overview-primary-image">
                 <img
                 alt="product"
-                id="overview-primary-image"
                 src={primaryPhoto.url}
                 />
             </div>

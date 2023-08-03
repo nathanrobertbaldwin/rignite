@@ -6,6 +6,7 @@ import { getAllProductsThunk } from "../../store/products";
 import { getAllOrdersThunk } from "../../store/orders";
 import ProductCard from "../ProductCard";
 import { getUserReviewsThunk } from "../../store/reviews";
+
 import "./CategoryProducts.css"
 
 export default function CategoryProducts() {
