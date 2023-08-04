@@ -3,8 +3,81 @@
     justify-content: center;
     column-gap: 20px;
     cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#activePage{
+    text-decoration: underline;
+}
+
+#orders{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #orders-title {
     text-align: center;
+}
+
+.ordCard{
+    border: 2px solid gray;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin-bottom: 10px;
+}
+
+.ordCard>button{
+    justify-self: flex-end;
+    padding: 0;
+    margin-left: 20px;
+}
+.ordCard>h3{
+    align-self: flex-end;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.ordDets{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+.ordCancel{
+    align-self: flex-end;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.prodCard{
+    display: flex;
+    margin: 10px;
+    margin-top: 0;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: rgb(61, 61, 61);
+}
+
+.prodCard > img{
+    height: 150px;
+    aspect-ratio: 3/2;
+}
+
+.prodDets{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    padding: 10px;
+    width: 100%;
+    /* flex-direction: column; */
+    /* align-content: flex-end; */
+    /* justify-content: end; */
+}
+.prodDets>h2{
+    height: fit-content;
+    display: flex;
+}
+.prodDets>p{
+    height: fit-content;
+    display: flex;
 }
