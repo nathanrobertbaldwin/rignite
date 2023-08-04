@@ -18,21 +18,6 @@ function Detail({product}) {
                     ))}
                 </ul>
             </div>
-            <div id='included-list'>
-                {/* this is just hardcode */}
-                <h2>Included</h2>
-                <ul>
-                    <li id='individual-spec'>
-                        USB-A to USB-C cable
-                    </li>
-                    <li id='individual-spec'>
-                        Keycap puller
-                    </li>
-                    <li id='individual-spec'>
-                        3-Year Standard Warranty
-                    </li>
-                </ul>
-            </div>
         </div>
     )
 }
