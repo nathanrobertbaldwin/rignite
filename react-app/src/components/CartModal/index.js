@@ -68,7 +68,8 @@ export default function SeeCartModal({ addProduct }) {
                         )
                     })}
                     <h2>Total: {Number.parseFloat(total).toFixed(2)}</h2>
-                    <button onClick={onClick}>Checkout</button>
+                    <button onClick={onClick} id='checkout'>Checkout</button>
+                    <button onClick={()=>closeModal()}>Continue Shopping</button>
                 </>
                 :
                 <div id='emptyCart'>
