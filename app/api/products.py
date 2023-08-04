@@ -28,6 +28,7 @@ def new_product():
             color=data["color"],
             description=data["description"],
             specs=data["specs"],
+            status="active"
         )
 
         db.session.add(new_product)
@@ -56,7 +57,7 @@ def new_product():
         return form.errors
 
 
-@products.route("/edit/<productId>", methods=["POST"])
+@products.route("/<productId>", methods=["PATCH"])
 def edit_product(productId):
     form = ProductForm()
     form["csrf_token"].data = request.cookies["csrf_token"]
@@ -73,6 +74,7 @@ def edit_product(productId):
         product.color = data["color"]
         product.description = data["description"]
         product.specs = data["specs"]
+        product.status = data["status"]
 
         db.session.commit()
 
