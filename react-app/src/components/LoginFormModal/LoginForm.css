@@ -1,0 +1,36 @@
+#login-title{
+    margin-bottom: 10%;
+}
+
+#login-hr{
+
+    width: 100%;
+    border: 1px solid grey;
+}
+
+#login-hr2{
+    margin: 10% 0px;
+    width: 100%;
+    border: 1px solid grey;
+}
+
+#login-email-container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    margin-bottom: 10%;
+}
+
+
+#login-password-container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    margin-bottom: 10%;
+}
+
+#login-signup-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
