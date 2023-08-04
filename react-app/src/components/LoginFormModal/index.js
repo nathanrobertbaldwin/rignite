@@ -29,6 +29,7 @@ function LoginFormModal() {
   }
 
 
+
   return (
     <>
       <h1 id='login-title'>Log In To Rignite</h1>
@@ -63,10 +64,14 @@ function LoginFormModal() {
             required
           />
         </div>
-        <button type="submit">Log In</button>
+        <div id='login-button'>
+          <button type="submit">Log In</button>
+        </div>
       </form>
-      <button onClick={()=>demoLogin('user')}>Demo User</button>
-      <button onClick={()=>demoLogin('admin')}>Demo Admin</button>
+      <div id='demo-container'>
+        <button onClick={()=>demoLogin('user')}>Demo User</button>
+        <button onClick={()=>demoLogin('admin')}>Demo Admin</button>
+      </div>
       <hr id='login-hr2'/>
       <div id='login-signup-container'>
         <p>Not a member yet?</p>
