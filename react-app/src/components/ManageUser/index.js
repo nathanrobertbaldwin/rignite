@@ -79,7 +79,7 @@ function ManageUser() {
                 <h2>Options</h2>
                 <button className='account-nav-buttons'> My Info</button>
                 <button onClick={() => history.push('/users/delete')} className='account-nav-buttons'>Account Settings</button>
-                <button onClick={() => history.push('/users/reviews')} className='account-nav-buttons'>Manage Reviews</button>
+                {!user?.is_admin ? <button onClick={()=>history.push('/users/reviews')} className='account-nav-buttons'>Manage Reviews</button> : <p>cannot manage reviews as an admin</p>}
             </div>
 
             <form onSubmit={handleSubmit} id='change-account-info-form'>
