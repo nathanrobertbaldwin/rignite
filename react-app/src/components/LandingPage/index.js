@@ -68,7 +68,7 @@ export default function Landing() {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setActiveIndex((prevIndex) => (prevIndex < carouselPhotos.length - 1 ? prevIndex + 1 : 0));
-    }, 2000);
+    }, 3000);
 
     return () => {
       clearInterval(intervalId);
@@ -91,25 +91,26 @@ export default function Landing() {
   };
 
   return (
-    <div id="categories_index_container">
+    <>
       <div id="carousel-div-container">
         <div id="carousel-div">
           {cyclePhotos()}
         </div>
         <div id="text-move">
-
-        <div id="carousel_cycle_text_container">
-          <h2 className={'cycle-text'} >{carouselPhotos[activeIndex].header}</h2>
-          <p className={'cycle-text'}>{carouselPhotos[activeIndex].text}</p>
-        </div>
+          <div id="carousel_cycle_text_container">
+            <h2 className={'cycle-text'} >{carouselPhotos[activeIndex].header}</h2>
+            <p className={'cycle-text'}>{carouselPhotos[activeIndex].text}</p>
+          </div>
         </div>
         <h2 id='shop-by-category'>Shop by Category</h2>
       </div>
+    {/* <div id="categories_index_container"> */}
       <div id='categories_index'>
         {categories?.map((category) => {
           return <CategoryCard key={category.id} category={category} />;
         })}
       </div>
-    </div>
+    {/* </div> */}
+    </>
   );
 }
