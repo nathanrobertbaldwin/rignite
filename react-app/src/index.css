@@ -131,6 +131,16 @@ button:hover {
   background-color: #f44a07;
 }
 
+#emptyCart{
+  display: flex;
+  flex-direction: column;
+}
+
+.emptyCartButt{
+  margin: 5px;
+  padding: 10px;
+}
+
 /* FOOTER */
 
 #footer-container {

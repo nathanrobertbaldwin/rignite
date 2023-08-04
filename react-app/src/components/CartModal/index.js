@@ -71,13 +71,13 @@ export default function SeeCartModal({ addProduct }) {
                     <button onClick={onClick}>Checkout</button>
                 </>
                 :
-                <>
+                <div id='emptyCart'>
                     <p>YOUR CART IS EMPTY!</p>
                     {Object.values(categories).map(category =>
-                        <button onClick={() => {history.push(`/category/${category.id}`); closeModal(); }}>Shop for {category.name}</button>
+                        <button className="emptyCartButt" onClick={() => { history.push(`/category/${category.id}`); closeModal(); }}>Shop for {category.name}</button>
                     )}
-                    <button onClick={()=> {history.push('/products/all'); closeModal(); }}>Shop for Everything</button>
-                </>
+                    <button className="emptyCartButt" onClick={() => { history.push('/products/all'); closeModal(); }}>Shop for Everything</button>
+                </div>
             }
         </>
     )
