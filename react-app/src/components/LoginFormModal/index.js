@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { login } from "../../store/session";
 import { useDispatch } from "react-redux";
 import { useModal } from "../../context/Modal";
+import SignupFormModal from "../SignupFormModal";
+import OpenModalButton from "../OpenModalButton";
 import "./LoginForm.css";
 
 function LoginFormModal() {
@@ -29,37 +31,51 @@ function LoginFormModal() {
 
   return (
     <>
-      <h1>Log In</h1>
+      <h1 id='login-title'>Log In To Rignite</h1>
+      <hr id='login-hr'/>
       <form onSubmit={handleSubmit}>
         <ul>
           {errors.map((error, idx) => (
             <li key={idx}>{error}</li>
           ))}
         </ul>
-        <label>
-          Email
+        <div id='login-email-container'>
+          <label>
+            Email
+          </label>
           <input
             type="text"
+            placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
           />
-        </label>
-        <label>
-          Password
+        </div>
+        <div id='login-password-container'>
+          <label>
+            Password
+          </label>
           <input
             type="password"
+            placeholder="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-        </label>
+        </div>
         <button type="submit">Log In</button>
       </form>
       <button onClick={()=>demoLogin('user')}>Demo User</button>
       <button onClick={()=>demoLogin('admin')}>Demo Admin</button>
+      <hr id='login-hr2'/>
+      <div id='login-signup-container'>
+        <p>Not a member yet?</p>
+        <OpenModalButton
+          buttonText="Sign Up"
+          modalComponent={<SignupFormModal />}
+        />
+      </div>
     </>
-
   );
 }
 
