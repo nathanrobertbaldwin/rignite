@@ -55,7 +55,7 @@ export default function Orders() {
             }
         }
         if (Object.keys(orders).length) once()
-    }, [orders])
+    }, [])
 
     return (
         <>
