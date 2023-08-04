@@ -24,7 +24,7 @@ function LoginFormModal() {
   };
 
   async function demoLogin(user){
-    await dispatch(login(user==='admin'?'admin@rignite.com':'user1@google.com','password'));
+    await dispatch(login(user==='admin'?'admin@rignite.com':'Demo-lition@example.com','password'));
     closeModal();
   }
 
