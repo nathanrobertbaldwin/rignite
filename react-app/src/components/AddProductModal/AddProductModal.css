@@ -1,56 +1,50 @@
-#new_product_form_h1 {
+#product-form-container {
+  width: 400px;
+}
+
+#product-form-h3 {
   text-align: center;
   border-bottom: 1px solid lightgray;
-  padding-bottom: .5em;
-  margin-bottom: .5em;
-}
-
-#new_product_form_container {
-  max-width: 400px;
-  margin: auto;
-  padding-top: 2em;  
-}
-
-#new_product_form {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-#new_product_form_section {
-  border-bottom: 1px solid lightgray;
-  padding-bottom: 1em;
-  margin-bottom: 1em;
-}
-
-#new_product_product_description_field{
-  width:100%;
-}
-
-#new_product_form_h4 {
-padding-bottom: 1em;
-}
-
-#new_product_form_p {
+  padding-bottom: 0.5em;
   margin-bottom: 0.5em;
 }
 
-#new_product_form_input {
-  width: 98%;
-  margin-top: .25em;
-  margin-bottom: .75em;
+#product-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
 }
 
-#new_product_form_price_label{
+.product-form-field {
+  display: flex;
+}
+
+.product-form-label {
+  width: 175px;
+}
+
+.product-form-input {
+  width: 60%;
+}
+
+.product-large-label {
+  width: 100%;
+}
+
+#product-product-description-field {
+  width: 100%;
+}
+
+#product-form-price-label {
   display: flex;
   align-items: center;
 }
 
-#new_form_dollar_sign{
-  margin-bottom: .5em;
+#form-dollar-sign {
+  margin-bottom: 0.5em;
 }
 
-#new_product_button_container {
+#product-button-container {
   display: flex;
   justify-content: center;
   margin-top: 1em;
