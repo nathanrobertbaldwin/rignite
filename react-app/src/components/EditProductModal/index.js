@@ -18,6 +18,7 @@ export default function EditProductModal({ product }) {
   const [specs, setSpecs] = useState(product.specs);
   const [price, setPrice] = useState(product.price);
   const [product_name, setProductName] = useState(product.product_name);
+  const [status, setStatus] = useState(product.status);
 
   const [imageOne, setImageOne] = useState(
     product.product_photos[0] ? product.product_photos[0].url : ""
@@ -47,6 +48,7 @@ export default function EditProductModal({ product }) {
     specs,
     price,
     product_name,
+    status,
     imageOne,
     imageTwo,
     imageThree,
@@ -71,6 +73,7 @@ export default function EditProductModal({ product }) {
         specs,
         price,
         product_name,
+        status,
         imageOne,
         imageTwo,
         imageThree,
@@ -127,6 +130,7 @@ export default function EditProductModal({ product }) {
     setSpecs("");
     setPrice("");
     setProductName("");
+    setStatus("");
     setImageOne("");
     setImageTwo("");
     setImageThree("");
@@ -283,6 +287,19 @@ export default function EditProductModal({ product }) {
             value={price}
             onChange={(e) => setPrice(e.target.value)}
           />
+        </div>
+        <div className="product-form-field">
+          <label className="product-form-label">Status:</label>
+          <select
+            id="state"
+            value={status}
+            onChange={(e) => setStatus(e.target.value)}
+          >
+            <option value="">Select a Status</option>
+            <option value="active">Active</option>
+            <option value="sold out">Sold Out</option>
+            <option value="deactivated">Deactivated</option>
+          </select>
         </div>
         <div className="product-form-field">
           <label className="product-form-label">
