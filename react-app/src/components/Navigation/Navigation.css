@@ -3,7 +3,7 @@
 }
 
 
-#nav_links_container{
+#nav_links_container {
   height: 75px;
   background-color: rgb(22, 22, 22);
   position: sticky;
@@ -86,11 +86,11 @@
   /* padding-left: -10px; */
 }
 
-#userButtons>a{
+#userButtons>a {
   color: rgb(245, 160, 85);
 }
 
-#dropNavs{
+#dropNavs {
   display: flex;
   flex-direction: column;
   padding-top: 0px;
@@ -99,7 +99,7 @@
   margin-right: 4px;
 }
 
-#dropNavs>a{
+#dropNavs>a {
   color: white;
   margin-top: 10px;
   text-decoration: none;
@@ -114,21 +114,24 @@
   width: 1700px;
 }
 
-#shop-link{
+#shop-link {
   padding-right: 70%;
 }
 
-#shop-link>a{
+#shop-link>a {
   color: white;
   text-decoration: none;
 }
 
-#home-link>a{
+#home-link>a {
   color: white;
   text-decoration: none;
 }
 
-.see-cart-modal>button{
-  background-color: transparent;
-  border: none;
+.navi-icons>button {
+  background-color: gray;
+}
+
+#profButt>button {
+  background-color: gray;
 }
