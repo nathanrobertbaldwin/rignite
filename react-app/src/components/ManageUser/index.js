@@ -85,6 +85,7 @@ function ManageUser() {
             <form onSubmit={handleSubmit} id='change-account-info-form'>
                 <div id='account-basic-info-section'>
                     <h2 className="change-account-form-title">Basic</h2>
+                        {formErrors.username && <span className='form-errors manage-errors'>{formErrors.username[0]}</span>}
                     <div id='update-username-container'>
                         <label htmlFor="username">Username</label>
                         <input
@@ -94,8 +95,8 @@ function ManageUser() {
                             onChange={(e) => setUsername(e.target.value)}
                             placeholder='Please confirm your new username'
                         />
-                        {formErrors.username && <span className='form-errors'>{formErrors.username[0]}</span>}
                     </div>
+                        {formErrors.first_name && <span className='form-errors manage-errors'>{formErrors.first_name[0]}</span>}
                     <div id='update-firstname-container'>
                         <label htmlFor="firstName">First Name</label>
                         <input
@@ -105,8 +106,8 @@ function ManageUser() {
                             onChange={(e) => setFirstName(e.target.value)}
                             placeholder='Please confirm your first name'
                         />
-                        {formErrors.first_name && <span className='form-errors'>{formErrors.first_name[0]}</span>}
                     </div>
+                        {formErrors.last_name && <span className='form-errors manage-errors'>{formErrors.last_name[0]}</span>}
                     <div id='update-lastname-container'>
                         <label htmlFor="lastName">Last Name</label>
                         <input
@@ -116,12 +117,12 @@ function ManageUser() {
                             onChange={(e) => setLastName(e.target.value)}
                             placeholder='Please confirm your last name'
                         />
-                        {formErrors.last_name && <span className='form-errors'>{formErrors.last_name[0]}</span>}
                     </div>
                 </div>
 
                 <div id='account-auth-section'>
                     <h2 className="change-account-form-title">Email & Password</h2>
+                        {formErrors.email && <span className='form-errors manage-errors'>{formErrors.email[0]}</span>}
                     <div id='update-email-container'>
                         <label htmlFor="email">Email</label>
                         <input
@@ -131,8 +132,8 @@ function ManageUser() {
                             onChange={(e) => setEmail(e.target.value)}
                             placeholder='Please enter your new email'
                         />
-                        {formErrors.email && <span className='form-errors'>{formErrors.email[0]}</span>}
                     </div>
+                        {formErrors.password && <span className='form-errors manage-errors'>{formErrors.password[0]}</span>}
                     <div id='update-password-container'>
                         <label htmlFor="password">Password</label>
                         <input
@@ -142,12 +143,12 @@ function ManageUser() {
                             onChange={(e) => setPassword(e.target.value)}
                             placeholder='Please confirm your new password'
                         />
-                        {formErrors.password && <span className='form-errors'>{formErrors.password[0]}</span>}
                     </div>
                 </div>
 
                 <div id='account-shipping-section'>
                     <h2 className="change-account-form-title">Shipping Info</h2>
+                        {formErrors.address && <span className='form-errors manage-errors'>{formErrors.address[0]}</span>}
                     <div id='update-address-container'>
                         <label htmlFor="address">Address</label>
                         <input
@@ -157,8 +158,8 @@ function ManageUser() {
                             onChange={(e) => setAddress(e.target.value)}
                             placeholder='Please confirm your new address'
                         />
-                        {formErrors.address && <span className='form-errors'>{formErrors.address[0]}</span>}
                     </div>
+                        {formErrors.city && <span className='form-errors manage-errors'>{formErrors.city[0]}</span>}
                     <div id='update-city-container'>
                         <label htmlFor="city">City</label>
                         <input
@@ -168,8 +169,8 @@ function ManageUser() {
                             onChange={(e) => setCity(e.target.value)}
                             placeholder='Please confirm your city'
                         />
-                        {formErrors.city && <span className='form-errors'>{formErrors.city[0]}</span>}
                     </div>
+                        {formErrors.state && <span className='form-errors manage-errors'>{formErrors.state[0]}</span>}
                     <div id='update-state-container'>
                         <label htmlFor="state">State</label>
                         <input
@@ -179,8 +180,8 @@ function ManageUser() {
                             onChange={(e) => setState(e.target.value)}
                             placeholder='Please confirm your state'
                         />
-                        {formErrors.state && <span className='form-errors'>{formErrors.state[0]}</span>}
                     </div>
+                        {formErrors.zip_code && <span className='form-errors manage-errors'>{formErrors.zip_code[0]}</span>}
                     <div id='update-zipcode-container'>
                         <label htmlFor="zipcode">Zip Code</label>
                         <input
@@ -190,7 +191,6 @@ function ManageUser() {
                             onChange={(e) => setZipCode(e.target.value)}
                             placeholder='Please confirm your zipcode'
                         />
-                        {formErrors.zip_code && <span className='form-errors'>{formErrors.zip_code[0]}</span>}
                     </div>
                 </div>
 
