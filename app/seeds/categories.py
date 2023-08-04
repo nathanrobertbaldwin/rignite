@@ -28,7 +28,7 @@ def seed_categories():
         photo_url="https://media.wired.com/photos/63e69de969cf98bf35404277/1:1/w_1278,h_1278,c_limit/Best-Wireless-Headphones-Featured-Focal-Bathys-Gear.jpg",
     )
 
-    db.session.add_all([keyboard, mice, speakers, headphones, desk_pads])
+    db.session.add_all([keyboard, mice, desk_pads, speakers, headphones])
 
     db.session.commit()
 
