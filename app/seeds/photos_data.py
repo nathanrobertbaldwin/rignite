@@ -308,19 +308,19 @@ photos = [
     # Product 19
     {
         "product_id": 19,
-        "url": "https://theawesomer.com/photos/2009/08/080709_logitech_1.jpg",
+        "url": "https://massdrop-s3.imgix.net/product-images/drop-expression-series-akatsuki-indigo-keyboard/FP/vR7OkRFjQOWeCUGJMLnM_PC.png?auto=format&fm=jpg&fit=fill&w=820&h=547&bg=f0f0f0&dpr=1&chromasub=444&q=70",
     },
     {
         "product_id": 19,
-        "url": "https://theawesomer.com/photos/2009/08/080709_logitech_2.jpg",
+        "url": "https://massdrop-s3.imgix.net/product-images/drop-expression-series-akatsuki-indigo-keyboard/FP/JpIv8IAQ1yDWaXQPXhAR_1050-copy.jpg?auto=format&fm=jpg&fit=fill&w=820&h=547&bg=f0f0f0&dpr=1&chromasub=444&q=70",
     },
     {
         "product_id": 19,
-        "url": "https://theawesomer.com/photos/2009/08/080709_logitech_3.jpg",
+        "url": "https://massdrop-s3.imgix.net/product-images/drop-expression-series-akatsuki-indigo-keyboard/FP/uBuxEtQeR3SjTzbW5jP1_1043-copy.jpg?auto=format&fm=jpg&fit=fill&w=820&h=547&bg=f0f0f0&dpr=1&chromasub=444&q=70",
     },
     {
         "product_id": 19,
-        "url": "https://theawesomer.com/photos/2009/08/080709_logitech_4.jpg",
+        "url": "https://massdrop-s3.imgix.net/product-images/drop-expression-series-akatsuki-indigo-keyboard/FP/g3Q6vd30QSW0dZvuoM0b_0437-copy-pdp.jpg?auto=format&fm=jpg&fit=fill&w=820&h=547&bg=f0f0f0&dpr=1&chromasub=444&q=70",
     },
     # Product 20
     {
@@ -407,19 +407,19 @@ photos = [
     },  # Product 25
     {
         "product_id": 25,
-        "url": "https://massdrop-s3.imgix.net/product-images/audioengine-a2-wireless-speaker/FP/XaFd6wpTLGgO2dhQV2Lw_red2.jpg?auto=format&fm=jpg&fit=fill&w=820&h=547&bg=f0f0f0&dpr=1&chromasub=444&q=70",
+        "url": "https://massdrop-s3.imgix.net/product-images/chenyi-switch-design-stitched-edge-deskmat/FP/tRq5njfHT8KPVx39upqV_PC.png?auto=format&fm=jpg&fit=fill&w=820&h=547&bg=f0f0f0&dpr=1&chromasub=444&q=70",
     },
     {
         "product_id": 25,
-        "url": "https://massdrop-s3.imgix.net/product-images/audioengine-a2-wireless-speaker/FP/JT0q5xv6SqC0E0nUa2cq_white.jpg?auto=format&fm=jpg&fit=fill&w=820&h=547&bg=f0f0f0&dpr=1&chromasub=444&q=70",
+        "url": "https://massdrop-s3.imgix.net/product-images/chenyi-switch-design-stitched-edge-deskmat/FP/kH9wAQEHQ4SUxzpJg5l9_1129.jpg?auto=format&fm=jpg&fit=fill&w=820&h=547&bg=f0f0f0&dpr=1&chromasub=444&q=70",
     },
     {
         "product_id": 25,
-        "url": "https://massdrop-s3.imgix.net/product-images/audioengine-a2-wireless-speaker/FP/o8PkAR6Q6C6Rm67k8kqc_life2.jpg?auto=format&fm=jpg&fit=fill&w=820&h=547&bg=f0f0f0&dpr=1&chromasub=444&q=70",
+        "url": "https://massdrop-s3.imgix.net/product-images/chenyi-switch-design-stitched-edge-deskmat/FP/g9My75gHSau1aeslSYk1_1112.jpg?auto=format&fm=jpg&fit=fill&w=820&h=547&bg=f0f0f0&dpr=1&chromasub=444&q=70",
     },
     {
         "product_id": 25,
-        "url": "https://massdrop-s3.imgix.net/product-images/audioengine-a2-wireless-speaker/FP/VMKOaUYRtm6t6bqUWevg_pc.png?auto=format&fm=jpg&fit=fill&w=820&h=547&bg=f0f0f0&dpr=1&chromasub=444&q=70",
+        "url": "https://massdrop-s3.imgix.net/product-images/chenyi-switch-design-stitched-edge-deskmat/FP/HBHKcYHSP2hMIKzuiUHQ_1109.jpg?auto=format&fm=jpg&fit=fill&w=820&h=547&bg=f0f0f0&dpr=1&chromasub=444&q=70",
     },  # Product 26
     {
         "product_id": 26,
