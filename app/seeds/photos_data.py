@@ -31,7 +31,7 @@ photos = [
     },
     {
         "product_id": 2,
-        "url": "https://i.dell.com/is/image/DellContent/content/dam/images/products/electronics-and-accessories/dell/keyboards/aw510k/aw510k-ckb-90000td-wh.psd?fmt=png-alpha&pscan=auto&scl=1&wid=3586&hei=2608&qlt=100,1&resMode=sharp2&size=3586,2608&chrss=full&imwidth=5000",
+        "url": "https://www.notebookcheck.net/fileadmin/_processed_/6/7/csm_aw420k_Angle_6d44577de6.png",
     },
     # Product 3
     {
@@ -308,19 +308,19 @@ photos = [
     # Product 19
     {
         "product_id": 19,
-        "url": "https://massdrop-s3.imgix.net/product-images/logitech-pro-gaming-keyboard/FP/ABpUFFt7QoOSfYZgH0IE_PC.png?auto=format&fm=jpg&fit=fill&w=820&h=547&bg=f0f0f0&dpr=1&chromasub=444&q=70",
+        "url": "https://theawesomer.com/photos/2009/08/080709_logitech_1.jpg",
     },
     {
         "product_id": 19,
-        "url": "https://massdrop-s3.imgix.net/product-images/logitech-pro-gaming-keyboard/FP/qUBWMChSpm5OMjobY2Zi_Logitech%20Pro%20Gaming%20Keyboard%20MD-990846595.jpg?auto=format&fm=jpg&fit=fill&w=820&h=547&bg=f0f0f0&dpr=1&chromasub=444&q=70",
+        "url": "https://theawesomer.com/photos/2009/08/080709_logitech_2.jpg",
     },
     {
         "product_id": 19,
-        "url": "https://massdrop-s3.imgix.net/product-images/logitech-pro-gaming-keyboard/FP/En1p90FURcSQZnuAx3aI_Logitech%20Pro%20Gaming%20Keyboard%20MD-990846611.jpg?auto=format&fm=jpg&fit=fill&w=820&h=547&bg=f0f0f0&dpr=1&chromasub=444&q=70",
+        "url": "https://theawesomer.com/photos/2009/08/080709_logitech_3.jpg",
     },
     {
         "product_id": 19,
-        "url": "https://massdrop-s3.imgix.net/product-images/logitech-pro-gaming-keyboard/FP/NkBC7ryLRVOuGJ3Y4vSy_Logitech%20Pro%20Gaming%20Keyboard%20MD-990846618.jpg?auto=format&fm=jpg&fit=fill&w=820&h=547&bg=f0f0f0&dpr=1&chromasub=444&q=70",
+        "url": "https://theawesomer.com/photos/2009/08/080709_logitech_4.jpg",
     },
     # Product 20
     {
