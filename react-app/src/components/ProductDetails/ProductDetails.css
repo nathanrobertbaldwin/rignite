@@ -72,7 +72,7 @@
 
 .carousel-button:hover,
 .carousel-button:focus {
-    color: #F44A07;
+    color: rgb(206, 206, 206);
     background-color: rgb(5, 5, 5);;
 }
 

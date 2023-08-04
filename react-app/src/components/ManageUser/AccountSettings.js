@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 
 function AccountSettings() {
     const user = useSelector(state=>state.session.user);
+    console.log("LOOK HERE", user)
     const history = useHistory();
     if (!user) history.push('/')
     return (
@@ -14,7 +15,7 @@ function AccountSettings() {
                 <h2>Options</h2>
                 <button onClick={()=>history.push('/users/manage')} className='account-nav-buttons'>My Info</button>
                 <button className='account-nav-buttons'>Account Settings</button>
-                <button onClick={()=>history.push('/users/reviews')} className='account-nav-buttons'>Manage Reviews</button>
+                {!user?.is_admin ? <button onClick={()=>history.push('/users/reviews')} className='account-nav-buttons'>Manage Reviews</button> : <p>cannot manage reviews as an admin</p>}
             </div>
 
             <div id="deactivate-account-container">
