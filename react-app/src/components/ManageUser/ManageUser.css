@@ -45,6 +45,12 @@
   color: rgb(181, 41, 41);
 }
 
+.manage-errors{
+  display: flex;
+  justify-content: end;
+  padding-right: 2%;
+}
+
 /* --------------------------------------------------- */
 
 /* CHANGE ACCOUNT FORM */
