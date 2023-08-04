@@ -1,19 +1,17 @@
-
 /* PRODUCT DETAILS COMPONENT */
 
 #product_details {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 20px;
 }
 
-
-#product_details_main_content_container{
-    display: flex;
-    width: 80%;
-    gap: 30px;
+#product_details_main_content_container {
+  display: flex;
+  width: 80%;
+  gap: 30px;
 }
 
 /* IMAGE CAROUSEL */
@@ -23,51 +21,52 @@
 } */
 
 .carousel {
-    flex-basis: 50%;
-    width: 100vw;
-    height: 50vh;
-    position: relative;
+  flex-basis: 50%;
+  width: 100vw;
+  height: 50vh;
+  position: relative;
 }
 
 .carousel > ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .slide {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    transition: 200ms opacity ease-in-out;
-    transition-delay: 200ms;
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: 200ms opacity ease-in-out;
+  transition-delay: 200ms;
 }
 
 .slide > img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-position: center;
-    object-fit: fill;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-position: center;
+  object-fit: fill;
 }
 
 .slide[data-active] {
-    opacity: 1;
+  opacity: 1;
 }
 
-
 .carousel-button {
-    position: absolute;
-    z-index: 2;
-    background: none;
-    border: none;
-    font-size: 4rem;
-    top: 85%;
-    cursor: pointer;
-    border-radius: 0.25rem;
-    padding: 0 .5rem;
-    color: rgb(206, 206, 206);
-    background-color: rgb(5, 5, 5);
+
+  position: absolute;
+  z-index: 2;
+  background: none;
+  border: none;
+  font-size: 4rem;
+  top: 85%;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  padding: 0 0.5rem;
+  color: #f44a07;
+  background-color: rgb(5, 5, 5);
+
 }
 
 .carousel-button:hover,
@@ -77,48 +76,45 @@
 }
 
 .carousel-button:focus {
-    outline: 1px solid rgb(5, 5, 5);
+  outline: 1px solid rgb(5, 5, 5);
 }
 
 .carousel-button.prev {
-    left: 1rem;
+  left: 1rem;
 }
 
 .carousel-button.next {
-    right: 1rem;
+  right: 1rem;
 }
-
 
 /* //////////////////////////////////////////////////// */
 
-
-#product_details_product_main_info{
-    flex-basis: 40%;
+#product_details_product_main_info {
+  flex-basis: 40%;
 }
 
 #switch-view-container {
-    display: flex;
-    justify-content: center;
-    gap: 40%;
-
+  display: flex;
+  justify-content: center;
+  gap: 40%;
 }
 
 #switch-view-container > button {
-    background-color: transparent;
-    color: white;
+  background-color: transparent;
+  color: white;
 }
 
 #switch-view-container > button:hover {
-    text-decoration: underline #F44A07;
+  text-decoration: underline #f44a07;
 }
 
 .hrtest {
-    width: 45vw;
-    border: 1px solid rgb(44, 44, 44);
-    margin-top: 100px;
+  width: 45vw;
+  border: 1px solid rgb(44, 44, 44);
+  margin-top: 100px;
 }
 
 .hrtest2 {
-    width: 45vw;
-    border: 1px solid rgb(44, 44, 44);
+  width: 45vw;
+  border: 1px solid rgb(44, 44, 44);
 }
