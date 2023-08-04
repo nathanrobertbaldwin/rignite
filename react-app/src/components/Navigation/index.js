@@ -10,36 +10,40 @@ import "./Navigation.css";
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
   return (
-    <div id="nav_links_container">
-      <ul className="navi-icons">
-        <li id='home-link'>
+    <div id="nav_container">
+      <div id="nav_links_container">
+        <div id="nav_links_left">
           <NavLink exact to="/">
-            <h1>Home</h1>
+            <h2>Home</h2>
           </NavLink>
-        </li>
-        <li id='shop-link'>
           <NavLink exact to="/products/all">
-            <h1>Shop</h1>
+            <h2>Shop All Products</h2>
           </NavLink>
-      </li>
-      {sessionUser?.is_admin && (
-        <OpenModalButton
-          className="product_modal_button"
-          buttonText="Add A Product"
-          modalComponent={<AddProductModal />}
-        />
-      )}
-      {sessionUser && <OpenModalButton
-          className="see-cart-modal"
-          buttonText="🛒"
-          modalComponent={<SeeCartModal addProduct={false}/>}
-        />}
-      {isLoaded && (
-        <li id='profButt'>
-          <ProfileButton user={sessionUser} />
-        </li>
-        )}
-      </ul>
+        </div>
+        <div id="nav_links_right">
+          <ul className="navi-icons">
+            {sessionUser?.is_admin && (
+              <OpenModalButton
+                className="product_modal_button"
+                buttonText="Add A Product"
+                modalComponent={<AddProductModal />}
+              />
+            )}
+            {sessionUser && (
+              <OpenModalButton
+                className="see-cart-modal"
+                buttonText="🛒"
+                modalComponent={<SeeCartModal addProduct={false} />}
+              />
+            )}
+            {isLoaded && (
+              <li id="profButt">
+                <ProfileButton user={sessionUser} />
+              </li>
+            )}
+          </ul>
+        </div>
+      </div>
     </div>
   );
 }

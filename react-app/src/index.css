@@ -1,168 +1,167 @@
 /* TODO Add site wide styles */
 
 html {
-    background-color: rgb(5, 5, 5);
-    margin: 0px !important;
-    padding: 0px !important;
-    font-family: "Gordita", Helvetica, Arial, Verdana, sans-serif;
+  background-color: rgb(5, 5, 5);
+  margin: 0px !important;
+  padding: 0px !important;
+  font-family: "Gordita", Helvetica, Arial, Verdana, sans-serif;
 }
 
 #root {
-    min-height: 100vh;
+  min-height: 100vh;
 }
 
 body {
-    color: white;
-    margin: 0px !important;
-    padding: 0px !important;
+  color: white;
+  margin: 0px !important;
+  padding: 0px !important;
 }
 
 div {
-    margin: 0px;
-    padding: 0px;
+  margin: 0px;
+  padding: 0px;
 }
 
-ul{
-    list-style: none;
-    padding: none !important;
-    margin: none !important;
+ul {
+  list-style: none;
+  padding: none !important;
+  margin: none !important;
 }
 
 #modal-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 20px;
 }
 
-#modal-content>form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+#modal-content > form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-#modal-content>form>input {
-    background-color: rgb(24, 26, 27);
-    border-radius: 5px;
-    color: lightgrey;
-    margin: 5px;
-    border: lightgrey 2px solid;
-    padding: 10px;
-    padding-right: 150px;
-    font-family: 'Belanosima', serif;
-    font-size: large;
+#modal-content > form > input {
+  background-color: rgb(24, 26, 27);
+  border-radius: 5px;
+  color: lightgrey;
+  margin: 5px;
+  border: lightgrey 2px solid;
+  padding: 10px;
+  padding-right: 150px;
+  font-family: "Belanosima", serif;
+  font-size: large;
 }
 
-#modal-content>form>button,
-#modal-content>button {
-    background-color: #f44a07;
-    border: white solid 3px;
-    box-shadow: white 3px 2px;
-    padding: 20px;
-    margin-top: 15px;
-    width: 100%;
-    font-family: 'Belanosima', serif;
-    font-size: large;
+#modal-content > form > button,
+#modal-content > button {
+  border: white solid 3px;
+  padding: 10px;
+  width: fit-content;
+  font-family: "Belanosima", serif;
+  font-size: medium;
 }
 
-#modal-content>#noDelete {
-    background-color: grey;
+#modal-content > #noDelete {
+  background-color: #f44a07;
+  background-color: grey;
 }
 
-#modal-content>form>button:hover,
-#modal-content>button:hover {
-    cursor: pointer;
+#modal-content > form > button:hover,
+#modal-content > button:hover {
+  cursor: pointer;
 }
 
-#modal-content>form>button:disabled,
-#modal-content>button:disabled {
-    background-color: grey;
+#modal-content > form > button:disabled,
+#modal-content > button:disabled {
+  background-color: grey;
 }
 
-#modal-content>#demoButton:hover {
-    cursor: pointer;
+#modal-content > #demoButton:hover {
+  cursor: pointer;
 }
 
 img {
-    object-fit: cover;
+  object-fit: cover;
 }
 
-h1{
-    font-size: 24px;
-    margin: 0px;
-    padding: 0px;
-    color: white;
+h1 {
+  font-size: 24px;
+  margin: 0px;
+  padding: 0px;
+  color: white;
 }
 
-h2{
-    font-size: 20px;
-    margin: 0px;
-    padding: 0px;
-    color: white;
+h2 {
+  font-size: 20px;
+  margin: 0px;
+  padding: 0px;
+  color: white;
 }
 
-h3{
-    font-size: 16px;
-    margin: 0px;
-    padding: 0px;
-    color: white;
+h3 {
+  font-size: 16px;
+  margin: 0px;
+  padding: 0px;
+  color: white;
 }
 
 a {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
 a:hover {
-    color: lightblue
+  color: white;
 }
 
 button {
-    cursor: pointer;
-    background-color: #f44a07;
-    font-size: x-large;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    /* background-color: #FF9C75; */
-    /* visibility: hidden; */
+  cursor: pointer;
+  background-color: rgb(206, 206, 206);
+  font-size: medium;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  /* background-color: #FF9C75; */
+  /* visibility: hidden; */
 }
 
 button:hover {
-    background-color: rgb(206, 206, 206);
+  background-color: #f44a07;
 }
-
 
 /* FOOTER */
 
-#footer-container{
-    /* border: 1px solid red; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(22, 22, 22);
-    height: 75px;
-    width: 100%;
-    gap: 10%;
-    border-top: 1px solid darkgrey;
-    margin-top: 30px;
+#footer-container {
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(22, 22, 22);
+  height: 75px;
+  width: 100%;
+  gap: 10%;
+  border-top: 1px solid darkgrey;
+  margin-top: 30px;
 }
 
-#footer-list{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 1em;
-    align-items: center;
-    /* border: 1px solid red; */
+#footer-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1em;
+  align-items: center;
+  /* border: 1px solid red; */
 }
 
-#footer-list > li{
-    cursor: pointer;
+#footer-list > li {
+  cursor: pointer;
 }
 
-#footer-info>h2, ul, li{
-    color: white;
-    list-style: none;
+#footer-info > h2,
+ul,
+li {
+  color: white;
+  list-style: none;
 }

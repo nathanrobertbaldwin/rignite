@@ -23,6 +23,12 @@ function LoginFormModal() {
     }
   };
 
+  async function demoLogin(user){
+    await dispatch(login(user==='admin'?'admin@rignite.com':'Demo-lition@example.com','password'));
+    closeModal();
+  }
+
+
   return (
     <>
       <h1 id='login-title'>Log In To Rignite</h1>
@@ -59,6 +65,8 @@ function LoginFormModal() {
         </div>
         <button type="submit">Log In</button>
       </form>
+      <button onClick={()=>demoLogin('user')}>Demo User</button>
+      <button onClick={()=>demoLogin('admin')}>Demo Admin</button>
       <hr id='login-hr2'/>
       <div id='login-signup-container'>
         <p>Not a member yet?</p>
