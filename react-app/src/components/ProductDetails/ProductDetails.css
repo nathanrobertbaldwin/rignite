@@ -54,7 +54,6 @@
 }
 
 .carousel-button {
-
   position: absolute;
   z-index: 2;
   background: none;
@@ -64,19 +63,18 @@
   cursor: pointer;
   border-radius: 0.25rem;
   padding: 0 0.5rem;
+  color: rgb(206, 206, 206);
+  background-color: rgb(5, 5, 5);
+}
+
+.carousel-button:hover {
   color: #f44a07;
   background-color: rgb(5, 5, 5);
-
-}
-
-.carousel-button:hover,
-.carousel-button:focus {
-    color: rgb(206, 206, 206);
-    background-color: rgb(5, 5, 5);;
 }
 
 .carousel-button:focus {
-  outline: 1px solid rgb(5, 5, 5);
+  /* color: #f44a07; */
+  outline: 1px solid rgb(255, 255, 255);
 }
 
 .carousel-button.prev {
