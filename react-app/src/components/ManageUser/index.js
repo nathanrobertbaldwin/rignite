@@ -126,7 +126,7 @@ function ManageUser() {
                         <label htmlFor="email">Email</label>
                         <input
                             id='email'
-                            type='text'
+                            type='email'
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             placeholder='Please enter your new email'
@@ -185,7 +185,7 @@ function ManageUser() {
                         <label htmlFor="zipcode">Zip Code</label>
                         <input
                             id='zipcode'
-                            type='number'
+                            type='text'
                             value={zipCode}
                             onChange={(e) => setZipCode(e.target.value)}
                             placeholder='Please confirm your zipcode'
