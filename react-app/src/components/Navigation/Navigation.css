@@ -128,7 +128,8 @@
   text-decoration: none;
 }
 
-.see-cart-modal>button{
+#nav_links_container>button{
   background-color: transparent;
   border: none;
+  padding: 300px;
 }
