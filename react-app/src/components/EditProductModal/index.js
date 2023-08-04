@@ -20,21 +20,17 @@ export default function EditProductModal({ product }) {
   const [price, setPrice] = useState(product.price);
   const [product_name, setProductName] = useState(product.product_name);
 
-  const productPhotos = useSelector((store) => {
-    return store.product_photos;
-  });
-
   const [imageOne, setImageOne] = useState(
-    productPhotos.length >= 1 ? product.product_photos[0].url : ""
+    product.product_photos[0] ? product.product_photos[0].url : ""
   );
   const [imageTwo, setImageTwo] = useState(
-    productPhotos.length >= 2 ? product.product_photos[1].url : ""
+    product.product_photos[1] ? product.product_photos[1].url : ""
   );
   const [imageThree, setImageThree] = useState(
-    productPhotos.length >= 3 ? product.product_photos[2].url : ""
+    product.product_photos[2] ? product.product_photos[2].url : ""
   );
   const [imageFour, setImageFour] = useState(
-    productPhotos.length >= 4 ? product.product_photos[3].url : ""
+    product.product_photos[3] ? product.product_photos[3].url : ""
   );
 
   const [hasSubmitted, setHasSubmitted] = useState(false);
