@@ -21,7 +21,7 @@ export default function EditProductModal({ product }) {
   const [product_name, setProductName] = useState(product.product_name);
 
   const productPhotos = useSelector((store) => {
-    store.product_photos;
+    return store.product_photos;
   });
 
   const [imageOne, setImageOne] = useState(
