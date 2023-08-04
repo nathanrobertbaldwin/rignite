@@ -83,7 +83,7 @@ function CreateReviewModal({user, productId}) {
                     {formErrors.review && <span className='form-errors'>{formErrors.review}</span>}
 
 
-                <div id='photo-url-container'>
+                {/* <div id='photo-url-container'>
                     <label htmlFor="photo-url">Image File Upload:</label>
                     <input
                         id='photo-url'
@@ -92,8 +92,7 @@ function CreateReviewModal({user, productId}) {
                         onChange={(e) => setPhotoUrl(e.target.value)}
                         placeholder='Feel free to include an image to support your review...'
                     />
-                    {/* {formErrors.username && <span className='form-errors'>{formErrors.username[0]}</span>} */}
-                </div>
+                </div> */}
 
                 <div id="review-button-container">
                     <button className="review-submit-button" type="submit">Submit Review</button>
