@@ -19,6 +19,11 @@
   display: flex;
 }
 
+.product-form-field-large {
+  display: flex;
+  flex-direction: column;
+}
+
 .product-form-label {
   width: 175px;
 }
@@ -27,8 +32,17 @@
   width: 60%;
 }
 
-.product-large-label {
+.product-form-label-large {
   width: 100%;
+}
+
+.error-message {
+  color: red;
+  font-size: small;
+  padding: 0;
+  /* top | right | bottom | left */
+  margin: 0px 0px 5px 0px;
+  text-align: right;
 }
 
 #product-product-description-field {
