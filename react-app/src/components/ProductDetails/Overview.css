@@ -17,6 +17,8 @@
 
 .overview-description{
     flex-basis: 50%;
+    word-wrap: break-word;
+    width: 50%;
 }
 
 #overview-primary-image{

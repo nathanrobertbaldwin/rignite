@@ -89,6 +89,7 @@
 
 #product_details_product_main_info {
   flex-basis: 40%;
+  max-width: 40%;
 }
 
 #switch-view-container {
@@ -120,4 +121,8 @@
 #breadcrumb{
     align-self: flex-start;
     margin-left: 100px;
+}
+
+#product_details_product_description{
+  word-wrap: break-word;
 }
