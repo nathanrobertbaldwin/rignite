@@ -14,7 +14,7 @@ export default function EditProductModal({ product }) {
   const [category_id, setCategoryId] = useState(product.category_id);
   const [color, setColor] = useState(product.color);
   const [description, setDescription] = useState(product.description);
-  const [specs, setSpecs] = useState(product.specs.split(','));
+  const [specs, setSpecs] = useState(product.specs.split(","));
   const [price, setPrice] = useState(product.price);
   const [product_name, setProductName] = useState(product.product_name);
   const [status, setStatus] = useState(product.status);
@@ -86,7 +86,7 @@ export default function EditProductModal({ product }) {
         imageFour,
       };
 
-      const newProductId = await dispatch(createNewProductThunk(data));
+      const newProductId = await dispatch(editProductThunk(data));
       _reset();
       closeModal();
       history.push(`/products/${newProductId}`);
@@ -151,7 +151,7 @@ export default function EditProductModal({ product }) {
 
   return (
     <div id="product-form-container">
-      <h3 id="product-form-h3">Add A New Product</h3>
+      <h3 id="product-form-h3">Edit Product</h3>
       <form id="product-form" onSubmit={handleSubmit}>
         <div className="product-form-field-container">
           {validationErrors.product_name && hasSubmitted && (
@@ -250,7 +250,7 @@ export default function EditProductModal({ product }) {
             </select>
           </div>
         </div>
-        <div className="product-form-field-container">
+        <div className="product-form-field-container-large">
           {validationErrors.description && hasSubmitted && (
             <p className="error-message">{validationErrors.description}</p>
           )}
@@ -266,7 +266,7 @@ export default function EditProductModal({ product }) {
             />
           </div>
         </div>
-        <div className="product-form-field-container">
+        <div className="product-form-field-container-large">
           {validationErrors.specs && hasSubmitted && (
             <p className="error-message">{validationErrors.specs}</p>
           )}
@@ -285,32 +285,37 @@ export default function EditProductModal({ product }) {
             />
           ))}
           {/* // ADD A SPEC */}
-          {specs.length < 10 && (
-            <button
-              type="submit"
-              onClick={(e) => {
-                e.preventDefault();
-                const newSpecs = [...specs, ""];
-                setSpecs(newSpecs);
-              }}
-            >
-              Add Spec
-            </button>
-          )}
-          {/* REMOVE A SPEC */}
-          {specs.length > 3 && (
-            <button
-              type="submit"
-              onClick={(e) => {
-                e.preventDefault();
-                const newSpecs = [...specs];
-                newSpecs.pop();
-                setSpecs(newSpecs);
-              }}
-            >
-              Remove Last Spec
-            </button>
-          )}
+          <div className="product-button-container">
+            {/* // ADD A SPEC */}
+            {specs.length < 10 && (
+              <button
+                type="submit"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const newSpecs = [...specs, ""];
+                  setSpecs(newSpecs);
+                }}
+              >
+                Add Spec
+              </button>
+            )}
+          </div>
+          <div className="product-button-container">
+            {/* REMOVE A SPEC */}
+            {specs.length > 3 && (
+              <button
+                type="submit"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const newSpecs = [...specs];
+                  newSpecs.pop();
+                  setSpecs(newSpecs);
+                }}
+              >
+                Remove Last Spec
+              </button>
+            )}
+          </div>
         </div>
         <div className="product-form-field-container">
           {validationErrors.imageOne && hasSubmitted && (
@@ -372,7 +377,7 @@ export default function EditProductModal({ product }) {
             />
           </div>
         </div>
-        <div id="product-button-container">
+        <div className="product-button-container">
           <button type="button" className="button-small" onClick={handleSubmit}>
             Submit Product
           </button>
