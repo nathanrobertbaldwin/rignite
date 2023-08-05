@@ -304,4 +304,6 @@ button.review-submit-button:hover {
   margin-bottom: 20px;
   padding: 10px 10px;
   border-radius: 6px;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }

@@ -18,18 +18,17 @@ import "./ProductDetails.css";
 import LoginFormModal from "../LoginFormModal";
 
 export default function ProductDetails() {
- const history = useHistory();
+  const history = useHistory();
   const [view, setView] = useState("overview")
   const sessionUser = useSelector((store) => store.session.user);
-
   const [activeIndex, setActiveIndex] = useState(0);
-
   const dispatch = useDispatch();
   let { id } = useParams();
   id = parseInt(id);
   const user = useSelector((state) => state.session.user);
   const products = useSelector((store) => store.products);
   const product = products[id];
+  console.log(product)
 
   useEffect(async () => {
     // MEGATHUNKADONK
@@ -83,7 +82,9 @@ export default function ProductDetails() {
         <div id="product_details_product_main_info">
           <h3>{`${product.product_name}`}</h3>
           <h4>{`$${product.price}`}</h4>
-          <p id="product_details_product_description">{product.description}</p>
+          <div id="product_details_product_description">
+            <p>{product.description}</p>
+          </div>
           <OpenModalButton
             buttonText="Add to cart"
             modalComponent={user ? <SeeCartModal addProduct={product.id} /> : <LoginFormModal />}

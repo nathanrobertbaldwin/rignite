@@ -1,9 +1,14 @@
 import './Details.css'
+import { useSelector } from 'react-redux'
 
 function Detail({product}) {
+
+    const categories = useSelector(state=>state.categories)
+    const prodType = categories[product.category_id].name;
+
     const specs = product.specs
-    const specsArray = specs.split(',')
-    const specsTitle = specsArray[1]
+    const specsTitle = `${prodType==='Mice'?'Mouse': prodType==="Keyboards"?"Keyboard": prodType==="Speakers"?"Speaker":prodType} Specifications`
+    const specsArray = specs.split(',');
     const specsInfo = specsArray.slice(1)
 
     return (

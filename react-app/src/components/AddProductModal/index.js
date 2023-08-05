@@ -15,7 +15,7 @@ export default function AddProductModal() {
   const [category_id, setCategoryId] = useState("");
   const [color, setColor] = useState("");
   const [description, setDescription] = useState("");
-  const [specs, setSpecs] = useState("");
+  const [specs, setSpecs] = useState(["", "", ""]);
   const [price, setPrice] = useState("");
   const [product_name, setProductName] = useState("");
   const [imageOne, setImageOne] = useState("");
@@ -51,13 +51,21 @@ export default function AddProductModal() {
     setHasSubmitted(true);
 
     if (Object.values(validationErrors).length === 0) {
+      let subSpecs = [...specs];
+      for (let i = 3; i < subSpecs.length; i++) {
+        if (!subSpecs[i]) {
+          subSpecs.splice(i, 1);
+          i--;
+        }
+      }
+
       let data = {
         user_id: user.id,
         brand,
         category_id,
         color,
         description,
-        specs,
+        specs: subSpecs.join(","),
         price,
         product_name,
         imageOne,
@@ -76,16 +84,17 @@ export default function AddProductModal() {
 
   function _checkForErrors() {
     const errors = {};
-    // check for errors
     if (!product_name) errors.product_name = "Name required";
     if (!brand) errors.brand = "Brand required";
     if (!color) errors.color = "Color required";
     if (!description || description.length < 50)
       errors.description = "Description of 50 characters required";
     if (!price || price < 0) errors.price = "A positive Price is required.";
-    if (!specs) errors.specs = "Product must have specs";
-    if (specs.length < 30)
-      errors.spec = "Specs must be more than 50 characters";
+    specs.forEach((spec) => {
+      if (spec.includes(",")) errors.specs = "Specs cannot include commas";
+    });
+    if (!specs[0] || !specs[1] || !specs[2])
+      errors.specs = "Product must have at least 3 specs";
     if (!imageOne || !urlCheck(imageOne))
       errors.imageOne = "Add at least 2 images ending in .png, .jpg, or .jpeg";
     if (!imageTwo || !urlCheck(imageTwo))
@@ -107,7 +116,7 @@ export default function AddProductModal() {
     setCategoryId("");
     setColor("");
     setDescription("");
-    setSpecs("");
+    setSpecs([""]);
     setPrice("");
     setProductName("");
     setImageOne("");
@@ -166,13 +175,17 @@ export default function AddProductModal() {
           )}
           <div className="product-form-field">
             <label className="product-form-label">Category</label>
-            <input
-              className="product-form-input"
-              type="number"
-              placeholder="Category Id"
+            <select
+              id="category"
               value={category_id}
               onChange={(e) => setCategoryId(e.target.value)}
-            />
+            >
+              <option value={1}>Keyboard</option>
+              <option value={2}>Mouse</option>
+              <option value={3}>Gaming Mat</option>
+              <option value={4}>Speaker</option>
+              <option value={5}>Headphones</option>
+            </select>
           </div>
         </div>
         <div className="product-form-field-container">
@@ -187,6 +200,21 @@ export default function AddProductModal() {
               placeholder="Color"
               value={color}
               onChange={(e) => setColor(e.target.value)}
+            />
+          </div>
+        </div>
+        <div className="product-form-field-container">
+          {validationErrors.price && hasSubmitted && (
+            <p className="error-message">{validationErrors.price}</p>
+          )}
+          <div className="product-form-field">
+            <label className="product-form-label">Price</label>
+            <input
+              className="product-form-input"
+              type="number"
+              placeholder="Price"
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
             />
           </div>
         </div>
@@ -207,35 +235,50 @@ export default function AddProductModal() {
           </div>
         </div>
         <div className="product-form-field-container">
-          <div className="product-form-field-large">
-            {validationErrors.specs && hasSubmitted && (
-              <p className="error-message">{validationErrors.specs}</p>
-            )}
-            <label className="product-form-label-large">Specs</label>
-            <textarea
-              id="form-text-area"
-              placeholder="Specs"
-              type="text"
-              value={specs}
-              onChange={(e) => setSpecs(e.target.value)}
-              rows="10"
-            />
-          </div>
-        </div>
-        <div className="product-form-field-container">
-          {validationErrors.price && hasSubmitted && (
-            <p className="error-message">{validationErrors.price}</p>
+          {validationErrors.specs && hasSubmitted && (
+            <p className="error-message">{validationErrors.specs}</p>
           )}
-          <div className="product-form-field">
-            <label className="product-form-label">Price</label>
+          <label className="product-form-label-large">Specs</label>
+          {specs?.map((str, index) => (
             <input
-              className="product-form-input"
-              type="number"
-              placeholder="Price"
-              value={price}
-              onChange={(e) => setPrice(e.target.value)}
+              key={index}
+              type="text"
+              placeholder={`Specification field ${index + 1}`}
+              value={specs[index]}
+              onChange={(e) => {
+                let newSpecs = [...specs];
+                newSpecs[index] = e.target.value;
+                setSpecs(newSpecs);
+              }}
             />
-          </div>
+          ))}
+          {/* // ADD A SPEC */}
+          {specs.length < 10 && (
+            <button
+              type="submit"
+              onClick={(e) => {
+                e.preventDefault();
+                const newSpecs = [...specs, ""];
+                setSpecs(newSpecs);
+              }}
+            >
+              Add Spec
+            </button>
+          )}
+          {/* REMOVE A SPEC */}
+          {specs.length > 3 && (
+            <button
+              type="submit"
+              onClick={(e) => {
+                e.preventDefault();
+                const newSpecs = [...specs];
+                newSpecs.pop();
+                setSpecs(newSpecs);
+              }}
+            >
+              Remove Last Spec
+            </button>
+          )}
         </div>
         <div className="product-form-field-container">
           {validationErrors.imageOne && hasSubmitted && (

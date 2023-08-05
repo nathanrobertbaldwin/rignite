@@ -14,7 +14,7 @@ export default function EditProductModal({ product }) {
   const [category_id, setCategoryId] = useState(product.category_id);
   const [color, setColor] = useState(product.color);
   const [description, setDescription] = useState(product.description);
-  const [specs, setSpecs] = useState(product.specs);
+  const [specs, setSpecs] = useState(product.specs.split(','));
   const [price, setPrice] = useState(product.price);
   const [product_name, setProductName] = useState(product.product_name);
   const [status, setStatus] = useState(product.status);
@@ -59,9 +59,16 @@ export default function EditProductModal({ product }) {
   async function handleSubmit(e) {
     e.preventDefault();
     setHasSubmitted(true);
-    console.log("After submit, validation errors:", validationErrors);
 
     if (Object.values(validationErrors).length === 0) {
+      let subSpecs = [...specs];
+      for (let i = 3; i < subSpecs.length; i++) {
+        if (!subSpecs[i]) {
+          subSpecs.splice(i, 1);
+          i--;
+        }
+      }
+
       let data = {
         product_id: product.id,
         user_id: user.id,
@@ -78,10 +85,11 @@ export default function EditProductModal({ product }) {
         imageThree,
         imageFour,
       };
-      const editedProductId = await dispatch(editProductThunk(data));
+
+      const newProductId = await dispatch(createNewProductThunk(data));
       _reset();
       closeModal();
-      history.push(`/products/${editedProductId}`);
+      history.push(`/products/${newProductId}`);
     }
   }
 
@@ -89,16 +97,17 @@ export default function EditProductModal({ product }) {
 
   function _checkForErrors() {
     const errors = {};
-    // check for errors
     if (!product_name) errors.product_name = "Name required";
     if (!brand) errors.brand = "Brand required";
     if (!color) errors.color = "Color required";
     if (!description || description.length < 50)
       errors.description = "Description of 50 characters required";
     if (!price || price < 0) errors.price = "A positive Price is required.";
-    if (!specs) errors.specs = "Product must have specs";
-    if (specs.length < 30)
-      errors.spec = "Specs must be more than 50 characters";
+    specs.forEach((spec) => {
+      if (spec.includes(",")) errors.specs = "Specs cannot include commas";
+    });
+    if (!specs[0] || !specs[1] || !specs[2])
+      errors.specs = "Product must have at least 3 specs";
     if (!imageOne || !urlCheck(imageOne))
       errors.imageOne = "Add at least 2 images ending in .png, .jpg, or .jpeg";
     if (!imageTwo || !urlCheck(imageTwo))
@@ -180,13 +189,17 @@ export default function EditProductModal({ product }) {
           )}
           <div className="product-form-field">
             <label className="product-form-label">Category</label>
-            <input
-              className="product-form-input"
-              type="number"
-              placeholder="Category Id"
+            <select
+              id="category"
               value={category_id}
               onChange={(e) => setCategoryId(e.target.value)}
-            />
+            >
+              <option value={1}>Keyboard</option>
+              <option value={2}>Mouse</option>
+              <option value={3}>Gaming Mat</option>
+              <option value={4}>Speaker</option>
+              <option value={5}>Headphones</option>
+            </select>
           </div>
         </div>
         <div className="product-form-field-container">
@@ -201,38 +214,6 @@ export default function EditProductModal({ product }) {
               placeholder="Color"
               value={color}
               onChange={(e) => setColor(e.target.value)}
-            />
-          </div>
-        </div>
-        <div className="product-form-field-container">
-          {validationErrors.description && hasSubmitted && (
-            <p className="error-message">{validationErrors.description}</p>
-          )}
-          <div className="product-form-field-large">
-            <label className="product-form-label-large">Description</label>
-            <textarea
-              id="form-text-area"
-              placeholder="Description"
-              type="text"
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-              rows="6"
-            />
-          </div>
-        </div>
-        <div className="product-form-field-container">
-          <div className="product-form-field-large">
-            {validationErrors.specs && hasSubmitted && (
-              <p className="error-message">{validationErrors.specs}</p>
-            )}
-            <label className="product-form-label-large">Specs</label>
-            <textarea
-              id="form-text-area"
-              placeholder="Specs"
-              type="text"
-              value={specs}
-              onChange={(e) => setSpecs(e.target.value)}
-              rows="10"
             />
           </div>
         </div>
@@ -268,6 +249,68 @@ export default function EditProductModal({ product }) {
               <option value="deactivated">Deactivated</option>
             </select>
           </div>
+        </div>
+        <div className="product-form-field-container">
+          {validationErrors.description && hasSubmitted && (
+            <p className="error-message">{validationErrors.description}</p>
+          )}
+          <div className="product-form-field-large">
+            <label className="product-form-label-large">Description</label>
+            <textarea
+              id="form-text-area"
+              placeholder="Description"
+              type="text"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              rows="6"
+            />
+          </div>
+        </div>
+        <div className="product-form-field-container">
+          {validationErrors.specs && hasSubmitted && (
+            <p className="error-message">{validationErrors.specs}</p>
+          )}
+          <label className="product-form-label-large">Specs</label>
+          {specs?.map((str, index) => (
+            <input
+              key={index}
+              type="text"
+              placeholder={`Specification field ${index + 1}`}
+              value={specs[index]}
+              onChange={(e) => {
+                let newSpecs = [...specs];
+                newSpecs[index] = e.target.value;
+                setSpecs(newSpecs);
+              }}
+            />
+          ))}
+          {/* // ADD A SPEC */}
+          {specs.length < 10 && (
+            <button
+              type="submit"
+              onClick={(e) => {
+                e.preventDefault();
+                const newSpecs = [...specs, ""];
+                setSpecs(newSpecs);
+              }}
+            >
+              Add Spec
+            </button>
+          )}
+          {/* REMOVE A SPEC */}
+          {specs.length > 3 && (
+            <button
+              type="submit"
+              onClick={(e) => {
+                e.preventDefault();
+                const newSpecs = [...specs];
+                newSpecs.pop();
+                setSpecs(newSpecs);
+              }}
+            >
+              Remove Last Spec
+            </button>
+          )}
         </div>
         <div className="product-form-field-container">
           {validationErrors.imageOne && hasSubmitted && (
