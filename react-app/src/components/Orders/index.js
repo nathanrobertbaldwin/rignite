@@ -57,13 +57,18 @@ export default function Orders() {
         if (Object.keys(orders).length) once()
     }, [])
 
+    async function advanceOrder(batch, status) {
+        await dispatch(editOrderStatusFetch(batch, status));
+        dispatch(getAllOrdersThunk());
+    }
+
     return (
         <>
             <h1 id="orders-title">Orders</h1>
             <div id="order-status-container">
-                <h3 onClick={() => setActivePage('pending')} id={activePage==='pending'?'activePage':''}>Pending</h3>
-                <h3 onClick={() => setActivePage('in transit')} id={activePage==='in transit'?'activePage':''}>In-Transit</h3>
-                <h3 onClick={() => setActivePage('delivered')} id={activePage==='delivered'?'activePage':''}>Delivered</h3>
+                <h3 onClick={() => setActivePage('pending')} id={activePage === 'pending' ? 'activePage' : ''}>Pending</h3>
+                <h3 onClick={() => setActivePage('in transit')} id={activePage === 'in transit' ? 'activePage' : ''}>In-Transit</h3>
+                <h3 onClick={() => setActivePage('delivered')} id={activePage === 'delivered' ? 'activePage' : ''}>Delivered</h3>
             </div>
             <div id='orders'>
                 {Object.keys(filteredOrders).length ? (
@@ -88,9 +93,12 @@ export default function Orders() {
                                         )
                                     })}
                                     <h3>Total: ${order.total}</h3>
-                                    {activePage != 'delivered' && <div className='ordCancel'>
-                                        <OpenModalButton buttonText={"Cancel Order"} modalComponent={<DeleteOrderModal batch={batch} />} />
-                                    </div>}
+                                    {activePage != 'delivered' &&
+                                        <div className='ordCancel'>
+                                            <button id='ordAdvance' onClick={() => advanceOrder(batch, activePage === 'pending' ? 'in transit' : 'delivered')}>Advance to {activePage === 'pending' ? 'In-Transit' : 'Delivered'}</button>
+                                            <OpenModalButton buttonText={"Cancel Order"} modalComponent={<DeleteOrderModal batch={batch} />} />
+                                        </div>
+                                    }
                                 </div>
                             )
                         })

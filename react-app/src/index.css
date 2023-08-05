@@ -131,6 +131,11 @@ button:hover {
   background-color: #f44a07;
 }
 
+#checkout{
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
 #emptyCart{
   display: flex;
   flex-direction: column;

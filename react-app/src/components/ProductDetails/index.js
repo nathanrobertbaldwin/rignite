@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { getAllProductCategoriesThunk } from "../../store/categories";
 import { getAllProductsThunk } from "../../store/products";
 import { getAllOrdersThunk } from "../../store/orders";
@@ -18,8 +18,9 @@ import "./ProductDetails.css";
 import LoginFormModal from "../LoginFormModal";
 
 export default function ProductDetails() {
+ const history = useHistory();
+  const [view, setView] = useState("overview")
   const sessionUser = useSelector((store) => store.session.user);
-  const [view, setView] = useState("overview");
 
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -61,20 +62,12 @@ export default function ProductDetails() {
 
   return (
     <div id="product_details">
-      <div id="product_details_main_content_container">
+      <h3 onClick={()=>history.goBack()} id='breadcrumb'>{'< Go Back'}</h3>
+      <div id='product_details_main_content_container'>
+
         <div className="carousel">
-          <button
-            onClick={() => handleNextImg(-1)}
-            className="carousel-button prev"
-          >
-            &#8592;
-          </button>
-          <button
-            onClick={() => handleNextImg(1)}
-            className="carousel-button next"
-          >
-            &#8594;
-          </button>
+          <button onClick={() => handleNextImg(-1)} className="carousel-button prev">&#8592;</button>
+          <button onClick={() => handleNextImg(1)} className="carousel-button next">&#8594;</button>
           <ul>
             {photos.map((image, index) => (
               <li
@@ -93,13 +86,7 @@ export default function ProductDetails() {
           <p id="product_details_product_description">{product.description}</p>
           <OpenModalButton
             buttonText="Add to cart"
-            modalComponent={
-              user ? (
-                <SeeCartModal addProduct={product.id} />
-              ) : (
-                <LoginFormModal />
-              )
-            }
+            modalComponent={user ? <SeeCartModal addProduct={product.id} /> : <LoginFormModal />}
           />
           {sessionUser?.is_admin && (
             <div id="manage_product_button_container">
@@ -114,13 +101,13 @@ export default function ProductDetails() {
           )}
         </div>
       </div>
-      <hr className="hrtest" />
+      <hr className='hrtest' />
       <div id="switch-view-container">
         <button onClick={() => handleView("overview")}>Overview</button>
         <button onClick={() => handleView("details")}>Details</button>
         <button onClick={() => handleView("reviews")}>Reviews</button>
       </div>
-      <hr className="hrtest2" />
+      <hr className='hrtest2' />
       {view === "overview" && <Overview product={product} />}
       {view === "details" && <Detail product={product} />}
       {view === "reviews" && <Review product={product} user={user} />}
