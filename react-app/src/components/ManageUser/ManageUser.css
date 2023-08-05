@@ -1,216 +1,219 @@
 /* GLOBAL MANAGE USER STYLES */
 
 #manage-account-main-container {
-    /* border: 5px solid white; */
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 30px;
+  /* border: 5px solid white; */
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
 }
 
 #account-nav-sidebar {
-    display: flex;
-    flex-direction: column;
-    row-gap: 10px;
-    width: 250px;
-    /* margin-top: 30px; */
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  width: 250px;
+  /* margin-top: 30px; */
 }
 
-.account-nav-buttons {
-    height: 45px;
-    background-color: #F44A07;
-    border: none;
-    cursor: pointer;
+/* .account-nav-buttons {
+  height: 45px;
+  background-color: rgb(206, 206, 206);
+  border: none;
+  cursor: pointer;
 }
 
 .account-nav-buttons:hover {
-    background-color: rgb(206, 206, 206);
-}
-
+  background-color: #f44a07;
+} */
 
 /* ALL MAIN DIV CONTAINERS SAME WIDTH */
 #deactivate-account-container {
-    width: 700px;
+  width: 700px;
 }
 
 #manage-reviews-main-container {
-    width: 700px;
+  width: 700px;
 }
 
 #change-account-info-form {
-    width: 700px;
-    border-top: 1px solid rgb(24, 26, 27);
+  width: 700px;
+  border-top: 1px solid rgb(24, 26, 27);
 }
 
 .form-errors {
-    color: rgb(181, 41, 41);
+  color: rgb(181, 41, 41);
 }
 
+.manage-errors{
+  display: flex;
+  justify-content: end;
+  padding-right: 2%;
+}
 
 /* --------------------------------------------------- */
 
 /* CHANGE ACCOUNT FORM */
 
-#account-basic-info-section{
-    border: 1px solid grey;
-    border-radius: 10px;
-    padding-bottom: 13px;
+#account-basic-info-section {
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding-bottom: 13px;
 }
 
 .change-account-form-title {
-    background-color: #F44A07;
-    color: black;
-    margin: 0px 0px 20px 0px;
-    border: 1px solid white;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    padding: 7px;
-    font-size: 19px;
+  background-color: rgb(206, 206, 206);
+  color: black;
+  margin: 0px 0px 20px 0px;
+  border: 1px solid white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 7px;
+  font-size: 19px;
 }
 
-#update-username-container{
-    display: flex;
-    padding-left: 10px;
+#update-username-container {
+  display: flex;
+  padding-left: 10px;
 }
 
-#username{
-    width: 60%;
-    margin-left: auto;
-    margin-right: 10px;
-    margin-bottom: 15px;
-    height: 20px;
+#username {
+  width: 60%;
+  margin-left: auto;
+  margin-right: 10px;
+  margin-bottom: 15px;
+  height: 20px;
 }
 
-#update-firstname-container{
-    display: flex;
-    padding-left: 10px;
+#update-firstname-container {
+  display: flex;
+  padding-left: 10px;
 }
 
-#firstName{
-    width: 60%;
-    margin-left: auto;
-    margin-right: 10px;
-    margin-bottom: 15px;
-    height: 20px;
+#firstName {
+  width: 60%;
+  margin-left: auto;
+  margin-right: 10px;
+  margin-bottom: 15px;
+  height: 20px;
 }
 
-#update-lastname-container{
-    display: flex;
-    padding-left: 10px;
+#update-lastname-container {
+  display: flex;
+  padding-left: 10px;
 }
 
-#lastName{
-    width: 60%;
-    margin-left: auto;
-    margin-right: 10px;
-    height: 20px;
+#lastName {
+  width: 60%;
+  margin-left: auto;
+  margin-right: 10px;
+  height: 20px;
 }
 
-#update-email-container{
-    display: flex;
-    padding-left: 10px;
+#update-email-container {
+  display: flex;
+  padding-left: 10px;
 }
 
-#email{
-    width: 60%;
-    margin-left: auto;
-    margin-right: 10px;
-    margin-bottom: 15px;
-    height: 20px;
+#email {
+  width: 60%;
+  margin-left: auto;
+  margin-right: 10px;
+  margin-bottom: 15px;
+  height: 20px;
 }
 
-#update-password-container{
-    display: flex;
-    padding-left: 10px;
+#update-password-container {
+  display: flex;
+  padding-left: 10px;
 }
 
-#password{
-    width: 60%;
-    margin-left: auto;
-    margin-right: 10px;
-    height: 20px;
+#password {
+  width: 60%;
+  margin-left: auto;
+  margin-right: 10px;
+  height: 20px;
 }
 
-#update-address-container{
-    display: flex;
-    padding-left: 10px;
+#update-address-container {
+  display: flex;
+  padding-left: 10px;
 }
 
-#address{
-    width: 60%;
-    margin-left: auto;
-    margin-right: 10px;
-    margin-bottom: 15px;
-    height: 20px;
+#address {
+  width: 60%;
+  margin-left: auto;
+  margin-right: 10px;
+  margin-bottom: 15px;
+  height: 20px;
 }
 
-#update-city-container{
-    display: flex;
-    padding-left: 10px;
+#update-city-container {
+  display: flex;
+  padding-left: 10px;
 }
 
-#city{
-    width: 60%;
-    margin-left: auto;
-    margin-right: 10px;
-    margin-bottom: 15px;
-    height: 20px;
+#city {
+  width: 60%;
+  margin-left: auto;
+  margin-right: 10px;
+  margin-bottom: 15px;
+  height: 20px;
 }
 
-#update-state-container{
-    display: flex;
-    padding-left: 10px;
+#update-state-container {
+  display: flex;
+  padding-left: 10px;
 }
 
-#state{
-    width: 60%;
-    margin-left: auto;
-    margin-right: 10px;
-    margin-bottom: 15px;
-    height: 20px;
+#state {
+  width: 60%;
+  margin-left: auto;
+  margin-right: 10px;
+  margin-bottom: 15px;
+  height: 20px;
 }
 
-#update-zipcode-container{
-    display: flex;
-    padding-left: 10px;
+#update-zipcode-container {
+  display: flex;
+  padding-left: 10px;
 }
 
-#zipcode{
-    width: 60%;
-    margin-left: auto;
-    margin-right: 10px;
-    height: 20px;
-
+#zipcode {
+  width: 60%;
+  margin-left: auto;
+  margin-right: 10px;
+  height: 20px;
 }
 
 #account-basic-info-section {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 #account-auth-section {
-    margin-bottom: 20px;
-    border: 1px solid grey;
-    border-radius: 10px;
-    padding-bottom: 10px;
+  margin-bottom: 20px;
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding-bottom: 10px;
 }
 
 #account-shipping-section {
-    border: 1px solid grey;
-    border-radius: 10px;
-    padding-bottom: 10px;
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding-bottom: 10px;
 }
 
 #change-account-details-button {
-    margin-top: 20px;
-    background-color: #F44A07;
-    color: black;
-    padding: 6px 20px;
-    border: 1px solid #222222;
-    cursor: pointer;
+  margin-top: 20px;
+  background-color: rgb(206, 206, 206);
+  color: black;
+  padding: 6px 20px;
+  border: 1px solid #222222;
+  cursor: pointer;
 }
 
 #change-account-details-button:hover {
-    background-color: rgb(206, 206, 206);
+  background-color: #f44a07;
 }
 
 /* ------------------------------------------------------------------- */
@@ -218,79 +221,87 @@
 /* DEACTIVATE ACCOUNT SECTION  */
 
 #deactivate-account-container {
-    border: 1px solid grey;
-    border-radius: 10px;
+  border: 1px solid grey;
+  border-radius: 10px;
 }
 
 .deativate-account-warning {
-    padding: 0px 10px;
+  padding: 0px 10px;
 }
 
-#deactivate-account-modal-button{
-    display: flex;
-    justify-content: center;
+#deactivate-account-modal-button {
+  display: flex;
+  justify-content: center;
 }
 
 #deactivate-account-modal-button > button {
-    background-color: #F44A07;
-    color: black;
-    margin-left: 10px;
-    font-size: 16px;
-    margin-left: 10px;
-    margin-bottom: 10px;
-    cursor: pointer;
+  background-color: rgb(206, 206, 206);
+  color: black;
+  margin-left: 10px;
+  font-size: 16px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
 }
 
 /* ------------------------------------------------------------------- */
 
-/* DELETE ACCOUNT MODAL */   /* DELETE REVIEW MODAL */
+/* DELETE ACCOUNT MODAL */ /* DELETE REVIEW MODAL */
 
 #deactivate-account-modal-button > button:hover {
-    background-color: rgb(206, 206, 206);
+  background-color: #f44a07;
 }
 
 .modal-buttons-container {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
 }
 
 .modal-buttons-container > button {
-    border: 1px solid white;
-    font-size: 16px;
-    cursor: pointer;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button.review-submit-button {
+  margin-top: 10px;
+  border: none;
+}
+
+button.review-submit-button:hover {
+  background-color: #f44a07;
 }
 
 .modal-buttons-container > button:hover {
-    background-color: rgb(206, 206, 206);
+  background-color: #f44a07;
 }
-
 
 /* ------------------------------------------------------------------- */
 
-
-
 /* USER REVIEWS/MANAGE REVIEWS CSS */
 
-#manage-reviews-buttons{
-    display: flex;
-    gap: 10px;
+#manage-reviews-buttons {
+  display: flex;
+  gap: 10px;
 }
 
-#manage-reviews-buttons > button{
-    border: 1px solid white;
-    font-size: 14px;
-    cursor: pointer;
+#manage-reviews-buttons > button {
+  font-size: 14px;
+  cursor: pointer;
 }
 
-#manage-reviews-buttons > button:hover{
-    background-color: rgb(206, 206, 206);
+#manage-reviews-buttons > button:hover {
+  background-color: #f44a07;
+}
+
+.review-submit-button:hover {
+  background-color: #f44a07;
 }
 
 .single-user-review {
-    background-color: black;
-    border: 1px solid grey;
-    margin-bottom: 20px;
-    padding: 10px 10px;
-    border-radius: 6px;
+  background-color: black;
+  border: 1px solid grey;
+  margin-bottom: 20px;
+  padding: 10px 10px;
+  border-radius: 6px;
 }

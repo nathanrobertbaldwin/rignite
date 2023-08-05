@@ -13,7 +13,7 @@ function Review({product, user}) {
 
     // user recommends product if review rating is 3 or higher
     const numPeopleThatRecommend = product.product_reviews.filter((review) => review.rating >= 3)
-    let wouldRecommendPercentage = (numPeopleThatRecommend.length / product.product_reviews.length) * 100
+    let wouldRecommendPercentage = ((numPeopleThatRecommend.length / product.product_reviews.length) * 100).toFixed(2)
     if (isNaN(wouldRecommendPercentage)) wouldRecommendPercentage = "0"
 
     // array to populate that will create a star for product rating 1-5

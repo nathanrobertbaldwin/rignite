@@ -1,0 +1,126 @@
+#signup-container{
+    width: 740px;
+}
+
+#signup-title{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3%;
+}
+
+#signup-hr{
+
+    width: 100%;
+    border: 1px solid grey;
+}
+
+#signup-hr2{
+    width: 100%;
+    border: 1px solid grey;
+}
+
+#signup-main-container{
+    display: flex;
+    gap: 5%;
+    width: 100%;
+}
+
+#signup-subtitle{
+    margin-bottom: 2%;
+}
+
+#login-hr2{
+    margin: 10% 0px;
+    width: 100%;
+    border: 1px solid grey;
+}
+
+#signup-email-container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    margin-bottom: 2%;
+}
+
+#signup-username-container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    margin-bottom: 2%;
+}
+
+#signup-firstname-container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    margin-bottom: 2%;
+}
+
+#signup-lastname-container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    margin-bottom: 5%;
+}
+
+#signup-address-container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    margin-bottom: 2%;
+}
+
+#signup-city-container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    margin-bottom: 2%;
+}
+
+#signup-state-container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    margin-bottom: 5%;
+}
+
+#signup-zipcode-container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    margin-bottom: 5%;
+}
+
+#signup-admin-container{
+    margin-bottom: 5%;
+}
+
+
+#signup-password-container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    margin-bottom: 2%;
+}
+
+#signup-confirm-password-container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    margin-bottom: 2%;
+}
+
+#login-signup-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#middle-border{
+    border: 1px solid grey;
+}
+
+#signup-button{
+    display: flex;
+    justify-content: center;
+}

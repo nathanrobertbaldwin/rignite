@@ -1,49 +1,24 @@
 from app.models import db, User, environment, SCHEMA
 from sqlalchemy.sql import text
-
+from .user_data import users
 
 # Adds a demo user, you can add other users here if you want
 def seed_users():
-    admin = User(
-        username="admin",
-        email="admin@rignite.com",
-        first_name="John",
-        last_name="Doe",
-        address="123 Main Street",
-        city="New York City",
-        state="New York",
-        zip_code=10001,
-        is_admin=True,
-        password="password",
-    )
+    for user in users:
+        new_user = User(
+            username=user['username'],
+            email=user['email'],
+            first_name=user['first_name'],
+            last_name=user['last_name'],
+            address=user['address'],
+            city=user['city'],
+            state=user['state'],
+            zip_code=user['zip_code'],
+            is_admin=user['is_admin'],
+            password=user['password'],
+        )
+        db.session.add(new_user)
 
-    user1 = User(
-        username="user1",
-        email="user1@google.com",
-        first_name="Bob",
-        last_name="User",
-        address="999 Whatever Road",
-        city="Whatever",
-        state="Nevada",
-        zip_code=11111,
-        is_admin=False,
-        password="password",
-    )
-
-    user2 = User(
-        username="user2",
-        email="user2@yahoo.com",
-        first_name="Jim",
-        last_name="User",
-        address="Town",
-        city="Pennsylvania",
-        state="New York",
-        zip_code=22222,
-        is_admin=False,
-        password="password",
-    )
-
-    db.session.add_all([admin, user1, user2])
     db.session.commit()
 
 

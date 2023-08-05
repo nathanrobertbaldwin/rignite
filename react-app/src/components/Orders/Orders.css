@@ -81,3 +81,7 @@
     height: fit-content;
     display: flex;
 }
+
+#ordAdvance{
+    margin-right: 10px;
+}

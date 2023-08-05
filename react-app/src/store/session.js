@@ -95,7 +95,7 @@ export const signUp = (username, email, firstname, lastname, address, city, stat
 			city,
 			state,
 			zip_code: zipcode,
-			is_admin: "True"
+			is_admin: admin
 		}),
 	});
 

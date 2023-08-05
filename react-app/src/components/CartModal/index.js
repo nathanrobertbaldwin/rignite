@@ -68,16 +68,17 @@ export default function SeeCartModal({ addProduct }) {
                         )
                     })}
                     <h2>Total: {Number.parseFloat(total).toFixed(2)}</h2>
-                    <button onClick={onClick}>Checkout</button>
+                    <button onClick={onClick} id='checkout'>Checkout</button>
+                    <button onClick={()=>closeModal()}>Continue Shopping</button>
                 </>
                 :
-                <>
+                <div id='emptyCart'>
                     <p>YOUR CART IS EMPTY!</p>
                     {Object.values(categories).map(category =>
-                        <button onClick={() => {history.push(`/category/${category.id}`); closeModal(); }}>Shop for {category.name}</button>
+                        <button className="emptyCartButt" onClick={() => { history.push(`/category/${category.id}`); closeModal(); }}>Shop for {category.name}</button>
                     )}
-                    <button onClick={()=> {history.push('/products/all'); closeModal(); }}>Shop for Everything</button>
-                </>
+                    <button className="emptyCartButt" onClick={() => { history.push('/products/all'); closeModal(); }}>Shop for Everything</button>
+                </div>
             }
         </>
     )
