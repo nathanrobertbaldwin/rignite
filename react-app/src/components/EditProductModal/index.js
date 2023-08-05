@@ -15,7 +15,7 @@ export default function EditProductModal({ product }) {
   const [category_id, setCategoryId] = useState(product.category_id);
   const [color, setColor] = useState(product.color);
   const [description, setDescription] = useState(product.description);
-  const [specs, setSpecs] = useState(product.specs);
+  const [specs, setSpecs] = useState(product.specs.split(','));
   const [price, setPrice] = useState(product.price);
   const [product_name, setProductName] = useState(product.product_name);
   const [status, setStatus] = useState(product.status);
@@ -62,6 +62,15 @@ export default function EditProductModal({ product }) {
     setHasSubmitted(true);
 
     if (Object.values(validationErrors).length === 0) {
+
+      let subSpecs = [...specs];
+      for (let i = 3; i < subSpecs.length; i++) {
+        if (!subSpecs[i]) {
+          subSpecs.splice(i, 1);
+          i--;
+        }
+      }
+
       let data = {
         product_id: product.id,
         user_id: user.id,
@@ -101,9 +110,12 @@ export default function EditProductModal({ product }) {
     if (!product_name) errors.product_name = "Product must have a name";
     if (product_name.length < 5)
       errors.product_name = "Product name must be more than 5 characters long";
-    if (!specs) errors.specs = "Product must have specs";
-    if (specs.length < 30)
-      errors.spec = "Product specs must contain more than 50 characters";
+
+    specs.forEach(spec => {
+      if (spec.includes(',')) errors.specs = 'Specs cannot include commas';
+    });
+    if (!specs[0] || !specs[1] || !specs[2]) errors.specs = "Product must have at least 3 specs";
+
     if (!imageOne) errors.imageOne = "You must have at least 1 image";
     if (!urlCheck(imageOne))
       errors.imageOne = "Images must end with .png, .jpg, or .jpeg";
@@ -204,13 +216,24 @@ export default function EditProductModal({ product }) {
               "Category Id:"
             )}
           </label>
-          <input
+          {/* <input
             className="product-form-input"
             type="number"
             placeholder="Category Id"
             value={category_id}
             onChange={(e) => setCategoryId(e.target.value)}
-          />
+          /> */}
+          <select
+          id="category"
+          value={category_id}
+          onChange={(e) => setCategoryId(e.target.value)}
+          >
+            <option value={1}>Keyboard</option>
+            <option value={2}>Mouse</option>
+            <option value={3}>Gaming Mat</option>
+            <option value={4}>Speaker</option>
+            <option value={5}>Headphones</option>
+          </select>
         </div>
         <div className="product-form-field">
           <label className="product-form-label">
@@ -261,14 +284,33 @@ export default function EditProductModal({ product }) {
             "Specs:"
           )}
         </label>
-        <textarea
-          id="form-text-area"
-          placeholder="Specs"
-          type="text"
-          value={specs}
-          onChange={(e) => setSpecs(e.target.value)}
-          rows="10"
-        />
+        {specs?.map((str, index) => (
+          <input key={index}
+            type='text'
+            placeholder={`Specification field ${index + 1}`}
+            value={specs[index]}
+            onChange={(e) => {
+              let newSpecs = [...specs];
+              newSpecs[index] = e.target.value;
+              setSpecs(newSpecs);
+            }} />
+        ))}
+
+        {/* // ADD A SPEC */}
+        {specs.length < 10 && <button type="submit" onClick={(e) => {
+          e.preventDefault();
+          const newSpecs = [...specs, ''];
+          setSpecs(newSpecs);
+        }}>Add Spec</button>}
+
+        {/* REMOVE A SPEC */}
+        {specs.length > 3 && <button type="submit" onClick={(e) => {
+          e.preventDefault();
+          const newSpecs = [...specs];
+          newSpecs.pop()
+          setSpecs(newSpecs);
+        }}>Remove Last Spec</button>}
+
         <div className="product-form-field">
           <label className="product-form-label">
             {validationErrors.price && hasSubmitted ? (

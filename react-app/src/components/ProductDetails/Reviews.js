@@ -26,7 +26,7 @@ function Review({product, user}) {
     return (
         <div id="review-component-main-container">
             <div id="create-review-modal-button-container">
-                {doesUserHaveReview === undefined && user
+                {doesUserHaveReview === undefined && user && !user.is_admin
                 ? <OpenModalButton buttonText={"Post Review"} modalComponent={<CreateReviewModal user={user} productId={product.id} />} />
                 : null}
             </div>

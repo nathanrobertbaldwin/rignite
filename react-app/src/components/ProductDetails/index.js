@@ -18,7 +18,7 @@ import "./ProductDetails.css";
 import LoginFormModal from "../LoginFormModal";
 
 export default function ProductDetails() {
- const history = useHistory();
+  const history = useHistory();
   const [view, setView] = useState("overview")
   const sessionUser = useSelector((store) => store.session.user);
 
