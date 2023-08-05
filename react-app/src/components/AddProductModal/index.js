@@ -218,7 +218,7 @@ export default function AddProductModal() {
             />
           </div>
         </div>
-        <div className="product-form-field-container">
+        <div className="product-form-field-container-large">
           {validationErrors.description && hasSubmitted && (
             <p className="error-message">{validationErrors.description}</p>
           )}
@@ -234,7 +234,7 @@ export default function AddProductModal() {
             />
           </div>
         </div>
-        <div className="product-form-field-container">
+        <div className="product-form-field-container-large">
           {validationErrors.specs && hasSubmitted && (
             <p className="error-message">{validationErrors.specs}</p>
           )}
@@ -252,33 +252,37 @@ export default function AddProductModal() {
               }}
             />
           ))}
-          {/* // ADD A SPEC */}
-          {specs.length < 10 && (
-            <button
-              type="submit"
-              onClick={(e) => {
-                e.preventDefault();
-                const newSpecs = [...specs, ""];
-                setSpecs(newSpecs);
-              }}
-            >
-              Add Spec
-            </button>
-          )}
-          {/* REMOVE A SPEC */}
-          {specs.length > 3 && (
-            <button
-              type="submit"
-              onClick={(e) => {
-                e.preventDefault();
-                const newSpecs = [...specs];
-                newSpecs.pop();
-                setSpecs(newSpecs);
-              }}
-            >
-              Remove Last Spec
-            </button>
-          )}
+          <div className="product-button-container">
+            {/* // ADD A SPEC */}
+            {specs.length < 10 && (
+              <button
+                type="submit"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const newSpecs = [...specs, ""];
+                  setSpecs(newSpecs);
+                }}
+              >
+                Add Spec
+              </button>
+            )}
+          </div>
+          <div className="product-button-container">
+            {/* REMOVE A SPEC */}
+            {specs.length > 3 && (
+              <button
+                type="submit"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const newSpecs = [...specs];
+                  newSpecs.pop();
+                  setSpecs(newSpecs);
+                }}
+              >
+                Remove Last Spec
+              </button>
+            )}
+          </div>
         </div>
         <div className="product-form-field-container">
           {validationErrors.imageOne && hasSubmitted && (
@@ -340,7 +344,7 @@ export default function AddProductModal() {
             />
           </div>
         </div>
-        <div id="product-button-container">
+        <div className="product-button-container">
           <button type="button" className="button-small" onClick={handleSubmit}>
             Submit Product
           </button>
