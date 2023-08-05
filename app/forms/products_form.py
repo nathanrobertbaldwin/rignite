@@ -12,6 +12,7 @@ class ProductForm(FlaskForm):
     color = StringField("color", validators=[DataRequired()])
     description = StringField("description", validators=[DataRequired()])
     specs = StringField("specs", validators=[DataRequired()])
+    status = StringField("status")
     imageOne = StringField("imageOne", validators=[DataRequired()])
     imageTwo = StringField("imageTwo")
     imageThree = StringField("imageThree")

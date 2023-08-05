@@ -15,23 +15,83 @@ function SignupFormModal() {
 	const [lastname, setLastname] = useState("");
 	const [address, setAddress] = useState("");
 	const [city, setCity] = useState("");
-	const [state, setState] = useState("");
+	const [state, setState] = useState("AL");
 	const [zipcode, setZipcode] = useState("");
-	const [admin, setAdmin] = useState(false);
+	let [admin, setAdmin] = useState(false);
 	const [password, setPassword] = useState("");
 	const [confirmPassword, setConfirmPassword] = useState("");
 	const [errors, setErrors] = useState([]);
 	const { closeModal } = useModal();
 
+	const VALID_STATES = [
+		"AL",
+		"AK",
+		"AZ",
+		"AR",
+		"CA",
+		"CZ",
+		"CO",
+		"CT",
+		"DE",
+		"DC",
+		"FL",
+		"GA",
+		"GU",
+		"HI",
+		"ID",
+		"IL",
+		"IN",
+		"IA",
+		"KS",
+		"KY",
+		"LA",
+		"ME",
+		"MD",
+		"MA",
+		"MI",
+		"MN",
+		"MS",
+		"MO",
+		"MT",
+		"NE",
+		"NV",
+		"NH",
+		"NJ",
+		"NM",
+		"NY",
+		"NC",
+		"ND",
+		"OH",
+		"OK",
+		"OR",
+		"PA",
+		"PR",
+		"RI",
+		"SC",
+		"SD",
+		"TN",
+		"TX",
+		"UT",
+		"VT",
+		"VI",
+		"VA",
+		"WA",
+		"WI",
+		"WY",
+	  ]
+
 	const handleSubmit = async (e) => {
+
 		e.preventDefault();
 		if (password === confirmPassword) {
 
-			if(admin) {
-				setAdmin("True")
+			if(admin === "true") {
+				admin = "True"
 			} else {
-				setAdmin("False")
+				admin = "False"
 			}
+
+			console.log('state', username, email, firstname, lastname, address, city, state, zipcode, admin, password)
 
 			const data = await dispatch(signUp(username, email, firstname, lastname, address, city, state, zipcode, admin, password));
 			if (data) {
@@ -53,7 +113,7 @@ function SignupFormModal() {
 			<form onSubmit={handleSubmit}>
 				<ul>
 					{errors.map((error, idx) => (
-						<li key={idx}>{error}</li>
+						<li className="form-errors" key={idx}>{error}</li>
 					))}
 				</ul>
 				<div id='signup-main-container'>
@@ -66,7 +126,7 @@ function SignupFormModal() {
 								Email
 							</label>
 								<input
-									type="text"
+									type="email"
 									value={email}
 									placeholder="Email"
 									onChange={(e) => setEmail(e.target.value)}
@@ -144,20 +204,23 @@ function SignupFormModal() {
 							<label>
 								State
 							</label>
-								<input
+								<select
 									type="text"
 									value={state}
-									placeholder="State"
 									onChange={(e) => setState(e.target.value)}
 									required
-								/>
+								>
+								{VALID_STATES.map((stateAbbr) => (
+									<option key={stateAbbr} value={stateAbbr}>{stateAbbr}</option>
+								))}
+								</select>
 						</div>
 						<div id='signup-zipcode-container'>
 							<label>
 								Zipcode
 							</label>
 								<input
-									type="number"
+									type="text"
 									value={zipcode}
 									placeholder="Zipcode"
 									onChange={(e) => setZipcode(e.target.value)}

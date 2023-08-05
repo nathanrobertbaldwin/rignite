@@ -41,6 +41,7 @@ class Product(db.Model):
             "specs": self.specs,
             "product_photos": [photo.to_dict() for photo in self.product_photos],
             "product_reviews": [review.to_dict() for review in self.product_reviews],
+            "status": self.status,
         }
 
     # def reviews_for_product(self):

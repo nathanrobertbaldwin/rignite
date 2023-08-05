@@ -5,6 +5,7 @@ import { getAllProductCategoriesThunk } from "../../store/categories";
 import { getAllProductsThunk } from "../../store/products";
 import { getAllOrdersThunk } from "../../store/orders";
 import { getUserReviewsThunk } from "../../store/reviews";
+import EditProductModal from "../EditProductModal";
 import SeeCartModal from "../CartModal";
 import OpenModalButton from "../OpenModalButton";
 import Overview from "./Overview";
@@ -19,13 +20,14 @@ import LoginFormModal from "../LoginFormModal";
 export default function ProductDetails() {
  const history = useHistory();
   const [view, setView] = useState("overview")
+  const sessionUser = useSelector((store) => store.session.user);
 
   const [activeIndex, setActiveIndex] = useState(0);
 
   const dispatch = useDispatch();
   let { id } = useParams();
   id = parseInt(id);
-  const user = useSelector((state) => state.session.user)
+  const user = useSelector((state) => state.session.user);
   const products = useSelector((store) => store.products);
   const product = products[id];
 
@@ -46,13 +48,11 @@ export default function ProductDetails() {
 
   if (!product) return <></>;
 
-
   const handleView = (view) => {
     setView(view);
   };
 
   const handleNextImg = (offset) => {
-
     let newIndex = activeIndex + offset;
     if (newIndex < 0) newIndex = photos.length - 1;
     if (newIndex >= photos.length) newIndex = 0;
@@ -70,17 +70,17 @@ export default function ProductDetails() {
           <button onClick={() => handleNextImg(1)} className="carousel-button next">&#8594;</button>
           <ul>
             {photos.map((image, index) => (
-              <li className="slide" key={image.id} style={{ opacity: index === activeIndex ? 1 : 0 }}>
-                <img
-                  alt={image.id}
-                  src={image.url}
-                />
+              <li
+                className="slide"
+                key={image.id}
+                style={{ opacity: index === activeIndex ? 1 : 0 }}
+              >
+                <img alt={image.id} src={image.url} />
               </li>
             ))}
           </ul>
         </div>
-
-        <div id='product_details_product_main_info'>
+        <div id="product_details_product_main_info">
           <h3>{`${product.product_name}`}</h3>
           <h4>{`$${product.price}`}</h4>
           <p id="product_details_product_description">{product.description}</p>
@@ -88,8 +88,18 @@ export default function ProductDetails() {
             buttonText="Add to cart"
             modalComponent={user ? <SeeCartModal addProduct={product.id} /> : <LoginFormModal />}
           />
+          {sessionUser?.is_admin && (
+            <div id="manage_product_button_container">
+              <li className="nav_links">
+                <OpenModalButton
+                  className="modal_button"
+                  buttonText="Manage Product"
+                  modalComponent={<EditProductModal product={product} />}
+                />
+              </li>
+            </div>
+          )}
         </div>
-
       </div>
       <hr className='hrtest' />
       <div id="switch-view-container">
