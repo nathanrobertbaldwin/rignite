@@ -23,6 +23,7 @@
 .carousel {
   flex-basis: 50%;
   width: 100vw;
+  min-width: 600px;
   height: 50vh;
   position: relative;
 }
@@ -89,6 +90,7 @@
 
 #product_details_product_main_info {
   flex-basis: 40%;
+  max-width: 40%;
 }
 
 #switch-view-container {
@@ -109,7 +111,7 @@
 .hrtest {
   width: 45vw;
   border: 1px solid rgb(44, 44, 44);
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .hrtest2 {
@@ -117,7 +119,11 @@
   border: 1px solid rgb(44, 44, 44);
 }
 
-#breadcrumb{
-    align-self: flex-start;
-    margin-left: 100px;
+#breadcrumb {
+  align-self: flex-start;
+  margin-left: 100px;
+}
+
+#product_details_product_description {
+  word-wrap: break-word;
 }

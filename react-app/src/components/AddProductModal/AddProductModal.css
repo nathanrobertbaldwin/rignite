@@ -1,5 +1,5 @@
 #product-form-container {
-  width: 400px;
+  width: 450px;
 }
 
 #product-form-h3 {
@@ -12,7 +12,11 @@
 #product-form {
   display: flex;
   flex-direction: column;
-  gap: 0.5em;
+  gap: 1em;
+  max-height: 560px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 1em;
 }
 
 .product-form-field {
@@ -27,8 +31,27 @@
   width: 60%;
 }
 
-.product-large-label {
+.product-form-field-container-large {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.product-form-label-large {
   width: 100%;
+}
+
+.product-form-field-large {
+  display: flex;
+  flex-direction: column;
+}
+
+.error-message {
+  color: red;
+  font-size: small;
+  padding: 0;
+  margin: 0px 0px 5px 0px;
+  text-align: right;
 }
 
 #product-product-description-field {
@@ -44,9 +67,9 @@
   margin-bottom: 0.5em;
 }
 
-#product-button-container {
+.product-button-container {
   display: flex;
-  justify-content: center;
-  margin-top: 1em;
+  justify-content: left;
   width: 100%;
+  margin: 0.25em;
 }

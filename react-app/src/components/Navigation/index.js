@@ -14,7 +14,9 @@ function Navigation({ isLoaded }) {
       <div id="nav_links_container">
         <div id="nav_links_left">
           <NavLink exact to="/">
-            <h2>Home</h2>
+            <div id="logo-container">
+              <img id="logo" src="https://rignite-images.s3.us-east-2.amazonaws.com/rignite_logo.JPG"/>
+            </div>
           </NavLink>
           <NavLink exact to="/products/all">
             <h2>Shop All Products</h2>

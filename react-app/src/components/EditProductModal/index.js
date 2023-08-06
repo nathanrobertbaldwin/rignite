@@ -9,13 +9,12 @@ export default function EditProductModal({ product }) {
   const history = useHistory();
   const { closeModal } = useModal();
   const user = useSelector((state) => state.session.user);
-  // will want to ensure that user is logged and is an Admin
 
   const [brand, setBrand] = useState(product.brand);
   const [category_id, setCategoryId] = useState(product.category_id);
   const [color, setColor] = useState(product.color);
   const [description, setDescription] = useState(product.description);
-  const [specs, setSpecs] = useState(product.specs);
+  const [specs, setSpecs] = useState(product.specs.split(",").slice(1));
   const [price, setPrice] = useState(product.price);
   const [product_name, setProductName] = useState(product.product_name);
   const [status, setStatus] = useState(product.status);
@@ -62,15 +61,22 @@ export default function EditProductModal({ product }) {
     setHasSubmitted(true);
 
     if (Object.values(validationErrors).length === 0) {
+      let subSpecs = [...specs];
+      for (let i = 3; i < subSpecs.length; i++) {
+        if (!subSpecs[i]) {
+          subSpecs.splice(i, 1);
+          i--;
+        }
+      }
+
       let data = {
         product_id: product.id,
         user_id: user.id,
         brand,
-        // Note: Give current category.
         category_id,
         color,
         description,
-        specs,
+        specs: subSpecs.join(","),
         price,
         product_name,
         status,
@@ -79,10 +85,13 @@ export default function EditProductModal({ product }) {
         imageThree,
         imageFour,
       };
-      const editedProductId = await dispatch(editProductThunk(data));
+
+      console.log("From Data construction:", data);
+
+      const newProductId = await dispatch(editProductThunk(data));
       _reset();
       closeModal();
-      history.push(`/products/${editedProductId}`);
+      history.push(`/products/${newProductId}`);
     }
   }
 
@@ -90,34 +99,28 @@ export default function EditProductModal({ product }) {
 
   function _checkForErrors() {
     const errors = {};
-    // check for errors
-    if (!brand) errors.brand = "Brand is required";
-    if (!color) errors.color = "Color is required";
-    if (!description) errors.description = "Description is required";
-    if (description.length < 50)
-      errors.description = "Description must be greater than 50 characters.";
-    if (!price) errors.price = "Price is required";
-    if (price < 0) errors.price = "Price must be positive";
-    if (!product_name) errors.product_name = "Product must have a name";
-    if (product_name.length < 5)
-      errors.product_name = "Product name must be more than 5 characters long";
-    if (!specs) errors.specs = "Product must have specs";
-    if (specs.length < 30)
-      errors.spec = "Product specs must contain more than 50 characters";
-    if (!imageOne) errors.imageOne = "You must have at least 1 image";
-    if (!urlCheck(imageOne))
-      errors.imageOne = "Images must end with .png, .jpg, or .jpeg";
-    if (imageTwo) {
-      if (!urlCheck(imageTwo))
-        errors.imageTwo = "Images must end with .png, .jpg, or .jpeg";
-    }
+    if (!product_name) errors.product_name = "Name required";
+    if (!brand) errors.brand = "Brand required";
+    if (!color) errors.color = "Color required";
+    if (!description || description.length < 50)
+      errors.description = "Description of 50 characters required";
+    if (!price || price < 0) errors.price = "A positive Price is required.";
+    specs.forEach((spec) => {
+      if (spec.includes(",")) errors.specs = "Specs cannot include commas";
+    });
+    if (!specs[0] || !specs[1] || !specs[2])
+      errors.specs = "Product must have at least 3 specs";
+    if (!imageOne || !urlCheck(imageOne))
+      errors.imageOne = "Add at least 2 images ending in .png, .jpg, or .jpeg";
+    if (!imageTwo || !urlCheck(imageTwo))
+      errors.imageTwo = "Add at least 2 images ending in .png, .jpg, or .jpeg";
     if (imageThree) {
       if (!urlCheck(imageThree))
-        errors.imageThree = "Images must end with .png, .jpg, or .jpeg";
+        errors.imageThree = "Must end with .png, .jpg, or .jpeg";
     }
     if (imageFour) {
       if (!urlCheck(imageFour))
-        errors.imageFour = "Images must end with .png, .jpg, or .jpeg";
+        errors.imageFour = "Must end with .png, .jpg, or .jpeg";
     }
     setValidationErrors(errors);
   }
@@ -127,7 +130,7 @@ export default function EditProductModal({ product }) {
     setCategoryId("");
     setColor("");
     setDescription("");
-    setSpecs("");
+    setSpecs([""]);
     setPrice("");
     setProductName("");
     setStatus("");
@@ -149,243 +152,233 @@ export default function EditProductModal({ product }) {
 
   return (
     <div id="product-form-container">
-      <h3 id="product-form-h3">Edit This Product</h3>
+      <h3 id="product-form-h3">Edit Product</h3>
       <form id="product-form" onSubmit={handleSubmit}>
-        <div className="product-form-field">
-          <label className="product-form-label">
-            {validationErrors.product_name && hasSubmitted ? (
-              <p>
-                {"Product Name: "}
-                <span className="error_message">
-                  {validationErrors.product_name}
-                </span>
-              </p>
-            ) : (
-              "Product Name:"
-            )}
-          </label>
-          <input
-            className="product-form-input"
-            type="text"
-            placeholder="Product Name"
-            value={product_name}
-            onChange={(e) => setProductName(e.target.value)}
-          />
-        </div>
-        <div className="product-form-field">
-          <label className="product-form-label">
-            {validationErrors.brand && hasSubmitted ? (
-              <p>
-                {"Brand: "}
-                <span className="error-message">{validationErrors.brand}</span>
-              </p>
-            ) : (
-              "Brand:"
-            )}
-          </label>
-          <input
-            className="product-form-input"
-            type="text"
-            placeholder="Brand"
-            value={brand}
-            onChange={(e) => setBrand(e.target.value)}
-          />
-        </div>
-        <div className="product-form-field">
-          <label className="product-form-label">
-            {validationErrors.category_id && hasSubmitted ? (
-              <p>
-                {"Category Id: "}
-                <span className="error-message">
-                  {validationErrors.category_id}
-                </span>
-              </p>
-            ) : (
-              "Category Id:"
-            )}
-          </label>
-          <input
-            className="product-form-input"
-            type="number"
-            placeholder="Category Id"
-            value={category_id}
-            onChange={(e) => setCategoryId(e.target.value)}
-          />
-        </div>
-        <div className="product-form-field">
-          <label className="product-form-label">
-            {validationErrors.color && hasSubmitted ? (
-              <p>
-                {"Color: "}
-                <span className="error-message">{validationErrors.color}</span>
-              </p>
-            ) : (
-              "Color:"
-            )}
-          </label>
-          <input
-            className="product-form-input"
-            type="text"
-            placeholder="Color"
-            value={color}
-            onChange={(e) => setColor(e.target.value)}
-          />
-        </div>
-        <label>
-          {validationErrors.description && hasSubmitted ? (
-            <p>
-              {"Description: "}
-              <span className="error_message">
-                {validationErrors.description}
-              </span>
-            </p>
-          ) : (
-            "Description:"
+        <div className="product-form-field-container">
+          {validationErrors.product_name && hasSubmitted && (
+            <p className="error-message">{validationErrors.product_name}</p>
           )}
-        </label>
-        <textarea
-          id="form-text-area"
-          placeholder="Description"
-          type="text"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          rows="6"
-        />
-        <label>
-          {validationErrors.specs && hasSubmitted ? (
-            <p>
-              {"Specs: "}
-              <span className="error-message">{validationErrors.specs}</span>
-            </p>
-          ) : (
-            "Specs:"
+          <div className="product-form-field">
+            <label className="product-form-label">Product Name</label>
+            <input
+              className="product-form-input"
+              type="text"
+              placeholder="Product Name"
+              value={product_name}
+              onChange={(e) => setProductName(e.target.value)}
+            />
+          </div>
+        </div>
+        <div className="product-form-field-container">
+          {validationErrors.brand && hasSubmitted && (
+            <p className="error-message">{validationErrors.brand}</p>
           )}
-        </label>
-        <textarea
-          id="form-text-area"
-          placeholder="Specs"
-          type="text"
-          value={specs}
-          onChange={(e) => setSpecs(e.target.value)}
-          rows="10"
-        />
-        <div className="product-form-field">
-          <label className="product-form-label">
-            {validationErrors.price && hasSubmitted ? (
-              <p>
-                {"Price: "}
-                <span className="error-message">{validationErrors.price}</span>
-              </p>
-            ) : (
-              "Price:"
+          <div className="product-form-field">
+            <label className="product-form-label">Brand</label>
+            <input
+              className="product-form-input"
+              type="text"
+              placeholder="Brand"
+              value={brand}
+              onChange={(e) => setBrand(e.target.value)}
+            />
+          </div>
+        </div>
+        <div className="product-form-field-container">
+          {validationErrors.category_id && hasSubmitted && (
+            <p className="error-message">{validationErrors.category_id}</p>
+          )}
+          <div className="product-form-field">
+            <label className="product-form-label">Category</label>
+            <select
+              id="category"
+              value={category_id}
+              onChange={(e) => setCategoryId(e.target.value)}
+            >
+              <option value={1}>Keyboard</option>
+              <option value={2}>Mouse</option>
+              <option value={3}>Gaming Mat</option>
+              <option value={4}>Speaker</option>
+              <option value={5}>Headphones</option>
+            </select>
+          </div>
+        </div>
+        <div className="product-form-field-container">
+          {validationErrors.color && hasSubmitted && (
+            <p className="error-message">{validationErrors.color}</p>
+          )}
+          <div className="product-form-field">
+            <label className="product-form-label">Color</label>
+            <input
+              className="product-form-input"
+              type="text"
+              placeholder="Color"
+              value={color}
+              onChange={(e) => setColor(e.target.value)}
+            />
+          </div>
+        </div>
+        <div className="product-form-field-container">
+          {validationErrors.price && hasSubmitted && (
+            <p className="error-message">{validationErrors.price}</p>
+          )}
+          <div className="product-form-field">
+            <label className="product-form-label">Price</label>
+            <input
+              className="product-form-input"
+              type="number"
+              placeholder="Price"
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
+            />
+          </div>
+        </div>
+        <div className="product-form-field-container">
+          {validationErrors.status && hasSubmitted && (
+            <p className="error-message">{validationErrors.status}</p>
+          )}
+          <div className="product-form-field">
+            <label className="product-form-label">Status</label>
+            <select
+              id="state"
+              value={status}
+              onChange={(e) => setStatus(e.target.value)}
+            >
+              <option value="">Select a Status</option>
+              <option value="active">Active</option>
+              <option value="sold out">Sold Out</option>
+              <option value="deactivated">Deactivated</option>
+            </select>
+          </div>
+        </div>
+        <div className="product-form-field-container-large">
+          {validationErrors.description && hasSubmitted && (
+            <p className="error-message">{validationErrors.description}</p>
+          )}
+          <div className="product-form-field-large">
+            <label className="product-form-label-large">Description</label>
+            <textarea
+              id="form-text-area"
+              placeholder="Description"
+              type="text"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              rows="6"
+            />
+          </div>
+        </div>
+        <div className="product-form-field-container-large">
+          {validationErrors.specs && hasSubmitted && (
+            <p className="error-message">{validationErrors.specs}</p>
+          )}
+          <label className="product-form-label-large">Specs</label>
+          {specs?.map((str, index) => (
+            <input
+              key={index}
+              type="text"
+              placeholder={`Specification field ${index + 1}`}
+              value={specs[index]}
+              onChange={(e) => {
+                let newSpecs = [...specs];
+                newSpecs[index] = e.target.value;
+                setSpecs(newSpecs);
+              }}
+            />
+          ))}
+          {/* // ADD A SPEC */}
+          <div className="product-button-container">
+            {/* // ADD A SPEC */}
+            {specs.length < 10 && (
+              <button
+                type="submit"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const newSpecs = [...specs, ""];
+                  setSpecs(newSpecs);
+                }}
+              >
+                Add Spec
+              </button>
             )}
-          </label>
-          <input
-            className="product-form-input"
-            type="number"
-            placeholder="Price"
-            value={price}
-            onChange={(e) => setPrice(e.target.value)}
-          />
-        </div>
-        <div className="product-form-field">
-          <label className="product-form-label">Status:</label>
-          <select
-            id="state"
-            value={status}
-            onChange={(e) => setStatus(e.target.value)}
-          >
-            <option value="">Select a Status</option>
-            <option value="active">Active</option>
-            <option value="sold out">Sold Out</option>
-            <option value="deactivated">Deactivated</option>
-          </select>
-        </div>
-        <div className="product-form-field">
-          <label className="product-form-label">
-            {validationErrors.imageOne && hasSubmitted ? (
-              <p>
-                {"Image One: "}
-                <span className="error-message">
-                  {validationErrors.imageOne}
-                </span>
-              </p>
-            ) : (
-              "Image One:"
+          </div>
+          <div className="product-button-container">
+            {/* REMOVE A SPEC */}
+            {specs.length > 3 && (
+              <button
+                type="submit"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const newSpecs = [...specs];
+                  newSpecs.pop();
+                  setSpecs(newSpecs);
+                }}
+              >
+                Remove Last Spec
+              </button>
             )}
-          </label>
-          <input
-            className="product-form-input"
-            type="text"
-            placeholder="Image One"
-            value={imageOne}
-            onChange={(e) => setImageOne(e.target.value)}
-          />
+          </div>
         </div>
-        <div className="product-form-field">
-          <label className="product-form-label">
-            {validationErrors.imageTwo && hasSubmitted ? (
-              <p>
-                {"Image Two: "}
-                <span className="error-message">
-                  {validationErrors.imageOne}
-                </span>
-              </p>
-            ) : (
-              "Image Two:"
-            )}
-          </label>
-          <input
-            className="product-form-input"
-            type="text"
-            placeholder="Image Two"
-            value={imageTwo}
-            onChange={(e) => setImageTwo(e.target.value)}
-          />
+        <div className="product-form-field-container">
+          {validationErrors.imageOne && hasSubmitted && (
+            <p className="error-message">{validationErrors.imageOne}</p>
+          )}
+          <div className="product-form-field">
+            <label className="product-form-label">Image One</label>
+            <input
+              className="product-form-input"
+              type="text"
+              placeholder="Image One"
+              value={imageOne}
+              onChange={(e) => setImageOne(e.target.value)}
+            />
+          </div>
         </div>
-        <div className="product-form-field">
-          <label className="product-form-label">
-            {validationErrors.imageThree && hasSubmitted ? (
-              <p>
-                {"Image Three: "}
-                <span className="error-message">
-                  {validationErrors.imageThree}
-                </span>
-              </p>
-            ) : (
-              "Image Three:"
-            )}
-          </label>
-          <input
-            className="product-form-input"
-            type="text"
-            placeholder="Image Three"
-            value={imageThree}
-            onChange={(e) => setImageThree(e.target.value)}
-          />
+        <div className="product-form-field-container">
+          {validationErrors.imageTwo && hasSubmitted && (
+            <p className="error-message">{validationErrors.imageTwo}</p>
+          )}
+          <div className="product-form-field">
+            <label className="product-form-label">Image Two</label>
+            <input
+              className="product-form-input"
+              type="text"
+              placeholder="Image Two"
+              value={imageTwo}
+              onChange={(e) => setImageTwo(e.target.value)}
+            />
+          </div>
         </div>
-        <div className="product-form-field">
-          <label className="product-form-label">
-            {validationErrors.imageFour && hasSubmitted ? (
-              <p>
-                {"Image Four: "}
-                <span className="error-message">
-                  {validationErrors.imageFour}
-                </span>
-              </p>
-            ) : (
-              "Image Four:"
-            )}
-          </label>
-          <input
-            className="product-form-input"
-            type="text"
-            placeholder="Image Four"
-            value={imageFour}
-            onChange={(e) => setImageFour(e.target.value)}
-          />
+        <div className="product-form-field-container">
+          {validationErrors.imageThree && hasSubmitted && (
+            <p className="error-message">{validationErrors.imageThree}</p>
+          )}
+          <div className="product-form-field">
+            <label className="product-form-label">Image Three</label>
+            <input
+              className="product-form-input"
+              type="text"
+              placeholder="Image Three"
+              value={imageThree}
+              onChange={(e) => setImageThree(e.target.value)}
+            />
+          </div>
         </div>
-        <div id="product-button-container">
+        <div className="product-form-field-container">
+          {validationErrors.imageFour && hasSubmitted && (
+            <p className="error-message">{validationErrors.imageFour}</p>
+          )}
+          <div className="product-form-field">
+            <label className="product-form-label">Image Four</label>
+            <input
+              className="product-form-input"
+              type="text"
+              placeholder="Image Four"
+              value={imageFour}
+              onChange={(e) => setImageFour(e.target.value)}
+            />
+          </div>
+        </div>
+        <div className="product-button-container">
           <button type="button" className="button-small" onClick={handleSubmit}>
             Submit Product
           </button>

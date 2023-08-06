@@ -28,6 +28,13 @@ function CreateReviewModal({user, productId}) {
             valueForPhotoUrl = photoUrl
         }
 
+        if(reviewText.length > 255) {
+            const errors = {}
+            errors.review = "Review cannot exceed 255 characters"
+            setFormErrors(errors)
+            return
+        }
+
         const reviewObj = {
             user_id: user.id,
             product_id: productId,
