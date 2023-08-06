@@ -61,7 +61,6 @@ export const createNewProductThunk = (product) => async (dispatch) => {
   });
   if (response.ok) {
     const newProduct = await response.json();
-    console.log("Being sent to store", newProduct);
     dispatch(makeProduct(newProduct));
     return newProduct.id;
   }

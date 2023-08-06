@@ -73,7 +73,6 @@ export default function AddProductModal() {
         imageThree,
         imageFour,
       };
-      console.log("Data construction", data);
       const newProductId = await dispatch(createNewProductThunk(data));
       _reset();
       closeModal();
