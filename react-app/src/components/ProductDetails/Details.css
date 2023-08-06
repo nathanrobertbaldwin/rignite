@@ -1,6 +1,7 @@
 #overview-specs-container {
   display: flex;
-  justify-content: center;
+  width: 400px;
+  justify-content: left;
   /* padding: 0 10%; */
 }
 

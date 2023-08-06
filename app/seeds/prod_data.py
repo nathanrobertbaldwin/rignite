@@ -8,7 +8,7 @@ products = [
         "description": "Upgrade your typing experience with the HyperType Pro Mechanical Keyboard. This premium keyboard features Cherry MX Red switches, providing a smooth and quiet typing experience. The aluminum top plate adds durability and a sleek look to your setup. Customize the per-key RGB lighting to match your style, and enjoy the convenience of programmable macros for faster execution. The detachable wrist rest ensures comfort during extended typing sessions.",
         "price": 129.99,
         "product_name": "HyperType Pro",
-        "specs": "Keyboard Specifications, Keyboard Type: Mechanical Keyboard, Switch Type: Cherry MX Red, Key Lifespan: 50 million keystrokes, Key Rollover: Full N-Key Rollover (NKRO) with Anti-Ghosting, Backlighting: Per-key RGB Backlighting, Layout: Full-sized 104-key layout with numeric keypad and multimedia keys, Connectivity: Wired USB 3.0, Gold-plated corrosion-resistant connector, Cable: Braided, Detachable USB cable, Construction: Aluminum top plate, Color: Black, Dimensions: 17.1 x 5.2 x 1.4 inches (L x W x H), Weight: Approx. 2.6 lbs (1.18 kg)",
+        "specs": "Product Specifications, Keyboard Type: Mechanical Keyboard, Switch Type: Cherry MX Red, Key Lifespan: 50 million keystrokes, Key Rollover: Full N-Key Rollover (NKRO) with Anti-Ghosting, Backlighting: Per-key RGB Backlighting, Layout: Full-sized 104-key layout with numeric keypad and multimedia keys, Connectivity: Wired USB 3.0, Gold-plated corrosion-resistant connector, Cable: Braided, Detachable USB cable, Construction: Aluminum top plate, Color: Black, Dimensions: 17.1 x 5.2 x 1.4 inches (L x W x H), Weight: Approx. 2.6 lbs (1.18 kg)",
     },
     # Product 2
     {
@@ -19,7 +19,7 @@ products = [
         "description": "Improve your productivity with the TechZone Ultra-Slim Keyboard. This wireless keyboard features scissor switches for a comfortable typing experience. The ultra-slim and compact design saves space on your desk and allows for easy portability. The built-in rechargeable battery ensures long-lasting use, and the wireless USB receiver provides a stable connection. Whether you're working from home or on the go, the TechZone Ultra-Slim Keyboard is a reliable companion.",
         "price": 59.99,
         "product_name": "TechZone Ultra-Slim",
-        "specs": "Keyboard Specifications, Keyboard Type: Wireless Membrane Keyboard, Switch Type: Scissor Switches, Key Lifespan: 10 million keystrokes, Key Rollover: 6-key rollover, Backlighting: Non-backlit, Layout: Compact 87-key layout, Connectivity: Wireless 2.4GHz USB receiver, Battery: Built-in rechargeable battery (Up to 30 days of use), Construction: ABS plastic, Color: White, Dimensions: 14.3 x 4.9 x 0.6 inches (L x W x H), Weight: Approx. 0.6 lbs (0.27 kg)",
+        "specs": "Product Specifications, Keyboard Type: Wireless Membrane Keyboard, Switch Type: Scissor Switches, Key Lifespan: 10 million keystrokes, Key Rollover: 6-key rollover, Backlighting: Non-backlit, Layout: Compact 87-key layout, Connectivity: Wireless 2.4GHz USB receiver, Battery: Built-in rechargeable battery (Up to 30 days of use), Construction: ABS plastic, Color: White, Dimensions: 14.3 x 4.9 x 0.6 inches (L x W x H), Weight: Approx. 0.6 lbs (0.27 kg)",
     },
     # Product 3
     {
@@ -30,7 +30,7 @@ products = [
         "description": "Take your gaming to the next level with the PulseGrip Gaming Keyboard. This mechanical keyboard features high-precision tactile switches that provide a responsive and satisfying typing experience. The dynamic RGB backlighting with various lighting effects allows you to create an immersive gaming setup. With anti-ghosting and full N-key rollover, every keystroke is registered accurately, giving you an edge over your opponents. The sturdy construction and detachable wrist rest ensure comfort and durability during long gaming sessions.",
         "price": 89.99,
         "product_name": "PulseGrip Gaming Keyboard",
-        "specs": "Keyboard Specifications, Keyboard Type: Mechanical Keyboard, Switch Type: Tactile Mechanical Switches, Key Lifespan: 50 million keystrokes, Key Rollover: Full N-Key Rollover (NKRO) with Anti-Ghosting, Backlighting: Customizable RGB Backlighting with dynamic lighting effects, Layout: Full-sized 104-key layout with numeric keypad and multimedia keys, Connectivity: Wired USB 3.0, Gold-plated corrosion-resistant connector, Cable: Braided, Detachable USB cable, Construction: ABS keycaps and metal top plate, Color: Black, Dimensions: 18.2 x 6.8 x 1.4 inches (L x W x H), Weight: Approx. 2.9 lbs (1.32 kg)",
+        "specs": "Product Specifications, Keyboard Type: Mechanical Keyboard, Switch Type: Tactile Mechanical Switches, Key Lifespan: 50 million keystrokes, Key Rollover: Full N-Key Rollover (NKRO) with Anti-Ghosting, Backlighting: Customizable RGB Backlighting with dynamic lighting effects, Layout: Full-sized 104-key layout with numeric keypad and multimedia keys, Connectivity: Wired USB 3.0, Gold-plated corrosion-resistant connector, Cable: Braided, Detachable USB cable, Construction: ABS keycaps and metal top plate, Color: Black, Dimensions: 18.2 x 6.8 x 1.4 inches (L x W x H), Weight: Approx. 2.9 lbs (1.32 kg)",
     },
     # Product 4
     {
@@ -41,7 +41,7 @@ products = [
         "description": "Upgrade your workspace with the TechFusion Pro Wired Keyboard. This sleek and elegant keyboard features low-profile scissor switches that provide a comfortable typing experience. The compact layout saves space on your desk, while the multimedia hotkeys allow quick access to various functions. The keyboard is spill-resistant, protecting it from accidental spills and splashes. The white finish adds a touch of sophistication to your setup.",
         "price": 49.99,
         "product_name": "TechFusion Pro Wired Keyboard",
-        "specs": "Keyboard Specifications, Keyboard Type: Membrane Keyboard, Switch Type: Scissor Switches, Key Lifespan: 10 million keystrokes, Key Rollover: 6-key rollover, Backlighting: Non-backlit, Layout: Compact 87-key layout with multimedia hotkeys, Connectivity: Wired USB 2.0, Cable: PVC, Connection: Fixed, Construction: ABS keycaps, Color: White, Dimensions: 14.2 x 5.5 x 0.9 inches (L x W x H), Weight: Approx. 1.1 lbs (0.5 kg)",
+        "specs": "Product Specifications, Keyboard Type: Membrane Keyboard, Switch Type: Scissor Switches, Key Lifespan: 10 million keystrokes, Key Rollover: 6-key rollover, Backlighting: Non-backlit, Layout: Compact 87-key layout with multimedia hotkeys, Connectivity: Wired USB 2.0, Cable: PVC, Connection: Fixed, Construction: ABS keycaps, Color: White, Dimensions: 14.2 x 5.5 x 0.9 inches (L x W x H), Weight: Approx. 1.1 lbs (0.5 kg)",
     },
     # Product 5
     {
@@ -52,7 +52,7 @@ products = [
         "description": "Unleash your gaming potential with the AstraPeak Gaming Mouse. This high-precision wired mouse features a responsive optical sensor for accurate tracking and targeting. With adjustable DPI settings, you can fine-tune the sensitivity to match your playstyle. The ergonomic design fits comfortably in your hand, reducing fatigue during extended gaming sessions. The mouse also features customizable RGB lighting, adding a vibrant touch to your gaming setup.",
         "price": 39.99,
         "product_name": "AstraPeak Gaming Mouse",
-        "specs": "Mouse Specifications, Mouse Type: Wired Optical Mouse, Sensor: Optical Sensor, DPI Levels: Adjustable DPI (800/1600/3200/6400), Backlighting: Customizable RGB Backlighting, Buttons: 6 programmable buttons, Connectivity: Wired USB 2.0, Cable: Braided, Connection: Fixed, Construction: ABS plastic, Color: Black, Dimensions: 4.7 x 2.7 x 1.5 inches (L x W x H), Weight: Approx. 0.3 lbs (0.14 kg)",
+        "specs": "Product Specifications, Mouse Type: Wired Optical Mouse, Sensor: Optical Sensor, DPI Levels: Adjustable DPI (800/1600/3200/6400), Backlighting: Customizable RGB Backlighting, Buttons: 6 programmable buttons, Connectivity: Wired USB 2.0, Cable: Braided, Connection: Fixed, Construction: ABS plastic, Color: Black, Dimensions: 4.7 x 2.7 x 1.5 inches (L x W x H), Weight: Approx. 0.3 lbs (0.14 kg)",
     },
     # Product 6
     {
@@ -63,7 +63,7 @@ products = [
         "description": "Experience precision and speed with the CoreDynamics Precision Gaming Mouse. Equipped with a high-performance optical sensor, this wired gaming mouse offers accurate tracking and rapid responsiveness. The adjustable DPI settings allow you to switch between different sensitivity levels, making it suitable for various gaming genres. The ergonomic design ensures a comfortable grip during intense gaming sessions. With customizable RGB lighting, you can create a stunning gaming ambiance.",
         "price": 49.99,
         "product_name": "CoreDynamics Precision",
-        "specs": "Mouse Specifications, Mouse Type: Wired Optical Mouse, Sensor: High-Performance Optical Sensor, DPI Levels: Adjustable DPI (800/1600/3200/6400/12000), Backlighting: Customizable RGB Backlighting, Buttons: 8 programmable buttons, Connectivity: Wired USB 3.0, Cable: Braided, Connection: Fixed, Construction: ABS plastic, Color: Silver, Dimensions: 4.8 x 2.6 x 1.6 inches (L x W x H), Weight: Approx. 0.25 lbs (0.11 kg)",
+        "specs": "Product Specifications, Mouse Type: Wired Optical Mouse, Sensor: High-Performance Optical Sensor, DPI Levels: Adjustable DPI (800/1600/3200/6400/12000), Backlighting: Customizable RGB Backlighting, Buttons: 8 programmable buttons, Connectivity: Wired USB 3.0, Cable: Braided, Connection: Fixed, Construction: ABS plastic, Color: Silver, Dimensions: 4.8 x 2.6 x 1.6 inches (L x W x H), Weight: Approx. 0.25 lbs (0.11 kg)",
     },
     # Product 7
     {
@@ -74,7 +74,7 @@ products = [
         "description": "Enhance your gaming precision with the OptiTech Precision XL Mouse Pad. This extra-large mouse pad provides ample space for smooth and precise mouse movements. The cloth surface with a non-slip rubber base ensures stability during intense gaming sessions. The stitched edges prevent fraying and increase the pad's durability. The vibrant blue design with the OptiTech logo adds a touch of style to your gaming setup.",
         "price": 34.99,
         "product_name": "OptiTech Precision XL",
-        "specs": "Mouse Pad Specifications, Material: Cloth surface with non-slip rubber base, Size: Extra-Large (Dimensions: 31.5 x 11.8 x 0.1 inches), Design: Blue with OptiTech logo, Stitched Edges: Yes, Compatibility: Suitable for all mouse types",
+        "specs": "Product Specifications, Material: Cloth surface with non-slip rubber base, Size: Extra-Large (Dimensions: 31.5 x 11.8 x 0.1 inches), Design: Blue with OptiTech logo, Stitched Edges: Yes, Compatibility: Suitable for all mouse types",
     },
     # Product 8
     {
@@ -85,7 +85,7 @@ products = [
         "description": "Immerse yourself in stunning sound with the SoundSurge BassX Gaming Speakers. These powerful speakers deliver rich and deep bass, enhancing your gaming and entertainment experience. The compact design fits perfectly on your desk, while the convenient volume and bass controls are within easy reach. Connect your devices via the wired 3.5mm audio input or use the headphone jack for private listening. Whether you're gaming, watching movies, or listening to music, the SoundSurge BassX Gaming Speakers deliver impressive audio quality.",
         "price": 79.99,
         "product_name": "SoundSurge BassX",
-        "specs": "Speaker Specifications, Speaker Type: 2.0 Stereo Speakers, Audio Output: 2 x 5W (RMS), Connectivity: Wired 3.5mm audio input, Headphone jack, Controls: Volume control, Bass control, Construction: ABS plastic, Color: Black, Dimensions: 6.3 x 3.9 x 3.5 inches (L x W x H), Weight: Approx. 2.2 lbs (1.0 kg)",
+        "specs": "Product Specifications, Speaker Type: 2.0 Stereo Speakers, Audio Output: 2 x 5W (RMS), Connectivity: Wired 3.5mm audio input, Headphone jack, Controls: Volume control, Bass control, Construction: ABS plastic, Color: Black, Dimensions: 6.3 x 3.9 x 3.5 inches (L x W x H), Weight: Approx. 2.2 lbs (1.0 kg)",
     },
     # Product 9
     {
@@ -96,7 +96,7 @@ products = [
         "description": "Feel the power of sound with the SonicPulse XLR Gaming Speakers. Equipped with XLR technology, these speakers deliver crystal-clear audio with enhanced bass performance. The dual-driver design ensures immersive sound, whether you're gaming or enjoying multimedia content. The speakers have an elegant red finish, making them a stylish addition to your setup. The integrated audio controls provide quick access to volume and bass adjustments.",
         "price": 129.99,
         "product_name": "SonicPulse XLR",
-        "specs": "Speaker Specifications, Speaker Type: 2.0 Stereo Speakers with XLR Technology, Audio Output: 2 x 10W (RMS), Connectivity: Wired 3.5mm audio input, Controls: Volume control, Bass control, Construction: MDF (Medium-Density Fiberboard) with metal grills, Color: Red, Dimensions: 8.7 x 4.9 x 5.1 inches (L x W x H), Weight: Approx. 4.2 lbs (1.9 kg)",
+        "specs": "Product Specifications, Speaker Type: 2.0 Stereo Speakers with XLR Technology, Audio Output: 2 x 10W (RMS), Connectivity: Wired 3.5mm audio input, Controls: Volume control, Bass control, Construction: MDF (Medium-Density Fiberboard) with metal grills, Color: Red, Dimensions: 8.7 x 4.9 x 5.1 inches (L x W x H), Weight: Approx. 4.2 lbs (1.9 kg)",
     },
     # Product 10
     {
@@ -107,7 +107,7 @@ products = [
         "description": "Experience superior audio clarity with the CrystalAudio Elite Gaming Headset. This wired headset features large 50mm drivers that deliver rich and immersive sound. The soft and comfortable ear cushions provide noise isolation, allowing you to focus on your game or call. The flexible boom microphone can be adjusted to your preferred position and delivers clear voice communication. The headset is equipped with an in-line volume control and mute switch for easy adjustments on the fly.",
         "price": 69.99,
         "product_name": "CrystalAudio Elite",
-        "specs": "Headset Specifications, Headset Type: Over-Ear Wired Headset, Driver Size: 50mm, Impedance: 32 ohms, Frequency Response: 20Hz - 20kHz, Microphone: Flexible Boom Microphone, Microphone Sensitivity: -38dB ± 3dB, Connectivity: Wired 3.5mm audio and microphone jacks, Controls: In-line volume control, Microphone mute switch, Construction: ABS plastic and cushioned earpads, Color: Black, Dimensions: 7.8 x 7.0 x 3.4 inches (L x W x H), Weight: Approx. 0.7 lbs (0.32 kg)",
+        "specs": "Product Specifications, Headset Type: Over-Ear Wired Headset, Driver Size: 50mm, Impedance: 32 ohms, Frequency Response: 20Hz - 20kHz, Microphone: Flexible Boom Microphone, Microphone Sensitivity: -38dB ± 3dB, Connectivity: Wired 3.5mm audio and microphone jacks, Controls: In-line volume control, Microphone mute switch, Construction: ABS plastic and cushioned earpads, Color: Black, Dimensions: 7.8 x 7.0 x 3.4 inches (L x W x H), Weight: Approx. 0.7 lbs (0.32 kg)",
     },
     # Product 11
     {
@@ -118,7 +118,7 @@ products = [
         "description": "Get ready for an immersive audio experience with the SoundScape Pro Wireless Headset. This wireless gaming headset offers low-latency audio transmission for a lag-free experience. The high-fidelity drivers deliver clear and powerful sound, enhancing your gaming and multimedia content. The soft memory foam earpads provide long-lasting comfort, while the adjustable headband ensures a secure fit. With its built-in rechargeable battery, you can enjoy hours of uninterrupted gaming and communication.",
         "price": 119.99,
         "product_name": "SoundScape Pro",
-        "specs": "Headset Specifications, Headset Type: Over-Ear Wireless Headset, Driver Size: 40mm, Impedance: 32 ohms, Frequency Response: 20Hz - 20kHz, Microphone: Built-in Microphone, Microphone Sensitivity: -42dB ± 3dB, Connectivity: Wireless 2.4GHz USB receiver, Battery: Built-in rechargeable battery (Up to 15 hours of continuous use), Controls: On-ear volume and playback controls, Construction: ABS plastic with memory foam earpads, Color: White, Dimensions: 7.7 x 7.3 x 3.5 inches (L x W x H), Weight: Approx. 0.8 lbs (0.36 kg)",
+        "specs": "Product Specifications, Headset Type: Over-Ear Wireless Headset, Driver Size: 40mm, Impedance: 32 ohms, Frequency Response: 20Hz - 20kHz, Microphone: Built-in Microphone, Microphone Sensitivity: -42dB ± 3dB, Connectivity: Wireless 2.4GHz USB receiver, Battery: Built-in rechargeable battery (Up to 15 hours of continuous use), Controls: On-ear volume and playback controls, Construction: ABS plastic with memory foam earpads, Color: White, Dimensions: 7.7 x 7.3 x 3.5 inches (L x W x H), Weight: Approx. 0.8 lbs (0.36 kg)",
     },
     # Product 12
     {
@@ -129,7 +129,7 @@ products = [
         "description": "Upgrade your typing experience with the HyperType Pro Mechanical Keyboard. This premium keyboard features Cherry MX Red switches, providing a smooth and quiet typing experience. The aluminum top plate adds durability and a sleek look to your setup. Customize the per-key RGB lighting to match your style, and enjoy the convenience of programmable macros for faster execution. The detachable wrist rest ensures comfort during extended typing sessions.",
         "price": 129.99,
         "product_name": "HyperType Pro",
-        "specs": "Keyboard Specifications, Keyboard Type: Mechanical Keyboard, Switch Type: Cherry MX Red, Key Lifespan: 50 million keystrokes, Key Rollover: Full N-Key Rollover (NKRO) with Anti-Ghosting, Backlighting: Per-key RGB Backlighting, Layout: Full-sized 104-key layout with numeric keypad and multimedia keys, Connectivity: Wired USB 3.0, Gold-plated corrosion-resistant connector, Cable: Braided, Detachable USB cable, Construction: Aluminum top plate, Color: Black, Dimensions: 17.1 x 5.2 x 1.4 inches (L x W x H), Weight: Approx. 2.6 lbs (1.18 kg)",
+        "specs": "Product Specifications, Keyboard Type: Mechanical Keyboard, Switch Type: Cherry MX Red, Key Lifespan: 50 million keystrokes, Key Rollover: Full N-Key Rollover (NKRO) with Anti-Ghosting, Backlighting: Per-key RGB Backlighting, Layout: Full-sized 104-key layout with numeric keypad and multimedia keys, Connectivity: Wired USB 3.0, Gold-plated corrosion-resistant connector, Cable: Braided, Detachable USB cable, Construction: Aluminum top plate, Color: Black, Dimensions: 17.1 x 5.2 x 1.4 inches (L x W x H), Weight: Approx. 2.6 lbs (1.18 kg)",
     },
     # Product 13
     {
@@ -140,7 +140,7 @@ products = [
         "description": "Improve your productivity with the TechZone Ultra-Slim Mat. This mat features a super padded backing for a comfortable typing experience. The ultra-slim and compact design saves space on your desk and allows for easy portability. The built-in led lights gives extra cool customization, and the wireless USB receiver provides a stable lighting control experience. Whether you're working from home or on the go, the TechZone Ultra-Slim mat is a reliable companion.",
         "price": 59.99,
         "product_name": "TechZone Ultra-Slim",
-        "specs": "Mat Specifications, Mat Type: Wired Membrane Mat, Backing Type: Ultra Pad Pro, Lifespan: 10 years, Backlighting: Non-backlit, Layout: Compact, Connectivity: Wired USB receiver, Battery: Built-in rechargeable battery (Up to 30 days of use), Construction: ABS plastic, Color: White, Dimensions: 14.3 x 4.9 x 0.6 inches (L x W x H), Weight: Approx. 0.6 lbs (0.27 kg)",
+        "specs": "Product Specifications, Mat Type: Wired Membrane Mat, Backing Type: Ultra Pad Pro, Lifespan: 10 years, Backlighting: Non-backlit, Layout: Compact, Connectivity: Wired USB receiver, Battery: Built-in rechargeable battery (Up to 30 days of use), Construction: ABS plastic, Color: White, Dimensions: 14.3 x 4.9 x 0.6 inches (L x W x H), Weight: Approx. 0.6 lbs (0.27 kg)",
     },
     # Product 14
     {
@@ -151,7 +151,7 @@ products = [
         "description": "Take your gaming to the next level with the PulseGrip Gaming Keyboard. This mechanical keyboard features high-precision tactile switches that provide a responsive and satisfying typing experience. The dynamic RGB backlighting with various lighting effects allows you to create an immersive gaming setup. With anti-ghosting and full N-key rollover, every keystroke is registered accurately, giving you an edge over your opponents. The sturdy construction and detachable wrist rest ensure comfort and durability during long gaming sessions.",
         "price": 89.99,
         "product_name": "PulseGrip Gaming Keyboard",
-        "specs": "Keyboard Specifications, Keyboard Type: Mechanical Keyboard, Switch Type: Tactile Mechanical Switches, Key Lifespan: 50 million keystrokes, Key Rollover: Full N-Key Rollover (NKRO) with Anti-Ghosting, Backlighting: Customizable RGB Backlighting with dynamic lighting effects, Layout: Full-sized 104-key layout with numeric keypad and multimedia keys, Connectivity: Wired USB 3.0, Gold-plated corrosion-resistant connector, Cable: Braided, Detachable USB cable, Construction: ABS keycaps and metal top plate, Color: Black, Dimensions: 18.2 x 6.8 x 1.4 inches (L x W x H), Weight: Approx. 2.9 lbs (1.32 kg)",
+        "specs": "Product Specifications, Keyboard Type: Mechanical Keyboard, Switch Type: Tactile Mechanical Switches, Key Lifespan: 50 million keystrokes, Key Rollover: Full N-Key Rollover (NKRO) with Anti-Ghosting, Backlighting: Customizable RGB Backlighting with dynamic lighting effects, Layout: Full-sized 104-key layout with numeric keypad and multimedia keys, Connectivity: Wired USB 3.0, Gold-plated corrosion-resistant connector, Cable: Braided, Detachable USB cable, Construction: ABS keycaps and metal top plate, Color: Black, Dimensions: 18.2 x 6.8 x 1.4 inches (L x W x H), Weight: Approx. 2.9 lbs (1.32 kg)",
     },
     # Product 15
     {
@@ -162,7 +162,7 @@ products = [
         "description": "Upgrade your workspace with the TechFusion Pro Wired Keyboard. This sleek and elegant keyboard features low-profile scissor switches that provide a comfortable typing experience. The compact layout saves space on your desk, while the multimedia hotkeys allow quick access to various functions. The keyboard is spill-resistant, protecting it from accidental spills and splashes. The white finish adds a touch of sophistication to your setup.",
         "price": 49.99,
         "product_name": "TechFusion Pro Wired Keyboard",
-        "specs": "Keyboard Specifications, Keyboard Type: Membrane Keyboard, Switch Type: Scissor Switches, Key Lifespan: 10 million keystrokes, Key Rollover: 6-key rollover, Backlighting: Non-backlit, Layout: Compact 87-key layout with multimedia hotkeys, Connectivity: Wired USB 2.0, Cable: PVC, Connection: Fixed, Construction: ABS keycaps, Color: White, Dimensions: 14.2 x 5.5 x 0.9 inches (L x W x H), Weight: Approx. 1.1 lbs (0.5 kg)",
+        "specs": "Product Specifications, Keyboard Type: Membrane Keyboard, Switch Type: Scissor Switches, Key Lifespan: 10 million keystrokes, Key Rollover: 6-key rollover, Backlighting: Non-backlit, Layout: Compact 87-key layout with multimedia hotkeys, Connectivity: Wired USB 2.0, Cable: PVC, Connection: Fixed, Construction: ABS keycaps, Color: White, Dimensions: 14.2 x 5.5 x 0.9 inches (L x W x H), Weight: Approx. 1.1 lbs (0.5 kg)",
     },
     # Product 16
     {
@@ -173,7 +173,7 @@ products = [
         "description": "Unleash your gaming potential with the AstraPeak Gaming Mouse. This high-precision wired mouse features a responsive optical sensor for accurate tracking and targeting. With adjustable DPI settings, you can fine-tune the sensitivity to match your playstyle. The ergonomic design fits comfortably in your hand, reducing fatigue during extended gaming sessions. The mouse also features customizable RGB lighting, adding a vibrant touch to your gaming setup.",
         "price": 39.99,
         "product_name": "AstraPeak Gaming Mouse",
-        "specs": "Mouse Specifications, Mouse Type: Wired Optical Mouse, Sensor: Optical Sensor, DPI Levels: Adjustable DPI (800/1600/3200/6400), Backlighting: Customizable RGB Backlighting, Buttons: 6 programmable buttons, Connectivity: Wired USB 2.0, Cable: Braided, Connection: Fixed, Construction: ABS plastic, Color: Black, Dimensions: 4.7 x 2.7 x 1.5 inches (L x W x H), Weight: Approx. 0.3 lbs (0.14 kg)",
+        "specs": "Product Specifications, Mouse Type: Wired Optical Mouse, Sensor: Optical Sensor, DPI Levels: Adjustable DPI (800/1600/3200/6400), Backlighting: Customizable RGB Backlighting, Buttons: 6 programmable buttons, Connectivity: Wired USB 2.0, Cable: Braided, Connection: Fixed, Construction: ABS plastic, Color: Black, Dimensions: 4.7 x 2.7 x 1.5 inches (L x W x H), Weight: Approx. 0.3 lbs (0.14 kg)",
     },
     # Product 17
     {
@@ -184,7 +184,7 @@ products = [
         "description": "Upgrade your typing experience with the TechFusion Pro Mechanical Keyboard. This premium keyboard features Cherry MX Brown switches, providing a tactile typing experience. The full-sized layout with numeric keypad and multimedia keys ensures convenience and efficiency. The keyboard is equipped with customizable RGB backlighting, allowing you to create a personalized setup. The aluminum top plate adds durability and a sleek look to your workspace.",
         "price": 119.99,
         "product_name": "TechFusion Pro",
-        "specs": "Keyboard Specifications, Keyboard Type: Mechanical Keyboard, Switch Type: Cherry MX Brown, Key Lifespan: 50 million keystrokes, Key Rollover: Full N-Key Rollover (NKRO) with Anti-Ghosting, Backlighting: Customizable RGB Backlighting, Layout: Full-sized 104-key layout with numeric keypad and multimedia keys, Connectivity: Wired USB 3.0, Gold-plated corrosion-resistant connector, Cable: Braided, Connection: Fixed, Construction: Aluminum top plate, Color: Black, Dimensions: 17.1 x 5.2 x 1.4 inches (L x W x H), Weight: Approx. 2.6 lbs (1.18 kg)",
+        "specs": "Product Specifications, Keyboard Type: Mechanical Keyboard, Switch Type: Cherry MX Brown, Key Lifespan: 50 million keystrokes, Key Rollover: Full N-Key Rollover (NKRO) with Anti-Ghosting, Backlighting: Customizable RGB Backlighting, Layout: Full-sized 104-key layout with numeric keypad and multimedia keys, Connectivity: Wired USB 3.0, Gold-plated corrosion-resistant connector, Cable: Braided, Connection: Fixed, Construction: Aluminum top plate, Color: Black, Dimensions: 17.1 x 5.2 x 1.4 inches (L x W x H), Weight: Approx. 2.6 lbs (1.18 kg)",
     },
     # Product 18
     {
@@ -195,7 +195,7 @@ products = [
         "description": "Take your typing to new heights with the AeroGlide Ultra-Slim Keyboard. This wireless keyboard features low-profile scissor switches, providing a smooth and responsive typing experience. The ultra-slim design complements your modern workspace and saves space on your desk. The built-in rechargeable battery ensures long-lasting use, and the wireless USB receiver provides a stable connection. With its elegant silver finish, the AeroGlide Ultra-Slim Keyboard adds a touch of sophistication to your setup.",
         "price": 79.99,
         "product_name": "AeroGlide Ultra-Slim",
-        "specs": "Keyboard Specifications, Keyboard Type: Wireless Membrane Keyboard, Switch Type: Scissor Switches, Key Lifespan: 10 million keystrokes, Key Rollover: 6-key rollover, Backlighting: Non-backlit, Layout: Compact 87-key layout, Connectivity: Wireless 2.4GHz USB receiver, Battery: Built-in rechargeable battery (Up to 30 days of use), Construction: ABS plastic, Color: Silver, Dimensions: 14.3 x 4.9 x 0.6 inches (L x W x H), Weight: Approx. 0.6 lbs (0.27 kg)",
+        "specs": "Product Specifications, Keyboard Type: Wireless Membrane Keyboard, Switch Type: Scissor Switches, Key Lifespan: 10 million keystrokes, Key Rollover: 6-key rollover, Backlighting: Non-backlit, Layout: Compact 87-key layout, Connectivity: Wireless 2.4GHz USB receiver, Battery: Built-in rechargeable battery (Up to 30 days of use), Construction: ABS plastic, Color: Silver, Dimensions: 14.3 x 4.9 x 0.6 inches (L x W x H), Weight: Approx. 0.6 lbs (0.27 kg)",
     },
     # Product 19
     {
@@ -206,7 +206,7 @@ products = [
         "description": "Effortlessly type with the SwiftType Pro Mechanical Keyboard. This premium keyboard features optical switches for lightning-fast response times and smooth keystrokes. The full-sized layout with numeric keypad and multimedia keys ensures convenience for both work and play. The customizable per-key RGB backlighting allows you to create stunning lighting effects. The detachable magnetic wrist rest provides ergonomic support during long typing sessions.",
         "price": 149.99,
         "product_name": "SwiftType Pro",
-        "specs": "Keyboard Specifications, Keyboard Type: Mechanical Keyboard, Switch Type: Optical Mechanical Switches, Key Lifespan: 100 million keystrokes, Key Rollover: Full N-Key Rollover (NKRO) with Anti-Ghosting, Backlighting: Customizable RGB Backlighting, Layout: Full-sized 104-key layout with numeric keypad and multimedia keys, Connectivity: Wired USB 3.0, Gold-plated corrosion-resistant connector, Cable: Braided, Detachable USB cable, Construction: Aluminum top plate, Color: Black, Dimensions: 17.1 x 5.2 x 1.4 inches (L x W x H), Weight: Approx. 2.8 lbs (1.27 kg)",
+        "specs": "Product Specifications, Keyboard Type: Mechanical Keyboard, Switch Type: Optical Mechanical Switches, Key Lifespan: 100 million keystrokes, Key Rollover: Full N-Key Rollover (NKRO) with Anti-Ghosting, Backlighting: Customizable RGB Backlighting, Layout: Full-sized 104-key layout with numeric keypad and multimedia keys, Connectivity: Wired USB 3.0, Gold-plated corrosion-resistant connector, Cable: Braided, Detachable USB cable, Construction: Aluminum top plate, Color: Black, Dimensions: 17.1 x 5.2 x 1.4 inches (L x W x H), Weight: Approx. 2.8 lbs (1.27 kg)",
     },
     # Product 20
     {
@@ -217,7 +217,7 @@ products = [
         "description": "Experience the DynoTec Supreme Gaming Keyboard and elevate your gaming performance. This mechanical keyboard features ultra-responsive Cherry MX Blue switches, providing tactile feedback and an audible click. The full-sized layout with numeric keypad and programmable macro keys ensures quick execution. The dynamic RGB backlighting with various lighting effects lets you customize your gaming setup. The durable ABS construction ensures lasting performance.",
         "price": 109.99,
         "product_name": "DynoTec Supreme",
-        "specs": "Keyboard Specifications, Keyboard Type: Mechanical Keyboard, Switch Type: Cherry MX Blue, Key Lifespan: 50 million keystrokes, Key Rollover: Full N-Key Rollover (NKRO) with Anti-Ghosting, Backlighting: Customizable RGB Backlighting, Layout: Full-sized 104-key layout with numeric keypad and programmable macro keys, Connectivity: Wired USB 3.0, Gold-plated corrosion-resistant connector, Cable: Braided, Connection: Fixed, Construction: ABS keycaps, Color: White, Dimensions: 17.1 x 5.2 x 1.4 inches (L x W x H), Weight: Approx. 2.7 lbs (1.23 kg)",
+        "specs": "Product Specifications, Keyboard Type: Mechanical Keyboard, Switch Type: Cherry MX Blue, Key Lifespan: 50 million keystrokes, Key Rollover: Full N-Key Rollover (NKRO) with Anti-Ghosting, Backlighting: Customizable RGB Backlighting, Layout: Full-sized 104-key layout with numeric keypad and programmable macro keys, Connectivity: Wired USB 3.0, Gold-plated corrosion-resistant connector, Cable: Braided, Connection: Fixed, Construction: ABS keycaps, Color: White, Dimensions: 17.1 x 5.2 x 1.4 inches (L x W x H), Weight: Approx. 2.7 lbs (1.23 kg)",
     },
     # Product 21
     {
@@ -228,7 +228,7 @@ products = [
         "description": "Feel the VibePulse Gaming Keyboard's energy as you dominate your opponents. This mechanical keyboard features tactile Outemu Blue switches, providing a satisfying typing experience with an audible click. The full-sized layout with numeric keypad and multimedia keys enhances productivity. The customizable RGB backlighting lets you set the perfect ambiance for your gaming sessions. The metal top plate adds durability and a premium look to your setup.",
         "price": 99.99,
         "product_name": "VibePulse Gaming Keyboard",
-        "specs": "Keyboard Specifications, Keyboard Type: Mechanical Keyboard, Switch Type: Outemu Blue, Key Lifespan: 50 million keystrokes, Key Rollover: Full N-Key Rollover (NKRO) with Anti-Ghosting, Backlighting: Customizable RGB Backlighting, Layout: Full-sized 104-key layout with numeric keypad and multimedia keys, Connectivity: Wired USB 3.0, Gold-plated corrosion-resistant connector, Cable: Braided, Connection: Fixed, Construction: Metal top plate and ABS keycaps, Color: Black, Dimensions: 17.1 x 5.2 x 1.4 inches (L x W x H), Weight: Approx. 2.9 lbs (1.32 kg)",
+        "specs": "Product Specifications, Keyboard Type: Mechanical Keyboard, Switch Type: Outemu Blue, Key Lifespan: 50 million keystrokes, Key Rollover: Full N-Key Rollover (NKRO) with Anti-Ghosting, Backlighting: Customizable RGB Backlighting, Layout: Full-sized 104-key layout with numeric keypad and multimedia keys, Connectivity: Wired USB 3.0, Gold-plated corrosion-resistant connector, Cable: Braided, Connection: Fixed, Construction: Metal top plate and ABS keycaps, Color: Black, Dimensions: 17.1 x 5.2 x 1.4 inches (L x W x H), Weight: Approx. 2.9 lbs (1.32 kg)",
     },
     # Product 22
     {
@@ -239,7 +239,7 @@ products = [
         "description": "Sprint ahead with the TechSprint Swift Keyboard, designed for speed and precision. This mechanical keyboard features Cherry MX Speed switches, allowing rapid keystrokes with an ultra-fast response time. The tenkeyless layout saves space on your desk and ensures a compact design for easy portability. The customizable per-key RGB backlighting lets you showcase your unique style. With a durable aluminum top plate, the TechSprint Swift Keyboard is built to withstand intense gaming sessions.",
         "price": 129.99,
         "product_name": "TechSprint Swift Keyboard",
-        "specs": "Keyboard Specifications, Keyboard Type: Mechanical Keyboard, Switch Type: Cherry MX Speed, Key Lifespan: 50 million keystrokes, Key Rollover: Full N-Key Rollover (NKRO) with Anti-Ghosting, Backlighting: Customizable RGB Backlighting, Layout: Tenkeyless 87-key layout, Connectivity: Wired USB 3.0, Gold-plated corrosion-resistant connector, Cable: Braided, Connection: Fixed, Construction: Aluminum top plate, Color: Black, Dimensions: 14.3 x 5.2 x 1.4 inches (L x W x H), Weight: Approx. 2.3 lbs (1.04 kg)",
+        "specs": "Product Specifications, Keyboard Type: Mechanical Keyboard, Switch Type: Cherry MX Speed, Key Lifespan: 50 million keystrokes, Key Rollover: Full N-Key Rollover (NKRO) with Anti-Ghosting, Backlighting: Customizable RGB Backlighting, Layout: Tenkeyless 87-key layout, Connectivity: Wired USB 3.0, Gold-plated corrosion-resistant connector, Cable: Braided, Connection: Fixed, Construction: Aluminum top plate, Color: Black, Dimensions: 14.3 x 5.2 x 1.4 inches (L x W x H), Weight: Approx. 2.3 lbs (1.04 kg)",
     },
     # Product 23
     {
@@ -250,7 +250,7 @@ products = [
         "description": "Unleash your gaming potential with the ProGenius X1 Gaming Mouse. This high-precision wired mouse features a responsive optical sensor for accurate tracking and targeting. With adjustable DPI settings, you can fine-tune the sensitivity to match your playstyle. The ergonomic design fits comfortably in your hand, reducing fatigue during extended gaming sessions. The mouse also features customizable RGB lighting, adding a vibrant touch to your gaming setup.",
         "price": 39.99,
         "product_name": "ProGenius X1 Gaming Mouse",
-        "specs": "Mouse Specifications, Mouse Type: Wired Optical Mouse, Sensor: Optical Sensor, DPI Levels: Adjustable DPI (800/1600/3200/6400), Backlighting: Customizable RGB Backlighting, Buttons: 6 programmable buttons, Connectivity: Wired USB 2.0, Cable: Braided, Connection: Fixed, Construction: ABS plastic, Color: Black, Dimensions: 4.7 x 2.7 x 1.5 inches (L x W x H), Weight: Approx. 0.3 lbs (0.14 kg)",
+        "specs": "Product Specifications, Mouse Type: Wired Optical Mouse, Sensor: Optical Sensor, DPI Levels: Adjustable DPI (800/1600/3200/6400), Backlighting: Customizable RGB Backlighting, Buttons: 6 programmable buttons, Connectivity: Wired USB 2.0, Cable: Braided, Connection: Fixed, Construction: ABS plastic, Color: Black, Dimensions: 4.7 x 2.7 x 1.5 inches (L x W x H), Weight: Approx. 0.3 lbs (0.14 kg)",
     },
     # Product 24
     {
@@ -261,7 +261,7 @@ products = [
         "description": "Experience precision and speed with the CoreDynamics Precision Gaming Mouse. Equipped with a high-performance optical sensor, this wired gaming mouse offers accurate tracking and rapid responsiveness. The adjustable DPI settings allow you to switch between different sensitivity levels, making it suitable for various gaming genres.",
         "price": 49.99,
         "product_name": "CoreDynamics Precision",
-        "specs": "Mouse Specifications, Mouse Type: Wired Optical Mouse, Sensor: High-Performance Optical Sensor, DPI Levels: Adjustable DPI (800/1600/3200/6400/12000), Backlighting: Customizable RGB Backlighting, Buttons: 8 programmable buttons, Connectivity: Wired USB 3.0, Cable: Braided, Connection: Fixed, Construction: ABS plastic, Color: Silver, Dimensions: 4.8 x 2.6 x 1.6 inches (L x W x H), Weight: Approx. 0.25 lbs (0.11 kg)",
+        "specs": "Product Specifications, Mouse Type: Wired Optical Mouse, Sensor: High-Performance Optical Sensor, DPI Levels: Adjustable DPI (800/1600/3200/6400/12000), Backlighting: Customizable RGB Backlighting, Buttons: 8 programmable buttons, Connectivity: Wired USB 3.0, Cable: Braided, Connection: Fixed, Construction: ABS plastic, Color: Silver, Dimensions: 4.8 x 2.6 x 1.6 inches (L x W x H), Weight: Approx. 0.25 lbs (0.11 kg)",
     },
     # Product 25
     {
@@ -272,7 +272,7 @@ products = [
         "description": "Enhance your gaming precision with the OptiTech Precision XL Mouse Pad. This extra-large mouse pad provides ample space for smooth and precise mouse movements. The cloth surface with a non-slip rubber base ensures stability during intense gaming sessions. The stitched edges prevent fraying and increase the pad's durability. The vibrant blue design with the OptiTech logo adds a touch of style to your gaming setup.",
         "price": 34.99,
         "product_name": "OptiTech Precision XL",
-        "specs": "Mouse Pad Specifications, Material: Cloth surface with non-slip rubber base, Size: Extra-Large (Dimensions: 31.5 x 11.8 x 0.1 inches), Design: Blue with OptiTech logo, Stitched Edges: Yes, Compatibility: Suitable for all mouse types",
+        "specs": "Product Specifications, Material: Cloth surface with non-slip rubber base, Size: Extra-Large (Dimensions: 31.5 x 11.8 x 0.1 inches), Design: Blue with OptiTech logo, Stitched Edges: Yes, Compatibility: Suitable for all mouse types",
     },
     # Product 26
     {
@@ -283,7 +283,7 @@ products = [
         "description": "Immerse yourself in stunning sound with the SoundSurge BassX Gaming Speakers. These powerful speakers deliver rich and deep bass, enhancing your gaming and entertainment experience. The compact design fits perfectly on your desk, while the convenient volume and bass controls are within easy reach. Connect your devices via the wired 3.5mm audio input or use the headphone jack for private listening. Whether you're gaming, watching movies, or listening to music, the SoundSurge BassX Gaming Speakers deliver impressive audio quality.",
         "price": 79.99,
         "product_name": "SoundSurge BassX",
-        "specs": "Speaker Specifications, Speaker Type: 2.0 Stereo Speakers, Audio Output: 2 x 5W (RMS), Connectivity: Wired 3.5mm audio input, Headphone jack, Controls: Volume control, Bass control, Construction: ABS plastic, Color: Black, Dimensions: 6.3 x 3.9 x 3.5 inches (L x W x H), Weight: Approx. 2.2 lbs (1.0 kg)",
+        "specs": "Product Specifications, Speaker Type: 2.0 Stereo Speakers, Audio Output: 2 x 5W (RMS), Connectivity: Wired 3.5mm audio input, Headphone jack, Controls: Volume control, Bass control, Construction: ABS plastic, Color: Black, Dimensions: 6.3 x 3.9 x 3.5 inches (L x W x H), Weight: Approx. 2.2 lbs (1.0 kg)",
     },
     # Product 27
     {
@@ -294,7 +294,7 @@ products = [
         "description": "Feel the power of sound with the SonicPulse XLR Gaming Speakers. Equipped with XLR technology, these speakers deliver crystal-clear audio with enhanced bass performance. The dual-driver design ensures immersive sound, whether you're gaming or enjoying multimedia content. The speakers have an elegant red finish, making them a stylish addition to your setup. The integrated audio controls provide quick access to volume and bass adjustments.",
         "price": 129.99,
         "product_name": "SonicPulse XLR",
-        "specs": "Speaker Specifications, Speaker Type: 2.0 Stereo Speakers with XLR Technology, Audio Output: 2 x 10W (RMS), Connectivity: Wired 3.5mm audio input, Controls: Volume control, Bass control, Construction: MDF (Medium-Density Fiberboard) with metal grills, Color: Red, Dimensions: 8.7 x 4.9 x 5.1 inches (L x W x H), Weight: Approx. 4.2 lbs (1.9 kg)",
+        "specs": "Product Specifications, Speaker Type: 2.0 Stereo Speakers with XLR Technology, Audio Output: 2 x 10W (RMS), Connectivity: Wired 3.5mm audio input, Controls: Volume control, Bass control, Construction: MDF (Medium-Density Fiberboard) with metal grills, Color: Red, Dimensions: 8.7 x 4.9 x 5.1 inches (L x W x H), Weight: Approx. 4.2 lbs (1.9 kg)",
     },
     # Product 28
     {
@@ -305,7 +305,7 @@ products = [
         "description": "Experience superior audio clarity with the CrystalAudio Elite Gaming Headset. This wired headset features large 50mm drivers that deliver rich and immersive sound. The soft and comfortable ear cushions provide noise isolation, allowing you to focus on your game or call. The flexible boom microphone can be adjusted to your preferred position and delivers clear voice communication. The headset is equipped with an in-line volume control and mute switch for easy adjustments on the fly.",
         "price": 69.99,
         "product_name": "CrystalAudio Elite",
-        "specs": "Headset Specifications, Headset Type: Over-Ear Wired Headset, Driver Size: 50mm, Impedance: 32 ohms, Frequency Response: 20Hz - 20kHz, Microphone: Flexible Boom Microphone, Microphone Sensitivity: -38dB ± 3dB, Connectivity: Wired 3.5mm audio and microphone jacks, Controls: In-line volume control, Microphone mute switch, Construction: ABS plastic and cushioned earpads, Color: Black, Dimensions: 7.8 x 7.0 x 3.4 inches (L x W x H), Weight: Approx. 0.7 lbs (0.32 kg)",
+        "specs": "Product Specifications, Headset Type: Over-Ear Wired Headset, Driver Size: 50mm, Impedance: 32 ohms, Frequency Response: 20Hz - 20kHz, Microphone: Flexible Boom Microphone, Microphone Sensitivity: -38dB ± 3dB, Connectivity: Wired 3.5mm audio and microphone jacks, Controls: In-line volume control, Microphone mute switch, Construction: ABS plastic and cushioned earpads, Color: Black, Dimensions: 7.8 x 7.0 x 3.4 inches (L x W x H), Weight: Approx. 0.7 lbs (0.32 kg)",
     },
     # Product 29
     {
@@ -316,7 +316,7 @@ products = [
         "description": "Get ready for an immersive audio experience with the SoundScape Pro Wireless Headset. This wireless gaming headset offers low-latency audio transmission for a lag-free experience. The high-fidelity drivers deliver clear and powerful sound, enhancing your gaming and multimedia content. The soft memory foam earpads provide long-lasting comfort, while the adjustable headband ensures a secure fit. With its built-in rechargeable battery, you can enjoy hours of uninterrupted gaming and communication.",
         "price": 119.99,
         "product_name": "SoundScape Pro",
-        "specs": "Headset Specifications, Headset Type: Over-Ear Wireless Headset, Driver Size: 40mm, Impedance: 32 ohms, Frequency Response: 20Hz - 20kHz, Microphone: Built-in Microphone, Microphone Sensitivity: -42dB ± 3dB, Connectivity: Wireless 2.4GHz USB receiver, Battery: Built-in rechargeable battery (Up to 15 hours of continuous use), Controls: On-ear volume and playback controls, Construction: ABS plastic with memory foam earpads, Color: White, Dimensions: 7.7 x 7.3 x 3.5 inches (L x W x H), Weight: Approx. 0.8 lbs (0.36 kg)",
+        "specs": "Product Specifications, Headset Type: Over-Ear Wireless Headset, Driver Size: 40mm, Impedance: 32 ohms, Frequency Response: 20Hz - 20kHz, Microphone: Built-in Microphone, Microphone Sensitivity: -42dB ± 3dB, Connectivity: Wireless 2.4GHz USB receiver, Battery: Built-in rechargeable battery (Up to 15 hours of continuous use), Controls: On-ear volume and playback controls, Construction: ABS plastic with memory foam earpads, Color: White, Dimensions: 7.7 x 7.3 x 3.5 inches (L x W x H), Weight: Approx. 0.8 lbs (0.36 kg)",
     },
     # Product 30
     {
@@ -327,7 +327,7 @@ products = [
         "description": "Upgrade your gaming setup with the DynoTec Supreme Gaming Desk Mat. This large desk mat provides ample space for your keyboard, mouse, and other accessories. The smooth and anti-fray surface ensures precise mouse movements and comfortable typing. The dynamic RGB lighting around the edges adds a stylish touch to your gaming station. The non-slip rubber base keeps the mat firmly in place during intense gaming sessions.",
         "price": 29.99,
         "product_name": "DynoTec Supreme Desk Mat",
-        "specs": "Desk Mat Specifications, Material: Smooth and anti-fray surface, Lighting: RGB lighting around the edges, Non-slip rubber base, Dimensions: 35.4 x 15.7 inches (L x W), Thickness: 0.1 inches, Weight: Approx. 1.5 lbs (0.68 kg)",
+        "specs": "Product Specifications, Material: Smooth and anti-fray surface, Lighting: RGB lighting around the edges, Non-slip rubber base, Dimensions: 35.4 x 15.7 inches (L x W), Thickness: 0.1 inches, Weight: Approx. 1.5 lbs (0.68 kg)",
     },
     # Product 31
     {
@@ -338,7 +338,7 @@ products = [
         "description": "Feel the VibePulse Gaming Desk Mat's premium quality as you take your gaming to the next level. This extra-large desk mat offers a smooth and low-friction surface, ensuring precise mouse tracking and comfortable typing. The sleek black design adds a touch of elegance to your gaming or office setup. The stitched edges enhance durability, preventing fraying over time. The non-slip rubber base keeps the mat securely in place.",
         "price": 24.99,
         "product_name": "VibePulse Gaming Desk Mat",
-        "specs": "Desk Mat Specifications, Material: Smooth and low-friction surface, Stitched edges for durability, Non-slip rubber base, Dimensions: 31.5 x 15.7 inches (L x W), Thickness: 0.12 inches, Weight: Approx. 1.7 lbs (0.77 kg)",
+        "specs": "Product Specifications, Material: Smooth and low-friction surface, Stitched edges for durability, Non-slip rubber base, Dimensions: 31.5 x 15.7 inches (L x W), Thickness: 0.12 inches, Weight: Approx. 1.7 lbs (0.77 kg)",
     },
     # Product 32
     {
@@ -349,7 +349,7 @@ products = [
         "description": "Accelerate your productivity with the TechSprint Swift Desk Mat. This desk mat features a water-resistant and easy-to-clean surface, making it suitable for both gaming and work setups. The extended size accommodates your keyboard, mouse, and other essentials. The non-slip rubber base keeps the mat firmly in place, ensuring stability during intense work or gaming sessions. The minimalist design complements any desk aesthetic.",
         "price": 34.99,
         "product_name": "TechSprint Swift Desk Mat",
-        "specs": "Desk Mat Specifications, Material: Water-resistant and easy-to-clean surface, Non-slip rubber base, Dimensions: 31.9 x 15.7 inches (L x W), Thickness: 0.08 inches, Weight: Approx. 1.6 lbs (0.73 kg)",
+        "specs": "Product Specifications, Material: Water-resistant and easy-to-clean surface, Non-slip rubber base, Dimensions: 31.9 x 15.7 inches (L x W), Thickness: 0.08 inches, Weight: Approx. 1.6 lbs (0.73 kg)",
     },
     # Product 33
     {
@@ -360,7 +360,7 @@ products = [
         "description": "Experience smooth and precise mouse movements with the TechMat UltraGlide Mouse Pad. This high-quality mouse pad is designed for gamers and creative professionals who demand precision and speed. The smooth fabric surface provides excellent tracking, while the non-slip rubber base ensures stability during intense use.",
         "price": 24.99,
         "product_name": "TechMat UltraGlide",
-        "specs": "Mouse Pad Specifications, Material: Smooth fabric surface with non-slip rubber base, Size: Standard (Dimensions: 13.8 x 10.2 x 0.1 inches), Color: Black",
+        "specs": "Product Specifications, Material: Smooth fabric surface with non-slip rubber base, Size: Standard (Dimensions: 13.8 x 10.2 x 0.1 inches), Color: Black",
     },
     # Product 34
     {
@@ -371,7 +371,7 @@ products = [
         "description": "Take your gaming to the next level with the ProGrip Precision Mouse Pad. Featuring a micro-textured surface, this mouse pad delivers pixel-precise tracking and enhanced targeting. The non-slip rubber base prevents any unwanted movement during intense gaming sessions. The stylish red design adds a touch of flair to your setup.",
         "price": 19.99,
         "product_name": "ProGrip Precision",
-        "specs": "Mouse Pad Specifications, Material: Micro-textured surface with non-slip rubber base, Size: Standard (Dimensions: 14.2 x 11.8 x 0.1 inches), Color: Red",
+        "specs": "Product Specifications, Material: Micro-textured surface with non-slip rubber base, Size: Standard (Dimensions: 14.2 x 11.8 x 0.1 inches), Color: Red",
     },
     # Product 35
     {
@@ -382,7 +382,7 @@ products = [
         "description": "Achieve peak gaming performance with the CoreGlide Speed Mouse Pad. This mouse pad is designed to provide a smooth and consistent glide for your mouse, enabling quick and precise movements. The anti-fray stitched edges increase durability, while the non-slip rubber base keeps the pad firmly in place.",
         "price": 29.99,
         "product_name": "CoreGlide Speed",
-        "specs": "Mouse Pad Specifications, Material: Smooth surface with anti-fray stitched edges and non-slip rubber base, Size: Standard (Dimensions: 13.0 x 10.6 x 0.1 inches), Color: Blue",
+        "specs": "Product Specifications, Material: Smooth surface with anti-fray stitched edges and non-slip rubber base, Size: Standard (Dimensions: 13.0 x 10.6 x 0.1 inches), Color: Blue",
     },
     # Product 36
     {
@@ -393,7 +393,7 @@ products = [
         "description": "Improve your gaming accuracy with the OptiFeel Control Mouse Pad. This mouse pad offers a textured surface that enhances control and accuracy in gaming and graphic design tasks. The non-slip rubber base ensures the pad stays in place even during intense use.",
         "price": 22.99,
         "product_name": "OptiFeel Control",
-        "specs": "Mouse Pad Specifications, Material: Textured surface with non-slip rubber base, Size: Standard (Dimensions: 12.6 x 10.2 x 0.1 inches), Color: Green",
+        "specs": "Product Specifications, Material: Textured surface with non-slip rubber base, Size: Standard (Dimensions: 12.6 x 10.2 x 0.1 inches), Color: Green",
     },
     # Product 37
     {
@@ -404,6 +404,6 @@ products = [
         "description": "Step up your gaming setup with the GamerZone RGB Mouse Pad. This mouse pad features customizable RGB lighting around the edges, creating an immersive gaming environment. The smooth surface provides precise tracking, and the non-slip rubber base keeps it in place during intense battles.",
         "price": 39.99,
         "product_name": "GamerZone RGB",
-        "specs": "Mouse Pad Specifications, Material: Smooth surface with non-slip rubber base, Size: Standard (Dimensions: 13.4 x 10.2 x 0.2 inches), Backlighting: Customizable RGB lighting, Color: Black with red accents",
+        "specs": "Product Specifications, Material: Smooth surface with non-slip rubber base, Size: Standard (Dimensions: 13.4 x 10.2 x 0.2 inches), Backlighting: Customizable RGB lighting, Color: Black with red accents",
     },
 ]

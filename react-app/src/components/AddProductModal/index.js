@@ -65,7 +65,7 @@ export default function AddProductModal() {
         category_id,
         color,
         description,
-        specs: subSpecs.join(","),
+        specs: "Product Specifications," + subSpecs.join(","),
         price,
         product_name,
         imageOne,
@@ -108,7 +108,6 @@ export default function AddProductModal() {
         errors.imageFour = "Must end with .png, .jpg, or .jpeg";
     }
     setValidationErrors(errors);
-    console.log("Validation Errors:", validationErrors);
   }
 
   function _reset() {

@@ -14,7 +14,7 @@ export default function EditProductModal({ product }) {
   const [category_id, setCategoryId] = useState(product.category_id);
   const [color, setColor] = useState(product.color);
   const [description, setDescription] = useState(product.description);
-  const [specs, setSpecs] = useState(product.specs.split(","));
+  const [specs, setSpecs] = useState(product.specs.split(",").slice(1));
   const [price, setPrice] = useState(product.price);
   const [product_name, setProductName] = useState(product.product_name);
   const [status, setStatus] = useState(product.status);
@@ -76,7 +76,7 @@ export default function EditProductModal({ product }) {
         category_id,
         color,
         description,
-        specs,
+        specs: subSpecs.join(","),
         price,
         product_name,
         status,
@@ -85,6 +85,8 @@ export default function EditProductModal({ product }) {
         imageThree,
         imageFour,
       };
+
+      console.log("From Data construction:", data);
 
       const newProductId = await dispatch(editProductThunk(data));
       _reset();
@@ -121,7 +123,6 @@ export default function EditProductModal({ product }) {
         errors.imageFour = "Must end with .png, .jpg, or .jpeg";
     }
     setValidationErrors(errors);
-    console.log("Validation Errors:", validationErrors);
   }
 
   function _reset() {
@@ -129,7 +130,7 @@ export default function EditProductModal({ product }) {
     setCategoryId("");
     setColor("");
     setDescription("");
-    setSpecs("");
+    setSpecs([""]);
     setPrice("");
     setProductName("");
     setStatus("");
