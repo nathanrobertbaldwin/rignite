@@ -12,6 +12,7 @@ from .api.products import products
 from .api.categories import categories
 from .api.orders import orders
 from .api.reviews import reviews
+from .api.images import images
 
 from .seeds import seed_commands
 from .config import Config
@@ -38,6 +39,7 @@ app.register_blueprint(products, url_prefix="/api/products")
 app.register_blueprint(categories, url_prefix="/api/categories")
 app.register_blueprint(orders, url_prefix="/api/orders")
 app.register_blueprint(reviews, url_prefix="/api/reviews")
+app.register_blueprint(images, url_prefix="/api/reviews")
 
 db.init_app(app)
 Migrate(app, db)
