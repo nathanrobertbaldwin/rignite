@@ -12,7 +12,7 @@ export default function AddProductModal() {
   const user = useSelector((state) => state.session.user);
 
   const [brand, setBrand] = useState("");
-  const [category_id, setCategoryId] = useState("");
+  const [category_id, setCategoryId] = useState(1);
   const [color, setColor] = useState("");
   const [description, setDescription] = useState("");
   const [specs, setSpecs] = useState(["", "", ""]);
@@ -73,6 +73,7 @@ export default function AddProductModal() {
         imageThree,
         imageFour,
       };
+      console.log("Data construction", data);
       const newProductId = await dispatch(createNewProductThunk(data));
       _reset();
       closeModal();

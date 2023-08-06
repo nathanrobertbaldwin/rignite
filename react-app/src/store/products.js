@@ -53,6 +53,7 @@ export const getAllProductsThunk = () => async (dispatch) => {
 };
 
 export const createNewProductThunk = (product) => async (dispatch) => {
+  console.log("From the THUNK", product);
   const response = await fetch("/api/products/new", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -60,6 +61,7 @@ export const createNewProductThunk = (product) => async (dispatch) => {
   });
   if (response.ok) {
     const newProduct = await response.json();
+    console.log("Being sent to store", newProduct);
     dispatch(makeProduct(newProduct));
     return newProduct.id;
   }
