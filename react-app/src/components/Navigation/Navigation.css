@@ -19,12 +19,23 @@
   justify-content: space-between;
   position: relative;
   width: 1200px;
+  margin-left: 2em;
+  margin-right: 2em;
 }
 
 #nav_links_left {
   display: flex;
   align-items: center;
   gap: 3em;
+}
+
+#logo-container {
+  height: 50px;
+}
+
+#logo {
+  width: 100%;
+  height: 100%;
 }
 
 #nav_links_right {
@@ -136,8 +147,6 @@
 .navi-icons > button {
   background-color: gray;
 }
-
-
 
 li#profButt > button:hover {
   background-color: #f44a07;

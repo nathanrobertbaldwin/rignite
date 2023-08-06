@@ -6,3 +6,4 @@ from .reviews import Review
 from .photos import Photo
 from .orders import Order
 from .category import Category
+from .images import Image
