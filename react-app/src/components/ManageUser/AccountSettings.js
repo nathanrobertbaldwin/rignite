@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 
 function AccountSettings() {
     const user = useSelector(state=>state.session.user);
-    console.log("LOOK HERE", user)
+
     const history = useHistory();
     if (!user) history.push('/')
     return (

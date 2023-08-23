@@ -86,8 +86,6 @@ export default function EditProductModal({ product }) {
         imageFour,
       };
 
-      console.log("From Data construction:", data);
-
       const newProductId = await dispatch(editProductThunk(data));
       _reset();
       closeModal();
