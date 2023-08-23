@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, IntegerField, BooleanField, SelectField, EmailField
-from wtforms.validators import DataRequired, ValidationError
+from wtforms.validators import DataRequired, ValidationError, InputRequired
 from app.models import User
 
 def user_exists(form, field):
@@ -42,5 +42,5 @@ class SignUpForm(FlaskForm):
     city = StringField('city', validators=[DataRequired()])
     state = StringField('state', validators=[DataRequired()])
     zip_code = StringField('zip_code', validators=[DataRequired(), zipcode_valid])
-    is_admin = BooleanField('is_admin', validators=[DataRequired()])
+    is_admin = BooleanField('is_admin', validators=[InputRequired()])
     password = StringField('password', validators=[DataRequired()])
