@@ -16,7 +16,7 @@ function SignupFormModal() {
   const [city, setCity] = useState("");
   const [state, setState] = useState("AL");
   const [zipcode, setZipcode] = useState("");
-  let [admin, setAdmin] = useState(false);
+  const [admin, setAdmin] = useState(false);
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState([]);
@@ -82,11 +82,6 @@ function SignupFormModal() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (password === confirmPassword) {
-      if (admin === "true") {
-        admin = "True";
-      } else {
-        admin = "False";
-      }
 
       const data = await dispatch(
         signUp(

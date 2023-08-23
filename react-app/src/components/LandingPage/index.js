@@ -13,7 +13,6 @@ export default function Landing() {
   const categoriesData = useSelector((store) => store.categories);
   const categories = Object.values(categoriesData);
 
-
   const [activeIndex, setActiveIndex] = useState(0);
   const carouselPhotos = [
     {
