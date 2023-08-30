@@ -8,8 +8,8 @@ Live Link: https://rignite.onrender.com
 
 Getting Started: https://github.com/nathanrobertbaldwin/rignite/wiki/Getting-Started
 
-Database / Routes: https://github.com/nathanrobertbaldwin/rignite/wiki/Database-and-Routes
+Database and Routes: https://github.com/nathanrobertbaldwin/rignite/wiki/Database-and-Routes
 
 Tech Stack: https://github.com/nathanrobertbaldwin/rignite/wiki/Tech-Stack
 
-User Story: https://github.com/nathanrobertbaldwin/rignite/wiki/User-Story
+Features List: https://github.com/nathanrobertbaldwin/rignite/wiki/Features-List
