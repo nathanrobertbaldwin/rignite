@@ -4,32 +4,33 @@ import { useParams } from "react-router-dom";
 import { getAllProductCategoriesThunk } from "../../store/categories";
 import { getAllProductsThunk } from "../../store/products";
 import { getAllOrdersThunk } from "../../store/orders";
-import ProductCard from "../ProductCard";
 import { getUserReviewsThunk } from "../../store/reviews";
-
-import "./CategoryProducts.css"
+import ProductCard from "../ProductCard";
+import "./CategoryProducts.css";
+const _ = require("lodash");
 
 export default function CategoryProducts() {
   const dispatch = useDispatch();
+  const user = useSelector((store) => store.session.user);
   const productsData = useSelector((store) => store.products);
   const products = Object.values(productsData);
-  const categoryData = useSelector((store) => store.categories)
+  const categoriesData = useSelector((store) => store.categories);
   let { id } = useParams();
   id = parseInt(id);
-  const category = categoryData[id].name
+  const category = categoriesData[id].name;
 
   useEffect(() => {
-    // MEGATHUNKADONK
-    if (!Object.values(productsData).length) {
-      async function fetchData() {
+    async function fetchData() {
+      if (_.isEmpty(categoriesData))
         await dispatch(getAllProductCategoriesThunk());
-        await dispatch(getAllProductsThunk());
+      if (_.isEmpty(productsData)) await dispatch(getAllProductsThunk());
+      if (!_.isEmpty(user)) {
         await dispatch(getAllOrdersThunk());
         await dispatch(getUserReviewsThunk());
       }
-      fetchData();
     }
-  }, [dispatch]);
+    fetchData();
+  }, []);
 
   const categoryProducts = products.filter(
     (product) => product.category_id === id
@@ -38,7 +39,7 @@ export default function CategoryProducts() {
   return (
     <div id="category_products_index_container">
       <div>
-        <h2 id='shop-by-category'>{`Shop ${category}`}</h2>
+        <h2 id="shop-by-category">{`Shop ${category}`}</h2>
       </div>
       <div id="category_products">
         {categoryProducts?.map((product) => {

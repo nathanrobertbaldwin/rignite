@@ -61,7 +61,7 @@ export default function Landing() {
       }
     }
     fetchData();
-  }, [dispatch]);
+  }, []);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -77,42 +77,34 @@ export default function Landing() {
 
   const cyclePhotos = () => {
     return (
-      <ul className="carousel-ul">
+      <ul>
         {carouselPhotos.map((photo, index) => (
-          <>
-            <li
-              className={index === activeIndex ? "active" : "hidden"}
-              key={index}
-            >
-              <img alt={index} src={photo.url} className="carouselphotostest" />
-            </li>
-          </>
+          <li
+            key={index}
+            className={index === activeIndex ? "active" : "hidden"}
+          >
+            <img alt={index} src={photo.url} className="carouselphotostest" />
+          </li>
         ))}
       </ul>
     );
   };
 
   return (
-    <>
-      <div id="carousel-div-container">
+    <div id="landing-page-container">
+      <section id="carousel-div-container">
         <div id="carousel-div">{cyclePhotos()}</div>
-        <div id="text-move">
-          <div id="carousel_cycle_text_container">
-            <h2 className={"cycle-text"}>
-              {carouselPhotos[activeIndex].header}
-            </h2>
-            <p className={"cycle-text"}>{carouselPhotos[activeIndex].text}</p>
-          </div>
+        <div id="carousel_cycle_text_container">
+          <h2 className={"cycle-text"}>{carouselPhotos[activeIndex].header}</h2>
+          <p className={"cycle-text"}>{carouselPhotos[activeIndex].text}</p>
         </div>
-        <h2 id="shop-by-category">Shop by Category</h2>
-      </div>
-      {/* <div id="categories_index_container"> */}
-      <div id="categories_index">
+      </section>
+      <h2 id="shop-by-category">Shop by Category</h2>
+      <section id="categories_index">
         {categories?.map((category) => {
           return <CategoryCard key={category.id} category={category} />;
         })}
-      </div>
-      {/* </div> */}
-    </>
+      </section>
+    </div>
   );
 }

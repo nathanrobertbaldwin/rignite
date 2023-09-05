@@ -11,36 +11,38 @@ import OpenModalButton from "../OpenModalButton";
 import Overview from "./Overview";
 import Detail from "./Details";
 import Review from "./Reviews";
-// import OpenModalButton from "../OpenModalButton";
-// import LoginFormModal from "../LoginFormModal";
-// import PostReviewModal from "./PostReviewModal";
 import "./ProductDetails.css";
 import LoginFormModal from "../LoginFormModal";
 
+const _ = require("lodash");
+
 export default function ProductDetails() {
-  const history = useHistory();
-  const [view, setView] = useState("overview");
-  const sessionUser = useSelector((store) => store.session.user);
-  const [activeIndex, setActiveIndex] = useState(0);
   const dispatch = useDispatch();
+  const history = useHistory();
+
+  const user = useSelector((state) => state.session.user);
+  const categoriesData = useSelector((store) => store.categories);
+  const productsData = useSelector((store) => store.products);
+  
+  const [view, setView] = useState("overview");
+  const [activeIndex, setActiveIndex] = useState(0);
+  
   let { id } = useParams();
   id = parseInt(id);
-  const user = useSelector((state) => state.session.user);
-  const products = useSelector((store) => store.products);
-  const product = products[id];
+  const product = productsData[id];
 
-  useEffect(async () => {
-    // MEGATHUNKADONK
-    if (!Object.values(products).length) {
-      async function fetchData() {
+  useEffect(() => {
+    async function fetchData() {
+      if (_.isEmpty(categoriesData))
         await dispatch(getAllProductCategoriesThunk());
-        await dispatch(getAllProductsThunk());
+      if (_.isEmpty(productsData)) await dispatch(getAllProductsThunk());
+      if (!_.isEmpty(user)) {
         await dispatch(getAllOrdersThunk());
         await dispatch(getUserReviewsThunk());
       }
-      fetchData();
     }
-  }, [dispatch]);
+    fetchData();
+  }, []);
 
   const photos = product?.product_photos;
 
@@ -105,7 +107,7 @@ export default function ProductDetails() {
               )
             }
           />
-          {sessionUser?.is_admin && (
+          {user?.is_admin && (
             <div id="manage_product_button_container">
               <li className="nav_links">
                 <OpenModalButton
