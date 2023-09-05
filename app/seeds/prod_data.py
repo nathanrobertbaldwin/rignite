@@ -38,9 +38,9 @@ products = [
         "brand": "TechFusion",
         "category_id": 1,
         "color": "White",
-        "description": "Upgrade your workspace with the TechFusion Pro Wired Keyboard. This sleek and elegant keyboard features low-profile scissor switches that provide a comfortable typing experience. The compact layout saves space on your desk, while the multimedia hotkeys allow quick access to various functions. The keyboard is spill-resistant, protecting it from accidental spills and splashes. The white finish adds a touch of sophistication to your setup.",
+        "description": "Upgrade your workspace with the TechFusion Pro Keyboard. This sleek and elegant keyboard features low-profile scissor switches that provide a comfortable typing experience. The compact layout saves space on your desk, while the multimedia hotkeys allow quick access to various functions. The keyboard is spill-resistant, protecting it from accidental spills and splashes. The white finish adds a touch of sophistication to your setup.",
         "price": 49.99,
-        "product_name": "TechFusion Pro Wired Keyboard",
+        "product_name": "TechFusion Pro Keyboard",
         "specs": "Product Specifications, Keyboard Type: Membrane Keyboard, Switch Type: Scissor Switches, Key Lifespan: 10 million keystrokes, Key Rollover: 6-key rollover, Backlighting: Non-backlit, Layout: Compact 87-key layout with multimedia hotkeys, Connectivity: Wired USB 2.0, Cable: PVC, Connection: Fixed, Construction: ABS keycaps, Color: White, Dimensions: 14.2 x 5.5 x 0.9 inches (L x W x H), Weight: Approx. 1.1 lbs (0.5 kg)",
     },
     # Product 5
@@ -159,9 +159,9 @@ products = [
         "brand": "TechFusion",
         "category_id": 1,
         "color": "White",
-        "description": "Upgrade your workspace with the TechFusion Pro Wired Keyboard. This sleek and elegant keyboard features low-profile scissor switches that provide a comfortable typing experience. The compact layout saves space on your desk, while the multimedia hotkeys allow quick access to various functions. The keyboard is spill-resistant, protecting it from accidental spills and splashes. The white finish adds a touch of sophistication to your setup.",
+        "description": "Upgrade your workspace with the TechFusion Pro Keyboard. This sleek and elegant keyboard features low-profile scissor switches that provide a comfortable typing experience. The compact layout saves space on your desk, while the multimedia hotkeys allow quick access to various functions. The keyboard is spill-resistant, protecting it from accidental spills and splashes. The white finish adds a touch of sophistication to your setup.",
         "price": 49.99,
-        "product_name": "TechFusion Pro Wired Keyboard",
+        "product_name": "TechFusion Pro Keyboard",
         "specs": "Product Specifications, Keyboard Type: Membrane Keyboard, Switch Type: Scissor Switches, Key Lifespan: 10 million keystrokes, Key Rollover: 6-key rollover, Backlighting: Non-backlit, Layout: Compact 87-key layout with multimedia hotkeys, Connectivity: Wired USB 2.0, Cable: PVC, Connection: Fixed, Construction: ABS keycaps, Color: White, Dimensions: 14.2 x 5.5 x 0.9 inches (L x W x H), Weight: Approx. 1.1 lbs (0.5 kg)",
     },
     # Product 16
