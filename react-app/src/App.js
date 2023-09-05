@@ -27,7 +27,7 @@ function App() {
   }, [dispatch, location]);
 
   return (
-    <div id="app">
+    <>
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <main id="main-content">
@@ -69,7 +69,7 @@ function App() {
         </main>
       )}
       <Footer />
-    </div>
+    </>
   );
 }
 

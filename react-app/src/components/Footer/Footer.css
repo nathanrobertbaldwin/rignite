@@ -1,7 +1,4 @@
-/* FOOTER */
-
 #footer-container {
-    /* border: 1px solid red; */
     grid-area: footer;
     display: flex;
     justify-content: center;
@@ -9,7 +6,7 @@
     height: 75px;
     width: 100%;
     gap: 10%;
-    border-top: 1px solid darkgrey;
+    border-top: 1px solid rgb(75, 75, 75);
   }
   
   #footer-list {
