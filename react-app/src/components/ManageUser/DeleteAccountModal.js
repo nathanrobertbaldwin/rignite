@@ -2,6 +2,7 @@ import { deleteUserAccount } from "../../store/session"
 import { useHistory } from "react-router-dom";
 import { useDispatch } from 'react-redux'
 import { useModal } from "../../context/Modal";
+import { getAllProductsThunk } from "../../store/products";
 
 function DeleteAccountModal() {
 
@@ -13,6 +14,7 @@ function DeleteAccountModal() {
         e.preventDefault()
 
         return dispatch(deleteUserAccount())
+        .then(dispatch(getAllProductsThunk()))
         .then(closeModal)
         .then(history.push("/"))
     }
