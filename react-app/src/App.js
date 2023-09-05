@@ -13,6 +13,7 @@ import ProductDetails from "./components/ProductDetails";
 import AccountSettings from "./components/ManageUser/AccountSettings";
 import Orders from "./components/Orders";
 import UserReviews from "./components/ManageUser/UserReviews";
+import Footer from "./components/Footer";
 
 function App() {
   const dispatch = useDispatch();
@@ -26,7 +27,7 @@ function App() {
   }, [dispatch, location]);
 
   return (
-    <>
+    <div id="app">
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <main id="main-content">
@@ -67,7 +68,8 @@ function App() {
           </Switch>
         </main>
       )}
-    </>
+      <Footer />
+    </div>
   );
 }
 

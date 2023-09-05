@@ -1,0 +1,37 @@
+/* FOOTER */
+
+#footer-container {
+    /* border: 1px solid red; */
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75px;
+    width: 100%;
+    gap: 10%;
+    border-top: 1px solid darkgrey;
+  }
+  
+  #footer-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5em;
+    align-items: center;
+  }
+  
+  #footer-list > li {
+    cursor: pointer;
+  }
+  
+  #footer-info > h2,
+  ul,
+  li {
+    color: white;
+    list-style: none;
+  }
+
+  .contributor-container{
+    display: flex;
+    gap: 1em;
+  }
