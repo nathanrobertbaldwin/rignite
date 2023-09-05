@@ -22,7 +22,7 @@ export default function SeeCartModal({ addProduct }) {
     if (addProduct) {
         if (!cart2) cart2 = [];
         let productIndex = cart2.findIndex(ele => ele[0] === addProduct)
-        if (productIndex != -1) cart2[productIndex][1]++
+        if (productIndex !== -1) cart2[productIndex][1]++
         else cart2.push([addProduct, 1]);
     }
     const [cart, setCart] = useState(cart2);

@@ -29,41 +29,43 @@ function App() {
     <>
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
-        <Switch>
-          <Route exact path="/">
-            <LandingPage />
-          </Route>
-          <Route exact path="/users/reviews">
-            <UserReviews />
-          </Route>
-          <Route exact path="/products/all">
-            <ProductIndex />
-          </Route>
-          <Route exact path="/products/:id">
-            <ProductDetails />
-          </Route>
-          <Route exact path="/login">
-            <LoginFormPage />
-          </Route>
-          <Route exact path="/signup">
-            <SignupFormPage />
-          </Route>
-          <Route exact path="/category/:id">
-            <CategoryProducts />
-          </Route>
-          <Route exact path="/users/manage">
-            <ManageUser />
-          </Route>
-          <Route exact path="/users/delete">
-            <AccountSettings />
-          </Route>
-          <Route exact path="/orders">
-            <Orders />
-          </Route>
-          <Route exact path="*">
-            <h2>"You done goofed."</h2>
-          </Route>
-        </Switch>
+        <main id="main-content">
+          <Switch>
+            <Route exact path="/">
+              <LandingPage />
+            </Route>
+            <Route exact path="/users/reviews">
+              <UserReviews />
+            </Route>
+            <Route exact path="/products/all">
+              <ProductIndex />
+            </Route>
+            <Route exact path="/products/:id">
+              <ProductDetails />
+            </Route>
+            <Route exact path="/login">
+              <LoginFormPage />
+            </Route>
+            <Route exact path="/signup">
+              <SignupFormPage />
+            </Route>
+            <Route exact path="/category/:id">
+              <CategoryProducts />
+            </Route>
+            <Route exact path="/users/manage">
+              <ManageUser />
+            </Route>
+            <Route exact path="/users/delete">
+              <AccountSettings />
+            </Route>
+            <Route exact path="/orders">
+              <Orders />
+            </Route>
+            <Route exact path="*">
+              <h2>"You done goofed."</h2>
+            </Route>
+          </Switch>
+        </main>
       )}
     </>
   );
