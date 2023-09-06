@@ -5,13 +5,13 @@
 #login-hr{
 
     width: 100%;
-    border: 1px solid grey;
+    border: 1px solid rgb(75, 75, 75);
 }
 
 #login-hr2{
     margin: 10% 0px;
     width: 100%;
-    border: 1px solid grey;
+    border: 1px solid rgb(75, 75, 75);
 }
 
 #login-email-container{

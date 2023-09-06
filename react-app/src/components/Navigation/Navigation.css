@@ -3,11 +3,12 @@
 }
 
 #nav_container {
+  grid-area: nav;
   display: flex;
   justify-content: center;
   background-color: rgb(22, 22, 22);
   position: sticky;
-  border-bottom: 1px solid darkgrey;
+  border-bottom: 1px solid rgb(75, 75, 75);
   top: 0px;
   z-index: 4;
   height: 75px;
@@ -18,9 +19,9 @@
   align-items: center;
   justify-content: space-between;
   position: relative;
-  width: 1200px;
-  margin-left: 2em;
-  margin-right: 2em;
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 #nav_links_left {
@@ -73,7 +74,7 @@
   position: absolute;
   right: 0px;
   top: 40px;
-  border: 1px solid rgb(255, 255, 255);
+    border: 1px solid rgb(75, 75, 75);
 }
 
 .profile-dropdown > li {

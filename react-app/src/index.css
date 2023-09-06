@@ -1,35 +1,35 @@
 /* TODO Add site wide styles */
 
-html {
-  background-color: rgb(5, 5, 5);
+html, body {
   margin: 0px !important;
   padding: 0px !important;
   font-family: "Gordita", Helvetica, Arial, Verdana, sans-serif;
+  height: 100%;
+  background-color:  rgb(10, 10, 10);
+  color: white;
 }
 
 #root {
-  min-height: 100vh;
+  font-family: "Gordita", Helvetica, Arial, Verdana, sans-serif;
+  height: 100%;
+  min-width: 1000px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 76px 1fr 76px;
+  grid-template-areas: 
+  "nav"
+  "main"
+  "footer";
 }
 
 #main-content{
+  grid-area: main;
   display: flex;
   flex-direction: column;
-  width: 1400px;
-  margin-left: auto;
-  margin-right: auto;
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
   margin-top: 2em;
-}
-
-body {
-  color: white;
-  margin: 0px !important;
-  padding: 0px !important;
-  font-size: small;
-}
-
-div {
-  margin: 0px;
-  padding: 0px;
 }
 
 ul {
@@ -53,7 +53,7 @@ ul {
 }
 
 #modal-content > form > input {
-  background-color: rgb(24, 26, 27);
+  background-color:  rgb(10, 10, 10);
   border-radius: 5px;
   color: lightgrey;
   margin: 5px;
@@ -132,9 +132,9 @@ button {
   font-size: medium;
   border: none;
   padding: 5px;
+  margin: 5px;
   border-radius: 5px;
-  /* background-color: #FF9C75; */
-  /* visibility: hidden; */
+  width: fit-content;
 }
 
 button:hover {
@@ -154,39 +154,4 @@ button:hover {
 .emptyCartButt {
   margin: 5px;
   padding: 10px;
-}
-
-/* FOOTER */
-
-#footer-container {
-  /* border: 1px solid red; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(22, 22, 22);
-  height: 75px;
-  width: 100%;
-  gap: 10%;
-  border-top: 1px solid darkgrey;
-  margin-top: 30px;
-}
-
-#footer-list {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 1em;
-  align-items: center;
-  /* border: 1px solid red; */
-}
-
-#footer-list > li {
-  cursor: pointer;
-}
-
-#footer-info > h2,
-ul,
-li {
-  color: white;
-  list-style: none;
 }

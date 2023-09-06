@@ -92,13 +92,17 @@ export default function Landing() {
 
   return (
     <div id="landing-page-container">
-      <section id="carousel-div-container">
-        <div id="carousel-div">{cyclePhotos()}</div>
-        <div id="carousel_cycle_text_container">
-          <h2 className={"cycle-text"}>{carouselPhotos[activeIndex].header}</h2>
-          <p className={"cycle-text"}>{carouselPhotos[activeIndex].text}</p>
+      <div id="carousel-div-container">
+        <div id="carousel-div">
+          {cyclePhotos()}
+          <div id="carousel_cycle_text_container">
+            <h3 className={"cycle-text"}>
+              {carouselPhotos[activeIndex].header}
+            </h3>
+            <p className={"cycle-text"}>{carouselPhotos[activeIndex].text}</p>
+          </div>
         </div>
-      </section>
+      </div>
       <h2 id="shop-by-category">Shop by Category</h2>
       <section id="categories_index">
         {categories?.map((category) => {

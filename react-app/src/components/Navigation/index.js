@@ -10,7 +10,7 @@ import "./Navigation.css";
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
   return (
-    <div id="nav_container">
+    <nav id="nav_container">
       <div id="nav_links_container">
         <div id="nav_links_left">
           <NavLink exact to="/">
@@ -50,7 +50,7 @@ function Navigation({ isLoaded }) {
           </ul>
         </div>
       </div>
-    </div>
+    </nav>
   );
 }
 

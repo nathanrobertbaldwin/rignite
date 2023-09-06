@@ -1,0 +1,34 @@
+#footer-container {
+    grid-area: footer;
+    background-color: rgb(22, 22, 22);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75px;
+    gap: 10%;
+    border-top: 1px solid rgb(75, 75, 75);
+  }
+  
+  #footer-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5em;
+    align-items: center;
+  }
+  
+  #footer-list > li {
+    cursor: pointer;
+  }
+  
+  #footer-info > h2,
+  ul,
+  li {
+    color: white;
+    list-style: none;
+  }
+
+  .contributor-container{
+    display: flex;
+    gap: 1em;
+  }

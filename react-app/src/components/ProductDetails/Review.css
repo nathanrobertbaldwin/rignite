@@ -1,7 +1,6 @@
 /* REVIEWS COMPONENT */
 
 #review-component-main-container {
-    width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: center;

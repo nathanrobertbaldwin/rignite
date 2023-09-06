@@ -17,7 +17,6 @@ export default function CategoryProducts() {
   const categoriesData = useSelector((store) => store.categories);
   let { id } = useParams();
   id = parseInt(id);
-  const category = categoriesData[id].name;
 
   useEffect(() => {
     async function fetchData() {
@@ -37,15 +36,13 @@ export default function CategoryProducts() {
   );
 
   return (
-    <div id="category_products_index_container">
-      <div>
-        <h2 id="shop-by-category">{`Shop ${category}`}</h2>
-      </div>
+    <>
+      <h2 id="shop-by-category">{`Shop ${categoriesData[id]?.name}`}</h2>
       <div id="category_products">
         {categoryProducts?.map((product) => {
           return <ProductCard key={product.id} product={product} />;
         })}
       </div>
-    </div>
+    </>
   );
 }
