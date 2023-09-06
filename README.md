@@ -1,11 +1,6 @@
 # Rignite
 
-Rignite sells cool products aimed at pc-builder enthusiasts who want extra style for their rig.
-Rignite Users create an account, add items to their shopping cart, and then create orders when finished.
-Users can leave reviews with a photo and rating for products.
-Users can manage their account information.
-Admins are Rignite employees with the power to post additional products, edit their employee accounts,
-and see User orders.
+Rignite is an eCommerce site, based on the site Drop.com, that focuses on selling computer products and accessories. Rignite offers highly customized gear for the gaming enthusiast, including incredible key-caps like "The Eye of Sauron," and gaming mats like the "Ameratsu."
 
 - Check out [Rignite](https://rignite.onrender.com/) here
 - Connect With Us: [Sebastian Stovall](https://www.linkedin.com/in/sebastian-stovall-a17a8a211/), [Nathan Baldwin](https://www.linkedin.com/in/nathan-baldwin-48959714/), [Casey O'Neil](https://www.linkedin.com/in/casey-o-neil-993b7228a/), [James Askelson](https://www.linkedin.com/in/james-askelson-bb4b6928a/)
@@ -170,3 +165,16 @@ DELETE
 |  POST /api/reviews/new                        |  Creates a new review from a user on a specific product.                       | { <br> "user_id": 2, <br> "product_id": 1, <br> "review": "I purchased this with the intent of using the board for a bulbasaur keyboard build. The switches are clacky and I hate it. I prefer thocky sounds, and I could get over the sound if it was good to type on - but I find it to be lackluster.", <br> "rating": 5, <br> "photo_url": None <br> }
 |  PUT /api/reviews/<int:reviewId>              |  user can edit a review they created.                                          | { <br> "user_id": 2, <br> "product_id": 1, <br> "review": "I purchased this with the intent of using the board for a bulbasaur keyboard build. The switches are clacky and I hate it. I prefer thocky sounds, and I could get over the sound if it was good to type on - but I find it to be lackluster.", <br> "rating": 5, <br> "photo_url": None <br>}
 |  DELETE /api/reviews/<int:reviewId>           |  A user can delete a review they posted.                                       | {"message": "successfully deleted review"}
+=======
+# Links
+
+Live Link: https://rignite.onrender.com
+
+Getting Started: https://github.com/nathanrobertbaldwin/rignite/wiki/Getting-Started
+
+Database and Routes: https://github.com/nathanrobertbaldwin/rignite/wiki/Database-and-Routes
+
+Tech Stack: https://github.com/nathanrobertbaldwin/rignite/wiki/Tech-Stack
+
+Features List: https://github.com/nathanrobertbaldwin/rignite/wiki/Features-List
+
