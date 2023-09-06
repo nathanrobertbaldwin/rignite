@@ -11,8 +11,9 @@ import OpenModalButton from "../OpenModalButton";
 import Overview from "./Overview";
 import Detail from "./Details";
 import Review from "./Reviews";
-import "./ProductDetails.css";
 import LoginFormModal from "../LoginFormModal";
+
+import "./ProductDetails.css";
 
 const _ = require("lodash");
 
@@ -23,10 +24,10 @@ export default function ProductDetails() {
   const user = useSelector((state) => state.session.user);
   const categoriesData = useSelector((store) => store.categories);
   const productsData = useSelector((store) => store.products);
-  
+
   const [view, setView] = useState("overview");
   const [activeIndex, setActiveIndex] = useState(0);
-  
+
   let { id } = useParams();
   id = parseInt(id);
   const product = productsData[id];
@@ -61,11 +62,9 @@ export default function ProductDetails() {
   };
 
   return (
-    <div id="product_details">
-      <h3 onClick={() => history.goBack()} id="breadcrumb">
-        {"< Go Back"}
-      </h3>
-      <div id="product_details_main_content_container">
+    <div id="product-details-container">
+      <button onClick={() => history.goBack()}>Go Back</button>
+      <section id="product_details_main_content_container">
         <div className="carousel">
           <button
             onClick={() => handleNextImg(-1)}
@@ -119,17 +118,17 @@ export default function ProductDetails() {
             </div>
           )}
         </div>
-      </div>
-      <hr className="hrtest" />
-      <div id="switch-view-container">
+      </section>
+      <section id="switch-view-container">
         <button onClick={() => handleView("overview")}>Overview</button>
-        <button onClick={() => handleView("details")}>Details</button>
+        <button onClick={() => handleView("specs")}>Specs</button>
         <button onClick={() => handleView("reviews")}>Reviews</button>
-      </div>
-      <hr className="hrtest2" />
-      {view === "overview" && <Overview product={product} />}
-      {view === "details" && <Detail product={product} />}
-      {view === "reviews" && <Review product={product} user={user} />}
+      </section>
+      <section>
+        {view === "overview" && <Overview product={product} />}
+        {view === "specs" && <Detail product={product} />}
+        {view === "reviews" && <Review product={product} user={user} />}
+      </section>
     </div>
   );
 }

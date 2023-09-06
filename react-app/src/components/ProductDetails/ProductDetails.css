@@ -1,17 +1,13 @@
-/* PRODUCT DETAILS COMPONENT */
-
-#product_details {
+#product-details-container{
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  padding-top: 20px;
+  gap: 2em;
 }
 
 #product_details_main_content_container {
   display: flex;
-  width: 80%;
-  gap: 30px;
+  gap: 3em;
+  padding-bottom: 2em;
 }
 
 /* IMAGE CAROUSEL */
@@ -22,9 +18,8 @@
 
 .carousel {
   flex-basis: 50%;
-  width: 100vw;
-  min-width: 600px;
-  height: 50vh;
+  width: 50%;
+  height: 300px;
   position: relative;
 }
 
@@ -47,7 +42,9 @@
   width: 100%;
   height: 100%;
   object-position: center;
-  object-fit: fill;
+  object-fit: cover;
+  border-radius: 1em;
+  border: 1px solid rgb(75, 75, 75);
 }
 
 .slide[data-active] {
@@ -89,14 +86,16 @@
 /* //////////////////////////////////////////////////// */
 
 #product_details_product_main_info {
-  flex-basis: 40%;
-  max-width: 40%;
+  width: 50%;
+  text-align: justify;
 }
 
 #switch-view-container {
   display: flex;
   justify-content: center;
-  gap: 40%;
+  gap: 10em;
+  border-top: 1px solid rgb(75, 75, 75);
+  border-bottom: 1px solid rgb(75, 75, 75);
 }
 
 #switch-view-container > button {
@@ -105,23 +104,7 @@
 }
 
 #switch-view-container > button:hover {
-  text-decoration: underline #f44a07;
-}
-
-.hrtest {
-  width: 45vw;
-  border: 1px solid rgb(75, 75, 75);
-  margin-top: 50px;
-}
-
-.hrtest2 {
-  width: 45vw;
-  border: 1px solid rgb(75, 75, 75);
-}
-
-#breadcrumb {
-  align-self: flex-start;
-  margin-left: 100px;
+  color:  #f44a07;
 }
 
 #product_details_product_description {
