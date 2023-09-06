@@ -10,12 +10,16 @@ import "./Navigation.css";
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
   return (
-    <div id="nav_container">
+    <nav id="nav_container">
       <div id="nav_links_container">
         <div id="nav_links_left">
           <NavLink exact to="/">
             <div id="logo-container">
-              <img id="logo" src="https://rignite-images.s3.us-east-2.amazonaws.com/rignite_logo.JPG"/>
+              <img
+                alt="logo"
+                id="logo"
+                src="https://rignite-images.s3.us-east-2.amazonaws.com/rignite_logo.JPG"
+              />
             </div>
           </NavLink>
           <NavLink exact to="/products/all">
@@ -46,7 +50,7 @@ function Navigation({ isLoaded }) {
           </ul>
         </div>
       </div>
-    </div>
+    </nav>
   );
 }
 

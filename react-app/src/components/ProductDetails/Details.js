@@ -10,8 +10,10 @@ function Detail({ product }) {
       <div id="specs-list">
         <h2>{specsTitle}</h2>
         <ul>
-          {specsInfo?.map((spec) => (
-            <li id="individual-spec">{spec}</li>
+          {specsInfo?.map((spec, idx) => (
+            <li key={idx} id="individual-spec">
+              {spec}
+            </li>
           ))}
         </ul>
       </div>

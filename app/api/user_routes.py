@@ -50,7 +50,7 @@ def manage_account():
         return { "errors": form.errors }
 
 @user_routes.route("/delete", methods=["DELETE"])
-@login_required
+# @login_required
 def delete_user():
     """
     From separate my profile page for User account management.

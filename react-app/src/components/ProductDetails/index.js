@@ -11,36 +11,39 @@ import OpenModalButton from "../OpenModalButton";
 import Overview from "./Overview";
 import Detail from "./Details";
 import Review from "./Reviews";
-// import OpenModalButton from "../OpenModalButton";
-// import LoginFormModal from "../LoginFormModal";
-// import PostReviewModal from "./PostReviewModal";
-import "./ProductDetails.css";
 import LoginFormModal from "../LoginFormModal";
 
+import "./ProductDetails.css";
+
+const _ = require("lodash");
+
 export default function ProductDetails() {
-  const history = useHistory();
-  const [view, setView] = useState("overview");
-  const sessionUser = useSelector((store) => store.session.user);
-  const [activeIndex, setActiveIndex] = useState(0);
   const dispatch = useDispatch();
+  const history = useHistory();
+
+  const user = useSelector((state) => state.session.user);
+  const categoriesData = useSelector((store) => store.categories);
+  const productsData = useSelector((store) => store.products);
+
+  const [view, setView] = useState("overview");
+  const [activeIndex, setActiveIndex] = useState(0);
+
   let { id } = useParams();
   id = parseInt(id);
-  const user = useSelector((state) => state.session.user);
-  const products = useSelector((store) => store.products);
-  const product = products[id];
+  const product = productsData[id];
 
-  useEffect(async () => {
-    // MEGATHUNKADONK
-    if (!Object.values(products).length) {
-      async function fetchData() {
+  useEffect(() => {
+    async function fetchData() {
+      if (_.isEmpty(categoriesData))
         await dispatch(getAllProductCategoriesThunk());
-        await dispatch(getAllProductsThunk());
+      if (_.isEmpty(productsData)) await dispatch(getAllProductsThunk());
+      if (!_.isEmpty(user)) {
         await dispatch(getAllOrdersThunk());
         await dispatch(getUserReviewsThunk());
       }
-      fetchData();
     }
-  }, [dispatch]);
+    fetchData();
+  }, []);
 
   const photos = product?.product_photos;
 
@@ -59,11 +62,9 @@ export default function ProductDetails() {
   };
 
   return (
-    <div id="product_details">
-      <h3 onClick={() => history.goBack()} id="breadcrumb">
-        {"< Go Back"}
-      </h3>
-      <div id="product_details_main_content_container">
+    <div id="product-details-container">
+      <button onClick={() => history.goBack()}>Go Back</button>
+      <section id="product_details_main_content_container">
         <div className="carousel">
           <button
             onClick={() => handleNextImg(-1)}
@@ -105,7 +106,7 @@ export default function ProductDetails() {
               )
             }
           />
-          {sessionUser?.is_admin && (
+          {user?.is_admin && (
             <div id="manage_product_button_container">
               <li className="nav_links">
                 <OpenModalButton
@@ -117,17 +118,17 @@ export default function ProductDetails() {
             </div>
           )}
         </div>
-      </div>
-      <hr className="hrtest" />
-      <div id="switch-view-container">
+      </section>
+      <section id="switch-view-container">
         <button onClick={() => handleView("overview")}>Overview</button>
-        <button onClick={() => handleView("details")}>Details</button>
+        <button onClick={() => handleView("specs")}>Specs</button>
         <button onClick={() => handleView("reviews")}>Reviews</button>
-      </div>
-      <hr className="hrtest2" />
-      {view === "overview" && <Overview product={product} />}
-      {view === "details" && <Detail product={product} />}
-      {view === "reviews" && <Review product={product} user={user} />}
+      </section>
+      <section>
+        {view === "overview" && <Overview product={product} />}
+        {view === "specs" && <Detail product={product} />}
+        {view === "reviews" && <Review product={product} user={user} />}
+      </section>
     </div>
   );
 }

@@ -19,14 +19,12 @@ export default function ProductCard({ product }) {
         to={`/products/${product.id}`}
         title={product?.product_name}
       >
-        <div id="product_card_image_container">
-          <img
-            id="product_card_image"
-            alt="product"
-            src={product?.product_photos[0]?.url}
-            title={product?.product_name}
-          />
-        </div>
+        <img
+          id="product_card_image"
+          alt="product"
+          src={product?.product_photos[0]?.url}
+          title={product?.product_name}
+        />
         <div id="product_card_text">
           <h3 id="product_name_h3">{product?.product_name}</h3>
           <p>{tagline}</p>

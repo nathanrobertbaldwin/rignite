@@ -38,7 +38,6 @@
 
 #change-account-info-form {
   width: 700px;
-  border-top: 1px solid rgb(24, 26, 27);
 }
 
 .form-errors {
@@ -56,7 +55,7 @@
 /* CHANGE ACCOUNT FORM */
 
 #account-basic-info-section {
-  border: 1px solid grey;
+  border: 1px solid rgb(75, 75, 75);
   border-radius: 10px;
   padding-bottom: 13px;
 }
@@ -192,13 +191,13 @@
 
 #account-auth-section {
   margin-bottom: 20px;
-  border: 1px solid grey;
+  border: 1px solid rgb(75, 75, 75);
   border-radius: 10px;
   padding-bottom: 10px;
 }
 
 #account-shipping-section {
-  border: 1px solid grey;
+  border: 1px solid rgb(75, 75, 75);
   border-radius: 10px;
   padding-bottom: 10px;
 }
@@ -208,7 +207,7 @@
   background-color: rgb(206, 206, 206);
   color: black;
   padding: 6px 20px;
-  border: 1px solid #222222;
+  border: 1px solid rgb(75, 75, 75);
   cursor: pointer;
 }
 
