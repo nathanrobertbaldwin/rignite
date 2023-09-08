@@ -98,15 +98,6 @@
   border-bottom: 1px solid rgb(75, 75, 75);
 }
 
-#switch-view-container > button {
-  background-color: transparent;
-  color: white;
-}
-
-#switch-view-container > button:hover {
-  color:  #f44a07;
-}
-
 #product_details_product_description {
   word-wrap: break-word;
 }

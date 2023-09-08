@@ -33,7 +33,7 @@ users = [
     "state": "CA",
     "zip_code": 12345,
     "is_admin": False,
-    "password": "password1"
+    "password": "password"
   },
   {
     "username": "user2",
@@ -45,7 +45,7 @@ users = [
     "state": "NY",
     "zip_code": 67890,
     "is_admin": False,
-    "password": "password2"
+    "password": "password"
   },
   {
     "username": "user3",
@@ -57,7 +57,7 @@ users = [
     "state": "TX",
     "zip_code": 54321,
     "is_admin": False,
-    "password": "password3"
+    "password": "password"
   },
   {
     "username": "user4",
@@ -69,7 +69,7 @@ users = [
     "state": "IL",
     "zip_code": 13579,
     "is_admin": False,
-    "password": "password4"
+    "password": "password"
   },
   {
     "username": "user5",
@@ -81,7 +81,7 @@ users = [
     "state": "FL",
     "zip_code": 24680,
     "is_admin": False,
-    "password": "password5"
+    "password": "password"
   },
   {
     "username": "user6",
@@ -93,7 +93,7 @@ users = [
     "state": "OH",
     "zip_code": 98765,
     "is_admin": False,
-    "password": "password6"
+    "password": "password"
   },
   {
     "username": "user7",
@@ -105,7 +105,7 @@ users = [
     "state": "GA",
     "zip_code": 54321,
     "is_admin": False,
-    "password": "password7"
+    "password": "password"
   },
   {
     "username": "user8",
@@ -117,7 +117,7 @@ users = [
     "state": "MI",
     "zip_code": 24680,
     "is_admin": False,
-    "password": "password8"
+    "password": "password"
   },
   {
     "username": "user9",
@@ -129,7 +129,7 @@ users = [
     "state": "WA",
     "zip_code": 13579,
     "is_admin": False,
-    "password": "password9"
+    "password": "password"
   },
   {
     "username": "user10",
@@ -141,7 +141,7 @@ users = [
     "state": "PA",
     "zip_code": 54321,
     "is_admin": False,
-    "password": "password10"
+    "password": "password"
   },
   {
     "username": "user11",
@@ -153,7 +153,7 @@ users = [
     "state": "IN",
     "zip_code": 24680,
     "is_admin": False,
-    "password": "password11"
+    "password": "password"
   },
   {
     "username": "user12",
@@ -165,7 +165,7 @@ users = [
     "state": "NJ",
     "zip_code": 13579,
     "is_admin": False,
-    "password": "password12"
+    "password": "password"
   },
   {
     "username": "user13",
@@ -177,7 +177,7 @@ users = [
     "state": "TX",
     "zip_code": 54321,
     "is_admin": False,
-    "password": "password13"
+    "password": "password"
   },
   {
     "username": "user14",
@@ -189,7 +189,7 @@ users = [
     "state": "FL",
     "zip_code": 24680,
     "is_admin": False,
-    "password": "password14"
+    "password": "password"
   },
   {
     "username": "user15",
@@ -201,6 +201,6 @@ users = [
     "state": "NY",
     "zip_code": 13579,
     "is_admin": False,
-    "password": "password15"
+    "password": "password"
   }
 ]
