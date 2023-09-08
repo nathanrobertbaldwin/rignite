@@ -58,23 +58,24 @@ function EditReviewModal({reviewId, reviewData}) {
 
                 <div id="star-container">
                     <div className="stars">
-                        <FaStar className={`single-star ${rating >= 1 ? "activestar" : ""}`} id={highlight >= 1 ? "highlight" : ""} value={rating}
-                        onClick={() => setRating(1)} onMouseMoveCapture={() => setHighlight(1)} onMouseLeave={() => setHighlight("")} />
+                        {formErrors.rating && <div className='form-errors star-errors'>{formErrors.rating}</div>}
+                        <div>
+                            <FaStar className={`single-star ${rating >= 1 ? "activestar" : ""}`} id={highlight >= 1 ? "highlight" : ""} value={rating}
+                            onClick={() => setRating(1)} onMouseMoveCapture={() => setHighlight(1)} onMouseLeave={() => setHighlight("")} />
 
-                        <FaStar className={`single-star ${rating >= 2 ? "activestar" : ""}`} id={highlight >= 2 ? "highlight" : ""} value={rating}
-                        onClick={() => setRating(2)} onMouseMoveCapture={() => setHighlight(2)} onMouseLeave={() => setHighlight("")} />
+                            <FaStar className={`single-star ${rating >= 2 ? "activestar" : ""}`} id={highlight >= 2 ? "highlight" : ""} value={rating}
+                            onClick={() => setRating(2)} onMouseMoveCapture={() => setHighlight(2)} onMouseLeave={() => setHighlight("")} />
 
-                        <FaStar className={`single-star ${rating >= 3 ? "activestar" : ""}`} id={highlight >= 3 ? "highlight" : ""} value={rating}
-                        onClick={() => setRating(3)} onMouseMoveCapture={() => setHighlight(3)} onMouseLeave={() => setHighlight("")} />
+                            <FaStar className={`single-star ${rating >= 3 ? "activestar" : ""}`} id={highlight >= 3 ? "highlight" : ""} value={rating}
+                            onClick={() => setRating(3)} onMouseMoveCapture={() => setHighlight(3)} onMouseLeave={() => setHighlight("")} />
 
-                        <FaStar className={`single-star ${rating >= 4 ? "activestar" : ""}`} id={highlight >= 4 ? "highlight" : ""} value={rating}
-                        onClick={() => setRating(4)} onMouseMoveCapture={() => setHighlight(4)} onMouseLeave={() => setHighlight("")} />
+                            <FaStar className={`single-star ${rating >= 4 ? "activestar" : ""}`} id={highlight >= 4 ? "highlight" : ""} value={rating}
+                            onClick={() => setRating(4)} onMouseMoveCapture={() => setHighlight(4)} onMouseLeave={() => setHighlight("")} />
 
-                        <FaStar className={`single-star ${rating >= 5 ? "activestar" : ""}`} id={highlight >= 5 ? "highlight" : ""} value={rating}
-                        onClick={() => setRating(5)} onMouseMoveCapture={() => setHighlight(5)} onMouseLeave={() => setHighlight("")} />
-                        <span className="star-text">Stars</span>
+                            <FaStar className={`single-star ${rating >= 5 ? "activestar" : ""}`} id={highlight >= 5 ? "highlight" : ""} value={rating}
+                            onClick={() => setRating(5)} onMouseMoveCapture={() => setHighlight(5)} onMouseLeave={() => setHighlight("")} />
+                        </div>
                     </div>
-                    {formErrors.rating && <span className='form-errors'>{formErrors.rating}</span>}
                 </div>
 
                 <div>

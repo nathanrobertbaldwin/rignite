@@ -10,9 +10,19 @@
 
 }
 
+#product-post-review-test-container {
+    display: flex;
+    align-items: center;
+}
+
+#product-post-review-test-container > h2 {
+    font-size: 50px;
+    margin-right: 110px;
+}
+
 #create-review-modal-button-container {
-    position: absolute;
-    left: 5%;
+    position: relative;
+    right: 200px;
 }
 
 #create-review-modal-button-container > button {
@@ -31,11 +41,6 @@
     align-items: center;
     flex-direction: column;
     margin-bottom: 10px;
-}
-
-#product-review-details-overview-container > h2 {
-    font-size: 50px;
-    margin: 0px;
 }
 
 
@@ -93,4 +98,15 @@
 
 #verified-buyer {
     font-size: 13px;
+}
+
+.stars {
+    display: flex;
+    flex-direction: column;
+}
+
+.star-errors {
+    font-size: 13px;
+    padding: 0px;
+    margin: 0px;
 }
