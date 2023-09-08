@@ -25,14 +25,16 @@ function Review({product, user}) {
 
     return (
         <div id="review-component-main-container">
-            <div id="create-review-modal-button-container">
-                {doesUserHaveReview === undefined && user && !user.is_admin
-                ? <OpenModalButton buttonText={"Post Review"} modalComponent={<CreateReviewModal user={user} productId={product.id} />} />
-                : null}
-            </div>
             <h2>Customer Reviews</h2>
             <div id="product-review-details-overview-container">
-                <h2>{productAverageRating}</h2>
+                <div id="product-post-review-test-container">
+                    <div id="create-review-modal-button-container">
+                        {doesUserHaveReview === undefined && user && !user.is_admin
+                        ? <OpenModalButton buttonText={"Post Review"} modalComponent={<CreateReviewModal user={user} productId={product.id} />} />
+                        : null}
+                    </div>
+                    <h2>{productAverageRating}</h2>
+                </div>
                 <div id="review-detail-view-container">
                     <div id="star-rating-mapping-container">
                         {arrToDisplayStarView.map((i) => (
