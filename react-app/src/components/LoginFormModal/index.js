@@ -19,31 +19,30 @@ function LoginFormModal() {
     if (data) {
       setErrors(data);
     } else {
-        closeModal()
+      closeModal();
     }
   };
 
-  async function demoLogin(user){
-    await dispatch(login(user==='admin'?'admin@rignite.com':'Demo-lition@example.com','password'));
+  async function demoLogin(user) {
+    await dispatch(
+      login(
+        user === "admin" ? "admin@rignite.com" : "Demo-lition@example.com",
+        "password"
+      )
+    );
     closeModal();
   }
 
-
-
   return (
-    <>
-      <h1 id='login-title'>Log In To Rignite</h1>
-      <hr id='login-hr'/>
+    <div>
+      <h1 id="login-title">Log In To Rignite</h1>
+      <hr id="login-hr" />
       <form onSubmit={handleSubmit}>
-        <ul>
-          {errors.map((error, idx) => (
-            <li className="form-errors" key={idx}>{error}</li>
-          ))}
-        </ul>
-        <div id='login-email-container'>
-          <label>
-            Email
-          </label>
+        {errors.map((error, idx) => (
+          <span className="form-errors" key={idx}>{error.split(": ")[1]}</span>
+        ))}
+        <div id="login-email-container">
+          <label>Email</label>
           <input
             type="text"
             placeholder="Email"
@@ -52,10 +51,8 @@ function LoginFormModal() {
             required
           />
         </div>
-        <div id='login-password-container'>
-          <label>
-            Password
-          </label>
+        <div id="login-password-container">
+          <label>Password</label>
           <input
             type="password"
             placeholder="password"
@@ -64,23 +61,23 @@ function LoginFormModal() {
             required
           />
         </div>
-        <div id='login-button'>
+        <div id="login-button">
           <button type="submit">Log In</button>
         </div>
       </form>
-      <div id='demo-container'>
-        <button onClick={()=>demoLogin('user')}>Demo User</button>
-        <button onClick={()=>demoLogin('admin')}>Demo Admin</button>
+      <div id="demo-container">
+        <button onClick={() => demoLogin("user")}>Demo User</button>
+        <button onClick={() => demoLogin("admin")}>Demo Admin</button>
       </div>
-      <hr id='login-hr2'/>
-      <div id='login-signup-container'>
+      <hr id="login-hr2" />
+      <div id="login-signup-container">
         <p>Not a member yet?</p>
         <OpenModalButton
           buttonText="Sign Up"
           modalComponent={<SignupFormModal />}
         />
       </div>
-    </>
+    </div>
   );
 }
 
