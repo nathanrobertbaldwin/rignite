@@ -128,17 +128,21 @@ a:hover {
 
 button {
   cursor: pointer;
-  background-color: rgb(206, 206, 206);
+  font-weight: bold;
+  color: white;
+  background-color: black;
   font-size: medium;
-  border: none;
+  border: 1px solid rgb(75, 75, 75);
   padding: 5px;
   margin: 5px;
   border-radius: 5px;
   width: fit-content;
+  transition: .5s;
 }
 
 button:hover {
   background-color: #f44a07;
+  color: black;
 }
 
 #checkout {

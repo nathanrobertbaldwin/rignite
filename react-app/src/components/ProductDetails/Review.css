@@ -10,20 +10,19 @@
 
 }
 
+#product-post-review-test-container {
+    display: flex;
+    align-items: center;
+}
+
+#product-post-review-test-container > h2 {
+    font-size: 50px;
+    margin-right: 110px;
+}
+
 #create-review-modal-button-container {
-    position: absolute;
-    left: 5%;
-}
-
-#create-review-modal-button-container > button {
-    cursor: pointer;
-    background-color: rgb(206, 206, 206);
-    border: none;
-    height: 50px;
-}
-
-#create-review-modal-button-container > button:hover {
-    background-color: #F44A07;
+    position: relative;
+    right: 200px;
 }
 
 #product-review-details-overview-container {
@@ -31,11 +30,6 @@
     align-items: center;
     flex-direction: column;
     margin-bottom: 10px;
-}
-
-#product-review-details-overview-container > h2 {
-    font-size: 50px;
-    margin: 0px;
 }
 
 
@@ -93,4 +87,15 @@
 
 #verified-buyer {
     font-size: 13px;
+}
+
+.stars {
+    display: flex;
+    flex-direction: column;
+}
+
+.star-errors {
+    font-size: 13px;
+    padding: 0px;
+    margin: 0px;
 }

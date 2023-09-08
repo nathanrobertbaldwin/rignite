@@ -61,6 +61,8 @@ function CreateReviewModal({user, productId}) {
 
                 <div id="star-container">
                     <div className="stars">
+                        {formErrors.rating && <div className='form-errors star-errors'>{formErrors.rating}</div>}
+                        <div>
                         <FaStar className={`single-star ${rating >= 1 ? "activestar" : ""}`} id={highlight >= 1 ? "highlight" : ""} value={rating}
                         onClick={() => setRating(1)} onMouseMoveCapture={() => setHighlight(1)} onMouseLeave={() => setHighlight("")} />
 
@@ -75,8 +77,8 @@ function CreateReviewModal({user, productId}) {
 
                         <FaStar className={`single-star ${rating >= 5 ? "activestar" : ""}`} id={highlight >= 5 ? "highlight" : ""} value={rating}
                         onClick={() => setRating(5)} onMouseMoveCapture={() => setHighlight(5)} onMouseLeave={() => setHighlight("")} />
+                        </div>
                     </div>
-                        {formErrors.rating && <span className='form-errors'>{formErrors.rating}</span>}
                 </div>
 
                 <div>

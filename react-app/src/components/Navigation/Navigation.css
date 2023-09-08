@@ -144,17 +144,3 @@
   color: white;
   text-decoration: none;
 }
-
-.navi-icons > button {
-  background-color: gray;
-}
-
-li#profButt > button:hover {
-  background-color: #f44a07;
-}
-
-#profButt > button {
-  background-color: gray;
-  padding: 7px 7px;
-  margin-bottom: 1px;
-}

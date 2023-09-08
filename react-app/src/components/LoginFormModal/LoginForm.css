@@ -19,6 +19,7 @@
     flex-direction: column;
     row-gap: 5px;
     margin-bottom: 10%;
+    margin-top: 10%;
 }
 
 
@@ -43,6 +44,6 @@
 
 #demo-container{
     display: flex;
-    width: 90%;
+    justify-content: center;
     gap: 5%;
 }
