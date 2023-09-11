@@ -29,6 +29,10 @@
     margin-bottom: 10px;
 }
 
+.prodCard:hover{
+    cursor: pointer;
+}
+
 .ordCard>button{
     justify-self: flex-end;
     padding: 0;
