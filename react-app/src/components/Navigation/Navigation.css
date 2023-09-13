@@ -129,6 +129,7 @@
   gap: 2em;
   align-items: center;
   margin: 0px 0px;
+  text-wrap: nowrap;
 }
 
 #shop-link {
