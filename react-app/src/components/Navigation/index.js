@@ -31,7 +31,7 @@ function Navigation({ isLoaded }) {
             {sessionUser?.is_admin && (
               <OpenModalButton
                 className="product_modal_button"
-                buttonText="Add A Product"
+                buttonText="Add Product"
                 modalComponent={<AddProductModal />}
               />
             )}
